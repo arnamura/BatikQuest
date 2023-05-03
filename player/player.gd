@@ -25,3 +25,8 @@ func _physics_process(delta):
 	handleInput()
 	move_and_slide()
 	updateAnimation()
+
+
+func _on_hurt_box_area_entered(area):
+	if area.name == "hitBox":
+		print_debug(area.get_parent().name)

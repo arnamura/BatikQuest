@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dndkvxcijkvrc"]
+[gd_scene load_steps=11 format=3 uid="uid://dndkvxcijkvrc"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_0emo5"]
 [ext_resource type="Texture2D" uid="uid://llf5sndwqnid" path="res://art/player.png" id="2_lwsoh"]
@@ -98,6 +98,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gr0ne"]
 size = Vector2(12, 2.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hsgqu"]
+size = Vector2(14, 14)
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 y_sort_enabled = true
@@ -105,7 +108,6 @@ texture_filter = 1
 script = ExtResource("1_0emo5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-2, 0)
 texture = ExtResource("2_lwsoh")
 offset = Vector2(0, -8)
 hframes = 4
@@ -117,5 +119,14 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -1.75)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_gr0ne")
+
+[node name="hurtBox" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtBox"]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_hsgqu")
+
+[connection signal="area_entered" from="hurtBox" to="." method="_on_hurt_box_area_entered"]
