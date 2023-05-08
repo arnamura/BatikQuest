@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var speed: int = 35
 @onready var animations = $AnimationPlayer
 
+
 #untuk handle input gerakan
 func handleInput():
 	var moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -28,5 +29,11 @@ func _physics_process(delta):
 
 
 func _on_hurt_box_area_entered(area):
+	var knockback_force = Vector2(0, 0)
+	var i = velocity
 	if area.name == "hitBox":
+		velocity = -velocity * 50
+		lerp(velocity, i, 0.2)
+		move_and_slide()
 		print_debug(area.get_parent().name)
+	

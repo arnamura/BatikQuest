@@ -39,3 +39,8 @@ func _physics_process(delta):
 	updateVelocity()
 	move_and_slide()
 	updateAnimation()
+
+func _on_hit_box_area_entered(area):
+	if area.name == "hurtBox":
+		velocity = -velocity * 50
+		move_and_slide()
