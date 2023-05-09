@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://de0dw7ts0iqam"]
+[gd_scene load_steps=17 format=3 uid="uid://de0dw7ts0iqam"]
 
 [ext_resource type="PackedScene" uid="uid://dndkvxcijkvrc" path="res://player/player.tscn" id="1_mlxps"]
 [ext_resource type="Texture2D" uid="uid://bn1rxgfowuian" path="res://art/TilesetFloor.png" id="2_7m60y"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://dui12k4mxn2th" path="res://art/TilesetHouse.png" id="4_h51bp"]
 [ext_resource type="PackedScene" uid="uid://dacvdvtgenqnt" path="res://enemies/slime.tscn" id="5_184i3"]
 [ext_resource type="Script" path="res://camera/Player Cam.gd" id="6_uj8y6"]
+[ext_resource type="PackedScene" uid="uid://bteda0q8lw1cj" path="res://npc/kakek.tscn" id="8_da03o"]
+[ext_resource type="PackedScene" uid="uid://01ydgb5cpsky" path="res://helpers/actionable.tscn" id="9_cpqxd"]
+[ext_resource type="Resource" uid="uid://cyofnijgd3gem" path="res://dialogue/test.dialogue" id="10_ebcei"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_26vdy"]
 texture = ExtResource("2_7m60y")
@@ -4094,6 +4097,9 @@ sources/1 = SubResource("TileSetAtlasSource_pcwk0")
 sources/2 = SubResource("TileSetAtlasSource_4gyhw")
 sources/3 = SubResource("TileSetAtlasSource_olngr")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_decqt"]
+radius = 8.0
+
 [node name="World" type="Node2D"]
 z_index = 1
 y_sort_enabled = true
@@ -4146,3 +4152,13 @@ position = Vector2(119, 72)
 [node name="Player Cam" type="Camera2D" parent="TileMap/Player" node_paths=PackedStringArray("tilemap")]
 script = ExtResource("6_uj8y6")
 tilemap = NodePath("../..")
+
+[node name="kakek" parent="TileMap" instance=ExtResource("8_da03o")]
+position = Vector2(169, 75)
+
+[node name="Actionable" parent="TileMap/kakek" instance=ExtResource("9_cpqxd")]
+dialogue_resource = ExtResource("10_ebcei")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/kakek/Actionable"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_decqt")
