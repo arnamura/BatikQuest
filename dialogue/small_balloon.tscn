@@ -64,7 +64,7 @@ mouse_filter = 1
 theme = SubResource("Theme_isg48")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 5
+theme_override_font_sizes/normal_font_size = 6
 bbcode_enabled = true
 text = "Character"
 fit_content = true
@@ -76,7 +76,7 @@ theme = SubResource("Theme_owda0")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/selection_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 5
+theme_override_font_sizes/normal_font_size = 6
 text = "Dialogue"
 
 [node name="Responses" type="VBoxContainer" parent="Balloon/Margin/VBox"]
@@ -92,7 +92,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/selection_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 5
+theme_override_font_sizes/normal_font_size = 6
 theme_override_styles/focus = SubResource("StyleBoxFlat_5d24i")
 theme_override_styles/normal = SubResource("StyleBoxFlat_oj3c8")
 bbcode_enabled = true

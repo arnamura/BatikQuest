@@ -3,6 +3,8 @@ extends CharacterBody2D
 @export var speed: int = 35
 @onready var actionable_finder = $Direction/ActionableFinder
 @onready var animations = $AnimationPlayer
+@onready var slimePos= get_node("/root/World/TileMap/slime") #import file slime
+
 
 #untuk handle input action
 func _unhandled_input(_event: InputEvent) -> void:
@@ -11,8 +13,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 		if actionable.size() > 0:
 			actionable[0].action()
 			return
-		
-		
+ 
 #untuk handle input gerakan 
 func handleInput():
 	var moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -20,6 +21,7 @@ func handleInput():
 
 #untuk animasi berjalan
 func updateAnimation():
+	
 	if velocity.length() == 0:
 		if  animations.is_playing():
 			animations.stop()
@@ -36,13 +38,18 @@ func _physics_process(_delta):
 	move_and_slide()
 	updateAnimation()
 
-
+func teleportToPosition(targetPosition: Vector2):
+	position = targetPosition
+	
+	
 func _on_hurt_box_area_entered(area):
-	#var knockback_force = Vector2(0, 0)
-	var i = velocity
 	if area.name == "hitBox":
-		velocity = -velocity * 50
-		lerp(velocity, i, 0.2)
+		if velocity == Vector2(0,0):
+			velocity = slimePos.velocity * 25
+		else:
+			velocity = -velocity * 25
 		move_and_slide()
+		print_debug(velocity)
 		print_debug(area.get_parent().name)
+		
 	

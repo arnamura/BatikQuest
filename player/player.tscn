@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dndkvxcijkvrc"]
+[gd_scene load_steps=13 format=3 uid="uid://dndkvxcijkvrc"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_0emo5"]
 [ext_resource type="Texture2D" uid="uid://llf5sndwqnid" path="res://art/player.png" id="2_lwsoh"]
@@ -29,6 +29,9 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0]
 }
+
+[sub_resource type="Animation" id="Animation_cvudy"]
+resource_name = "hurt"
 
 [sub_resource type="Animation" id="Animation_xftbf"]
 resource_name = "walkDown"
@@ -149,6 +152,7 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rj0s8"]
 _data = {
 "RESET": SubResource("Animation_wv0uj"),
+"hurt": SubResource("Animation_cvudy"),
 "walkDown": SubResource("Animation_xftbf"),
 "walkLeft": SubResource("Animation_qeecf"),
 "walkRight": SubResource("Animation_k7etw"),
@@ -159,7 +163,7 @@ _data = {
 size = Vector2(12, 5.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hsgqu"]
-size = Vector2(14, 14)
+size = Vector2(10, 9)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1jhbf"]
 radius = 8.0
@@ -186,11 +190,10 @@ position = Vector2(0, -2.375)
 shape = SubResource("RectangleShape2D_gr0ne")
 
 [node name="hurtBox" type="Area2D" parent="."]
-visible = false
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtBox"]
-position = Vector2(0, -7)
+position = Vector2(0, -4.5)
 shape = SubResource("RectangleShape2D_hsgqu")
 
 [node name="Direction" type="Marker2D" parent="."]

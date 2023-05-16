@@ -3,10 +3,14 @@ extends CharacterBody2D
 @export var speed = 20
 @export var limit = 0.5
 @export var endPoint : Marker2D
+@export var slimeV = velocity
+
 
 @onready var animations = $AnimationPlayer
 var startPosition
 var endPosition
+var y = velocity
+var pos
 
 func _ready():
 	startPosition = position
@@ -35,12 +39,13 @@ func updateAnimation():
 		elif velocity.y <0: direction = "Up"
 		animations.play("walk"+ direction)
 	
-func _physics_process(delta):
+func _physics_process(_delta):
+	pos = get_position()
 	updateVelocity()
 	move_and_slide()
 	updateAnimation()
 
 func _on_hit_box_area_entered(area):
 	if area.name == "hurtBox":
-		velocity = -velocity * 50
+		#velocity = -velocity * 50
 		move_and_slide()

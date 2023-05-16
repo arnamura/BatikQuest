@@ -9,5 +9,3 @@ func _ready():
 	limit_right = worldSizeInPixels.x
 	limit_bottom = worldSizeInPixels.y
 
-func _process(delta):
-	pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://de0dw7ts0iqam"]
+[gd_scene load_steps=19 format=3 uid="uid://de0dw7ts0iqam"]
 
 [ext_resource type="PackedScene" uid="uid://dndkvxcijkvrc" path="res://player/player.tscn" id="1_mlxps"]
 [ext_resource type="Texture2D" uid="uid://bn1rxgfowuian" path="res://art/TilesetFloor.png" id="2_7m60y"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bteda0q8lw1cj" path="res://npc/kakek.tscn" id="8_da03o"]
 [ext_resource type="PackedScene" uid="uid://01ydgb5cpsky" path="res://helpers/actionable.tscn" id="9_cpqxd"]
 [ext_resource type="Resource" uid="uid://cyofnijgd3gem" path="res://dialogue/test.dialogue" id="10_ebcei"]
+[ext_resource type="Texture2D" uid="uid://4h0tsxqa5y1x" path="res://art/crate.png" id="11_8qa4j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_26vdy"]
 texture = ExtResource("2_7m60y")
@@ -4100,6 +4101,9 @@ sources/3 = SubResource("TileSetAtlasSource_olngr")
 [sub_resource type="CircleShape2D" id="CircleShape2D_decqt"]
 radius = 8.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmdai"]
+size = Vector2(22.8333, 22.8333)
+
 [node name="World" type="Node2D"]
 z_index = 1
 y_sort_enabled = true
@@ -4137,14 +4141,7 @@ position = Vector2(166, 113)
 endPoint = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="TileMap/slime"]
-position = Vector2(109, 0)
-
-[node name="slime2" parent="TileMap" node_paths=PackedStringArray("endPoint") instance=ExtResource("5_184i3")]
-position = Vector2(166, 137)
-endPoint = NodePath("Marker2D")
-
-[node name="Marker2D" type="Marker2D" parent="TileMap/slime2"]
-position = Vector2(0, 30)
+position = Vector2(-59, -7)
 
 [node name="Player" parent="TileMap" instance=ExtResource("1_mlxps")]
 position = Vector2(119, 72)
@@ -4162,3 +4159,18 @@ dialogue_resource = ExtResource("10_ebcei")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/kakek/Actionable"]
 position = Vector2(0, 6)
 shape = SubResource("CircleShape2D_decqt")
+
+[node name="Area2D" type="Area2D" parent="TileMap"]
+position = Vector2(88, 70)
+scale = Vector2(0.857143, 0.857143)
+
+[node name="Sprite2D" type="Sprite2D" parent="TileMap/Area2D"]
+position = Vector2(0, -7.62939e-06)
+texture = ExtResource("11_8qa4j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Area2D"]
+shape = SubResource("RectangleShape2D_qmdai")
+
+[connection signal="area_entered" from="TileMap/kakek/Actionable" to="TileMap/kakek" method="_on_actionable_area_entered"]
+[connection signal="body_entered" from="TileMap/kakek/Actionable" to="TileMap/kakek/Actionable" method="_on_body_entered"]
+[connection signal="body_exited" from="TileMap/kakek/Actionable" to="TileMap/kakek/Actionable" method="_on_body_exited"]
