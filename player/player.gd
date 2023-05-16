@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var actionable_finder = $Direction/ActionableFinder
 @onready var animations = $AnimationPlayer
 @onready var slimePos= get_node("/root/World/TileMap/slime") #import file slime
-
+@onready var playerSprite = $Sprite2D
 
 #untuk handle input action
 func _unhandled_input(_event: InputEvent) -> void:
@@ -37,19 +37,19 @@ func _physics_process(_delta):
 	handleInput()
 	move_and_slide()
 	updateAnimation()
-
-func teleportToPosition(targetPosition: Vector2):
-	position = targetPosition
-	
 	
 func _on_hurt_box_area_entered(area):
 	if area.name == "hitBox":
+		set_modulate(Color("d95351"))
 		if velocity == Vector2(0,0):
 			velocity = slimePos.velocity * 25
 		else:
 			velocity = -velocity * 25
+		playerSprite.modulate = Color('red')
+		$Timer.start()
 		move_and_slide()
 		print_debug(velocity)
 		print_debug(area.get_parent().name)
-		
-	
+
+func _on_timer_timeout():
+	playerSprite.modulate = Color(1,1,1,1)
