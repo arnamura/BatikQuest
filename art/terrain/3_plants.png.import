@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4h0tsxqa5y1x"
-path="res://.godot/imported/crate.png-7a5c65fead6c082ef0f772445351e342.ctex"
+uid="uid://ce7vhh2x6eg7d"
+path="res://.godot/imported/3_plants.png-bbbf62f6c1a1c2b9f14217c8cfb0b022.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/crate.png"
-dest_files=["res://.godot/imported/crate.png-7a5c65fead6c082ef0f772445351e342.ctex"]
+source_file="res://art/terrain/3_plants.png"
+dest_files=["res://.godot/imported/3_plants.png-bbbf62f6c1a1c2b9f14217c8cfb0b022.ctex"]
 
 [params]
 

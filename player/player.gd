@@ -8,6 +8,12 @@ extends CharacterBody2D
 
 #untuk handle input action
 func _unhandled_input(_event: InputEvent) -> void:
+	#untuk tombol berlari
+	if Input.is_action_just_pressed("ui_shift"):
+		speed = 150
+	elif Input.is_action_just_released("ui_shift"):
+		speed = 50
+	#untuk tombol interaksi
 	if Input.is_action_just_pressed("ui_accept"):
 		var actionable = actionable_finder.get_overlapping_areas()
 		if actionable.size() > 0:
@@ -42,9 +48,15 @@ func _on_hurt_box_area_entered(area):
 	if area.name == "hitBox":
 		set_modulate(Color("d95351"))
 		if velocity == Vector2(0,0):
-			velocity = slimePos.velocity * 25
+			if speed == 150:
+				velocity = slimePos.velocity * 10
+			else:
+				velocity = slimePos.velocity * 25
 		else:
-			velocity = -velocity * 25
+			if speed == 150:
+				velocity = -velocity * 10
+			else:
+				velocity = -velocity * 25
 		playerSprite.modulate = Color('red')
 		$Timer.start()
 		move_and_slide()
