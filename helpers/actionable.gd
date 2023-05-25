@@ -4,10 +4,10 @@ extends Area2D
 @export var dialogue_start : String = "start"
 
 const Balloon = preload("res://dialogue/small_balloon.tscn")
+
+@onready var uiDesc: CanvasLayer = get_node("/root/World/DescriptionGUI")
 	
 func action() -> void:
 	var balloon: Node = Balloon.instantiate()
 	get_tree().current_scene.add_child(balloon)
 	balloon.start(dialogue_resource, dialogue_start)
-
-

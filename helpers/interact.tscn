@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4k2fs1ckj4lg"]
+
+[ext_resource type="Script" path="res://helpers/Interact.gd" id="1_r7e82"]
+
+[node name="Interact" type="Area2D"]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("1_r7e82")
+
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

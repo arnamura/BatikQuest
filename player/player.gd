@@ -1,10 +1,12 @@
 extends CharacterBody2D
 
 @export var speed: int = 35
+
 @onready var actionable_finder = $Direction/ActionableFinder
 @onready var animations = $AnimationPlayer
 @onready var slimePos= get_node("/root/World/TileMap/slime") #import file slime
 @onready var playerSprite = $Sprite2D
+@onready var ui = get_node("/root/World/DescriptionGUI")
 
 #untuk handle input action
 func _unhandled_input(_event: InputEvent) -> void:
@@ -27,7 +29,6 @@ func handleInput():
 
 #untuk animasi berjalan
 func updateAnimation():
-	
 	if velocity.length() == 0:
 		if  animations.is_playing():
 			animations.stop()
@@ -46,22 +47,29 @@ func _physics_process(_delta):
 	
 func _on_hurt_box_area_entered(area):
 	if area.name == "hitBox":
-		set_modulate(Color("d95351"))
-		if velocity == Vector2(0,0):
-			if speed == 150:
-				velocity = slimePos.velocity * 10
-			else:
-				velocity = slimePos.velocity * 25
-		else:
-			if speed == 150:
-				velocity = -velocity * 10
-			else:
-				velocity = -velocity * 25
-		playerSprite.modulate = Color('red')
-		$Timer.start()
-		move_and_slide()
-		print_debug(velocity)
+		knockback()
+		print_debug(area.get_parent().name)
+	if area.name == "Interact":
 		print_debug(area.get_parent().name)
 
 func _on_timer_timeout():
+	# untuk mengembalikan warna sprite ke semula setelah knockback
 	playerSprite.modulate = Color(1,1,1,1)
+	
+#fungsi untuk handle bila terjadi colision dengan musuh yang akan membuat musuh terpental
+func knockback():
+	set_modulate(Color("d95351"))
+	if velocity == Vector2(0,0):
+		if speed == 150:
+			velocity = slimePos.velocity * 10
+		else:
+			velocity = slimePos.velocity * 25
+	else:
+		if speed == 150:
+			velocity = -velocity * 10
+		else:
+			velocity = -velocity * 25
+	#Ketika terjadi collision dengan musuh, player berubah warna merah sesaat
+	playerSprite.modulate = Color('red')
+	$Timer.start()
+	move_and_slide()

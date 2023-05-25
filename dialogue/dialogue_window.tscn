@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0utbw3yb238h"]
+
+[ext_resource type="Texture2D" uid="uid://e2vamsgxgk6x" path="res://art/DialogueBoxSimple.png" id="1_mk0c0"]
+
+[node name="DialogueWindow" type="CanvasLayer"]
+
+[node name="bg" type="NinePatchRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.492
+anchor_top = 1.0
+anchor_right = 0.492
+anchor_bottom = 1.0
+offset_left = -110.08
+offset_top = -63.0
+offset_right = 114.92
+offset_bottom = -3.0
+texture = ExtResource("1_mk0c0")
+
+[node name="MarginContainer" type="MarginContainer" parent="bg"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.027
+anchor_top = 0.083
+anchor_right = 0.969
+anchor_bottom = 0.9
+offset_left = -0.0750003
+offset_top = 0.0199995
+offset_right = -0.0250092
+
+[node name="VBoxContainer" type="VBoxContainer" parent="bg/MarginContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="bg/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 7
+text = "nama"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="bg/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 8
+text = "textexetecxet"
+fit_content = true
+
+[node name="GridContainer" type="GridContainer" parent="bg/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
+
+[node name="Button" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0

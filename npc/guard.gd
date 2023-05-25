@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var limit = 0.5
 @export var endPoint : Marker2D
 
+@onready var player = get_node("/root/World/TileMap/Player")
 @onready var animations = $AnimationPlayer
 var startPosition
 var endPosition
@@ -39,3 +40,24 @@ func _physics_process(_delta):
 	updateVelocity()
 	move_and_slide()
 	updateAnimation()
+
+
+func _on_interact_area_entered(area):
+	if area.name == "hurtBox":
+		speed = 0
+		
+		#if player.position.y < position.y:
+			#print_debug("dibawah")
+		#elif player.position.y > position.y:
+			#print_debug("diatas")
+		#elif player.position.x < position.x:
+			#print_debug("dikiri")
+		#elif player.position.x > position.x:
+			#print_debug("dikanan")
+		
+		
+
+
+func _on_interact_area_exited(area):
+	if area.name == "hurtBox":
+		speed = 5

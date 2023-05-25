@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://b361p61jmf257"]
 
 [ext_resource type="Script" path="res://dialogue/balloon.gd" id="1_4u26j"]
+[ext_resource type="Texture2D" uid="uid://e2vamsgxgk6x" path="res://art/DialogueBoxSimple.png" id="2_2wd5b"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
-[ext_resource type="Texture2D" uid="uid://t7rx73jh4ao3" path="res://art/DialogBox.png" id="2_oe7pv"]
 
 [sub_resource type="Theme" id="Theme_isg48"]
 default_font_size = 9
@@ -18,7 +18,8 @@ content_margin_left = 20.0
 content_margin_top = 2.0
 content_margin_right = 2.0
 content_margin_bottom = 2.0
-bg_color = Color(1, 1, 1, 0.25098)
+bg_color = Color(0, 0, 0, 0.407843)
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oj3c8"]
 content_margin_left = 20.0
@@ -32,26 +33,32 @@ layer = 100
 script = ExtResource("1_4u26j")
 
 [node name="Balloon" type="NinePatchRect" parent="."]
-offset_right = 140.0
-offset_bottom = 54.0
-texture = ExtResource("2_oe7pv")
-region_rect = Rect2(1, -1.5, 298, 59)
+offset_left = 1.0
+offset_top = 79.0
+offset_right = 141.0
+offset_bottom = 134.0
+texture = ExtResource("2_2wd5b")
+region_rect = Rect2(-0.194588, -0.121246, 317.301, 59.758)
 patch_margin_left = 69
-patch_margin_top = 30
+patch_margin_top = 33
 patch_margin_right = 71
 patch_margin_bottom = 24
 
 [node name="Margin" type="MarginContainer" parent="Balloon"]
 layout_mode = 1
-offset_left = -7.0
-offset_top = -6.0
-offset_right = 140.0
-offset_bottom = 54.0
+anchors_preset = -1
+anchor_top = 0.0545455
+anchor_bottom = 0.0909091
+offset_left = -10.0
+offset_top = -7.0
+offset_right = 137.0
+offset_bottom = 56.0
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 10
 metadata/_edit_layout_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="VBox" type="VBoxContainer" parent="Balloon/Margin"]
 layout_mode = 2
@@ -64,7 +71,7 @@ mouse_filter = 1
 theme = SubResource("Theme_isg48")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 6
+theme_override_font_sizes/normal_font_size = 7
 bbcode_enabled = true
 text = "Character"
 fit_content = true
@@ -89,19 +96,20 @@ layout_mode = 2
 focus_mode = 2
 theme = SubResource("Theme_fakos")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
-theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_colors/selection_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 6
 theme_override_styles/focus = SubResource("StyleBoxFlat_5d24i")
 theme_override_styles/normal = SubResource("StyleBoxFlat_oj3c8")
 bbcode_enabled = true
-text = "Response"
+text = "response"
 fit_content = true
 scroll_active = false
 shortcut_keys_enabled = false
 meta_underlined = false
 hint_underlined = false
+selection_enabled = true
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="resized" from="Balloon/Margin" to="." method="_on_margin_resized"]
