@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://de0dw7ts0iqam"]
+[gd_scene load_steps=32 format=3 uid="uid://de0dw7ts0iqam"]
 
 [ext_resource type="PackedScene" uid="uid://dndkvxcijkvrc" path="res://player/player.tscn" id="1_mlxps"]
 [ext_resource type="Texture2D" uid="uid://bn1rxgfowuian" path="res://art/TilesetFloor.png" id="2_7m60y"]
@@ -16,8 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://01ydgb5cpsky" path="res://helpers/actionable.tscn" id="9_cpqxd"]
 [ext_resource type="Resource" uid="uid://cyofnijgd3gem" path="res://dialogue/test.dialogue" id="10_ebcei"]
 [ext_resource type="PackedScene" uid="uid://tdo63he11iml" path="res://obj/sign.tscn" id="17_3gsfd"]
+[ext_resource type="Script" path="res://scenes/dungeon.gd" id="18_3x2cv"]
 [ext_resource type="PackedScene" uid="uid://b4k2fs1ckj4lg" path="res://helpers/interact.tscn" id="18_hr4qy"]
 [ext_resource type="PackedScene" uid="uid://tbvn2122fjtg" path="res://helpers/description_gui.tscn" id="19_4nh8k"]
+[ext_resource type="PackedScene" uid="uid://s1ht1iwxfmen" path="res://helpers/pause.tscn" id="20_va8hm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_26vdy"]
 texture = ExtResource("2_7m60y")
@@ -6021,9 +6023,16 @@ sources/7 = SubResource("TileSetAtlasSource_58ine")
 [sub_resource type="CircleShape2D" id="CircleShape2D_decqt"]
 radius = 8.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qigvx"]
+
 [node name="World" type="Node2D"]
 z_index = 1
 y_sort_enabled = true
+
+[node name="DescriptionGUI" parent="." instance=ExtResource("19_4nh8k")]
+visible = false
+
+[node name="Pause" parent="." instance=ExtResource("20_va8hm")]
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -6103,6 +6112,12 @@ position = Vector2(154, 79)
 collision_mask = 33
 
 [node name="Player Cam" type="Camera2D" parent="TileMap/Player" node_paths=PackedStringArray("tilemap")]
+limit_left = 0
+limit_top = 0
+limit_right = 12288
+limit_bottom = 12288
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 script = ExtResource("6_uj8y6")
 tilemap = NodePath("../..")
 
@@ -6162,8 +6177,12 @@ visibility_layer = 32
 position = Vector2(0, 6)
 shape = SubResource("CircleShape2D_decqt")
 
-[node name="DescriptionGUI" parent="." instance=ExtResource("19_4nh8k")]
-visible = false
+[node name="dungeon_door" type="Area2D" parent="TileMap"]
+position = Vector2(182, 63)
+script = ExtResource("18_3x2cv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/dungeon_door"]
+shape = SubResource("RectangleShape2D_qigvx")
 
 [connection signal="area_entered" from="TileMap/kakek/Actionable" to="TileMap/kakek" method="_on_actionable_area_entered"]
 [connection signal="body_entered" from="TileMap/kakek/Actionable" to="TileMap/kakek/Actionable" method="_on_body_entered"]
@@ -6174,3 +6193,4 @@ visible = false
 [connection signal="area_entered" from="TileMap/Parang/Interact" to="TileMap/Parang/Interact" method="_on_area_entered"]
 [connection signal="area_entered" from="TileMap/Gringsing/Interact" to="TileMap/Gringsing" method="_on_interact_area_entered"]
 [connection signal="area_entered" from="TileMap/Gringsing/Interact" to="TileMap/Gringsing/Interact" method="_on_area_entered"]
+[connection signal="body_entered" from="TileMap/dungeon_door" to="TileMap/dungeon_door" method="_on_body_entered"]

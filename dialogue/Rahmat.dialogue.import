@@ -1,0 +1,14 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://bahgr1srwq1oq"
+path="res://.godot/imported/Rahmat.dialogue-dcc80d3c95765b5b413c935086029e45.tres"
+
+[deps]
+
+source_file="res://dialogue/Rahmat.dialogue"
+dest_files=["res://.godot/imported/Rahmat.dialogue-dcc80d3c95765b5b413c935086029e45.tres"]
+
+[params]
+

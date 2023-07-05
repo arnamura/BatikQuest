@@ -6,7 +6,7 @@ class_name Interact extends Area2D
 @export var path_gambar = "none"
 
 
-@onready var uiDesc: CanvasLayer = get_node("/root/World/DescriptionGUI")
+@onready var uiDesc: CanvasLayer = $"../../../DescriptionGUI"
 
 var player_in_range = false
 #const Gui = preload("res://helpers/description_gui.tscn")
@@ -32,7 +32,7 @@ func _on_area_entered(area):
 		player_in_range = true
 		print_debug("halo")
 
-func _unhandled_input(event):
+func _unhandled_input(_event):
 	if player_in_range == true:
 		if Input.is_action_just_pressed("ui_accept"):
 			showUi()

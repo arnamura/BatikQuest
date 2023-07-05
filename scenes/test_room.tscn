@@ -1,0 +1,585 @@
+[gd_scene load_steps=21 format=3 uid="uid://dyqv2xpyc8km3"]
+
+[ext_resource type="Texture2D" uid="uid://bn1rxgfowuian" path="res://art/TilesetFloor.png" id="1_2bw0p"]
+[ext_resource type="PackedScene" path="res://npc/bang_dirman.tscn" id="2_c7lco"]
+[ext_resource type="PackedScene" uid="uid://b8j383v7acxcp" path="res://npc/npc_woman.tscn" id="2_iqo37"]
+[ext_resource type="PackedScene" uid="uid://dndkvxcijkvrc" path="res://player/player.tscn" id="2_lkifr"]
+[ext_resource type="Script" path="res://camera/Player Cam.gd" id="3_3js8v"]
+[ext_resource type="PackedScene" uid="uid://bteda0q8lw1cj" path="res://npc/kakek.tscn" id="4_4iddo"]
+[ext_resource type="Resource" uid="uid://xdkxtuh5wjca" path="res://dialogue/Bang Dirman.dialogue" id="4_jlbdo"]
+[ext_resource type="PackedScene" uid="uid://01ydgb5cpsky" path="res://helpers/actionable.tscn" id="5_kcoma"]
+[ext_resource type="Resource" uid="uid://cyofnijgd3gem" path="res://dialogue/test.dialogue" id="6_ctgtr"]
+[ext_resource type="PackedScene" uid="uid://tdo63he11iml" path="res://obj/sign.tscn" id="7_j1q27"]
+[ext_resource type="PackedScene" uid="uid://b4k2fs1ckj4lg" path="res://helpers/interact.tscn" id="8_j74g8"]
+[ext_resource type="PackedScene" uid="uid://dacvdvtgenqnt" path="res://enemies/slime.tscn" id="9_bx1cm"]
+[ext_resource type="PackedScene" uid="uid://tbvn2122fjtg" path="res://helpers/description_gui.tscn" id="9_ju60t"]
+[ext_resource type="PackedScene" uid="uid://di1rategakk3o" path="res://npc/rahmat.tscn" id="11_uuc8r"]
+[ext_resource type="Resource" uid="uid://bahgr1srwq1oq" path="res://dialogue/Rahmat.dialogue" id="12_istxr"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6hiqs"]
+texture = ExtResource("1_2bw0p")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+20:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+20:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+21:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+20:3/0 = 0
+21:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+17:7/0 = 0
+18:7/0 = 0
+19:7/0 = 0
+20:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+20:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+16:9/0 = 0
+17:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+20:9/0 = 0
+21:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+16:10/0 = 0
+17:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+20:10/0 = 0
+21:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+16:11/0 = 0
+17:11/0 = 0
+18:11/0 = 0
+19:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+11:12/0 = 0
+12:12/0 = 0
+13:12/0 = 0
+14:12/0 = 0
+15:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+11:13/0 = 0
+12:13/0 = 0
+13:13/0 = 0
+14:13/0 = 0
+15:13/0 = 0
+16:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+9:14/0 = 0
+11:14/0 = 0
+12:14/0 = 0
+13:14/0 = 0
+14:14/0 = 0
+15:14/0 = 0
+16:14/0 = 0
+17:14/0 = 0
+18:14/0 = 0
+19:14/0 = 0
+20:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+4:15/0 = 0
+5:15/0 = 0
+6:15/0 = 0
+7:15/0 = 0
+8:15/0 = 0
+9:15/0 = 0
+11:15/0 = 0
+12:15/0 = 0
+13:15/0 = 0
+14:15/0 = 0
+15:15/0 = 0
+16:15/0 = 0
+17:15/0 = 0
+18:15/0 = 0
+19:15/0 = 0
+20:15/0 = 0
+0:16/0 = 0
+1:16/0 = 0
+2:16/0 = 0
+3:16/0 = 0
+4:16/0 = 0
+5:16/0 = 0
+6:16/0 = 0
+7:16/0 = 0
+8:16/0 = 0
+9:16/0 = 0
+10:16/0 = 0
+11:16/0 = 0
+12:16/0 = 0
+13:16/0 = 0
+14:16/0 = 0
+15:16/0 = 0
+16:16/0 = 0
+17:16/0 = 0
+18:16/0 = 0
+19:16/0 = 0
+20:16/0 = 0
+21:16/0 = 0
+0:17/0 = 0
+1:17/0 = 0
+2:17/0 = 0
+3:17/0 = 0
+4:17/0 = 0
+5:17/0 = 0
+6:17/0 = 0
+7:17/0 = 0
+8:17/0 = 0
+9:17/0 = 0
+10:17/0 = 0
+11:17/0 = 0
+12:17/0 = 0
+13:17/0 = 0
+14:17/0 = 0
+15:17/0 = 0
+16:17/0 = 0
+17:17/0 = 0
+18:17/0 = 0
+19:17/0 = 0
+20:17/0 = 0
+21:17/0 = 0
+0:18/0 = 0
+1:18/0 = 0
+3:18/0 = 0
+4:18/0 = 0
+5:18/0 = 0
+6:18/0 = 0
+7:18/0 = 0
+8:18/0 = 0
+11:18/0 = 0
+12:18/0 = 0
+14:18/0 = 0
+15:18/0 = 0
+16:18/0 = 0
+17:18/0 = 0
+18:18/0 = 0
+19:18/0 = 0
+0:19/0 = 0
+1:19/0 = 0
+2:19/0 = 0
+3:19/0 = 0
+4:19/0 = 0
+11:19/0 = 0
+12:19/0 = 0
+13:19/0 = 0
+14:19/0 = 0
+15:19/0 = 0
+0:20/0 = 0
+1:20/0 = 0
+2:20/0 = 0
+3:20/0 = 0
+4:20/0 = 0
+5:20/0 = 0
+11:20/0 = 0
+12:20/0 = 0
+13:20/0 = 0
+14:20/0 = 0
+15:20/0 = 0
+16:20/0 = 0
+0:21/0 = 0
+1:21/0 = 0
+2:21/0 = 0
+3:21/0 = 0
+4:21/0 = 0
+5:21/0 = 0
+6:21/0 = 0
+7:21/0 = 0
+8:21/0 = 0
+9:21/0 = 0
+11:21/0 = 0
+12:21/0 = 0
+13:21/0 = 0
+14:21/0 = 0
+15:21/0 = 0
+16:21/0 = 0
+17:21/0 = 0
+18:21/0 = 0
+19:21/0 = 0
+20:21/0 = 0
+0:22/0 = 0
+1:22/0 = 0
+2:22/0 = 0
+3:22/0 = 0
+4:22/0 = 0
+5:22/0 = 0
+6:22/0 = 0
+7:22/0 = 0
+8:22/0 = 0
+9:22/0 = 0
+11:22/0 = 0
+12:22/0 = 0
+13:22/0 = 0
+14:22/0 = 0
+15:22/0 = 0
+16:22/0 = 0
+17:22/0 = 0
+18:22/0 = 0
+19:22/0 = 0
+20:22/0 = 0
+0:23/0 = 0
+1:23/0 = 0
+2:23/0 = 0
+3:23/0 = 0
+4:23/0 = 0
+5:23/0 = 0
+6:23/0 = 0
+7:23/0 = 0
+8:23/0 = 0
+9:23/0 = 0
+10:23/0 = 0
+11:23/0 = 0
+12:23/0 = 0
+13:23/0 = 0
+14:23/0 = 0
+15:23/0 = 0
+16:23/0 = 0
+17:23/0 = 0
+18:23/0 = 0
+19:23/0 = 0
+20:23/0 = 0
+21:23/0 = 0
+0:24/0 = 0
+1:24/0 = 0
+2:24/0 = 0
+4:24/0 = 0
+5:24/0 = 0
+6:24/0 = 0
+7:24/0 = 0
+8:24/0 = 0
+9:24/0 = 0
+10:24/0 = 0
+11:24/0 = 0
+12:24/0 = 0
+13:24/0 = 0
+15:24/0 = 0
+16:24/0 = 0
+17:24/0 = 0
+18:24/0 = 0
+19:24/0 = 0
+20:24/0 = 0
+21:24/0 = 0
+0:25/0 = 0
+4:25/0 = 0
+5:25/0 = 0
+6:25/0 = 0
+7:25/0 = 0
+8:25/0 = 0
+15:25/0 = 0
+16:25/0 = 0
+17:25/0 = 0
+18:25/0 = 0
+19:25/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_uv5es"]
+sources/0 = SubResource("TileSetAtlasSource_6hiqs")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ofhbf"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2xi6q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v4ad1"]
+
+[node name="testRoom" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_uv5es")
+format = 2
+layer_0/name = "Ground"
+layer_0/tile_data = PackedInt32Array(0, 0, 12, 65536, 196608, 12, 131072, 131072, 12, 196608, 65536, 12, 262144, 131072, 12, 327680, 196608, 12, 393216, 0, 12, 458752, 0, 12, 524288, 65536, 12, 589824, 0, 12, 1, 0, 12, 65537, 0, 12, 131073, 0, 12, 196609, 131072, 12, 262145, 0, 12, 327681, 65536, 12, 393217, 0, 12, 458753, 0, 12, 524289, 131072, 12, 589825, 0, 12, 2, 65536, 12, 65538, 0, 12, 131074, 0, 12, 196610, 196608, 12, 262146, 196608, 12, 327682, 0, 12, 393218, 196608, 12, 458754, 0, 12, 524290, 65536, 12, 589826, 0, 12, 3, 131072, 12, 65539, 0, 12, 131075, 131072, 12, 196611, 131072, 12, 262147, 0, 12, 327683, 0, 12, 393219, 65536, 12, 458755, 196608, 12, 524291, 0, 12, 589827, 131072, 12, 4, 196608, 12, 65540, 65536, 12, 131076, 131072, 12, 196612, 131072, 12, 262148, 196608, 12, 327684, 131072, 12, 393220, 65536, 12, 458756, 0, 12, 524292, 65536, 12, 589828, 131072, 12, 5, 0, 12, 65541, 0, 12, 131077, 65536, 12, 196613, 0, 12, 262149, 0, 12, 327685, 0, 12, 393221, 0, 12, 458757, 131072, 12, 524293, 65536, 12, 589829, 0, 12, 6, 0, 12, 65542, 65536, 12, 131078, 196608, 12, 196614, 131072, 12, 262150, 0, 12, 327686, 131072, 12, 393222, 0, 12, 458758, 65536, 12, 524294, 0, 12, 589830, 0, 12, 7, 0, 12, 65543, 0, 12, 131079, 0, 12, 196615, 0, 12, 262151, 65536, 12, 327687, 131072, 12, 393223, 196608, 12, 458759, 0, 12, 524295, 131072, 12, 589831, 65536, 12, 8, 65536, 12, 65544, 196608, 12, 131080, 0, 12, 196616, 196608, 12, 262152, 65536, 12, 327688, 0, 12, 393224, 65536, 12, 458760, 131072, 12, 524296, 131072, 12, 589832, 0, 12, 9, 131072, 12, 65545, 196608, 12, 131081, 65536, 12, 196617, 196608, 12, 262153, 0, 12, 327689, 0, 12, 393225, 0, 12, 458761, 0, 12, 524297, 65536, 12, 589833, 0, 12, 10, 0, 12, 65546, 0, 12, 131082, 0, 12, 196618, 196608, 12, 262154, 196608, 12, 327690, 0, 12, 393226, 65536, 12, 458762, 131072, 12, 524298, 196608, 12, 589834, 131072, 12, 11, 0, 12, 65547, 196608, 12, 131083, 0, 12, 196619, 196608, 12, 262155, 0, 12, 327691, 0, 12, 393227, 65536, 12, 458763, 131072, 12, 524299, 0, 12, 589835, 0, 12, 12, 131072, 12, 65548, 65536, 12, 131084, 196608, 12, 196620, 0, 12, 262156, 65536, 12, 327692, 65536, 12, 393228, 0, 12, 458764, 131072, 12, 524300, 0, 12, 589836, 0, 12, 13, 131072, 12, 65549, 196608, 12, 131085, 65536, 12, 196621, 196608, 12, 262157, 0, 12, 327693, 131072, 12, 393229, 0, 12, 458765, 196608, 12, 524301, 0, 12, 589837, 0, 12, 14, 196608, 12, 65550, 0, 12, 131086, 65536, 12, 196622, 196608, 12, 262158, 0, 12, 327694, 196608, 12, 393230, 131072, 12, 458766, 0, 12, 524302, 131072, 12, 589838, 65536, 12, 15, 196608, 12, 65551, 196608, 12, 131087, 65536, 12, 196623, 65536, 12, 262159, 0, 12, 327695, 131072, 12, 393231, 196608, 12, 458767, 196608, 12, 524303, 65536, 12, 589839, 65536, 12, 16, 65536, 12, 65552, 196608, 12, 131088, 0, 12, 196624, 131072, 12, 262160, 196608, 12, 327696, 131072, 12, 393232, 0, 12, 458768, 0, 12, 524304, 131072, 12, 589840, 0, 12, 17, 0, 12, 65553, 196608, 12, 131089, 196608, 12, 196625, 131072, 12, 262161, 65536, 12, 327697, 0, 12, 393233, 0, 12, 458769, 65536, 12, 524305, 65536, 12, 589841, 131072, 12, 18, 131072, 12, 65554, 65536, 12, 131090, 131072, 12, 196626, 0, 12, 262162, 65536, 12, 327698, 65536, 12, 393234, 65536, 12, 458770, 196608, 12, 524306, 0, 12, 589842, 131072, 12, 19, 131072, 12, 65555, 0, 12, 131091, 65536, 12, 196627, 0, 12, 262163, 131072, 12, 327699, 0, 12, 393235, 0, 12, 458771, 196608, 12, 524307, 0, 12, 589843, 131072, 12, 20, 131072, 12, 65556, 131072, 12, 131092, 131072, 12, 196628, 0, 12, 262164, 0, 12, 327700, 0, 12, 393236, 196608, 12, 458772, 65536, 12, 524308, 196608, 12, 589844, 131072, 12, 21, 196608, 12, 65557, 65536, 12, 131093, 131072, 12, 196629, 131072, 12, 262165, 131072, 12, 327701, 65536, 12, 393237, 0, 12, 458773, 196608, 12, 524309, 131072, 12, 589845, 65536, 12, 655360, 65536, 12, 720896, 65536, 12, 655361, 0, 12, 720897, 131072, 12, 655362, 65536, 12, 720898, 0, 12, 655363, 0, 12, 720899, 131072, 12, 655364, 131072, 12, 720900, 131072, 12, 655365, 131072, 12, 720901, 0, 12, 655366, 65536, 12, 720902, 131072, 12, 655367, 0, 12, 720903, 0, 12, 655368, 0, 12, 720904, 196608, 12, 655369, 196608, 12, 720905, 131072, 12, 655370, 196608, 12, 720906, 131072, 12, 655371, 65536, 12, 720907, 65536, 12, 655372, 0, 12, 720908, 0, 12, 655373, 0, 12, 720909, 0, 12, 655374, 0, 12, 720910, 131072, 12, 655375, 65536, 12, 720911, 0, 12, 655376, 0, 12, 720912, 196608, 12, 655377, 196608, 12, 720913, 131072, 12, 655378, 131072, 12, 720914, 196608, 12, 655379, 131072, 12, 720915, 0, 12, 655380, 131072, 12, 720916, 0, 12, 655381, 196608, 12, 720917, 131072, 12)
+
+[node name="BangDirman" parent="TileMap" instance=ExtResource("2_c7lco")]
+position = Vector2(176, 25)
+
+[node name="Actionable" parent="TileMap/BangDirman" instance=ExtResource("5_kcoma")]
+dialogue_resource = ExtResource("4_jlbdo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/BangDirman/Actionable"]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_ofhbf")
+
+[node name="BuTini" parent="TileMap" instance=ExtResource("2_iqo37")]
+position = Vector2(104, 25)
+
+[node name="Actionable" parent="TileMap/BuTini" instance=ExtResource("5_kcoma")]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/BuTini/Actionable"]
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_2xi6q")
+
+[node name="Player" parent="TileMap" instance=ExtResource("2_lkifr")]
+position = Vector2(40, 80)
+collision_mask = 33
+
+[node name="Player Cam" type="Camera2D" parent="TileMap/Player" node_paths=PackedStringArray("tilemap")]
+limit_left = 0
+limit_top = 0
+limit_right = 352
+limit_bottom = 192
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+script = ExtResource("3_3js8v")
+tilemap = NodePath("../..")
+
+[node name="kakek" parent="TileMap" instance=ExtResource("4_4iddo")]
+z_index = 1
+position = Vector2(72, 24)
+
+[node name="Actionable" parent="TileMap/kakek" instance=ExtResource("5_kcoma")]
+dialogue_resource = ExtResource("6_ctgtr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/kakek/Actionable"]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_ofhbf")
+
+[node name="Ceplok" parent="TileMap" instance=ExtResource("7_j1q27")]
+position = Vector2(40, 24)
+
+[node name="Interact" parent="TileMap/Ceplok" instance=ExtResource("8_j74g8")]
+collision_mask = 33
+label_batik = "ceplok"
+deskripsi_batik = "sebuah deskripsi yang sangat panjang gila dah ini sumpah gua gatau mau ngetik apa lagi yaudah deh gini ajaa"
+path_gambar = "res://art/batik/ceplok.png"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Ceplok/Interact"]
+light_mask = 32
+visibility_layer = 32
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_ofhbf")
+
+[node name="slime" parent="TileMap" node_paths=PackedStringArray("endPoint") instance=ExtResource("9_bx1cm")]
+position = Vector2(75, 112)
+endPoint = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="TileMap/slime"]
+position = Vector2(-48, -5)
+
+[node name="Rahmat" parent="TileMap" instance=ExtResource("11_uuc8r")]
+position = Vector2(137, 24)
+
+[node name="Actionable" parent="TileMap/Rahmat" instance=ExtResource("5_kcoma")]
+dialogue_resource = ExtResource("12_istxr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Rahmat/Actionable"]
+position = Vector2(0, 9)
+shape = SubResource("CircleShape2D_v4ad1")
+
+[node name="DescriptionGUI" parent="." instance=ExtResource("9_ju60t")]
+visible = false
+
+[connection signal="area_entered" from="TileMap/BangDirman/Actionable" to="TileMap/kakek" method="_on_actionable_area_entered"]
+[connection signal="body_entered" from="TileMap/BangDirman/Actionable" to="TileMap/BangDirman/Actionable" method="_on_body_entered"]
+[connection signal="body_exited" from="TileMap/BangDirman/Actionable" to="TileMap/BangDirman/Actionable" method="_on_body_exited"]
+[connection signal="area_entered" from="TileMap/kakek/Actionable" to="TileMap/kakek" method="_on_actionable_area_entered"]
+[connection signal="body_entered" from="TileMap/kakek/Actionable" to="TileMap/kakek/Actionable" method="_on_body_entered"]
+[connection signal="body_exited" from="TileMap/kakek/Actionable" to="TileMap/kakek/Actionable" method="_on_body_exited"]
+[connection signal="area_entered" from="TileMap/Ceplok/Interact" to="TileMap/Ceplok" method="_on_interact_area_entered"]
+[connection signal="area_entered" from="TileMap/Ceplok/Interact" to="TileMap/Ceplok/Interact" method="_on_area_entered"]

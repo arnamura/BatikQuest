@@ -1,0 +1,16 @@
+~ start
+
+Rahmat: Hei! Apa kau bisa membantuku?
+- Ada apa?
+Rahmat: Namaku Rahmat,
+Rahmat: Tadi aku habis bermain bersama kekasih ku di taman 
+Rahmat: Namun, batik yang tadi ku bawa bersamaku tertinggal
+Rahmat: Apa kau bisa membantuku mengambilnya kembalil?
+Rahmat: Kumohon karena ini adalah pemberian dari orangtuaku
+- Maaf, ada yang harus bisa ku lakukan
+	Rahmat: Sayang sekali, mungkin ada orang lain yang bisa melakukannya => END!
+- Aku bisa membantumu
+	Rahmat: Terimakasih banyak!
+	Rahmat: Seharusnya kain tersebut berada di sekitar patung taman
+
+=> END

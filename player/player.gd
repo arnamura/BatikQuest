@@ -1,13 +1,19 @@
 extends CharacterBody2D
 
 @export var speed: int = 35
+@export var knockbackPower: int = 750
 
 @onready var actionable_finder = $Direction/ActionableFinder
 @onready var animations = $AnimationPlayer
-@onready var slimePos= get_node("/root/World/TileMap/slime") #import file slime
+@onready var effects = $Effect
+@onready var hurtTimer = $Timer
+@onready var slimePos= $"../slime" #import file slime
 @onready var playerSprite = $Sprite2D
-@onready var ui = get_node("/root/World/DescriptionGUI")
 
+func _ready():
+	#agar diawal warna player default
+	effects.play("reset")
+	
 #untuk handle input action
 func _unhandled_input(_event: InputEvent) -> void:
 	#untuk tombol berlari
@@ -46,30 +52,47 @@ func _physics_process(_delta):
 	updateAnimation()
 	
 func _on_hurt_box_area_entered(area):
+	# kondisi hurt bila hitbox musuh mengenai hurtbox player
 	if area.name == "hitBox":
-		knockback()
+		knockback2(area.get_parent().velocity)
+		timerknock()
+		#knockback()
 		print_debug(area.get_parent().name)
 	if area.name == "Interact":
 		print_debug(area.get_parent().name)
 
-func _on_timer_timeout():
+#func _on_timer_timeout():
 	# untuk mengembalikan warna sprite ke semula setelah knockback
-	playerSprite.modulate = Color(1,1,1,1)
+	#playerSprite.modulate = Color(1,1,1,1)
 	
 #fungsi untuk handle bila terjadi colision dengan musuh yang akan membuat musuh terpental
-func knockback():
-	set_modulate(Color("d95351"))
-	if velocity == Vector2(0,0):
-		if speed == 150:
-			velocity = slimePos.velocity * 10
-		else:
-			velocity = slimePos.velocity * 25
-	else:
-		if speed == 150:
-			velocity = -velocity * 10
-		else:
-			velocity = -velocity * 25
-	#Ketika terjadi collision dengan musuh, player berubah warna merah sesaat
-	playerSprite.modulate = Color('red')
-	$Timer.start()
+
+#func knockback():
+#	set_modulate(Color("d95351"))
+#	if velocity == Vector2(0,0):
+#		if speed == 150:
+#			velocity = slimePos.velocity * 10
+#		else:
+#			velocity = slimePos.velocity * 25
+#	else:
+#		if speed == 150:
+#			velocity = -velocity * 10
+#		else:
+#			velocity = -velocity * 25
+#	#Ketika terjadi collision dengan musuh, player berubah warna merah sesaat
+#	playerSprite.modulate = Color('red')
+#	$Timer.start()
+#	move_and_slide()
+	
+func knockback2(enemyVelocity: Vector2):
+	var knockDir = (enemyVelocity - velocity).normalized() * knockbackPower
+	velocity = knockDir
 	move_and_slide()
+	
+	
+func timerknock():
+		effects.play("hurtAnim")
+		hurtTimer.start()
+		await hurtTimer.timeout
+		effects.play("reset")
+	

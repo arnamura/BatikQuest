@@ -1,0 +1,14 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://c34dd0uglpnrb"
+path="res://.godot/imported/Kakek.dialogue-a62dafabe8fe6d0655b2e8045fff3b3e.tres"
+
+[deps]
+
+source_file="res://dialogue/Kakek.dialogue"
+dest_files=["res://.godot/imported/Kakek.dialogue-a62dafabe8fe6d0655b2e8045fff3b3e.tres"]
+
+[params]
+

@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var uiDesc: CanvasLayer = get_node("/root/World/DescriptionGUI")
+#@onready var uiDesc: CanvasLayer = get_node("/root/World/DescriptionGUI")
 
 @export var ui_in_range = false
 

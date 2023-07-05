@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://s1ht1iwxfmen"]
+
+[ext_resource type="Script" path="res://helpers/pause.gd" id="1_2okch"]
+
+[node name="Pause" type="CanvasLayer"]
+process_mode = 3
+visible = false
+script = ExtResource("1_2okch")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.12549)
+offset_right = 240.0
+offset_bottom = 135.0
+color = Color(0, 0, 0, 1)
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 232.0
+offset_bottom = 128.0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 192.0
+offset_top = 16.0
+offset_right = 262.0
+offset_bottom = 47.0
+scale = Vector2(0.438, 0.438)
+text = "Resume"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
