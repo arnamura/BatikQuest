@@ -168,6 +168,21 @@ size = Vector2(10, 9)
 [sub_resource type="CircleShape2D" id="CircleShape2D_1jhbf"]
 radius = 8.0
 
+[sub_resource type="Animation" id="Animation_vo8vg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 0.301961)]
+}
+
 [sub_resource type="Animation" id="Animation_x5nyq"]
 resource_name = "hurtAnim"
 length = 0.4
@@ -183,21 +198,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 0, 0, 0.498039), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_vo8vg"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D/ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 0, 0, 0.301961)]
 }
 
 [sub_resource type="Animation" id="Animation_xedpr"]
@@ -278,4 +278,4 @@ libraries = {
 }
 
 [connection signal="area_entered" from="hurtBox" to="." method="_on_hurt_box_area_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_exited" from="hurtBox" to="." method="_on_hurt_box_area_exited"]

@@ -10,6 +10,10 @@ extends CharacterBody2D
 @onready var slimePos= $"../slime" #import file slime
 @onready var playerSprite = $Sprite2D
 
+var isHurt: bool = false
+var enemyInArea = []
+
+
 func _ready():
 	#agar diawal warna player default
 	effects.play("reset")
@@ -50,49 +54,39 @@ func _physics_process(_delta):
 	handleInput()
 	move_and_slide()
 	updateAnimation()
+	if !isHurt:
+		for enemyArea in enemyInArea:
+			onHit(enemyArea)
 	
 func _on_hurt_box_area_entered(area):
-	# kondisi hurt bila hitbox musuh mengenai hurtbox player
+	# cek kondisi hurt bila hitbox musuh mengenai hurtbox player
 	if area.name == "hitBox":
-		knockback2(area.get_parent().velocity)
-		timerknock()
+		enemyInArea.append(area)
 		#knockback()
 		print_debug(area.get_parent().name)
+	# cek kondisi untuk fungsi interaksi
 	if area.name == "Interact":
 		print_debug(area.get_parent().name)
 
-#func _on_timer_timeout():
-	# untuk mengembalikan warna sprite ke semula setelah knockback
-	#playerSprite.modulate = Color(1,1,1,1)
-	
-#fungsi untuk handle bila terjadi colision dengan musuh yang akan membuat musuh terpental
-
-#func knockback():
-#	set_modulate(Color("d95351"))
-#	if velocity == Vector2(0,0):
-#		if speed == 150:
-#			velocity = slimePos.velocity * 10
-#		else:
-#			velocity = slimePos.velocity * 25
-#	else:
-#		if speed == 150:
-#			velocity = -velocity * 10
-#		else:
-#			velocity = -velocity * 25
-#	#Ketika terjadi collision dengan musuh, player berubah warna merah sesaat
-#	playerSprite.modulate = Color('red')
-#	$Timer.start()
-#	move_and_slide()
-	
 func knockback2(enemyVelocity: Vector2):
 	var knockDir = (enemyVelocity - velocity).normalized() * knockbackPower
 	velocity = knockDir
 	move_and_slide()
-	
-	
+
 func timerknock():
 		effects.play("hurtAnim")
 		hurtTimer.start()
 		await hurtTimer.timeout
 		effects.play("reset")
-	
+
+func onHit(area):
+	isHurt = true
+	knockback2(area.get_parent().velocity)
+	effects.play("hurtAnim")
+	hurtTimer.start()
+	await hurtTimer.timeout
+	effects.play("reset")
+	isHurt = false	
+
+func _on_hurt_box_area_exited(area):
+	enemyInArea.erase(area)
