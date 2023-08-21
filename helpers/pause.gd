@@ -11,6 +11,5 @@ func _unhandled_input(event):
 		self.is_paused = !is_paused
 		
 
-
 func _on_button_pressed():
 	self.is_paused = false

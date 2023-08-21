@@ -1,31 +1,40 @@
 ~ start
-
-Kakek: Siapa namamu anak muda?
-- Bima
-Kakek: Nama yang bagus, sepertinya kau bukan berasal dari sini ya?
-- Sejujurnya aku tidak tau ini di mana
-Kakek: Kau berada di Desa Batik
-- Desa Batik? Oh iya aku ingat sebelumnya aku berada di museum batik
-Kakek: Apa itu? di sini tidak ada tempat seperti itu. nama yang asing
-Kakek: Sepertinya kau tidak seharusnya ada disini
-Kakek: Saya bisa membantumu untuk kembali ke waktumu
-Kakek: tapi kau harus mengumpulkan beberapa benda terlebih dahulu
-Kakek: Kau harus mengumpulkan 5 Batik yang ada di Desa ini dan mempelajarinya
-Kakek: Setelah itu kau baru bisa menghadapi penjaga portal untuk kembai ke asalmu
-- Bagaimana cara aku menemukannya?
-Kakek: Berinteraksilah dengan warga setempat, dan bantulah mereka
-Kakek: Pertama, aku dapat membantumu memberi kain batik pertama
-Kakek: Ambillah kain mori disebelah sana, lalu aku akan membuatkanmu satu
-- Baik lah kakek! tunggu sebentar => checker
-
-~ checker
-
-Kakek: Apakah kau sudah mendapatkan kain mori yang kuminta?
-- Belum
-	Kakek: kembalilah jika kau sudah mendapatkannya!
-- Ini dia kainnya
-	Kakek: Baiklah, Tunggu sebentar
-	Kakek: ...
-	Kakek: ...
-	Kakek: Nah ini dia
+Kakek: Halo anak muda
+if takenQuest1 == true
+	if reqItem1 == "1" 
+		Ini dia kainnya
+		Kakek: Baiklah, Tunggu sebentar
+		Kakek: ...
+		Kakek: ...
+		Kakek: Nah ini dia kainnya
+		Kakek: Pergilah dan bantu orang-orang yang ada di desa ini
+		set quest1Status = true
+	else
+		Kakek: Ambilkan kain Morinya, nanti ku buatkan kain batik
+else
+	Kakek: Siapa namamu?
+	- Bima
+	Kakek: Nama yang bagus, sepertinya kau bukan berasal dari sini ya?
+	- Sejujurnya aku tidak tau ini di mana
+	Kakek: Kau berada di Desa Batik
+	- Desa Batik? Oh iya aku ingat sebelumnya aku berada di museum batik
+	Kakek: Apa itu? di sini tidak ada tempat seperti itu. nama yang asing
+	Kakek: Sepertinya kau tidak seharusnya ada disini
+	Kakek: Saya bisa membantumu untuk kembali ke waktumu
+	Kakek: tapi kau harus mengumpulkan beberapa benda terlebih dahulu
+	Kakek: Kau harus mengumpulkan 5 Batik yang ada di Desa ini dan mempelajarinya
+	Kakek: Setelah itu kau baru bisa menghadapi penjaga portal untuk kembai ke asalmu
+	- Bagaimana cara aku menemukannya?
+	Kakek: Berinteraksilah dengan warga setempat, dan bantulah mereka
+	Kakek: Pertama, aku dapat membantumu memberi kain batik pertama
+	Kakek: Ambillah kain mori disebelah sana, lalu aku akan membuatkanmu satu
+	- Baik lah kakek! tunggu sebentar 
+set takenQuest1 = true 
 => END
+
+~ ambilKain
+if get_quest1 == true
+	Sepertinya ini kain yang dimaksud kakek
+	set reqItem1 = "1"
+else
+	Bentuknya seperti kain

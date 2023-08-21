@@ -4,7 +4,6 @@
 
 [node name="Pause" type="CanvasLayer"]
 process_mode = 3
-visible = false
 script = ExtResource("1_2okch")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -19,7 +18,14 @@ offset_top = 8.0
 offset_right = 232.0
 offset_bottom = 128.0
 
-[node name="Button" type="Button" parent="."]
+[node name="Container" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 177.0
+offset_bottom = 117.0
+
+[node name="PauseBtn" type="Button" parent="."]
 offset_left = 192.0
 offset_top = 16.0
 offset_right = 262.0
@@ -27,4 +33,28 @@ offset_bottom = 47.0
 scale = Vector2(0.438, 0.438)
 text = "Resume"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="QuestBtn" type="Button" parent="."]
+offset_left = 192.0
+offset_top = 35.0
+offset_right = 262.0
+offset_bottom = 66.0
+scale = Vector2(0.438, 0.438)
+text = "Quest"
+
+[node name="BatikBtn" type="Button" parent="."]
+offset_left = 192.0
+offset_top = 53.0
+offset_right = 262.0
+offset_bottom = 84.0
+scale = Vector2(0.438, 0.438)
+text = "Batik"
+
+[node name="ExitBtn" type="Button" parent="."]
+offset_left = 192.0
+offset_top = 71.0
+offset_right = 262.0
+offset_bottom = 102.0
+scale = Vector2(0.438, 0.438)
+text = "Quit"
+
+[connection signal="pressed" from="PauseBtn" to="." method="_on_button_pressed"]

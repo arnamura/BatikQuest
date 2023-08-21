@@ -6033,6 +6033,7 @@ y_sort_enabled = true
 visible = false
 
 [node name="Pause" parent="." instance=ExtResource("20_va8hm")]
+visible = false
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
