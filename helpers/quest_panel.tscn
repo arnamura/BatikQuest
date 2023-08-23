@@ -3,7 +3,7 @@
 [sub_resource type="GDScript" id="GDScript_1cy2t"]
 script/source = "extends Panel
 
-@onready var quest = \"res://state.gd\"
+#@onready var quest = \"res://state.gd\"
 @onready var questLabel = get_node(\"Label\")
 @onready var questtext: String = \"\"
 
@@ -55,14 +55,16 @@ func _process(delta):
 
 [node name="QuestPanel" type="Panel"]
 offset_right = 104.0
-offset_bottom = 73.0
+offset_bottom = 48.0
+size_flags_horizontal = 3
 script = SubResource("GDScript_1cy2t")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 6.0
-offset_top = 7.0
-offset_right = 185.0
-offset_bottom = 33.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 135.0
+offset_bottom = 60.0
 scale = Vector2(0.644, 0.644)
-text = "- ini quest"
+text = "- ini quest yang panjang"
+autowrap_mode = 3

@@ -33,7 +33,7 @@ set takenQuest1 = true
 => END
 
 ~ ambilKain
-if get_quest1 == true
+if takenQuest1 == true
 	Sepertinya ini kain yang dimaksud kakek
 	set reqItem1 = "1"
 else

@@ -33,7 +33,7 @@ else:
 => END
 
 ~item
-if State.get_quest2 == true:
+if State.takenQuest2 == true:
 	Bima: Sepertinya ini cangkir yang di cari oleh rahman
 	Bima: Sebaiknya aku antar barang ini segera supaya ia tak dimarahi orang tuanya
 	set State.reqItem2 = "1"

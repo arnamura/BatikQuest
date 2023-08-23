@@ -24,20 +24,37 @@ var reqItem2: String = ""
 var quest2text1: String = "- Bantu Rahmat menemukan barangnya yang hilang"
 var quest2text2: String = "- Kembalikan barang ke Rahmat"
 
+var questInfo = {
+	"quest1": {
+		"status": quest1Status,
+		"taken": takenQuest1,
+		"item": reqItem1,
+		"text1": quest1text1,
+		"text2": quest1text2
+	},
+	"quest2": {
+		"status": quest2Status,
+		"taken": takenQuest2,
+		"item": reqItem2,
+		"text1": quest2text1,
+		"text2": quest2text2
+	}
+}
+
 func _process(delta):
-	var questInfo = {
-			"quest1": {
-				"status": quest1Status,
-				"taken": takenQuest1,
-				"item": reqItem1,
-				"text1": quest1text1,
-				"text2": quest1text2
-			},
-			"quest2": {
-				"status": quest2Status,
-				"taken": takenQuest2,
-				"item": reqItem2,
-				"text1": quest2text1,
-				"text2": quest2text2
-			}
+	questInfo = {
+		"quest1": {
+			"status": quest1Status,
+			"taken": takenQuest1,
+			"item": reqItem1,
+			"text1": quest1text1,
+			"text2": quest1text2
+		},
+		"quest2": {
+			"status": quest2Status,
+			"taken": takenQuest2,
+			"item": reqItem2,
+			"text1": quest2text1,
+			"text2": quest2text2
 		}
+	}
