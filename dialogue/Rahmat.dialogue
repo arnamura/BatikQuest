@@ -11,34 +11,40 @@ else:
 			Rahmat: Aku ingin kau menerimanya
 			Rahmat: Lain kali sepertinya aku harus lebih teliti terhadap barang bawaanku, hahaha
 			Rahmat: Sampai jumpa kawan
-			set State.quest2Status = true
+			set quest2Status = true
+			set inQuest = false
+			set taken2quest = false
 		else:
 			Rahmat: Tolonglah bima, 
 			Rahmat: Sepertinya cangkir tersebut ada di sekitar taman 
 	else:
-		Rahmat: Hei! Apa kau bisa membantuku?
-		- Ada apa?
-		Rahmat: Namaku Rahmat,
-		Rahmat: Tadi aku habis bermain bersama kekasih ku di taman 
-		Rahmat: Namun, batik yang tadi ku bawa bersamaku tertinggal
-		Rahmat: Apa kau bisa membantuku mengambilnya kembalil?
-		Rahmat: Kumohon karena ini adalah pemberian dari orangtuaku
-		- Maaf, ada yang harus bisa ku lakukan
-			Rahmat: Sayang sekali, mungkin ada orang lain yang bisa melakukannya
-			=> END!
-		- Aku bisa membantumu
-			Rahmat: Terimakasih banyak!
-			Rahmat: Seharusnya kain tersebut berada di sekitar patung taman
-			set State.takenQuest2 = true
+		if not takenQuest1 and not takenQuest2
+			Rahmat: Hei! Apa kau bisa membantuku?
+			- Ada apa?
+			Rahmat: Namaku Rahmat,
+			Rahmat: Tadi aku habis bermain bersama kekasih ku di taman 
+			Rahmat: Namun, batik yang tadi ku bawa bersamaku tertinggal
+			Rahmat: Apa kau bisa membantuku mengambilnya kembalil?
+			Rahmat: Kumohon karena ini adalah pemberian dari orangtuaku
+			- Aku bisa membantumu
+				Rahmat: Terimakasih banyak!
+				Rahmat: Seharusnya kain tersebut berada di sekitar patung taman
+				set takenQuest2 = true
+				set inQuest = true
+			- Maaf, ada yang harus bisa ku lakukan
+				Rahmat: Sayang sekali, mungkin ada orang lain yang bisa melakukannya
+				=> END!
+		else:
+			Rahmat: Sepertinya ada hal lain yang harus kau kerjakan
 => END
 
 ~item
 if State.takenQuest2 == true:
 	Bima: Sepertinya ini cangkir yang di cari oleh rahman
 	Bima: Sebaiknya aku antar barang ini segera supaya ia tak dimarahi orang tuanya
-	set State.reqItem2 = "1"
+	set reqItem2 = "1"
 else:
 	Bima: Barang ini terlihat bagus dan berharga
 	Bima: Siapa ya yang meninggalkannya disini? hmm...
 	Bima: Sebaiknya aku ambil, siapa tau ada yang mencarinya di Desa
-	set State.reqItem2 = "1"
+	set reqItem2 = "1"

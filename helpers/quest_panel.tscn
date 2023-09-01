@@ -8,38 +8,42 @@ script/source = "extends Panel
 @onready var questtext: String = \"\"
 
 func _process(delta):
-#	var questInfo = {
-#		\"quest1\": {
-#			\"status\": State.quest1Status,
-#			\"taken\": State.takenQuest1,
-#			\"item\": State.reqItem1,
-#			\"text1\": State.quest1text1,
-#			\"text2\": State.quest1text2
-#		},
-#		\"quest2\": {
-#			\"status\": State.quest2Status,
-#			\"taken\": State.takenQuest2,
-#			\"item\": State.reqItem2,
-#			\"text1\": State.quest2text1,
-#			\"text2\": State.quest2text2
-#		}
-#	}
-	#Daftar quest
-	var questNames = [\"quest1\"]
+	cekQuest()
 
-	#Loop untuk memeriksa status quest
-	for questName in questNames:
-		var quest = State.questInfo[questName]
-		if not quest[\"status\"]:
-			if not quest[\"taken\"]:
-				questLabel.text = \"Cari Quest Dulu\"
-			else:
-				if quest[\"item\"] == \"1\":
-					questLabel.text = quest[\"text2\"]
-				else:
-					questLabel.text = quest[\"text1\"]
+func cekQuest():
+	var quest = State.questInfo
+	var taken = false
+	var takenMission = -1
+	questLabel.text = \"Cari Quest Dulu\"
+	for i in range(2):
+		if quest[i][\"taken\"]:
+			taken = true
+			takenMission = i
+			
+	if taken:
+		if quest[takenMission][\"item\"] == \"1\":
+			questLabel.text = quest[takenMission][\"text2\"]
 		else:
-			questLabel.text = \"Cari Quest\"
+			questLabel.text = quest[takenMission][\"text1\"]
+
+
+
+	#Daftar quest
+#	var questNames = [1]
+#	#Loop untuk memeriksa status quest
+
+#	for questName in questNames:
+#		var quest = State.questInfo[questName]
+#		if not quest[\"status\"]:
+#			if not quest[\"taken\"]:
+#				questLabel.text = \"Cari Quest Dulu\"
+#			else:
+#				if quest[\"item\"] == \"1\":
+#					questLabel.text = quest[\"text2\"]
+#				else:
+#					questLabel.text = quest[\"text1\"]
+#		else:
+#			questLabel.text = \"Cari Quest\"
 
 #	if State.quest1Status == false:
 #		if State.get_quest1 == false:

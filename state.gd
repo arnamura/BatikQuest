@@ -6,6 +6,8 @@ extends Node
 #get quest untuk menandakan apa quest sudah didapatkan atau belum
 #reqItem merupakan item yang harus didapatkan untuk menyelesaikan misi
 
+var inQuest = false
+
 #quest 1
 var quest1title: String = "Desa Batik "
 var quest1Status: bool = false
@@ -25,14 +27,14 @@ var quest2text1: String = "- Bantu Rahmat menemukan barangnya yang hilang"
 var quest2text2: String = "- Kembalikan barang ke Rahmat"
 
 var questInfo = {
-	"quest1": {
+	0: {
 		"status": quest1Status,
 		"taken": takenQuest1,
 		"item": reqItem1,
 		"text1": quest1text1,
 		"text2": quest1text2
 	},
-	"quest2": {
+	1: {
 		"status": quest2Status,
 		"taken": takenQuest2,
 		"item": reqItem2,
@@ -43,14 +45,14 @@ var questInfo = {
 
 func _process(delta):
 	questInfo = {
-		"quest1": {
+		0: {
 			"status": quest1Status,
 			"taken": takenQuest1,
 			"item": reqItem1,
 			"text1": quest1text1,
 			"text2": quest1text2
 		},
-		"quest2": {
+		1: {
 			"status": quest2Status,
 			"taken": takenQuest2,
 			"item": reqItem2,

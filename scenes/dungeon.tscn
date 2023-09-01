@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bb3qnpusxy128"]
+[gd_scene load_steps=17 format=3 uid="uid://bb3qnpusxy128"]
 
 [ext_resource type="Texture2D" uid="uid://dih0b8f6g40ef" path="res://art/TilesetInteriorFloor.png" id="1_m1yn1"]
 [ext_resource type="Texture2D" uid="uid://bn1rxgfowuian" path="res://art/TilesetFloor.png" id="2_68bty"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dui12k4mxn2th" path="res://art/TilesetHouse.png" id="6_y7o86"]
 [ext_resource type="Script" path="res://scenes/World_door.gd" id="6_yyiil"]
 [ext_resource type="Script" path="res://camera/Player Cam.gd" id="7_ujyi3"]
+[ext_resource type="PackedScene" uid="uid://binluxttspuiq" path="res://helpers/main_ui.tscn" id="9_28bnk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fe7qt"]
 texture = ExtResource("1_m1yn1")
@@ -1612,5 +1613,9 @@ collision_mask = 33
 [node name="Player Cam" type="Camera2D" parent="TileMap/Player" node_paths=PackedStringArray("tilemap")]
 script = ExtResource("7_ujyi3")
 tilemap = NodePath("../..")
+
+[node name="MainUI" parent="TileMap" instance=ExtResource("9_28bnk")]
+offset = Vector2(-3, 20)
+transform = Transform2D(1, 0, 0, 1, -3, 20)
 
 [connection signal="body_entered" from="TileMap/World_door" to="TileMap/World_door" method="_on_body_entered"]
