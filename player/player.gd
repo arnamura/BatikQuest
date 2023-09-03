@@ -67,6 +67,8 @@ func _on_hurt_box_area_entered(area):
 	# cek kondisi untuk fungsi interaksi
 	if area.name == "Interact":
 		print_debug(area.get_parent().name)
+#	if area.has_method("collect"):
+#		area.collect()
 
 func knockback2(enemyVelocity: Vector2):
 	var knockDir = (enemyVelocity - velocity).normalized() * knockbackPower

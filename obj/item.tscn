@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d28ne4l3a8l63"]
+
+[ext_resource type="Script" path="res://obj/item.gd" id="1_dp421"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ws4wn"]
+resource_local_to_scene = true
+size = Vector2(16, 8)
+
+[node name="item" type="Area2D"]
+script = ExtResource("1_dp421")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ws4wn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

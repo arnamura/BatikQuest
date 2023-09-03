@@ -434,7 +434,6 @@ func get_state_value(property: String, extra_game_states: Array):
 	
 	if include_singletons and Engine.has_singleton(property):
 		return Engine.get_singleton(property)
-
 	assert(false, "\"{property}\" is not a property on any game states ({states}).".format({ property = property, states = str(get_game_states(extra_game_states)) }))
 
 

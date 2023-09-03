@@ -13,7 +13,7 @@ else:
 			Rahmat: Sampai jumpa kawan
 			set quest2Status = true
 			set inQuest = false
-			set taken2quest = false
+			set takenQuest2 = false
 		else:
 			Rahmat: Tolonglah bima, 
 			Rahmat: Sepertinya cangkir tersebut ada di sekitar taman 
@@ -38,7 +38,7 @@ else:
 			Rahmat: Sepertinya ada hal lain yang harus kau kerjakan
 => END
 
-~item
+~ item
 if State.takenQuest2 == true:
 	Bima: Sepertinya ini cangkir yang di cari oleh rahman
 	Bima: Sebaiknya aku antar barang ini segera supaya ia tak dimarahi orang tuanya

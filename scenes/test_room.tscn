@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dyqv2xpyc8km3"]
+[gd_scene load_steps=30 format=3 uid="uid://dyqv2xpyc8km3"]
 
 [ext_resource type="Texture2D" uid="uid://bn1rxgfowuian" path="res://art/TilesetFloor.png" id="1_2bw0p"]
 [ext_resource type="Texture2D" uid="uid://dui12k4mxn2th" path="res://art/TilesetHouse.png" id="2_aoq1c"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b8j383v7acxcp" path="res://npc/npc_woman.tscn" id="2_iqo37"]
 [ext_resource type="PackedScene" uid="uid://dndkvxcijkvrc" path="res://player/player.tscn" id="2_lkifr"]
 [ext_resource type="Script" path="res://camera/Player Cam.gd" id="3_3js8v"]
+[ext_resource type="PackedScene" uid="uid://dvauw5xcq8cif" path="res://obj/kunci_emas.tscn" id="3_ih41s"]
 [ext_resource type="PackedScene" uid="uid://bteda0q8lw1cj" path="res://npc/kakek.tscn" id="4_4iddo"]
 [ext_resource type="Resource" uid="uid://xdkxtuh5wjca" path="res://dialogue/Bang Dirman.dialogue" id="4_jlbdo"]
 [ext_resource type="PackedScene" uid="uid://01ydgb5cpsky" path="res://helpers/actionable.tscn" id="5_kcoma"]
@@ -1134,6 +1135,7 @@ texture = ExtResource("2_aoq1c")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_k8gk3"]
 resource_name = "items"
+scenes/3/scene = ExtResource("3_ih41s")
 
 [sub_resource type="TileSet" id="TileSet_uv5es"]
 sources/0 = SubResource("TileSetAtlasSource_6hiqs")
@@ -1166,6 +1168,13 @@ layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(196610, 1245185, 15)
+layer_2/name = "items"
+layer_2/enabled = true
+layer_2/modulate = Color(1, 1, 1, 1)
+layer_2/y_sort_enabled = false
+layer_2/y_sort_origin = 0
+layer_2/z_index = 0
+layer_2/tile_data = PackedInt32Array(458761, 2, 196608)
 
 [node name="BangDirman" parent="TileMap" instance=ExtResource("2_c7lco")]
 position = Vector2(176, 25)
