@@ -26,6 +26,15 @@ var reqItem2: String = ""
 var quest2text1: String = "- Bantu Rahmat menemukan barangnya yang hilang"
 var quest2text2: String = "- Kembalikan barang ke Rahmat"
 
+#quest 3
+var quest3title: String = "Petualang Pemberani"
+var quest3Status: bool = false
+var takenQuest3: bool = false
+var reqItem3: String = ""
+
+var quest3text1: String = "- Pergi ke dalam goa dan temukan batik yang dicuri"
+var quest3text2: String = "- Berikan batik kepada Bang Dirman"
+
 var questInfo = {
 	0: {
 		"status": quest1Status,

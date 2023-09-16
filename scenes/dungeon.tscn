@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://bb3qnpusxy128"]
+[gd_scene load_steps=19 format=3 uid="uid://bb3qnpusxy128"]
 
 [ext_resource type="Texture2D" uid="uid://dih0b8f6g40ef" path="res://art/TilesetInteriorFloor.png" id="1_m1yn1"]
+[ext_resource type="PackedScene" uid="uid://dvauw5xcq8cif" path="res://obj/kunci_emas.tscn" id="2_2htf2"]
 [ext_resource type="Texture2D" uid="uid://bn1rxgfowuian" path="res://art/TilesetFloor.png" id="2_68bty"]
 [ext_resource type="Texture2D" uid="uid://cld5np4uacn4v" path="res://art/TilesetReliefDetail.png" id="4_u41yu"]
 [ext_resource type="Texture2D" uid="uid://dhw8hjfkujy22" path="res://art/TilesetRelief.png" id="5_wvqjh"]
@@ -306,6 +307,10 @@ texture = ExtResource("1_m1yn1")
 17:16/0 = 0
 18:16/0 = 0
 19:16/0 = 0
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_cb3ag"]
+resource_name = "items"
+scenes/1/scene = ExtResource("2_2htf2")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ljyv"]
 texture = ExtResource("2_68bty")
@@ -1580,6 +1585,7 @@ sources/5 = SubResource("TileSetAtlasSource_4ljyv")
 sources/6 = SubResource("TileSetAtlasSource_1rf7q")
 sources/7 = SubResource("TileSetAtlasSource_rxkqr")
 sources/8 = SubResource("TileSetAtlasSource_7njak")
+sources/1 = SubResource("TileSetScenesCollectionSource_cb3ag")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r4jlj"]
 size = Vector2(20, 15)
@@ -1598,6 +1604,13 @@ layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(9, 327687, 4, 65545, 327687, 5, 7, 327687, 4, 65543, 327687, 5, 8, 327687, 3, 65544, 327687, 3)
+layer_2/name = "item"
+layer_2/enabled = true
+layer_2/modulate = Color(1, 1, 1, 1)
+layer_2/y_sort_enabled = false
+layer_2/y_sort_origin = 0
+layer_2/z_index = 0
+layer_2/tile_data = PackedInt32Array(131085, 1, 65536)
 
 [node name="World_door" type="Area2D" parent="TileMap"]
 script = ExtResource("6_yyiil")

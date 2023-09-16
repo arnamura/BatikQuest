@@ -1,23 +1,39 @@
-~ this_is_a_node_title
+~ start
 
-Bang Dirman: Oi anak muda, apakah kau suka tantangan?
-- Engga Dulu Deh
-	Bang Dirman: Sayang Sekali
-- Tentu Saja!
-	Bang Dirman: Aku Suka Semangatmu!
-	Bang Dirman: Panggil aku Bang Dirman
-	Bang Dirman: Aku Punya Misi Untukmmu
-	Bang Dirman: Dikabarkan bahwa batik keraton dicuri oleh mahluk tak dikenal
-	Bang Dirman: Batik ini sangat berharga dan tidak boleh sembarang orang memakainya
-	Bang Dirman: Untuk itu, Barang siapa yang dapat mengembalikan kain batik yang telah dicuri,
-	Bang Dirman: Akan diberikan hadiah batik khusus yang biasa diberikan kepada panglima perang yang telah berjasa
-	Bang Dirman: Menarik bukan?
-	Bang Dirman: Untuk Memulainya, pergilah ke dalam hutan
-	Bang Dirman: Batik tersebut seharusnya ada di perkemahan monster didalam hutan
-	Bang Dirman: Berhati-hatilah untuk tidak terkena kontak langsung dengan monster
-	Bang Dirman: Sebelum itu, Ada yang ingin kau tanyakan?
-	- Tidak ada
-		Bang Dirman: Baiklah, semoga beruntung
-	- Ada yang ingin ku tanyakan
-
+if quest3status == false:
+	if takenQuest3 == false:
+		Bang Dirman: Oi anak muda, apakah kau suka tantangan?
+		- Engga Dulu Deh
+			Bang Dirman: Sayang Sekali
+		- Tentu Saja!
+			Bang Dirman: Aku Suka Semangatmu!
+			Bang Dirman: Panggil aku Bang Dirman
+			Bang Dirman: Aku Punya Misi Untukmmu
+			Bang Dirman: Dikabarkan bahwa batik keraton dicuri oleh mahluk tak dikenal
+			Bang Dirman: Batik ini sangat berharga dan tidak boleh sembarang orang memakainya
+			Bang Dirman: Untuk itu, Barang siapa yang dapat mengembalikan kain batik yang telah dicuri,
+			Bang Dirman: Akan diberikan hadiah batik khusus yang biasa diberikan kepada panglima perang yang telah berjasa
+			Bang Dirman: Menarik bukan?
+			Bang Dirman: Untuk Memulainya, pergilah ke dalam hutan
+			Bang Dirman: Batik tersebut seharusnya ada di perkemahan monster didalam hutan
+			Bang Dirman: Berhati-hatilah untuk tidak terkena kontak langsung dengan monster
+			set takenQuest3 = true
+		else:
+			Bang Dirman: Ada yang ingin kau tanyakan?
+			- Tidak ada
+				Bang Dirman: Baiklah, semoga beruntung
+			- Ada yang ingin ku tanyakan
+				Bang Dirman: Silakan tanyakan
+				- Bagaimana Caraku untuk menemukan batiknya?
+					Bang Dirman: Masuklah kedalam goa, lalu ikuti saja jalannya
+					Bang Dirman: Terakhirku ingat sih jalannya tidak sulit
+					Bang Dirman: Semoga, hahaha
+					Bang Dirman: aku yakin kau bisa menemukannya 
+				- Apa yang terjadi bila aku terkena musuh?
+					Bang Dirman: Waduh!
+					Bang Dirman: Rasanya akan sangat menyakitkan
+					Bang Dirman: Sebaiknya jangan terkena serangan musuh sampai 3 kali
+					Bang Dirman: Atau kau akan dibawa kembali ke pintu goa
+else:
+	Bang Dirman: Kerja bagus nak, pasti raja akan senang
 => END
