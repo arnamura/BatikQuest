@@ -12,13 +12,12 @@ else:
 			Rahmat: Lain kali sepertinya aku harus lebih teliti terhadap barang bawaanku, hahaha
 			Rahmat: Sampai jumpa kawan
 			set quest2Status = true
-			set inQuest = false
 			set takenQuest2 = false
 		else:
 			Rahmat: Tolonglah bima, 
 			Rahmat: Sepertinya kunci rumahku ada di sekitar taman 
 	else:
-		if not takenQuest1 and not takenQuest2
+		if not takenQuest1 and not takenQuest2 and not takenQuest3
 			Rahmat: Hei! Apa kau bisa membantuku?
 			- Ada apa?
 			Rahmat: Namaku Rahmat,
@@ -31,7 +30,6 @@ else:
 				Rahmat: Terimakasih banyak!
 				Rahmat: Seharusnya kunci tersebut berada di sekitar patung taman
 				set takenQuest2 = true
-				set inQuest = true
 			- Maaf, ada yang harus bisa ku lakukan
 				Rahmat: Sayang sekali, mungkin ada orang lain yang bisa melakukannya
 				=> END!

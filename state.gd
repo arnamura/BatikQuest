@@ -49,6 +49,13 @@ var questInfo = {
 		"item": reqItem2,
 		"text1": quest2text1,
 		"text2": quest2text2
+	},
+	2: {
+		"status": quest3Status,
+		"taken": takenQuest3,
+		"item": reqItem3,
+		"text1": quest3text1,
+		"text2": quest3text2
 	}
 }
 
@@ -67,5 +74,12 @@ func _process(delta):
 			"item": reqItem2,
 			"text1": quest2text1,
 			"text2": quest2text2
-		}
+		},
+		2: {
+			"status": quest3Status,
+			"taken": takenQuest3,
+			"item": reqItem3,
+			"text1": quest3text1,
+			"text2": quest3text2
+	}
 	}

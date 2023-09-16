@@ -2,22 +2,30 @@
 
 if quest3status == false:
 	if takenQuest3 == false:
-		Bang Dirman: Oi anak muda, apakah kau suka tantangan?
-		- Engga Dulu Deh
-			Bang Dirman: Sayang Sekali
-		- Tentu Saja!
-			Bang Dirman: Aku Suka Semangatmu!
-			Bang Dirman: Panggil aku Bang Dirman
-			Bang Dirman: Aku Punya Misi Untukmmu
-			Bang Dirman: Dikabarkan bahwa batik keraton dicuri oleh mahluk tak dikenal
-			Bang Dirman: Batik ini sangat berharga dan tidak boleh sembarang orang memakainya
-			Bang Dirman: Untuk itu, Barang siapa yang dapat mengembalikan kain batik yang telah dicuri,
-			Bang Dirman: Akan diberikan hadiah batik khusus yang biasa diberikan kepada panglima perang yang telah berjasa
-			Bang Dirman: Menarik bukan?
-			Bang Dirman: Untuk Memulainya, pergilah ke dalam hutan
-			Bang Dirman: Batik tersebut seharusnya ada di perkemahan monster didalam hutan
-			Bang Dirman: Berhati-hatilah untuk tidak terkena kontak langsung dengan monster
-			set takenQuest3 = true
+		if not takenQuest1 and not takenQuest2 and not takenQuest3
+			Bang Dirman: Oi anak muda, apakah kau suka tantangan?
+			- Engga Dulu Deh
+				Bang Dirman: Sayang Sekali
+			- Tentu Saja!
+				Bang Dirman: Aku Suka Semangatmu!
+				Bang Dirman: Panggil aku Bang Dirman
+				Bang Dirman: Aku Punya Misi Untukmmu
+				Bang Dirman: Dikabarkan bahwa batik keraton dicuri oleh mahluk tak dikenal
+				Bang Dirman: Batik ini sangat berharga dan tidak boleh sembarang orang memakainya
+				Bang Dirman: Untuk itu, Barang siapa yang dapat mengembalikan kain batik yang telah dicuri,
+				Bang Dirman: Akan diberikan hadiah batik khusus yang biasa diberikan kepada panglima perang yang telah berjasa
+				Bang Dirman: Menarik bukan?
+				Bang Dirman: Untuk Memulainya, pergilah ke dalam hutan
+				Bang Dirman: Batik tersebut seharusnya ada di perkemahan monster didalam hutan
+				Bang Dirman: Berhati-hatilah untuk tidak terkena kontak langsung dengan monster
+				set takenQuest3 = true
+	else:
+		if reqItem3 == "1"
+			Bang Dirman: Kerja bagus nak, aku akan segera melapor kepada kerajaan
+			Bang Dirman: Hanya kau yang berani untuk mengambilnya kedalam sana
+			Bang Dirman: Sebagai imbalan, terimalah ini hadiah dari kerajaan
+			set takenQuest3 = false
+			set quest3status = true
 		else:
 			Bang Dirman: Ada yang ingin kau tanyakan?
 			- Tidak ada
@@ -37,3 +45,9 @@ if quest3status == false:
 else:
 	Bang Dirman: Kerja bagus nak, pasti raja akan senang
 => END
+
+~ item3
+terlihat seperti barang yang dideskripsikan oleh bang dirman
+seharusnya ini barang yang benar
+sebaiknya aku cepat melapor
+set reqItem3 = "1"
