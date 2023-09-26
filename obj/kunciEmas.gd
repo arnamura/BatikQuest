@@ -2,7 +2,7 @@ extends "res://obj/item.gd"
 
 @onready var anim = $AnimationPlayer
 
-func _process(delta):
+func _process(_delta):
 	anim.play("idle")
 	ambil()
 

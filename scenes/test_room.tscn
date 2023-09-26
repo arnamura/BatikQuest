@@ -1,11 +1,12 @@
-[gd_scene load_steps=30 format=3 uid="uid://dyqv2xpyc8km3"]
+[gd_scene load_steps=31 format=3 uid="uid://dyqv2xpyc8km3"]
 
 [ext_resource type="Texture2D" uid="uid://bn1rxgfowuian" path="res://art/TilesetFloor.png" id="1_2bw0p"]
 [ext_resource type="Texture2D" uid="uid://dui12k4mxn2th" path="res://art/TilesetHouse.png" id="2_aoq1c"]
-[ext_resource type="PackedScene" path="res://npc/bang_dirman.tscn" id="2_c7lco"]
+[ext_resource type="PackedScene" uid="uid://bu85lk1e1qt1k" path="res://npc/bang_dirman.tscn" id="2_c7lco"]
 [ext_resource type="PackedScene" uid="uid://b8j383v7acxcp" path="res://npc/npc_woman.tscn" id="2_iqo37"]
 [ext_resource type="PackedScene" uid="uid://dndkvxcijkvrc" path="res://player/player.tscn" id="2_lkifr"]
 [ext_resource type="Script" path="res://camera/Player Cam.gd" id="3_3js8v"]
+[ext_resource type="PackedScene" uid="uid://b8ibpe41602q4" path="res://obj/peti_harta.tscn" id="3_dwa3i"]
 [ext_resource type="PackedScene" uid="uid://dvauw5xcq8cif" path="res://obj/kunci_emas.tscn" id="3_ih41s"]
 [ext_resource type="PackedScene" uid="uid://bteda0q8lw1cj" path="res://npc/kakek.tscn" id="4_4iddo"]
 [ext_resource type="Resource" uid="uid://xdkxtuh5wjca" path="res://dialogue/Bang Dirman.dialogue" id="4_jlbdo"]
@@ -1135,6 +1136,7 @@ texture = ExtResource("2_aoq1c")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_k8gk3"]
 resource_name = "items"
+scenes/1/scene = ExtResource("3_dwa3i")
 scenes/3/scene = ExtResource("3_ih41s")
 
 [sub_resource type="TileSet" id="TileSet_uv5es"]

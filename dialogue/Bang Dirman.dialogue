@@ -1,6 +1,6 @@
 ~ start
 
-if quest3status == false:
+if quest3Status == false:
 	if takenQuest3 == false:
 		if not takenQuest1 and not takenQuest2 and not takenQuest3
 			Bang Dirman: Oi anak muda, apakah kau suka tantangan?
@@ -25,7 +25,7 @@ if quest3status == false:
 			Bang Dirman: Hanya kau yang berani untuk mengambilnya kedalam sana
 			Bang Dirman: Sebagai imbalan, terimalah ini hadiah dari kerajaan
 			set takenQuest3 = false
-			set quest3status = true
+			set quest3Status = true
 		else:
 			Bang Dirman: Ada yang ingin kau tanyakan?
 			- Tidak ada
@@ -51,3 +51,16 @@ terlihat seperti barang yang dideskripsikan oleh bang dirman
 seharusnya ini barang yang benar
 sebaiknya aku cepat melapor
 set reqItem3 = "1"
+
+~ kunciDungeon
+Sepertinya ini merupakan kunci untuk membuka ruangan peti
+Sebaiknya aku ambil
+set kunciDungeon = true
+
+~ pintuDungeon
+if kunciDungeon == false:
+	Pintu ini terkunci, sepertinya kuncinya ada disekitar sini
+	Sebaiknya aku ambil
+else:
+	Terbuka!
+	Kuncinya ternyata cocok

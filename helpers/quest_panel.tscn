@@ -15,7 +15,7 @@ func cekQuest():
 	var taken = false
 	var takenMission = -1
 	questLabel.text = \"Cari Quest Dulu\"
-	for i in range(2):
+	for i in range(3):
 		if quest[i][\"taken\"]:
 			taken = true
 			takenMission = i

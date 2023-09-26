@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://0ms0bbqtfdsk"]
+
+[ext_resource type="PackedScene" uid="uid://d28ne4l3a8l63" path="res://obj/item.tscn" id="1_bps7m"]
+[ext_resource type="Script" path="res://obj/KunciDungeon.gd" id="2_3xc54"]
+[ext_resource type="Texture2D" uid="uid://rlog7nlrr3bf" path="res://art/kunciPeti.png" id="3_ti32t"]
+[ext_resource type="PackedScene" uid="uid://01ydgb5cpsky" path="res://helpers/actionable.tscn" id="4_4fp54"]
+[ext_resource type="Resource" uid="uid://xdkxtuh5wjca" path="res://dialogue/Bang Dirman.dialogue" id="5_tdlxq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwxng"]
+resource_local_to_scene = true
+size = Vector2(16, 8)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_npr7f"]
+radius = 16.0
+
+[node name="KunciDungeon" instance=ExtResource("1_bps7m")]
+script = ExtResource("2_3xc54")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_rwxng")
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.574, 0.574)
+texture = ExtResource("3_ti32t")
+
+[node name="Actionable" parent="." index="2" instance=ExtResource("4_4fp54")]
+dialogue_resource = ExtResource("5_tdlxq")
+dialogue_start = "kunciDungeon"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable" index="0"]
+shape = SubResource("CircleShape2D_npr7f")

@@ -4,8 +4,8 @@ if State.quest2Status == true:
 else:
 	if State.takenQuest2 == true:
 		if State.reqItem2 == "1":
-			Rahmat: Terima kasih bima, karena sudah menemukan kunci ini
-			Rahmat: Dengan begini, aku tidak akan dimarahi oleh orang tua ku
+			Rahmat: Terima kasih bima, karena sudah menemukan cincin tunanganku ini
+			Rahmat: Dengan begini, aku bisa segera melamar kekasih ku
 			Rahmat: Terimalah kain batik ini,
 			Rahmat: ini merupakan kain batik terbaik buatan orang tuaku
 			Rahmat: Aku ingin kau menerimanya
@@ -15,20 +15,21 @@ else:
 			set takenQuest2 = false
 		else:
 			Rahmat: Tolonglah bima, 
-			Rahmat: Sepertinya kunci rumahku ada di sekitar taman 
+			Rahmat: Sepertinya cincin tunanganku ada di sekitar taman 
 	else:
 		if not takenQuest1 and not takenQuest2 and not takenQuest3
 			Rahmat: Hei! Apa kau bisa membantuku?
 			- Ada apa?
 			Rahmat: Namaku Rahmat,
 			Rahmat: Tadi aku habis bermain bersama kekasih ku di taman 
-			Rahmat: Namun, kunci rumah ku hilang entah dimana
-			Rahmat: Dan sepertinya terjatuh saat aku bermain di taman tadi
+			Rahmat: Niatnya setelah pulang dari taman,
+			Rahmat: Aku ingin melamar kekasihku dengan memberikannya cincin berlian
+			Rahmat: Namun, sepertinya cincintersebut jatuh di taman
 			Rahmat: Apa kau bisa membantuku mencarinnya?
-			Rahmat: Kumohon, aku tidak bisa pulang karena ini
+			Rahmat: Kumohon, aku ingin segera melamar kekasihku
 			- Aku bisa membantumu
 				Rahmat: Terimakasih banyak!
-				Rahmat: Seharusnya kunci tersebut berada di sekitar patung taman
+				Rahmat: Seharusnya cincin tersebut berada di sekitar patung taman
 				set takenQuest2 = true
 			- Maaf, ada yang harus bisa ku lakukan
 				Rahmat: Sayang sekali, mungkin ada orang lain yang bisa melakukannya
@@ -39,11 +40,11 @@ else:
 
 ~ item
 if State.takenQuest2 == true:
-	Bima: Sepertinya ini kunci yang di cari oleh rahman
-	Bima: Sebaiknya aku antar barang ini segera supaya ia bisa cepat pulang
+	Bima: Sepertinya ini cincin tunangan yang di cari oleh rahman
+	Bima: Sebaiknya aku antar barang ini segera supaya ia tenang
 	set reqItem2 = "1"
 else:
-	Bima: Terlihat seperti kunci rumah
+	Bima: Terlihat seperti cincin yang mahal
 	Bima: Siapa ya yang meninggalkannya disini? hmm...
 	Bima: Sebaiknya aku ambil, siapa tau ada yang mencarinya di Desa
 	set reqItem2 = "1"

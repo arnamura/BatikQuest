@@ -34,6 +34,9 @@ var reqItem3: String = ""
 
 var quest3text1: String = "- Pergi ke dalam goa dan temukan batik yang dicuri"
 var quest3text2: String = "- Berikan batik kepada Bang Dirman"
+#tambahan
+var kunciDungeon: bool = false
+var pintuDungeon: bool = false
 
 var questInfo = {
 	0: {
@@ -59,7 +62,7 @@ var questInfo = {
 	}
 }
 
-func _process(delta):
+func _process(_delta):
 	questInfo = {
 		0: {
 			"status": quest1Status,

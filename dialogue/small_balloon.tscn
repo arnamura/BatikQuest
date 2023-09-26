@@ -29,6 +29,7 @@ content_margin_bottom = 2.0
 draw_center = false
 
 [node name="smallBalloon" type="CanvasLayer"]
+process_mode = 3
 layer = 100
 script = ExtResource("1_4u26j")
 

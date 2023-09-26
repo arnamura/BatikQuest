@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://b8ibpe41602q4"]
+
+[ext_resource type="PackedScene" uid="uid://d28ne4l3a8l63" path="res://obj/item.tscn" id="1_1tee8"]
+[ext_resource type="Script" path="res://obj/peti_harta.gd" id="2_tqxat"]
+[ext_resource type="Texture2D" uid="uid://bfxgy8g54ayg6" path="res://art/Treasure_Chest (32 x 16).png" id="3_yyuw8"]
+[ext_resource type="PackedScene" uid="uid://01ydgb5cpsky" path="res://helpers/actionable.tscn" id="4_rxxnr"]
+[ext_resource type="Resource" uid="uid://xdkxtuh5wjca" path="res://dialogue/Bang Dirman.dialogue" id="5_fwnqy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fx5h0"]
+radius = 16.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgc2j"]
+resource_local_to_scene = true
+size = Vector2(16, 8)
+
+[sub_resource type="Animation" id="Animation_173f5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_j2yeh"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_crgqn"]
+_data = {
+"RESET": SubResource("Animation_173f5"),
+"open": SubResource("Animation_j2yeh")
+}
+
+[node name="petiHarta" instance=ExtResource("1_1tee8")]
+script = ExtResource("2_tqxat")
+
+[node name="Actionable" parent="." index="0" instance=ExtResource("4_rxxnr")]
+dialogue_resource = ExtResource("5_fwnqy")
+dialogue_start = "item3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable" index="0"]
+shape = SubResource("CircleShape2D_fx5h0")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_vgc2j")
+
+[node name="Timer" type="Timer" parent="." index="2"]
+one_shot = true
+
+[node name="Sprite2D" parent="." index="3"]
+texture = ExtResource("3_yyuw8")
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+libraries = {
+"": SubResource("AnimationLibrary_crgqn")
+}

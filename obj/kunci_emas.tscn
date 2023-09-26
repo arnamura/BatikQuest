@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://dvauw5xcq8cif"]
 
 [ext_resource type="PackedScene" uid="uid://d28ne4l3a8l63" path="res://obj/item.tscn" id="1_ro4ib"]
-[ext_resource type="Texture2D" uid="uid://cslgeksepa2sf" path="res://art/GoldKey.png" id="2_143vk"]
 [ext_resource type="Script" path="res://obj/kunciEmas.gd" id="2_ujk7v"]
 [ext_resource type="PackedScene" uid="uid://01ydgb5cpsky" path="res://helpers/actionable.tscn" id="3_f552d"]
 [ext_resource type="Resource" uid="uid://bahgr1srwq1oq" path="res://dialogue/Rahmat.dialogue" id="4_g184c"]
+[ext_resource type="Texture2D" uid="uid://b0wramep3cq8s" path="res://art/cincin.png" id="5_kcsu7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bvvxh"]
 radius = 20.2788
@@ -51,8 +51,8 @@ _data = {
 "idle": SubResource("Animation_55p2g")
 }
 
-[node name="kunciEmas" instance=ExtResource("1_ro4ib")]
-scale = Vector2(0.789, 0.789)
+[node name="cincin" instance=ExtResource("1_ro4ib")]
+scale = Vector2(0.399, 0.399)
 script = ExtResource("2_ujk7v")
 
 [node name="Actionable" parent="." index="0" instance=ExtResource("3_f552d")]
@@ -66,7 +66,7 @@ shape = SubResource("CircleShape2D_bvvxh")
 shape = SubResource("RectangleShape2D_xvfki")
 
 [node name="Sprite2D" parent="." index="2"]
-texture = ExtResource("2_143vk")
+texture = ExtResource("5_kcsu7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
 libraries = {

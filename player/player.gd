@@ -7,12 +7,10 @@ extends CharacterBody2D
 @onready var animations = $AnimationPlayer
 @onready var effects = $Effect
 @onready var hurtTimer = $Timer
-@onready var slimePos= $"../slime" #import file slime
+@onready var hurtBox = $hurtBox
 @onready var playerSprite = $Sprite2D
 
 var isHurt: bool = false
-var enemyInArea = []
-
 
 func _ready():
 	#agar diawal warna player default
@@ -49,37 +47,19 @@ func updateAnimation():
 		elif velocity.y <0: direction = "Up"
 		animations.play("walk"+ direction)
 	
-
 func _physics_process(_delta):
 	handleInput()
 	move_and_slide()
 	updateAnimation()
 	if !isHurt:
-		for enemyArea in enemyInArea:
-			onHit(enemyArea)
-	
-func _on_hurt_box_area_entered(area):
-	# cek kondisi hurt bila hitbox musuh mengenai hurtbox player
-	if area.name == "hitBox":
-		enemyInArea.append(area)
-		#knockback()
-		print_debug(area.get_parent().name)
-	# cek kondisi untuk fungsi interaksi
-	if area.name == "Interact":
-		print_debug(area.get_parent().name)
-#	if area.has_method("collect"):
-#		area.collect()
-
+		for area in hurtBox.get_overlapping_areas():
+			if area.name == "hitBox":
+				onHit(area)
+				
 func knockback2(enemyVelocity: Vector2):
 	var knockDir = (enemyVelocity - velocity).normalized() * knockbackPower
 	velocity = knockDir
 	move_and_slide()
-
-func timerknock():
-		effects.play("hurtAnim")
-		hurtTimer.start()
-		await hurtTimer.timeout
-		effects.play("reset")
 
 func onHit(area):
 	isHurt = true
@@ -90,5 +70,16 @@ func onHit(area):
 	effects.play("reset")
 	isHurt = false	
 
-func _on_hurt_box_area_exited(area):
-	enemyInArea.erase(area)
+#tidak dipakai
+func _on_hurt_box_area_exited(area): pass
+
+func _on_hurt_box_area_entered(area): pass
+	# cek kondisi untuk fungsi interaksi
+	#if area.name == "Interact":
+	#	print_debug(area.get_parent().name)
+
+#func timerknock():
+#		effects.play("hurtAnim")
+#		hurtTimer.start()
+#		await hurtTimer.timeout
+#		effects.play("reset")
