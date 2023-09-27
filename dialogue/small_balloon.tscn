@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b361p61jmf257"]
+[gd_scene load_steps=10 format=3 uid="uid://b361p61jmf257"]
 
 [ext_resource type="Script" path="res://dialogue/balloon.gd" id="1_4u26j"]
 [ext_resource type="Texture2D" uid="uid://e2vamsgxgk6x" path="res://art/DialogueBoxSimple.png" id="2_2wd5b"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
+[ext_resource type="Texture2D" uid="uid://ceki5avr4r78j" path="res://dialogue/flatDark24.png" id="4_feptj"]
 
 [sub_resource type="Theme" id="Theme_isg48"]
 default_font_size = 9
@@ -112,6 +113,13 @@ shortcut_keys_enabled = false
 meta_underlined = false
 hint_underlined = false
 selection_enabled = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(130, 117)
+rotation = 1.5708
+scale = Vector2(0.131, 0.131)
+texture_normal = ExtResource("4_feptj")
+action = "ui_accept"
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="resized" from="Balloon/Margin" to="." method="_on_margin_resized"]

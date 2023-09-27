@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dyqv2xpyc8km3"]
+[gd_scene load_steps=32 format=3 uid="uid://dyqv2xpyc8km3"]
 
 [ext_resource type="Texture2D" uid="uid://bn1rxgfowuian" path="res://art/TilesetFloor.png" id="1_2bw0p"]
 [ext_resource type="Texture2D" uid="uid://dui12k4mxn2th" path="res://art/TilesetHouse.png" id="2_aoq1c"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" path="res://scenes/dungeon.gd" id="16_tl1cp"]
 [ext_resource type="PackedScene" uid="uid://s1ht1iwxfmen" path="res://helpers/pause.tscn" id="17_xm1li"]
 [ext_resource type="PackedScene" uid="uid://binluxttspuiq" path="res://helpers/main_ui.tscn" id="18_u1v85"]
+[ext_resource type="PackedScene" uid="uid://dywd02ye0oyh5" path="res://helpers/dpads.tscn" id="22_uktsu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6hiqs"]
 texture = ExtResource("1_2bw0p")
@@ -1281,6 +1282,8 @@ visible = false
 [node name="MainUI" parent="." instance=ExtResource("18_u1v85")]
 offset = Vector2(-3, 20)
 transform = Transform2D(1, 0, 0, 1, -3, 20)
+
+[node name="Dpads" parent="MainUI" instance=ExtResource("22_uktsu")]
 
 [connection signal="area_entered" from="TileMap/BangDirman/Actionable" to="TileMap/kakek" method="_on_actionable_area_entered"]
 [connection signal="body_entered" from="TileMap/BangDirman/Actionable" to="TileMap/BangDirman/Actionable" method="_on_body_entered"]
