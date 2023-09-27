@@ -115,9 +115,10 @@ hint_underlined = false
 selection_enabled = true
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
-position = Vector2(130, 117)
+modulate = Color(1, 1, 1, 0)
+position = Vector2(232.986, 86.7996)
 rotation = 1.5708
-scale = Vector2(0.131, 0.131)
+scale = Vector2(0.508509, 2.82199)
 texture_normal = ExtResource("4_feptj")
 action = "ui_accept"
 
