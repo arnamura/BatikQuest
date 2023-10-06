@@ -9,8 +9,12 @@ extends CharacterBody2D
 @onready var hurtTimer = $Timer
 @onready var hurtBox = $hurtBox
 @onready var playerSprite = $Sprite2D
+@onready var weapon = $Weapon
+
 
 var isHurt: bool = false
+var lastDirect: String = "Down"
+var isAttack: bool = false
 
 func _ready():
 	#agar diawal warna player default
@@ -34,9 +38,18 @@ func _unhandled_input(_event: InputEvent) -> void:
 func handleInput():
 	var moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = moveDirection*speed
+	
+	if Input.is_action_just_pressed("ui_attack"):
+		animations.play("att" + lastDirect)
+		isAttack = true
+		weapon.visible = true
+		await animations.animation_finished
+		weapon.visible = false
+		isAttack = false
 
 #untuk animasi berjalan
 func updateAnimation():
+	if isAttack: return
 	if velocity.length() == 0:
 		if  animations.is_playing():
 			animations.stop()
@@ -46,6 +59,7 @@ func updateAnimation():
 		elif velocity.x > 0: direction = "Right"
 		elif velocity.y <0: direction = "Up"
 		animations.play("walk"+ direction)
+		lastDirect = direction
 	
 func _physics_process(_delta):
 	handleInput()
