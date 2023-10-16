@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b53ma8c66c033"
-path="res://.godot/imported/bunga gerak.png-4da53c22fabcefa90ece2dc9693daa2b.ctex"
+uid="uid://d0etke32axmbp"
+path="res://.godot/imported/guard.png-c6448c747520968ffa1392dc163fe44f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/bunga gerak.png"
-dest_files=["res://.godot/imported/bunga gerak.png-4da53c22fabcefa90ece2dc9693daa2b.ctex"]
+source_file="res://art/char/guard.png"
+dest_files=["res://.godot/imported/guard.png-c6448c747520968ffa1392dc163fe44f.ctex"]
 
 [params]
 

@@ -53,3 +53,4 @@ if takenQuest1 == true
 	set reqItem1 = "1"
 else
 	Bentuknya seperti kain
+=> END

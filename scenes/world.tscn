@@ -1,19 +1,19 @@
 [gd_scene load_steps=32 format=3 uid="uid://de0dw7ts0iqam"]
 
 [ext_resource type="PackedScene" uid="uid://dndkvxcijkvrc" path="res://player/player.tscn" id="1_mlxps"]
-[ext_resource type="Texture2D" uid="uid://bn1rxgfowuian" path="res://art/TilesetFloor.png" id="2_7m60y"]
-[ext_resource type="Texture2D" uid="uid://dep2qksg16xox" path="res://art/TilesetNature.png" id="2_eu3om"]
-[ext_resource type="Texture2D" uid="uid://b53ma8c66c033" path="res://art/bunga gerak.png" id="3_h43fe"]
-[ext_resource type="Texture2D" uid="uid://dui12k4mxn2th" path="res://art/TilesetHouse.png" id="4_h51bp"]
+[ext_resource type="Texture2D" uid="uid://bn1rxgfowuian" path="res://art/tileset/TilesetFloor.png" id="3_ombyi"]
+[ext_resource type="Texture2D" uid="uid://dep2qksg16xox" path="res://art/tileset/TilesetNature.png" id="4_v1p50"]
 [ext_resource type="PackedScene" uid="uid://dacvdvtgenqnt" path="res://enemies/slime.tscn" id="5_184i3"]
-[ext_resource type="Texture2D" uid="uid://dw1tavph1lenb" path="res://art/TilesetWater.png" id="5_h0yto"]
-[ext_resource type="Texture2D" uid="uid://dhw8hjfkujy22" path="res://art/TilesetRelief.png" id="6_kthd0"]
+[ext_resource type="Texture2D" uid="uid://b53ma8c66c033" path="res://art/terrain/bunga gerak.png" id="5_780ys"]
+[ext_resource type="Texture2D" uid="uid://dui12k4mxn2th" path="res://art/tileset/TilesetHouse.png" id="6_5pty6"]
 [ext_resource type="Script" path="res://camera/Player Cam.gd" id="6_uj8y6"]
-[ext_resource type="Texture2D" uid="uid://cld5np4uacn4v" path="res://art/TilesetReliefDetail.png" id="7_0rymc"]
-[ext_resource type="Texture2D" uid="uid://dih0b8f6g40ef" path="res://art/TilesetInteriorFloor.png" id="8_3r2x2"]
+[ext_resource type="Texture2D" uid="uid://dw1tavph1lenb" path="res://art/tileset/TilesetWater.png" id="7_jshxu"]
+[ext_resource type="Texture2D" uid="uid://dhw8hjfkujy22" path="res://art/tileset/TilesetRelief.png" id="8_3v4xa"]
 [ext_resource type="PackedScene" uid="uid://bteda0q8lw1cj" path="res://npc/kakek.tscn" id="8_da03o"]
 [ext_resource type="PackedScene" uid="uid://cglff21wycfgs" path="res://npc/guard.tscn" id="8_gnovn"]
 [ext_resource type="PackedScene" uid="uid://01ydgb5cpsky" path="res://helpers/actionable.tscn" id="9_cpqxd"]
+[ext_resource type="Texture2D" uid="uid://cld5np4uacn4v" path="res://art/tileset/TilesetReliefDetail.png" id="9_p37bb"]
+[ext_resource type="Texture2D" uid="uid://dih0b8f6g40ef" path="res://art/tileset/TilesetInteriorFloor.png" id="10_3pimi"]
 [ext_resource type="Resource" uid="uid://cyofnijgd3gem" path="res://dialogue/test.dialogue" id="10_ebcei"]
 [ext_resource type="PackedScene" uid="uid://tdo63he11iml" path="res://obj/sign.tscn" id="17_3gsfd"]
 [ext_resource type="Script" path="res://scenes/dungeon.gd" id="18_3x2cv"]
@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://s1ht1iwxfmen" path="res://helpers/pause.tscn" id="20_va8hm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_26vdy"]
-texture = ExtResource("2_7m60y")
+texture = ExtResource("3_ombyi")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1399,7 +1399,7 @@ texture = ExtResource("2_7m60y")
 19:25/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pcwk0"]
-texture = ExtResource("2_eu3om")
+texture = ExtResource("4_v1p50")
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(-8, 8)
@@ -2165,7 +2165,7 @@ texture = ExtResource("2_eu3om")
 0:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 3.5, 10, 6.5, 13.5, 8, 19, 8, 22.5, 6, 24, 3.5, 23.5, 1.5, 22, -1, 11, -1, 8, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4gyhw"]
-texture = ExtResource("3_h43fe")
+texture = ExtResource("5_780ys")
 0:0/animation_frame_0/duration = 0.2
 0:0/animation_frame_1/duration = 0.2
 0:0/animation_frame_2/duration = 0.2
@@ -2177,7 +2177,7 @@ texture = ExtResource("3_h43fe")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1, 8, 1, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_olngr"]
-texture = ExtResource("4_h51bp")
+texture = ExtResource("6_5pty6")
 8:0/0 = 0
 8:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:0/0/physics_layer_0/angular_velocity = 0.0
@@ -3861,7 +3861,7 @@ texture = ExtResource("4_h51bp")
 7:21/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3, -8, 8, 8, 8, 8, -3)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r88ph"]
-texture = ExtResource("5_h0yto")
+texture = ExtResource("7_jshxu")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -4659,7 +4659,7 @@ texture = ExtResource("5_h0yto")
 8:16/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_68a0b"]
-texture = ExtResource("6_kthd0")
+texture = ExtResource("8_3v4xa")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -4968,7 +4968,7 @@ texture = ExtResource("6_kthd0")
 5:9/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6usgr"]
-texture = ExtResource("7_0rymc")
+texture = ExtResource("9_p37bb")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -5124,7 +5124,7 @@ texture = ExtResource("7_0rymc")
 5:9/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_58ine"]
-texture = ExtResource("8_3r2x2")
+texture = ExtResource("10_3pimi")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0

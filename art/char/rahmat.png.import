@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhw8hjfkujy22"
-path="res://.godot/imported/TilesetRelief.png-fcb62719d7503ecef82e8548be03fca4.ctex"
+uid="uid://dynd32ekkrif8"
+path="res://.godot/imported/rahmat.png-4d191ac13c273614ced3692dc2f3633f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/TilesetRelief.png"
-dest_files=["res://.godot/imported/TilesetRelief.png-fcb62719d7503ecef82e8548be03fca4.ctex"]
+source_file="res://art/char/rahmat.png"
+dest_files=["res://.godot/imported/rahmat.png-4d191ac13c273614ced3692dc2f3633f.ctex"]
 
 [params]
 

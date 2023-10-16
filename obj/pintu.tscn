@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://spjqesy8jhoc"]
+
+[ext_resource type="Script" path="res://obj/Pintu.gd" id="1_lin04"]
+[ext_resource type="Texture2D" uid="uid://dg7v1uvmdexop" path="res://art/door_open.png" id="2_7fltb"]
+[ext_resource type="Texture2D" uid="uid://dcik224gup615" path="res://art/door_closed.png" id="3_mh4t0"]
+[ext_resource type="PackedScene" uid="uid://01ydgb5cpsky" path="res://helpers/actionable.tscn" id="4_l3nud"]
+[ext_resource type="Resource" uid="uid://xdkxtuh5wjca" path="res://dialogue/Bang Dirman.dialogue" id="5_j51tf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6rdqg"]
+size = Vector2(26, 22)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ftabs"]
+radius = 26.0
+
+[node name="Pintu" type="StaticBody2D"]
+position = Vector2(0, -16)
+collision_layer = 49
+collision_mask = 49
+script = ExtResource("1_lin04")
+
+[node name="open" type="Area2D" parent="."]
+collision_layer = 33
+collision_mask = 33
+
+[node name="doorOpen" type="Sprite2D" parent="open"]
+texture = ExtResource("2_7fltb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="open"]
+build_mode = 1
+polygon = PackedVector2Array(-16, 9, -16, 16, -13, 16, -13, -6, -16, -6)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="open"]
+position = Vector2(29, 0)
+build_mode = 1
+polygon = PackedVector2Array(-16, 9, -16, 16, -13, 16, -13, -6, -16, -6)
+
+[node name="close" type="Area2D" parent="."]
+collision_layer = 33
+collision_mask = 33
+
+[node name="doorClose" type="Sprite2D" parent="close"]
+texture = ExtResource("3_mh4t0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="close"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_6rdqg")
+
+[node name="Actionable" parent="." instance=ExtResource("4_l3nud")]
+dialogue_resource = ExtResource("5_j51tf")
+dialogue_start = "pintuDungeon"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+shape = SubResource("CircleShape2D_ftabs")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+build_mode = 1
+polygon = PackedVector2Array(-16, 9, -16, 16, -13, 16, -13, -6, -16, -6)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+position = Vector2(29, 0)
+build_mode = 1
+polygon = PackedVector2Array(-16, 9, -16, 16, -13, 16, -13, -6, -16, -6)
+
+[node name="Collisionclose" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_6rdqg")

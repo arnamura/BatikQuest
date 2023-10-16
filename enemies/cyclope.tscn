@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://bm3sfk1gxuk4n"]
 
 [ext_resource type="PackedScene" uid="uid://dacvdvtgenqnt" path="res://enemies/slime.tscn" id="1_qchdt"]
-[ext_resource type="Texture2D" uid="uid://cpx3oc1iirtmy" path="res://art/cyclope.png" id="2_ddekn"]
+[ext_resource type="Texture2D" uid="uid://cpx3oc1iirtmy" path="res://art/char/cyclope.png" id="2_qvqw5"]
 
 [node name="cyclope" instance=ExtResource("1_qchdt")]
 
 [node name="sprite" parent="." index="1"]
-texture = ExtResource("2_ddekn")
+texture = ExtResource("2_qvqw5")

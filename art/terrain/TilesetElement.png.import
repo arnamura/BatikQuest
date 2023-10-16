@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0etke32axmbp"
-path="res://.godot/imported/guard.png-3ee6e0eeb5cdcf7b2412c2d4d980940f.ctex"
+uid="uid://vup3ac4pey0k"
+path="res://.godot/imported/TilesetElement.png-e6163fce14f5816ea3d5e7391f591548.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/guard.png"
-dest_files=["res://.godot/imported/guard.png-3ee6e0eeb5cdcf7b2412c2d4d980940f.ctex"]
+source_file="res://art/terrain/TilesetElement.png"
+dest_files=["res://.godot/imported/TilesetElement.png-e6163fce14f5816ea3d5e7391f591548.ctex"]
 
 [params]
 

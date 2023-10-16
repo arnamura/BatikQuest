@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwstu1jyt7jk7"
-path="res://.godot/imported/gabe-idle-run.png-d01721017d9b4f7ad7a85b3656c0d3c9.ctex"
+uid="uid://diuyrwdms8rmy"
+path="res://.godot/imported/kakek.png-05e82c81703af02c67192db49b02c802.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/gabe-idle-run.png"
-dest_files=["res://.godot/imported/gabe-idle-run.png-d01721017d9b4f7ad7a85b3656c0d3c9.ctex"]
+source_file="res://art/char/kakek.png"
+dest_files=["res://.godot/imported/kakek.png-05e82c81703af02c67192db49b02c802.ctex"]
 
 [params]
 

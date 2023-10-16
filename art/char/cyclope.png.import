@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpx3oc1iirtmy"
-path="res://.godot/imported/cyclope.png-ae7d2f404f0ad3a952ab6fcbdd6ea717.ctex"
+path="res://.godot/imported/cyclope.png-1fdff51bd64aa102fdc3f399baa19816.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/cyclope.png"
-dest_files=["res://.godot/imported/cyclope.png-ae7d2f404f0ad3a952ab6fcbdd6ea717.ctex"]
+source_file="res://art/char/cyclope.png"
+dest_files=["res://.godot/imported/cyclope.png-1fdff51bd64aa102fdc3f399baa19816.ctex"]
 
 [params]
 

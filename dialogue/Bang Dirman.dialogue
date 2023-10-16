@@ -51,11 +51,13 @@ terlihat seperti barang yang dideskripsikan oleh bang dirman
 seharusnya ini barang yang benar
 sebaiknya aku cepat melapor
 set reqItem3 = "1"
+=> END
 
 ~ kunciDungeon
 Sepertinya ini merupakan kunci untuk membuka ruangan peti
 Sebaiknya aku ambil
 set kunciDungeon = true
+=> END
 
 ~ pintuDungeon
 if kunciDungeon == false:
@@ -64,3 +66,5 @@ if kunciDungeon == false:
 else:
 	Terbuka!
 	Kuncinya ternyata cocok
+	set pintuDungeon = true
+	=> END

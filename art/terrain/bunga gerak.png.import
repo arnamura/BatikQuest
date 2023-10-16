@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7qpm7j4u3kgf"
-path="res://.godot/imported/woman.png-88e16a500a49026f504779a55bd9f951.ctex"
+uid="uid://b53ma8c66c033"
+path="res://.godot/imported/bunga gerak.png-9c40f4f6616c77f3a9e685fc7c934492.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/woman.png"
-dest_files=["res://.godot/imported/woman.png-88e16a500a49026f504779a55bd9f951.ctex"]
+source_file="res://art/terrain/bunga gerak.png"
+dest_files=["res://.godot/imported/bunga gerak.png-9c40f4f6616c77f3a9e685fc7c934492.ctex"]
 
 [params]
 

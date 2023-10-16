@@ -12,6 +12,6 @@ func buka():
 		i = 2
 		anim.play("open")
 		timer.start()
-		await timer.timeout
+		await anim.animation_finished
 		super.collect()
 	

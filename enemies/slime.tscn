@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dacvdvtgenqnt"]
 
 [ext_resource type="Script" path="res://enemies/slime.gd" id="1_cd1x5"]
-[ext_resource type="Texture2D" uid="uid://byno0cvtki53o" path="res://art/Slime2.png" id="1_xn40h"]
+[ext_resource type="Texture2D" uid="uid://byno0cvtki53o" path="res://art/char/Slime2.png" id="1_xn40h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6wleo"]
 radius = 6.0

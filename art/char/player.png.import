@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://diuyrwdms8rmy"
-path="res://.godot/imported/kakek.png-cc07cc09ecaa11e6cc9d0b4643bfbe67.ctex"
+uid="uid://llf5sndwqnid"
+path="res://.godot/imported/player.png-4909ce95db223db410b067a25086218e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/kakek.png"
-dest_files=["res://.godot/imported/kakek.png-cc07cc09ecaa11e6cc9d0b4643bfbe67.ctex"]
+source_file="res://art/char/player.png"
+dest_files=["res://.godot/imported/player.png-4909ce95db223db410b067a25086218e.ctex"]
 
 [params]
 

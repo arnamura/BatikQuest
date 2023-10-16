@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cld5np4uacn4v"
-path="res://.godot/imported/TilesetReliefDetail.png-748270f39639b563c58a09f4dc02894a.ctex"
+uid="uid://c6ffiggdvbdos"
+path="res://.godot/imported/bangdirman.png-6e5ad5d9238881abbc6e3b19b076c08e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/TilesetReliefDetail.png"
-dest_files=["res://.godot/imported/TilesetReliefDetail.png-748270f39639b563c58a09f4dc02894a.ctex"]
+source_file="res://art/char/bangdirman.png"
+dest_files=["res://.godot/imported/bangdirman.png-6e5ad5d9238881abbc6e3b19b076c08e.ctex"]
 
 [params]
 
