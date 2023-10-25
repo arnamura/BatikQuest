@@ -7,6 +7,8 @@ resource_local_to_scene = true
 size = Vector2(16, 8)
 
 [node name="item" type="Area2D"]
+z_index = 2
+y_sort_enabled = true
 script = ExtResource("1_dp421")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

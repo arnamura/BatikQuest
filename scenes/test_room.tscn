@@ -908,6 +908,7 @@ texture = ExtResource("2_wkt4l")
 19:14/0 = 0
 20:14/0 = 0
 21:14/0 = 0
+21:14/0/y_sort_origin = 7
 22:14/0 = 0
 23:14/0 = 0
 24:14/0 = 0
@@ -1162,6 +1163,7 @@ radius = 13.0
 [node name="testRoom" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
+y_sort_enabled = true
 tile_set = SubResource("TileSet_uv5es")
 format = 2
 layer_0/name = "Ground"
@@ -1176,10 +1178,10 @@ layer_1/tile_data = PackedInt32Array(196610, 1245185, 15)
 layer_2/name = "items"
 layer_2/enabled = true
 layer_2/modulate = Color(1, 1, 1, 1)
-layer_2/y_sort_enabled = false
+layer_2/y_sort_enabled = true
 layer_2/y_sort_origin = 0
-layer_2/z_index = 0
-layer_2/tile_data = PackedInt32Array(458761, 2, 196608)
+layer_2/z_index = 1
+layer_2/tile_data = PackedInt32Array(458761, 2, 196608, 262154, 1376257, 14)
 
 [node name="BangDirman" parent="TileMap" instance=ExtResource("2_c7lco")]
 position = Vector2(176, 25)
@@ -1192,6 +1194,7 @@ position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_ofhbf")
 
 [node name="BuTini" parent="TileMap" instance=ExtResource("2_iqo37")]
+visible = false
 position = Vector2(104, 25)
 
 [node name="Actionable" parent="TileMap/BuTini" instance=ExtResource("5_kcoma")]
