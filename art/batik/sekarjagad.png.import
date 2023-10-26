@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxhx8bme1fgua"
-path="res://.godot/imported/sekar jagad.png-1e59169f633be1e792bd45ee6d1cf166.ctex"
+path="res://.godot/imported/sekarjagad.png-9d85077b09683bde16123907add983d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/batik/sekar jagad.png"
-dest_files=["res://.godot/imported/sekar jagad.png-1e59169f633be1e792bd45ee6d1cf166.ctex"]
+source_file="res://art/batik/sekarjagad.png"
+dest_files=["res://.godot/imported/sekarjagad.png-9d85077b09683bde16123907add983d5.ctex"]
 
 [params]
 

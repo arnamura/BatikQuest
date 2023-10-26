@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bry1wdh2crbir"
-path="res://.godot/imported/pring sedapur.png-66ffbaa4ab0e2a99fb5cbd005dec0c95.ctex"
+path="res://.godot/imported/pringSedapur.png-0d40a70a6281874ac3e1ea3c1df2286e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/batik/pring sedapur.png"
-dest_files=["res://.godot/imported/pring sedapur.png-66ffbaa4ab0e2a99fb5cbd005dec0c95.ctex"]
+source_file="res://art/batik/pringSedapur.png"
+dest_files=["res://.godot/imported/pringSedapur.png-0d40a70a6281874ac3e1ea3c1df2286e.ctex"]
 
 [params]
 

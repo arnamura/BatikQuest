@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 DoorHandle="*res://helpers/door_handle.tscn"
 State="*res://state.gd"
+DataBatik="*res://dataBatik.gd"
 
 [dialogue_manager]
 
