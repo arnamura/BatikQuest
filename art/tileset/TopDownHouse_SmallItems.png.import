@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cki7ttulr0gld"
-path="res://.godot/imported/gabe-idle-run-left.png-63dc1deaf841f01d35e452cd16e4bed8.ctex"
+uid="uid://d24uf52gdo31u"
+path="res://.godot/imported/TopDownHouse_SmallItems.png-c6efa2173bdccfd5bca4ad06e456699d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/gabe-idle-run-left.png"
-dest_files=["res://.godot/imported/gabe-idle-run-left.png-63dc1deaf841f01d35e452cd16e4bed8.ctex"]
+source_file="res://art/tileset/TopDownHouse_SmallItems.png"
+dest_files=["res://.godot/imported/TopDownHouse_SmallItems.png-c6efa2173bdccfd5bca4ad06e456699d.ctex"]
 
 [params]
 

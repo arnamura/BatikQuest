@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byno0cvtki53o"
-path="res://.godot/imported/Slime2.png-eeeb8c869f13e19d4fb7e0abdc0df816.ctex"
+uid="uid://c0o00i0rv4dp6"
+path="res://.godot/imported/furniture pack coloured outline.png-aadddfe3cb469973a82c3916201ae769.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Slime2.png"
-dest_files=["res://.godot/imported/Slime2.png-eeeb8c869f13e19d4fb7e0abdc0df816.ctex"]
+source_file="res://art/tileset/furniture pack coloured outline.png"
+dest_files=["res://.godot/imported/furniture pack coloured outline.png-aadddfe3cb469973a82c3916201ae769.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dep2qksg16xox"
-path="res://.godot/imported/TilesetNature.png-d8a648a2fafb8d61d10fe0b21e1b96c7.ctex"
+uid="uid://c6ffiggdvbdos"
+path="res://.godot/imported/bangdirman.png-6e5ad5d9238881abbc6e3b19b076c08e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/TilesetNature.png"
-dest_files=["res://.godot/imported/TilesetNature.png-d8a648a2fafb8d61d10fe0b21e1b96c7.ctex"]
+source_file="res://art/char/bangdirman.png"
+dest_files=["res://.godot/imported/bangdirman.png-6e5ad5d9238881abbc6e3b19b076c08e.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwstu1jyt7jk7"
-path="res://.godot/imported/gabe-idle-run.png-d01721017d9b4f7ad7a85b3656c0d3c9.ctex"
+uid="uid://r0vokuctmke3"
+path="res://.godot/imported/naga.png-97816a906be7188629f94c145ed8e88a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/gabe-idle-run.png"
-dest_files=["res://.godot/imported/gabe-idle-run.png-d01721017d9b4f7ad7a85b3656c0d3c9.ctex"]
+source_file="res://art/char/naga.png"
+dest_files=["res://.godot/imported/naga.png-97816a906be7188629f94c145ed8e88a.ctex"]
 
 [params]
 

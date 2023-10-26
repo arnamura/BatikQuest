@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7qpm7j4u3kgf"
-path="res://.godot/imported/woman.png-88e16a500a49026f504779a55bd9f951.ctex"
+uid="uid://bn1rxgfowuian"
+path="res://.godot/imported/TilesetFloor.png-dc5001182f719b81c19e354da016b22e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/woman.png"
-dest_files=["res://.godot/imported/woman.png-88e16a500a49026f504779a55bd9f951.ctex"]
+source_file="res://art/tileset/TilesetFloor.png"
+dest_files=["res://.godot/imported/TilesetFloor.png-dc5001182f719b81c19e354da016b22e.ctex"]
 
 [params]
 

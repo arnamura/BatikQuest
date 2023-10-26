@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://bteda0q8lw1cj"]
 
 [ext_resource type="Script" path="res://npc/kakek.gd" id="1_6rnts"]
-[ext_resource type="Texture2D" uid="uid://diuyrwdms8rmy" path="res://art/kakek.png" id="2_mtn2c"]
+[ext_resource type="Texture2D" uid="uid://diuyrwdms8rmy" path="res://art/char/kakek.png" id="2_mtn2c"]
 [ext_resource type="Texture2D" uid="uid://cl06betmhoesn" path="res://art/DialogInfo.png" id="3_4xltu"]
 
 [sub_resource type="Animation" id="Animation_oxmg8"]

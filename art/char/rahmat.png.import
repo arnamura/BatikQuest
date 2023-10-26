@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw1tavph1lenb"
-path="res://.godot/imported/TilesetWater.png-eb16867f18c9275a787b5c5c40272076.ctex"
+uid="uid://dynd32ekkrif8"
+path="res://.godot/imported/rahmat.png-4d191ac13c273614ced3692dc2f3633f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/TilesetWater.png"
-dest_files=["res://.godot/imported/TilesetWater.png-eb16867f18c9275a787b5c5c40272076.ctex"]
+source_file="res://art/char/rahmat.png"
+dest_files=["res://.godot/imported/rahmat.png-4d191ac13c273614ced3692dc2f3633f.ctex"]
 
 [params]
 

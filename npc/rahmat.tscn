@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://di1rategakk3o"]
 
-[ext_resource type="Texture2D" uid="uid://dynd32ekkrif8" path="res://art/rahmat.png" id="1_1psi8"]
+[ext_resource type="Texture2D" uid="uid://dynd32ekkrif8" path="res://art/char/rahmat.png" id="1_1psi8"]
 [ext_resource type="Script" path="res://npc/rahmat.gd" id="1_isbm3"]
 [ext_resource type="Texture2D" uid="uid://cl06betmhoesn" path="res://art/DialogInfo.png" id="2_q3pq6"]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://diuyrwdms8rmy"
-path="res://.godot/imported/kakek.png-cc07cc09ecaa11e6cc9d0b4643bfbe67.ctex"
+uid="uid://dmq4mtfhpomhg"
+path="res://.godot/imported/TilesetInterior.png-114a1874f83eb15494c44b974bc2969d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/kakek.png"
-dest_files=["res://.godot/imported/kakek.png-cc07cc09ecaa11e6cc9d0b4643bfbe67.ctex"]
+source_file="res://art/terrain/TilesetInterior.png"
+dest_files=["res://.godot/imported/TilesetInterior.png-114a1874f83eb15494c44b974bc2969d.ctex"]
 
 [params]
 

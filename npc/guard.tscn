@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://cglff21wycfgs"]
 
 [ext_resource type="Script" path="res://npc/guard.gd" id="1_mfhc0"]
-[ext_resource type="Texture2D" uid="uid://d0etke32axmbp" path="res://art/guard.png" id="2_qslui"]
+[ext_resource type="Texture2D" uid="uid://d0etke32axmbp" path="res://art/char/guard.png" id="2_qslui"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utho6"]
 size = Vector2(12, 15)

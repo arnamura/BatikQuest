@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dynd32ekkrif8"
-path="res://.godot/imported/rahmat.png-7aa40cc94e5d354bebd615dfabc3dfbf.ctex"
+uid="uid://dcik224gup615"
+path="res://.godot/imported/door_closed.png-51796c8a61f2538334a1a975cc633043.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/rahmat.png"
-dest_files=["res://.godot/imported/rahmat.png-7aa40cc94e5d354bebd615dfabc3dfbf.ctex"]
+source_file="res://art/door_closed.png"
+dest_files=["res://.godot/imported/door_closed.png-51796c8a61f2538334a1a975cc633043.ctex"]
 
 [params]
 

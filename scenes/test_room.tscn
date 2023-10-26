@@ -1,15 +1,16 @@
-[gd_scene load_steps=32 format=3 uid="uid://dyqv2xpyc8km3"]
+[gd_scene load_steps=33 format=3 uid="uid://dyqv2xpyc8km3"]
 
-[ext_resource type="Texture2D" uid="uid://bn1rxgfowuian" path="res://art/TilesetFloor.png" id="1_2bw0p"]
-[ext_resource type="Texture2D" uid="uid://dui12k4mxn2th" path="res://art/TilesetHouse.png" id="2_aoq1c"]
+[ext_resource type="Texture2D" uid="uid://bn1rxgfowuian" path="res://art/tileset/TilesetFloor.png" id="1_a0fq1"]
 [ext_resource type="PackedScene" uid="uid://bu85lk1e1qt1k" path="res://npc/bang_dirman.tscn" id="2_c7lco"]
 [ext_resource type="PackedScene" uid="uid://b8j383v7acxcp" path="res://npc/npc_woman.tscn" id="2_iqo37"]
 [ext_resource type="PackedScene" uid="uid://dndkvxcijkvrc" path="res://player/player.tscn" id="2_lkifr"]
+[ext_resource type="Texture2D" uid="uid://dui12k4mxn2th" path="res://art/tileset/TilesetHouse.png" id="2_wkt4l"]
 [ext_resource type="Script" path="res://camera/Player Cam.gd" id="3_3js8v"]
 [ext_resource type="PackedScene" uid="uid://b8ibpe41602q4" path="res://obj/peti_harta.tscn" id="3_dwa3i"]
 [ext_resource type="PackedScene" uid="uid://dvauw5xcq8cif" path="res://obj/kunci_emas.tscn" id="3_ih41s"]
 [ext_resource type="PackedScene" uid="uid://bteda0q8lw1cj" path="res://npc/kakek.tscn" id="4_4iddo"]
 [ext_resource type="Resource" uid="uid://xdkxtuh5wjca" path="res://dialogue/Bang Dirman.dialogue" id="4_jlbdo"]
+[ext_resource type="PackedScene" uid="uid://spjqesy8jhoc" path="res://obj/pintu.tscn" id="4_psftb"]
 [ext_resource type="PackedScene" uid="uid://01ydgb5cpsky" path="res://helpers/actionable.tscn" id="5_kcoma"]
 [ext_resource type="PackedScene" uid="uid://tdo63he11iml" path="res://obj/sign.tscn" id="7_j1q27"]
 [ext_resource type="PackedScene" uid="uid://b4k2fs1ckj4lg" path="res://helpers/interact.tscn" id="8_j74g8"]
@@ -24,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://dywd02ye0oyh5" path="res://helpers/dpads.tscn" id="22_uktsu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6hiqs"]
-texture = ExtResource("1_2bw0p")
+texture = ExtResource("1_a0fq1")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -485,7 +486,7 @@ texture = ExtResource("1_2bw0p")
 19:25/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k4eu7"]
-texture = ExtResource("2_aoq1c")
+texture = ExtResource("2_wkt4l")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -907,6 +908,7 @@ texture = ExtResource("2_aoq1c")
 19:14/0 = 0
 20:14/0 = 0
 21:14/0 = 0
+21:14/0/y_sort_origin = 7
 22:14/0 = 0
 23:14/0 = 0
 24:14/0 = 0
@@ -1138,6 +1140,7 @@ texture = ExtResource("2_aoq1c")
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_k8gk3"]
 resource_name = "items"
 scenes/1/scene = ExtResource("3_dwa3i")
+scenes/2/scene = ExtResource("4_psftb")
 scenes/3/scene = ExtResource("3_ih41s")
 
 [sub_resource type="TileSet" id="TileSet_uv5es"]
@@ -1160,6 +1163,7 @@ radius = 13.0
 [node name="testRoom" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
+y_sort_enabled = true
 tile_set = SubResource("TileSet_uv5es")
 format = 2
 layer_0/name = "Ground"
@@ -1174,10 +1178,10 @@ layer_1/tile_data = PackedInt32Array(196610, 1245185, 15)
 layer_2/name = "items"
 layer_2/enabled = true
 layer_2/modulate = Color(1, 1, 1, 1)
-layer_2/y_sort_enabled = false
+layer_2/y_sort_enabled = true
 layer_2/y_sort_origin = 0
-layer_2/z_index = 0
-layer_2/tile_data = PackedInt32Array(458761, 2, 196608)
+layer_2/z_index = 1
+layer_2/tile_data = PackedInt32Array(458761, 2, 196608, 262154, 1376257, 14)
 
 [node name="BangDirman" parent="TileMap" instance=ExtResource("2_c7lco")]
 position = Vector2(176, 25)
@@ -1190,6 +1194,7 @@ position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_ofhbf")
 
 [node name="BuTini" parent="TileMap" instance=ExtResource("2_iqo37")]
+visible = false
 position = Vector2(104, 25)
 
 [node name="Actionable" parent="TileMap/BuTini" instance=ExtResource("5_kcoma")]

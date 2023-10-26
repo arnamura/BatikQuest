@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b53ma8c66c033"
-path="res://.godot/imported/bunga gerak.png-4da53c22fabcefa90ece2dc9693daa2b.ctex"
+path="res://.godot/imported/bunga gerak.png-9c40f4f6616c77f3a9e685fc7c934492.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/bunga gerak.png"
-dest_files=["res://.godot/imported/bunga gerak.png-4da53c22fabcefa90ece2dc9693daa2b.ctex"]
+source_file="res://art/terrain/bunga gerak.png"
+dest_files=["res://.godot/imported/bunga gerak.png-9c40f4f6616c77f3a9e685fc7c934492.ctex"]
 
 [params]
 
