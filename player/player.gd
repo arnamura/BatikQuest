@@ -11,7 +11,6 @@ extends CharacterBody2D
 @onready var playerSprite = $Sprite2D
 @onready var weapon = $Weapon
 
-
 var isHurt: bool = false
 var lastDirect: String = "Down"
 var isAttack: bool = false
@@ -40,14 +39,18 @@ func handleInput():
 	velocity = moveDirection*speed
 	
 	if Input.is_action_just_pressed("ui_attack"):
-		animations.play("att" + lastDirect)
-		isAttack = true
-		weapon.visible = true
-		await animations.animation_finished
-		weapon.visible = false
-		isAttack = false
+		attack()
 
-#untuk animasi berjalan
+#Animasi Attack
+func attack():
+	animations.play("att" + lastDirect)
+	isAttack = true
+	weapon.visible = true
+	await animations.animation_finished
+	weapon.visible = false
+	isAttack = false
+	
+#animasi berjalan
 func updateAnimation():
 	if isAttack: return
 	if velocity.length() == 0:
