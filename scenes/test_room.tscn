@@ -1233,7 +1233,7 @@ position = Vector2(40, 24)
 
 [node name="Interact" parent="TileMap/Ceplok" instance=ExtResource("8_j74g8")]
 collision_mask = 33
-label_batik = "ceplok"
+label_batik = "batik1"
 deskripsi_batik = "sebuah deskripsi yang sangat panjang gila dah ini sumpah gua gatau mau ngetik apa lagi yaudah deh gini ajaa"
 path_gambar = "res://art/batik/ceplok.png"
 
