@@ -20,7 +20,6 @@ var player_in_range = false
 	#gui.start(interact_label)
 
 func _ready():
-	var batik = DataBatik[label_batik]
 	set_process(true)
 
 func showUi():

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://tbvn2122fjtg"]
+[gd_scene load_steps=6 format=3 uid="uid://tbvn2122fjtg"]
 
 [ext_resource type="Script" path="res://helpers/description_gui.gd" id="1_sas3c"]
+[ext_resource type="Texture2D" uid="uid://djl68rhctcgqd" path="res://art/FacesetBox.png" id="2_jj63t"]
 [ext_resource type="Texture2D" uid="uid://cdudngtp2q14p" path="res://art/183578050_473107943801943_6185835635627700778_n.png" id="2_tqagx"]
 [ext_resource type="Texture2D" uid="uid://dtr1io5brfxbs" path="res://art/x.png" id="2_treqa"]
 [ext_resource type="Script" path="res://helpers/ButtonX.gd" id="3_td7w4"]
@@ -27,17 +28,18 @@ offset_right = 0.559998
 offset_bottom = 3.01999
 grow_horizontal = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
 layout_mode = 2
+texture = ExtResource("2_jj63t")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
-layout_mode = 2
-size_flags_vertical = 4
-
-[node name="ButtonX" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+[node name="ButtonX" type="Button" parent="MarginContainer/NinePatchRect"]
 clip_contents = true
 custom_minimum_size = Vector2(15, 15)
 layout_mode = 2
+offset_left = 110.0
+offset_top = 3.0
+offset_right = 125.0
+offset_bottom = 18.0
 size_flags_horizontal = 8
 size_flags_vertical = 10
 action_mode = 0
@@ -48,13 +50,23 @@ icon_alignment = 2
 expand_icon = true
 script = ExtResource("3_td7w4")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/NinePatchRect"]
+layout_mode = 2
+offset_left = 15.0
+offset_top = 16.0
+offset_right = 143.0
+offset_bottom = 138.0
+scale = Vector2(0.770693, 0.799653)
+size_flags_vertical = 4
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/NinePatchRect/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.46
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/NinePatchRect/VBoxContainer/HBoxContainer"]
 clip_contents = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -65,24 +77,25 @@ expand_mode = 2
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/NinePatchRect/VBoxContainer"]
 clip_contents = true
 layout_mode = 2
 alignment = 1
 
-[node name="label" type="RichTextLabel" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer3"]
+[node name="label" type="RichTextLabel" parent="MarginContainer/NinePatchRect/VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(85, 0)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 6
 text = "Ini judul gambar"
 fit_content = true
+tab_size = 0
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/NinePatchRect/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
-[node name="DeskripsiGambar" type="RichTextLabel" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
+[node name="DeskripsiGambar" type="RichTextLabel" parent="MarginContainer/NinePatchRect/VBoxContainer/HBoxContainer2"]
 clip_contents = false
 custom_minimum_size = Vector2(98, 0)
 layout_mode = 2
@@ -91,4 +104,4 @@ text = "ini text naosidnawilJ bdh  o;auh ;DIJOb w;iau b apuefb lsijhdf bwiloeuf 
 fit_content = true
 tab_size = 1
 
-[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/ButtonX" to="." method="_on_button_x_pressed"]
+[connection signal="pressed" from="MarginContainer/NinePatchRect/ButtonX" to="." method="_on_button_x_pressed"]

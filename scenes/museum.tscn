@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b5tc2y4jyw05v"]
+[gd_scene load_steps=15 format=3 uid="uid://b5tc2y4jyw05v"]
 
 [ext_resource type="Texture2D" uid="uid://3sxuvjpjwq4u" path="res://art/tileset/TopDownHouse_FloorsAndWalls.png" id="1_ivq45"]
 [ext_resource type="PackedScene" uid="uid://dndkvxcijkvrc" path="res://player/player.tscn" id="2_7xgbq"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://c0o00i0rv4dp6" path="res://art/tileset/furniture pack coloured outline.png" id="3_3mck4"]
 [ext_resource type="Texture2D" uid="uid://d24uf52gdo31u" path="res://art/tileset/TopDownHouse_SmallItems.png" id="4_hiu51"]
 [ext_resource type="Script" path="res://camera/Player Cam.gd" id="6_tytx4"]
+[ext_resource type="PackedScene" uid="uid://b4k2fs1ckj4lg" path="res://helpers/interact.tscn" id="7_rmnms"]
+[ext_resource type="PackedScene" uid="uid://tbvn2122fjtg" path="res://helpers/description_gui.tscn" id="8_n62jq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_octtg"]
 texture = ExtResource("1_ivq45")
@@ -3339,6 +3341,8 @@ sources/1 = SubResource("TileSetAtlasSource_73gri")
 sources/2 = SubResource("TileSetAtlasSource_cdllb")
 sources/3 = SubResource("TileSetAtlasSource_5fjd3")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_vb8x8"]
+
 [node name="Museum" type="Node2D"]
 y_sort_enabled = true
 
@@ -3372,8 +3376,105 @@ layer_3/z_index = 2
 layer_3/tile_data = PackedInt32Array(-131064, 327683, 1, -131069, 65539, 1, -131067, 3, 1, -131060, 65539, 1, -131058, 3, 1, 327685, 65539, 3)
 
 [node name="Player" parent="TileMap" instance=ExtResource("2_7xgbq")]
+visibility_layer = 33
 position = Vector2(58, 37)
+collision_mask = 33
 
 [node name="Player Cam" type="Camera2D" parent="TileMap/Player" node_paths=PackedStringArray("tilemap")]
 script = ExtResource("6_tytx4")
 tilemap = NodePath("../..")
+
+[node name="BatikObj" type="Node2D" parent="TileMap"]
+
+[node name="batik1" parent="TileMap/BatikObj" instance=ExtResource("7_rmnms")]
+position = Vector2(312, 96)
+collision_mask = 33
+label_batik = "batik1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/BatikObj/batik1"]
+light_mask = 32
+visibility_layer = 32
+shape = SubResource("CircleShape2D_vb8x8")
+
+[node name="batik2" parent="TileMap/BatikObj" instance=ExtResource("7_rmnms")]
+position = Vector2(344, 96)
+collision_mask = 33
+label_batik = "batik2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/BatikObj/batik2"]
+light_mask = 32
+visibility_layer = 32
+shape = SubResource("CircleShape2D_vb8x8")
+
+[node name="batik3" parent="TileMap/BatikObj" instance=ExtResource("7_rmnms")]
+position = Vector2(376, 96)
+collision_mask = 33
+label_batik = "batik3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/BatikObj/batik3"]
+light_mask = 32
+visibility_layer = 32
+shape = SubResource("CircleShape2D_vb8x8")
+
+[node name="batik4" parent="TileMap/BatikObj" instance=ExtResource("7_rmnms")]
+position = Vector2(312, 128)
+collision_mask = 33
+label_batik = "batik4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/BatikObj/batik4"]
+light_mask = 32
+visibility_layer = 32
+shape = SubResource("CircleShape2D_vb8x8")
+
+[node name="batik5" parent="TileMap/BatikObj" instance=ExtResource("7_rmnms")]
+position = Vector2(344, 128)
+collision_mask = 33
+label_batik = "batik5"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/BatikObj/batik5"]
+light_mask = 32
+visibility_layer = 32
+shape = SubResource("CircleShape2D_vb8x8")
+
+[node name="batik6" parent="TileMap/BatikObj" instance=ExtResource("7_rmnms")]
+position = Vector2(376, 128)
+collision_mask = 33
+label_batik = "batik6"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/BatikObj/batik6"]
+light_mask = 32
+visibility_layer = 32
+shape = SubResource("CircleShape2D_vb8x8")
+
+[node name="batik7" parent="TileMap/BatikObj" instance=ExtResource("7_rmnms")]
+position = Vector2(312, 160)
+collision_mask = 33
+label_batik = "batik7"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/BatikObj/batik7"]
+light_mask = 32
+visibility_layer = 32
+shape = SubResource("CircleShape2D_vb8x8")
+
+[node name="batik8" parent="TileMap/BatikObj" instance=ExtResource("7_rmnms")]
+position = Vector2(344, 160)
+collision_mask = 33
+label_batik = "batik8"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/BatikObj/batik8"]
+light_mask = 32
+visibility_layer = 32
+shape = SubResource("CircleShape2D_vb8x8")
+
+[node name="batik9" parent="TileMap/BatikObj" instance=ExtResource("7_rmnms")]
+position = Vector2(376, 160)
+collision_mask = 33
+label_batik = "batik9"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/BatikObj/batik9"]
+light_mask = 32
+visibility_layer = 32
+shape = SubResource("CircleShape2D_vb8x8")
+
+[node name="DescriptionGUI" parent="." instance=ExtResource("8_n62jq")]
+visible = false
