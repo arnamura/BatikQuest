@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dndkvxcijkvrc"]
+[gd_scene load_steps=23 format=3 uid="uid://dndkvxcijkvrc"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_0emo5"]
 [ext_resource type="Texture2D" uid="uid://llf5sndwqnid" path="res://art/char/player.png" id="2_lwsoh"]
@@ -334,6 +334,22 @@ tracks/1/keys = {
 "values": [3.14159]
 }
 
+[sub_resource type="Animation" id="Animation_5fnsd"]
+resource_name = "dead"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(0, 6)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rj0s8"]
 _data = {
 "RESET": SubResource("Animation_wv0uj"),
@@ -341,6 +357,7 @@ _data = {
 "attLeft": SubResource("Animation_ukqaf"),
 "attRight": SubResource("Animation_1dyux"),
 "attUp": SubResource("Animation_dcvek"),
+"dead": SubResource("Animation_5fnsd"),
 "hurt": SubResource("Animation_cvudy"),
 "walkDown": SubResource("Animation_xftbf"),
 "walkLeft": SubResource("Animation_qeecf"),

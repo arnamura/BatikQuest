@@ -25,7 +25,6 @@ func updateVelocity():
 	var moveDirection = (endPosition - position)
 	if moveDirection.length() < limit:
 		changeDirection()
-		
 	velocity = moveDirection.normalized()*speed
 	
 func updateAnimation():

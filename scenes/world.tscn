@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://de0dw7ts0iqam"]
+[gd_scene load_steps=33 format=3 uid="uid://de0dw7ts0iqam"]
 
 [ext_resource type="PackedScene" uid="uid://dndkvxcijkvrc" path="res://player/player.tscn" id="1_mlxps"]
 [ext_resource type="Texture2D" uid="uid://bn1rxgfowuian" path="res://art/tileset/TilesetFloor.png" id="3_ombyi"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://b4k2fs1ckj4lg" path="res://helpers/interact.tscn" id="18_hr4qy"]
 [ext_resource type="PackedScene" uid="uid://tbvn2122fjtg" path="res://helpers/description_gui.tscn" id="19_4nh8k"]
 [ext_resource type="PackedScene" uid="uid://s1ht1iwxfmen" path="res://helpers/pause.tscn" id="20_va8hm"]
+[ext_resource type="PackedScene" uid="uid://dbjvr4c4hlqml" path="res://enemies/skeleton.tscn" id="21_bl2wv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_26vdy"]
 texture = ExtResource("3_ombyi")
@@ -6080,11 +6081,11 @@ layer_5/z_index = 2
 layer_5/tile_data = PackedInt32Array(2818104, 1310723, 18)
 
 [node name="slime" parent="TileMap" node_paths=PackedStringArray("endPoint") instance=ExtResource("5_184i3")]
-position = Vector2(224, 157)
+position = Vector2(274, 156)
 endPoint = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="TileMap/slime"]
-position = Vector2(145, 0)
+position = Vector2(0, 65)
 
 [node name="Actor" type="Node2D" parent="TileMap"]
 
@@ -6185,13 +6186,17 @@ script = ExtResource("18_3x2cv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/dungeon_door"]
 shape = SubResource("RectangleShape2D_qigvx")
 
+[node name="Skeleton" parent="TileMap" node_paths=PackedStringArray("endPoint") instance=ExtResource("21_bl2wv")]
+position = Vector2(210, 154)
+endPoint = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="TileMap/Skeleton"]
+position = Vector2(0, 36)
+
 [connection signal="area_entered" from="TileMap/kakek/Actionable" to="TileMap/kakek" method="_on_actionable_area_entered"]
 [connection signal="body_entered" from="TileMap/kakek/Actionable" to="TileMap/kakek/Actionable" method="_on_body_entered"]
 [connection signal="body_exited" from="TileMap/kakek/Actionable" to="TileMap/kakek/Actionable" method="_on_body_exited"]
 [connection signal="area_entered" from="TileMap/Ceplok/Interact" to="TileMap/Ceplok" method="_on_interact_area_entered"]
-[connection signal="area_entered" from="TileMap/Ceplok/Interact" to="TileMap/Ceplok/Interact" method="_on_area_entered"]
 [connection signal="area_entered" from="TileMap/Parang/Interact" to="TileMap/Parang" method="_on_interact_area_entered"]
-[connection signal="area_entered" from="TileMap/Parang/Interact" to="TileMap/Parang/Interact" method="_on_area_entered"]
 [connection signal="area_entered" from="TileMap/Gringsing/Interact" to="TileMap/Gringsing" method="_on_interact_area_entered"]
-[connection signal="area_entered" from="TileMap/Gringsing/Interact" to="TileMap/Gringsing/Interact" method="_on_area_entered"]
 [connection signal="body_entered" from="TileMap/dungeon_door" to="TileMap/dungeon_door" method="_on_body_entered"]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbjvr4c4hlqml"]
+
+[ext_resource type="PackedScene" uid="uid://dacvdvtgenqnt" path="res://enemies/slime.tscn" id="1_60lwj"]
+[ext_resource type="Texture2D" uid="uid://c1indw03xtj3n" path="res://art/char/Skeleton.png" id="2_2cmec"]
+
+[node name="Skeleton" instance=ExtResource("1_60lwj")]
+
+[node name="sprite" parent="." index="1"]
+texture = ExtResource("2_2cmec")
+vframes = 7

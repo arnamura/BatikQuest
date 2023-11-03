@@ -14,6 +14,7 @@ extends CharacterBody2D
 var isHurt: bool = false
 var lastDirect: String = "Down"
 var isAttack: bool = false
+@export var hp = 3
 
 func _ready():
 	#agar diawal warna player default
@@ -79,6 +80,9 @@ func knockback2(enemyVelocity: Vector2):
 	move_and_slide()
 
 func onHit(area):
+	hp = hp-1
+	if hp<0:
+		hp = 3
 	isHurt = true
 	knockback2(area.get_parent().velocity)
 	effects.play("hurtAnim")

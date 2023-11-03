@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bb3qnpusxy128"]
+[gd_scene load_steps=29 format=3 uid="uid://bb3qnpusxy128"]
 
 [ext_resource type="Texture2D" uid="uid://dih0b8f6g40ef" path="res://art/tileset/TilesetInteriorFloor.png" id="1_1uf3n"]
 [ext_resource type="PackedScene" uid="uid://dvauw5xcq8cif" path="res://obj/kunci_emas.tscn" id="2_2htf2"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bm3sfk1gxuk4n" path="res://enemies/cyclope.tscn" id="12_cvd51"]
 [ext_resource type="PackedScene" uid="uid://spjqesy8jhoc" path="res://obj/pintu.tscn" id="14_no046"]
 [ext_resource type="PackedScene" uid="uid://dacvdvtgenqnt" path="res://enemies/slime.tscn" id="16_fxmo5"]
+[ext_resource type="PackedScene" uid="uid://dbjvr4c4hlqml" path="res://enemies/skeleton.tscn" id="17_id1a4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fe7qt"]
 texture = ExtResource("1_1uf3n")
@@ -5428,8 +5429,8 @@ size = Vector2(20, 15)
 [node name="Map_desa" type="Node2D"]
 
 [node name="MainUI" parent="." instance=ExtResource("9_28bnk")]
-offset = Vector2(-3, 20)
-transform = Transform2D(1, 0, 0, 1, -3, 20)
+offset = Vector2(-3, 9)
+transform = Transform2D(1, 0, 0, 1, -3, 9)
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -5443,14 +5444,14 @@ layer_1/modulate = Color(1, 1, 1, 1)
 layer_1/y_sort_enabled = true
 layer_1/y_sort_origin = 0
 layer_1/z_index = 2
-layer_1/tile_data = PackedInt32Array(851989, 1, 131072, 1114103, 1, 196608)
+layer_1/tile_data = PackedInt32Array(1114103, 1, 196608)
 layer_2/name = "Objectlv2"
 layer_2/enabled = true
 layer_2/modulate = Color(1, 1, 1, 1)
 layer_2/y_sort_enabled = true
 layer_2/y_sort_origin = 0
 layer_2/z_index = 1
-layer_2/tile_data = PackedInt32Array(8, 393219, 12, 1048596, 262147, 3, 655378, 917510, 12, 655380, 917510, 18, 262149, 262147, 3, 786446, 3, 10, 1048595, 3, 10, 1179649, 3, 10, 1376264, 196611, 9, 1376263, 3, 9, 1310722, 262147, 3, 1114104, 917510, 12, 1441796, 1048582, 11, 1114102, 3, 9, 983029, 917510, 18, 1114103, 196611, 9)
+layer_2/tile_data = PackedInt32Array(8, 393219, 12, 1048596, 262147, 3, 655378, 917510, 12, 655380, 917510, 18, 786446, 3, 10, 1048595, 3, 10, 1179649, 3, 10, 1114104, 917510, 12, 1441796, 1048582, 11, 1114102, 3, 9, 983029, 917510, 18, 1114103, 196611, 9, 851989, 1, 131072, 1441793, 2031622, 17, 1441795, 983046, 17, 1376257, 1179654, 12, 983033, 3, 11, 1310721, 3, 9, 1179650, 1900550, 15, 1179651, 2031622, 15, 1179652, 2097158, 15)
 layer_3/name = "Walls"
 layer_3/enabled = true
 layer_3/modulate = Color(1, 1, 1, 1)
@@ -5458,6 +5459,13 @@ layer_3/y_sort_enabled = false
 layer_3/y_sort_origin = 0
 layer_3/z_index = 0
 layer_3/tile_data = PackedInt32Array(-65536, 196610, 6, -65535, 196610, 6, -65534, 196610, 6, -65533, 196610, 6, -65531, 196610, 6, -65530, 196610, 6, -65529, 196610, 6, -65528, 196610, 6, -65527, 196610, 6, -65526, 196610, 6, -65525, 262146, 6, 11, 262146, 7, 65547, 262146, 7, 131083, 262146, 7, 196619, 262146, 7, 262155, 262146, 7, 327691, 262146, 7, 393227, 262146, 7, 458763, 262146, 7, 524299, 262146, 7, 589835, 262146, 10, 589834, 196610, 10, 589833, 131074, 7, 655369, 262146, 7, 720905, 262146, 7, 786441, 262146, 7, 851977, 262146, 7, 917513, 262146, 7, 983049, 262146, 7, 1048585, 262146, 7, -1, 2, 6, 65535, 2, 7, 131071, 2, 7, 196607, 2, 7, 262143, 196610, 8, 262142, 131074, 8, 196606, 262146, 6, 196604, 2, 6, 262140, 196610, 8, 262139, 196610, 6, 262138, 196610, 6, 196599, 65538, 7, 720889, 196610, 6, 524281, 196610, 6, 524277, 196610, 6, 917497, 196610, 6, 917493, 196610, 6, 655364, 196610, 6, 1114116, 196610, 6, 1114115, 196610, 6, 1114114, 65538, 7, 1114113, 196610, 6, 1114122, 196610, 6, 1114123, 65538, 7, 720910, 196610, 6, 720911, 65538, 7, 720912, 196610, 6, 589842, 196610, 6, 589843, 65538, 7, 589844, 196610, 6, 589845, 196610, 6, 589846, 65538, 7, 589847, 196610, 6, 589828, 196610, 10, 589827, 196610, 10, 589826, 196610, 10, 589825, 196610, 10, 589824, 196610, 10, 393214, 196610, 10, 393213, 196610, 10, 393212, 196610, 10, 655349, 196610, 10, 655353, 196610, 10, 851961, 196610, 10, 1179641, 196610, 10, 1179640, 196610, 10, 1179639, 196610, 10, 1179638, 196610, 10, 1179637, 196610, 10, 262133, 2, 7, 327669, 2, 7, 393205, 2, 7, 589812, 2, 7, 983028, 2, 7, 1048564, 2, 7, 1114100, 2, 7, 458751, 2, 7, 524287, 2, 7, 589823, 2, 7, 720899, 2, 7, 786435, 2, 7, 917509, 2, 7, 983045, 2, 7, 1048581, 2, 7, 1245184, 2, 7, 1179648, 2, 7, 1310720, 2, 7, 1376256, 2, 7, 1441792, 2, 7, 786445, 2, 7, 851981, 2, 7, 917517, 2, 7, 1114125, 2, 7, 655377, 2, 7, 655384, 262146, 7, 720920, 262146, 7, 786456, 262146, 7, 851992, 262146, 7, 917528, 262146, 7, 983064, 262146, 7, 1048600, 262146, 7, 1179665, 262146, 7, 1245201, 262146, 7, 1310737, 262146, 7, 1114129, 262146, 7, 1376273, 262146, 7, 589818, 262146, 7, 786426, 262146, 7, 983034, 262146, 7, 1048570, 262146, 7, 1114106, 262146, 7, 458744, 262146, 7, 196597, 2, 6, 524276, 2, 6, 917492, 2, 6, 655363, 2, 6, 1114112, 2, 6, 720909, 2, 6, 589841, 2, 6, 589848, 262146, 6, 1048593, 262146, 6, 1114124, 262146, 6, 196601, 262146, 6, 524282, 262146, 6, 720890, 262146, 6, 917498, 262146, 6, 1179642, 262146, 10, 851962, 262146, 10, 655354, 262146, 10, 458747, 262146, 10, 1507340, 262146, 10, 1441809, 262146, 10, 1114136, 262146, 10, 1114135, 196610, 10, 1114134, 196610, 10, 1114133, 196610, 10, 1114132, 196610, 10, 1114131, 196610, 10, 1114130, 2, 10, 1048594, 2, 7, 983058, 2, 7, 917522, 196610, 7, 917521, 196610, 10, 917520, 131074, 7, 983056, 262146, 7, 1048592, 131074, 8, 983053, 2, 10, 983054, 196610, 7, 1048590, 196610, 8, 1048589, 2, 6, 720913, 196610, 8, 1441808, 196610, 10, 1441807, 196610, 10, 1441806, 196610, 10, 1441805, 196610, 10, 1507339, 196610, 10, 1507338, 196610, 10, 1507337, 196610, 10, 1507336, 196610, 10, 1507335, 196610, 10, 1507334, 196610, 10, 1507333, 196610, 10, 1507332, 196610, 10, 1507331, 196610, 10, 1507330, 196610, 10, 1507329, 196610, 10, 1507328, 2, 10, 1441804, 131074, 7, 1179660, 131074, 8, 1179661, 196610, 8, 1114121, 131074, 8, 1114117, 196610, 8, 851973, 196610, 7, 851972, 196610, 10, 851971, 2, 10, 655365, 196610, 8, 589829, 196610, 7, 655359, 2, 10, 393215, 196610, 7, 393211, 131074, 7, 458745, 2, 10, 393209, 196610, 7, 393208, 131074, 7, 458746, 196610, 10, 196605, 196610, 6, 196600, 196610, 6, 196598, 196610, 6, 262137, 131074, 8, 458741, 131074, 8, 458742, 196610, 7, 524278, 196610, 8, 524280, 131074, 8, 720888, 131074, 8, 655352, 131074, 7, 655350, 196610, 7, 655348, 2, 10, 720886, 2, 7, 786422, 2, 7, 851958, 2, 7, 917494, 196610, 8, 1179636, 2, 10, 917496, 131074, 8, 851960, 131074, 7, -65532, 65538, 7)
+layer_4/name = "HisanLantai"
+layer_4/enabled = true
+layer_4/modulate = Color(1, 1, 1, 1)
+layer_4/y_sort_enabled = false
+layer_4/y_sort_origin = 0
+layer_4/z_index = 0
+layer_4/tile_data = PackedInt32Array(786452, 851971, 4, 851988, 851971, 5, 917524, 851971, 6, 786453, 917507, 4, 851989, 917507, 5, 917525, 917507, 6, 786454, 983043, 4, 851990, 983043, 5, 917526, 983043, 6, 1114103, 786435, 5, 1310721, 851971, 4, 1310722, 983043, 4, 1376257, 851971, 5, 1441793, 851971, 6, 1376258, 983043, 5, 1441794, 983043, 6, 1179659, 65539, 10, 655383, 65539, 10, 262134, 65539, 10)
 
 [node name="Player" parent="TileMap" instance=ExtResource("6_jcvc3")]
 position = Vector2(136, 42)
@@ -5468,36 +5476,6 @@ collision_mask = 33
 script = ExtResource("7_ujyi3")
 tilemap = NodePath("../..")
 
-[node name="Enemies" type="Node2D" parent="TileMap"]
-
-[node name="cyclope" parent="TileMap/Enemies" node_paths=PackedStringArray("endPoint") instance=ExtResource("12_cvd51")]
-position = Vector2(-164, 140)
-endPoint = NodePath("Marker2D")
-
-[node name="Marker2D" type="Marker2D" parent="TileMap/Enemies/cyclope"]
-position = Vector2(57, -4)
-
-[node name="cyclope2" parent="TileMap/Enemies" node_paths=PackedStringArray("endPoint") instance=ExtResource("12_cvd51")]
-position = Vector2(-21, 76)
-endPoint = NodePath("Marker2D")
-
-[node name="Marker2D" type="Marker2D" parent="TileMap/Enemies/cyclope2"]
-position = Vector2(-96, -3)
-
-[node name="cyclope4" parent="TileMap/Enemies" node_paths=PackedStringArray("endPoint") instance=ExtResource("12_cvd51")]
-position = Vector2(-105, 189)
-endPoint = NodePath("Marker2D")
-
-[node name="Marker2D" type="Marker2D" parent="TileMap/Enemies/cyclope4"]
-position = Vector2(-29, -5)
-
-[node name="slime" parent="TileMap/Enemies" node_paths=PackedStringArray("endPoint") instance=ExtResource("16_fxmo5")]
-position = Vector2(117, 166)
-endPoint = NodePath("Marker2D")
-
-[node name="Marker2D" type="Marker2D" parent="TileMap/Enemies/slime"]
-position = Vector2(5, 113)
-
 [node name="World_door" type="Area2D" parent="TileMap"]
 script = ExtResource("6_yyiil")
 
@@ -5506,6 +5484,50 @@ position = Vector2(136, 7.5)
 shape = SubResource("RectangleShape2D_r4jlj")
 
 [node name="Pintu" parent="TileMap" instance=ExtResource("14_no046")]
-position = Vector2(248, 256)
+position = Vector2(247, 256)
+
+[node name="Enemies" type="Node2D" parent="TileMap"]
+
+[node name="slime" parent="TileMap/Enemies" node_paths=PackedStringArray("endPoint") instance=ExtResource("16_fxmo5")]
+position = Vector2(108, 168)
+endPoint = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="TileMap/Enemies/slime"]
+position = Vector2(0, 104)
+
+[node name="slime2" parent="TileMap/Enemies" node_paths=PackedStringArray("endPoint") instance=ExtResource("16_fxmo5")]
+position = Vector2(132, 272)
+endPoint = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="TileMap/Enemies/slime2"]
+position = Vector2(0, -110)
+
+[node name="Skeleton" parent="TileMap/Enemies" node_paths=PackedStringArray("endPoint") instance=ExtResource("17_id1a4")]
+position = Vector2(183, 312)
+endPoint = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="TileMap/Enemies/Skeleton"]
+position = Vector2(0, 45)
+
+[node name="cyclope" parent="TileMap/Enemies" node_paths=PackedStringArray("endPoint") instance=ExtResource("12_cvd51")]
+position = Vector2(-22, 76)
+endPoint = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="TileMap/Enemies/cyclope"]
+position = Vector2(-89, 0)
+
+[node name="cyclope2" parent="TileMap/Enemies" node_paths=PackedStringArray("endPoint") instance=ExtResource("12_cvd51")]
+position = Vector2(-135, 191)
+endPoint = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="TileMap/Enemies/cyclope2"]
+position = Vector2(33, 0)
+
+[node name="cyclope3" parent="TileMap/Enemies" node_paths=PackedStringArray("endPoint") instance=ExtResource("12_cvd51")]
+position = Vector2(-106, 141)
+endPoint = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="TileMap/Enemies/cyclope3"]
+position = Vector2(-60, 0)
 
 [connection signal="body_entered" from="TileMap/World_door" to="TileMap/World_door" method="_on_body_entered"]
