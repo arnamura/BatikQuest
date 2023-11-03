@@ -6,10 +6,7 @@ class_name Interact extends Area2D
 @export_multiline var deskripsi_batik = "none"
 @export var value = "none"
 @export var path_gambar = "none"
-
-
 @onready var uiDesc: CanvasLayer = $"../../../DescriptionGUI"
-
 var player_in_range = false
 
 #const Gui = preload("res://helpers/description_gui.tscn")
@@ -24,11 +21,18 @@ func _ready():
 
 func showUi():
 	var batik = load(DataBatik[label_batik]["pathimg"])
-	uiDesc.title = DataBatik[label_batik]["nama"]
 	uiDesc.desk = DataBatik[label_batik]["deskripsi"]
+	uiDesc.title = DataBatik[label_batik]["nama"]
+	uiDesc.ciri = DataBatik[label_batik]["ciri"]
 	uiDesc.texturerect.set_texture(batik)
-	print_debug(DataBatik[label_batik]["nama"])
 	uiDesc.show()	
+	
+func updateText():
+	#untuk update deksripsi ke ciri
+	if uiDesc.currentPage == 0:
+		uiDesc.desk = DataBatik[label_batik]["deskripsi"]
+	elif uiDesc.currentPage == 1:
+		uiDesc.desk =DataBatik[label_batik]["ciri"]
 
 func _on_area_entered(area):
 	if area.name == "hurtBox":
