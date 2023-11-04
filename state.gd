@@ -8,6 +8,8 @@ extends Node
 
 var inQuest = false
 
+
+	
 #quest 1
 var quest1title: String = "Desa Batik "
 var quest1Status: bool = false

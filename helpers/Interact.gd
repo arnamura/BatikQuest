@@ -15,7 +15,7 @@ var player_in_range = false
 	#var gui: Node = Gui.instantiate()
 	#get_tree().current_scene.add_child(gui)
 	#gui.start(interact_label)
-
+	
 func _ready():
 	set_process(true)
 

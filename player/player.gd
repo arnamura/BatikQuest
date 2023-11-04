@@ -10,7 +10,9 @@ extends CharacterBody2D
 @onready var hurtBox = $hurtBox
 @onready var playerSprite = $Sprite2D
 @onready var weapon = $Weapon
+@export var respawnMark : Marker2D
 
+var respawnPoint
 var isHurt: bool = false
 var lastDirect: String = "Down"
 var isAttack: bool = false
@@ -19,6 +21,10 @@ var isAttack: bool = false
 func _ready():
 	#agar diawal warna player default
 	effects.play("reset")
+	if respawnMark:
+		respawnPoint = respawnMark.global_position
+	else:
+		respawnPoint = Vector2.ZERO
 	
 #untuk handle input action
 func _unhandled_input(_event: InputEvent) -> void:
@@ -81,8 +87,9 @@ func knockback2(enemyVelocity: Vector2):
 
 func onHit(area):
 	hp = hp-1
-	if hp<0:
+	if hp == 0:
 		hp = 3
+		respawn()	
 	isHurt = true
 	knockback2(area.get_parent().velocity)
 	effects.play("hurtAnim")
@@ -91,6 +98,9 @@ func onHit(area):
 	effects.play("reset")
 	isHurt = false	
 
+func respawn():
+	position = respawnPoint
+	
 #tidak dipakai
 func _on_hurt_box_area_exited(area): pass
 

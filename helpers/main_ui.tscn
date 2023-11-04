@@ -92,6 +92,7 @@ theme_override_font_sizes/font_size = 18
 text = "HP:"
 
 [node name="poin" type="Label" parent="HpPanel"]
+layout_mode = 0
 offset_left = 13.0
 offset_top = 3.0
 offset_right = 43.0

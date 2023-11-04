@@ -23,6 +23,7 @@ func _process(_delta: float):
 
 func _on_button_x_pressed():
 	ui.hide()
+	
 
 func _on_next_pressed():
 	#button update deskripsi ke ciri

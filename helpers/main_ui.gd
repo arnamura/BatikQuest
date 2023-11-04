@@ -13,7 +13,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	updateHp()
-	print_debug(hpPlayer)
 	
 
 func updateHp():

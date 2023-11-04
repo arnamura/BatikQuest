@@ -5467,14 +5467,18 @@ layer_4/y_sort_origin = 0
 layer_4/z_index = 0
 layer_4/tile_data = PackedInt32Array(786452, 851971, 4, 851988, 851971, 5, 917524, 851971, 6, 786453, 917507, 4, 851989, 917507, 5, 917525, 917507, 6, 786454, 983043, 4, 851990, 983043, 5, 917526, 983043, 6, 1114103, 786435, 5, 1310721, 851971, 4, 1310722, 983043, 4, 1376257, 851971, 5, 1441793, 851971, 6, 1376258, 983043, 5, 1441794, 983043, 6, 1179659, 65539, 10, 655383, 65539, 10, 262134, 65539, 10)
 
-[node name="Player" parent="TileMap" instance=ExtResource("6_jcvc3")]
-position = Vector2(136, 42)
+[node name="Player" parent="TileMap" node_paths=PackedStringArray("respawnMark") instance=ExtResource("6_jcvc3")]
+position = Vector2(108, 19)
 collision_layer = 33
 collision_mask = 33
+respawnMark = NodePath("Marker2D")
 
 [node name="Player Cam" type="Camera2D" parent="TileMap/Player" node_paths=PackedStringArray("tilemap")]
 script = ExtResource("7_ujyi3")
 tilemap = NodePath("../..")
+
+[node name="Marker2D" type="Marker2D" parent="TileMap/Player"]
+position = Vector2(-26, -4)
 
 [node name="World_door" type="Area2D" parent="TileMap"]
 script = ExtResource("6_yyiil")
