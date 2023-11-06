@@ -1,6 +1,7 @@
-[gd_scene load_steps=33 format=3 uid="uid://dyqv2xpyc8km3"]
+[gd_scene load_steps=40 format=3 uid="uid://dyqv2xpyc8km3"]
 
 [ext_resource type="Texture2D" uid="uid://bn1rxgfowuian" path="res://art/tileset/TilesetFloor.png" id="1_a0fq1"]
+[ext_resource type="Script" path="res://scenes/test_room.gd" id="1_i8iwx"]
 [ext_resource type="PackedScene" uid="uid://bu85lk1e1qt1k" path="res://npc/bang_dirman.tscn" id="2_c7lco"]
 [ext_resource type="PackedScene" uid="uid://b8j383v7acxcp" path="res://npc/npc_woman.tscn" id="2_iqo37"]
 [ext_resource type="PackedScene" uid="uid://dndkvxcijkvrc" path="res://player/player.tscn" id="2_lkifr"]
@@ -19,10 +20,110 @@
 [ext_resource type="PackedScene" uid="uid://tbvn2122fjtg" path="res://helpers/description_gui.tscn" id="9_ju60t"]
 [ext_resource type="PackedScene" uid="uid://di1rategakk3o" path="res://npc/rahmat.tscn" id="11_uuc8r"]
 [ext_resource type="Resource" uid="uid://bahgr1srwq1oq" path="res://dialogue/Rahmat.dialogue" id="12_istxr"]
-[ext_resource type="Script" path="res://scenes/dungeon.gd" id="16_tl1cp"]
 [ext_resource type="PackedScene" uid="uid://s1ht1iwxfmen" path="res://helpers/pause.tscn" id="17_xm1li"]
 [ext_resource type="PackedScene" uid="uid://binluxttspuiq" path="res://helpers/main_ui.tscn" id="18_u1v85"]
+[ext_resource type="Script" path="res://scenes/toDungeon.gd" id="20_pk5ct"]
 [ext_resource type="PackedScene" uid="uid://dywd02ye0oyh5" path="res://helpers/dpads.tscn" id="22_uktsu"]
+
+[sub_resource type="Animation" id="Animation_vo8vg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 0.301961)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bgTransisi:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_x5nyq"]
+resource_name = "hurtAnim"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 0.498039), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xedpr"]
+resource_name = "reset"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_j6aig"]
+resource_name = "transisiIn"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bgTransisi:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_s3tp7"]
+resource_name = "transisi"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bgTransisi:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p0ymr"]
+_data = {
+"RESET": SubResource("Animation_vo8vg"),
+"hurtAnim": SubResource("Animation_x5nyq"),
+"reset": SubResource("Animation_xedpr"),
+"transisiIn": SubResource("Animation_j6aig"),
+"transisiOut": SubResource("Animation_s3tp7")
+}
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6hiqs"]
 texture = ExtResource("1_a0fq1")
@@ -1161,6 +1262,32 @@ radius = 13.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2keew"]
 
 [node name="testRoom" type="Node2D"]
+script = ExtResource("1_i8iwx")
+
+[node name="Effect" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_p0ymr")
+}
+
+[node name="bgTransisi" type="ColorRect" parent="."]
+show_behind_parent = true
+z_index = 10
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -69.0
+offset_right = 260.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+color = Color(0, 0, 0, 0)
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -1272,7 +1399,7 @@ shape = SubResource("CircleShape2D_2somd")
 
 [node name="dungeon_door" type="Area2D" parent="TileMap"]
 position = Vector2(182, 63)
-script = ExtResource("16_tl1cp")
+script = ExtResource("20_pk5ct")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/dungeon_door"]
 position = Vector2(39, -36)

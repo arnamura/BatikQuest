@@ -86,25 +86,26 @@ func knockback2(enemyVelocity: Vector2):
 	move_and_slide()
 
 func onHit(area):
-	hp = hp-1
-	if hp == 0:
-		hp = 3
-		respawn()	
+	hp = hp-1	
 	isHurt = true
 	knockback2(area.get_parent().velocity)
 	effects.play("hurtAnim")
 	hurtTimer.start()
 	await hurtTimer.timeout
+	#insert jika hp 0, layar menghitam dan player kembali kespawn
 	effects.play("reset")
+	if hp == 0:
+		hp = 3
 	isHurt = false	
 
 func respawn():
 	position = respawnPoint
+	#effects.play("transisiIn")
 	
 #tidak dipakai
-func _on_hurt_box_area_exited(area): pass
+func _on_hurt_box_area_exited(_area): pass
 
-func _on_hurt_box_area_entered(area): pass
+func _on_hurt_box_area_entered(_area): pass
 	# cek kondisi untuk fungsi interaksi
 	#if area.name == "Interact":
 	#	print_debug(area.get_parent().name)

@@ -7,6 +7,7 @@ extends Node
 #reqItem merupakan item yang harus didapatkan untuk menyelesaikan misi
 
 var inQuest = false
+var dungeonState = false
 
 
 	

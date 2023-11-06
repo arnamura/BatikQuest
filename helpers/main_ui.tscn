@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://binluxttspuiq"]
+[gd_scene load_steps=8 format=3 uid="uid://binluxttspuiq"]
 
 [ext_resource type="Script" path="res://helpers/main_ui.gd" id="1_0ggmh"]
 [ext_resource type="Script" path="res://helpers/QuestListContainer.gd" id="1_4upwj"]
+[ext_resource type="PackedScene" uid="uid://s1ht1iwxfmen" path="res://helpers/pause.tscn" id="2_il1pk"]
 [ext_resource type="Script" path="res://helpers/QuestPopUp.gd" id="2_xtwu0"]
+[ext_resource type="PackedScene" uid="uid://dywd02ye0oyh5" path="res://helpers/dpads.tscn" id="3_merot"]
+[ext_resource type="Texture2D" uid="uid://dkk1xe14wp4pd" path="res://icon.svg" id="5_vg3ny"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bebpi"]
 bg_color = Color(0.94902, 0.917647, 0.945098, 1)
@@ -18,6 +21,11 @@ corner_radius_bottom_left = 1
 
 [node name="MainUI" type="CanvasLayer"]
 script = ExtResource("1_0ggmh")
+
+[node name="Pause" parent="." instance=ExtResource("2_il1pk")]
+visible = false
+
+[node name="Dpads" parent="." instance=ExtResource("3_merot")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 8.0
@@ -101,3 +109,14 @@ scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 18
 text = "3"
+
+[node name="Menu" type="Button" parent="."]
+process_mode = 3
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 137.0
+offset_bottom = 138.0
+scale = Vector2(0.062, 0.062)
+icon = ExtResource("5_vg3ny")
+
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]

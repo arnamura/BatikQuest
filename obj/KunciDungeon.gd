@@ -1,6 +1,6 @@
 extends "res://obj/item.gd"
 
-func _process(delta):
+func _process(_delta):
 	ambil()
 	
 func ambil():

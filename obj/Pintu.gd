@@ -3,7 +3,7 @@ extends StaticBody2D
 
 @onready var i = 0
 
-func _process(delta):
+func _process(_delta):
 	if State.pintuDungeon == true and i == 0:
 		open()
 

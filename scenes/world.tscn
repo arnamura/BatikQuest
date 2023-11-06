@@ -16,9 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://dih0b8f6g40ef" path="res://art/tileset/TilesetInteriorFloor.png" id="10_3pimi"]
 [ext_resource type="Resource" uid="uid://cyofnijgd3gem" path="res://dialogue/test.dialogue" id="10_ebcei"]
 [ext_resource type="PackedScene" uid="uid://tdo63he11iml" path="res://obj/sign.tscn" id="17_3gsfd"]
-[ext_resource type="Script" path="res://scenes/dungeon.gd" id="18_3x2cv"]
 [ext_resource type="PackedScene" uid="uid://b4k2fs1ckj4lg" path="res://helpers/interact.tscn" id="18_hr4qy"]
 [ext_resource type="PackedScene" uid="uid://tbvn2122fjtg" path="res://helpers/description_gui.tscn" id="19_4nh8k"]
+[ext_resource type="Script" path="res://scenes/toDungeon.gd" id="20_f8ke0"]
 [ext_resource type="PackedScene" uid="uid://s1ht1iwxfmen" path="res://helpers/pause.tscn" id="20_va8hm"]
 [ext_resource type="PackedScene" uid="uid://dbjvr4c4hlqml" path="res://enemies/skeleton.tscn" id="21_bl2wv"]
 
@@ -6181,7 +6181,7 @@ shape = SubResource("CircleShape2D_decqt")
 
 [node name="dungeon_door" type="Area2D" parent="TileMap"]
 position = Vector2(182, 63)
-script = ExtResource("18_3x2cv")
+script = ExtResource("20_f8ke0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/dungeon_door"]
 shape = SubResource("RectangleShape2D_qigvx")
