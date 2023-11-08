@@ -1,11 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://tbvn2122fjtg"]
+[gd_scene load_steps=8 format=3 uid="uid://tbvn2122fjtg"]
 
 [ext_resource type="Script" path="res://helpers/description_gui.gd" id="1_sas3c"]
-[ext_resource type="StyleBox" uid="uid://ophfdr3d2jl0" path="res://helpers/uiContainer.tres" id="2_onos4"]
+[ext_resource type="Texture2D" uid="uid://e2vamsgxgk6x" path="res://art/DialogueBoxSimple.png" id="2_jl062"]
 [ext_resource type="Texture2D" uid="uid://d36uquoswmma4" path="res://art/controller/flatDark34.png" id="2_tff3d"]
 [ext_resource type="Texture2D" uid="uid://cdudngtp2q14p" path="res://art/183578050_473107943801943_6185835635627700778_n.png" id="2_tqagx"]
 [ext_resource type="Script" path="res://helpers/ButtonX.gd" id="3_td7w4"]
 [ext_resource type="Texture2D" uid="uid://2anmgwbjjhbo" path="res://art/controller/flatDark15.png" id="5_uqjyl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t717g"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="DescriptionGUI" type="CanvasLayer"]
 process_mode = 3
@@ -19,7 +22,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.137255)
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="NinePatchRect" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -33,7 +36,11 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = ExtResource("2_onos4")
+texture = ExtResource("2_jl062")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
 
 [node name="ButtonX" type="Button" parent="Panel"]
 clip_contents = true
@@ -42,19 +49,42 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -16.0
-offset_top = 0.5
-offset_right = -1.0
-offset_bottom = 15.5
+offset_left = -20.0
+offset_top = 3.5
+offset_right = -5.0
+offset_bottom = 18.5
 grow_horizontal = 0
 size_flags_horizontal = 8
 size_flags_vertical = 0
+theme_override_styles/pressed = SubResource("StyleBoxFlat_t717g")
 icon = ExtResource("2_tff3d")
 flat = true
-alignment = 2
 icon_alignment = 2
 expand_icon = true
 script = ExtResource("3_td7w4")
+
+[node name="next" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = -14.5
+offset_right = 406.0
+offset_bottom = 121.5
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.056, 0.056)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 53
+text = "Ciri-ciri"
+icon = ExtResource("5_uqjyl")
+flat = true
+icon_alignment = 2
+expand_icon = true
 
 [node name="TextureRect" type="TextureRect" parent="Panel"]
 clip_contents = true
@@ -131,29 +161,6 @@ scale = Vector2(0.261, 0.261)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 18
 text = "Deskripsi"
-
-[node name="next" type="Button" parent="Panel"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -28.0
-offset_top = -13.0
-offset_right = 411.0
-offset_bottom = 123.0
-grow_horizontal = 0
-grow_vertical = 0
-scale = Vector2(0.056, 0.056)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 53
-text = "Ciri-ciri"
-icon = ExtResource("5_uqjyl")
-flat = true
-icon_alignment = 2
-expand_icon = true
 
 [connection signal="pressed" from="Panel/ButtonX" to="." method="_on_button_x_pressed"]
 [connection signal="pressed" from="Panel/next" to="." method="_on_next_pressed"]
