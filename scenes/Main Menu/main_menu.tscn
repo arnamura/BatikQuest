@@ -1,0 +1,162 @@
+[gd_scene load_steps=7 format=3 uid="uid://bt3oquybtan00"]
+
+[ext_resource type="FontFile" uid="uid://dofpvw42s1f6d" path="res://NormalFont.ttf" id="1_72bcx"]
+[ext_resource type="Script" path="res://scenes/Main Menu/main_menu.gd" id="1_enl23"]
+[ext_resource type="StyleBox" uid="uid://cn6mbunwuv2gb" path="res://styles/buttonStyle.tres" id="2_5gt5y"]
+[ext_resource type="Texture2D" uid="uid://e2vamsgxgk6x" path="res://art/DialogueBoxSimple.png" id="3_14l6q"]
+
+[sub_resource type="Theme" id="Theme_fwml8"]
+default_font = ExtResource("1_72bcx")
+default_font_size = 8
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cj05l"]
+texture = ExtResource("3_14l6q")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+draw_center = false
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_enl23")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.788235, 0.537255, 0.309804, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 92.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.723, 0.723)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_72bcx")
+theme_override_font_sizes/font_size = 32
+text = "Batik Quest"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="MarginContainer1" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_right = 75
+
+[node name="BtnNewG" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer1"]
+layout_mode = 2
+focus_mode = 0
+theme = SubResource("Theme_fwml8")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/h_separation = 0
+theme_override_styles/normal = ExtResource("2_5gt5y")
+theme_override_styles/hover = ExtResource("2_5gt5y")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cj05l")
+text = "New Game"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_right = 75
+
+[node name="BtnLoadG" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+focus_mode = 0
+theme = SubResource("Theme_fwml8")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/h_separation = 0
+theme_override_styles/normal = ExtResource("2_5gt5y")
+theme_override_styles/hover = ExtResource("2_5gt5y")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cj05l")
+text = "Load Game"
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_right = 75
+
+[node name="BtnSett" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+focus_mode = 0
+theme = SubResource("Theme_fwml8")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_styles/normal = ExtResource("2_5gt5y")
+theme_override_styles/hover = ExtResource("2_5gt5y")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cj05l")
+text = "Setting"
+
+[node name="MarginContainer5" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_right = 75
+
+[node name="BtnCol" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer5"]
+layout_mode = 2
+focus_mode = 0
+theme = SubResource("Theme_fwml8")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_styles/normal = ExtResource("2_5gt5y")
+theme_override_styles/hover = ExtResource("2_5gt5y")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cj05l")
+text = "Collection
+"
+
+[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_right = 75
+
+[node name="BtnExt" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer4"]
+layout_mode = 2
+focus_mode = 0
+theme = SubResource("Theme_fwml8")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/h_separation = 0
+theme_override_styles/normal = ExtResource("2_5gt5y")
+theme_override_styles/hover = ExtResource("2_5gt5y")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cj05l")
+text = "Exit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer1/BtnNewG" to="." method="_on_btn_new_g_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2/BtnLoadG" to="." method="_on_btn_load_g_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/BtnSett" to="." method="_on_btn_sett_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer5/BtnCol" to="." method="_on_btn_col_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer4/BtnExt" to="." method="_on_btn_ext_pressed"]

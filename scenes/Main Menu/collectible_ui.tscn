@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://bophhpfu7t6m"]
+
+[ext_resource type="PackedScene" uid="uid://d26emnmor4bo3" path="res://scenes/Main Menu/col_slot.tscn" id="1_nbj7u"]
+
+[node name="CollectibleUI" type="Control"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 72.0
+offset_bottom = 72.0
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 72.0
+offset_bottom = 72.0
+
+[node name="GridContainer" type="GridContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -34.0
+offset_right = 34.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="colSlot" parent="Panel/GridContainer" instance=ExtResource("1_nbj7u")]
+layout_mode = 2
+
+[node name="colSlot2" parent="Panel/GridContainer" instance=ExtResource("1_nbj7u")]
+layout_mode = 2
+
+[node name="colSlot3" parent="Panel/GridContainer" instance=ExtResource("1_nbj7u")]
+layout_mode = 2
+
+[node name="colSlot4" parent="Panel/GridContainer" instance=ExtResource("1_nbj7u")]
+layout_mode = 2
+
+[node name="colSlot5" parent="Panel/GridContainer" instance=ExtResource("1_nbj7u")]
+layout_mode = 2
+
+[node name="colSlot6" parent="Panel/GridContainer" instance=ExtResource("1_nbj7u")]
+layout_mode = 2
+
+[node name="colSlot7" parent="Panel/GridContainer" instance=ExtResource("1_nbj7u")]
+layout_mode = 2
+
+[node name="colSlot8" parent="Panel/GridContainer" instance=ExtResource("1_nbj7u")]
+layout_mode = 2
+
+[node name="colSlot9" parent="Panel/GridContainer" instance=ExtResource("1_nbj7u")]
+layout_mode = 2

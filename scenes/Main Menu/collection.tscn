@@ -1,0 +1,124 @@
+[gd_scene load_steps=10 format=3 uid="uid://caswwisem8cst"]
+
+[ext_resource type="Script" path="res://scenes/Main Menu/collection.gd" id="1_j0dyd"]
+[ext_resource type="FontFile" uid="uid://dofpvw42s1f6d" path="res://NormalFont.ttf" id="1_odvtf"]
+[ext_resource type="Texture2D" uid="uid://dddpiads1f8c1" path="res://art/InventoryRect.png" id="2_2h5on"]
+[ext_resource type="StyleBox" uid="uid://cn6mbunwuv2gb" path="res://styles/buttonStyle.tres" id="2_todhl"]
+[ext_resource type="Texture2D" uid="uid://cyr0xdq8lnqf" path="res://art/DialogueBubble.png" id="3_k7b6h"]
+[ext_resource type="Texture2D" uid="uid://e2vamsgxgk6x" path="res://art/DialogueBoxSimple.png" id="3_ysgd3"]
+[ext_resource type="PackedScene" uid="uid://bophhpfu7t6m" path="res://scenes/Main Menu/collectible_ui.tscn" id="4_xtdr8"]
+
+[sub_resource type="Theme" id="Theme_og67l"]
+default_font = ExtResource("1_odvtf")
+default_font_size = 8
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cdf40"]
+texture = ExtResource("3_ysgd3")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+draw_center = false
+
+[node name="Collection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j0dyd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.788235, 0.537255, 0.309804, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_right = 80.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.723, 0.723)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_odvtf")
+theme_override_font_sizes/font_size = 32
+text = "Collection"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BatikCollection" type="NinePatchRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.46
+texture = ExtResource("2_2h5on")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="CollectibleUI" parent="MarginContainer/VBoxContainer/HBoxContainer/BatikCollection" instance=ExtResource("4_xtdr8")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="Description" type="NinePatchRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("3_k7b6h")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="BtnExt" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+focus_mode = 0
+theme = SubResource("Theme_og67l")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/h_separation = 0
+theme_override_styles/normal = ExtResource("2_todhl")
+theme_override_styles/hover = ExtResource("2_todhl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cdf40")
+text = "Exit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BtnExt" to="." method="_on_btn_ext_pressed"]
