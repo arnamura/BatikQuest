@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://d26emnmor4bo3"]
+[gd_scene load_steps=5 format=3 uid="uid://d26emnmor4bo3"]
 
 [ext_resource type="Texture2D" uid="uid://d3kyl0c7wltym" path="res://art/inventorySlot.png" id="1_0s55s"]
+[ext_resource type="Script" path="res://scenes/Main Menu/col_slot.gd" id="1_x8yev"]
+[ext_resource type="Texture2D" uid="uid://dkk1xe14wp4pd" path="res://icon.svg" id="3_3erq6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fm7fp"]
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [node name="colSlot" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
@@ -12,8 +20,33 @@ offset_right = -220.0
 offset_bottom = -115.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_x8yev")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_0s55s")
 centered = false
 vframes = 2
+
+[node name="CenteredContainer" type="CenterContainer" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -8.0
+offset_right = 7.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CenteredContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fm7fp")
+
+[node name="Icon" type="Sprite2D" parent="CenteredContainer/Panel"]
+scale = Vector2(0.113281, 0.103516)
+texture = ExtResource("3_3erq6")
