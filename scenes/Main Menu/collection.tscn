@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://caswwisem8cst"]
+[gd_scene load_steps=11 format=3 uid="uid://caswwisem8cst"]
 
 [ext_resource type="Script" path="res://scenes/Main Menu/collection.gd" id="1_j0dyd"]
 [ext_resource type="FontFile" uid="uid://dofpvw42s1f6d" path="res://NormalFont.ttf" id="1_odvtf"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cyr0xdq8lnqf" path="res://art/DialogueBubble.png" id="3_k7b6h"]
 [ext_resource type="Texture2D" uid="uid://e2vamsgxgk6x" path="res://art/DialogueBoxSimple.png" id="3_ysgd3"]
 [ext_resource type="PackedScene" uid="uid://bophhpfu7t6m" path="res://scenes/Main Menu/collectible_ui.tscn" id="4_xtdr8"]
+[ext_resource type="PackedScene" uid="uid://17xmobuyhomw" path="res://scenes/Main Menu/description_collection.tscn" id="6_autrq"]
 
 [sub_resource type="Theme" id="Theme_og67l"]
 default_font = ExtResource("1_odvtf")
@@ -95,7 +96,6 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
 size_flags_vertical = 6
 
 [node name="Description" type="NinePatchRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
@@ -107,6 +107,13 @@ patch_margin_left = 10
 patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
+
+[node name="DescriptionCollection" parent="MarginContainer/VBoxContainer/HBoxContainer/Description" instance=ExtResource("6_autrq")]
+layout_mode = 1
+offset_left = 31.7801
+offset_top = -45.0256
+offset_right = 181.78
+offset_bottom = 44.9744
 
 [node name="BtnExt" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

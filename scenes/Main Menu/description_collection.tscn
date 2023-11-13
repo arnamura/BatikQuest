@@ -1,0 +1,121 @@
+[gd_scene load_steps=10 format=3 uid="uid://17xmobuyhomw"]
+
+[ext_resource type="Script" path="res://scenes/Main Menu/description_collection.gd" id="1_7ilpk"]
+[ext_resource type="Texture2D" uid="uid://tprloiler3ar" path="res://art/211601851_4144758722284278_3610844652128989081_n.jpg" id="1_8okrx"]
+[ext_resource type="FontFile" uid="uid://dofpvw42s1f6d" path="res://NormalFont.ttf" id="2_gmawj"]
+[ext_resource type="StyleBox" uid="uid://cn6mbunwuv2gb" path="res://styles/buttonStyle.tres" id="3_l7awn"]
+[ext_resource type="Texture2D" uid="uid://e2vamsgxgk6x" path="res://art/DialogueBoxSimple.png" id="4_oah5o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cyicp"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="Theme" id="Theme_3f0a5"]
+default_font = ExtResource("2_gmawj")
+default_font_size = 12
+
+[sub_resource type="Theme" id="Theme_2y44q"]
+default_font = ExtResource("2_gmawj")
+default_font_size = 8
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ldgda"]
+texture = ExtResource("4_oah5o")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+draw_center = false
+
+[node name="DescriptionCollection" type="Control"]
+custom_minimum_size = Vector2(150, 90)
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -45.0
+offset_right = 150.0
+offset_bottom = 45.0
+grow_vertical = 2
+size_flags_horizontal = 2
+script = ExtResource("1_7ilpk")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(150, 90)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cyicp")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 2
+offset_left = 8.0
+offset_top = 25.5
+offset_right = 56.0
+offset_bottom = 65.5
+size_flags_horizontal = 6
+texture = ExtResource("1_8okrx")
+expand_mode = 1
+
+[node name="nama" type="Label" parent="Panel"]
+layout_mode = 2
+offset_left = 80.0
+offset_top = -6.5
+offset_right = 120.0
+offset_bottom = 9.5
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_gmawj")
+theme_override_font_sizes/font_size = 9
+text = "Batik"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sub" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 17.0
+offset_right = 120.0
+offset_bottom = 29.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_gmawj")
+theme_override_font_sizes/font_size = 6
+text = "Deskripsi"
+horizontal_alignment = 1
+
+[node name="deskripsi" type="Label" parent="Panel"]
+layout_mode = 2
+offset_left = 64.0
+offset_top = 28.0
+offset_right = 136.0
+offset_bottom = 74.0
+theme = SubResource("Theme_3f0a5")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_gmawj")
+theme_override_font_sizes/font_size = 4
+text = "blablabla ini deskripsi batik panjang banget gila gapaham gua jadi semangat membaca, jangan pernah malas untuk membaca ya kawan kawan"
+horizontal_alignment = 3
+autowrap_mode = 2
+text_overrun_behavior = 3
+
+[node name="BtnNext" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 76.5
+offset_right = 183.0
+offset_bottom = 99.5
+scale = Vector2(0.364, 0.364)
+size_flags_horizontal = 0
+focus_mode = 0
+theme = SubResource("Theme_2y44q")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/h_separation = 0
+theme_override_styles/normal = ExtResource("3_l7awn")
+theme_override_styles/hover = ExtResource("3_l7awn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ldgda")
+text = "Ciri -Ciri"
+
+[connection signal="pressed" from="Panel/BtnNext" to="." method="_on_btn_next_pressed"]

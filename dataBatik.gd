@@ -1,5 +1,8 @@
 extends Node
 
+var pressedBatik
+var visibleDesc = false
+
 var batik1 := {
 	"nama": "Ceplok",
 	"pathimg": "res://art/batik/ceplok.png",
