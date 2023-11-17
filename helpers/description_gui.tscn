@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://tbvn2122fjtg"]
+[gd_scene load_steps=13 format=3 uid="uid://tbvn2122fjtg"]
 
 [ext_resource type="Script" path="res://helpers/description_gui.gd" id="1_sas3c"]
 [ext_resource type="Texture2D" uid="uid://e2vamsgxgk6x" path="res://art/DialogueBoxSimple.png" id="2_jl062"]
@@ -6,9 +6,26 @@
 [ext_resource type="Texture2D" uid="uid://cdudngtp2q14p" path="res://art/183578050_473107943801943_6185835635627700778_n.png" id="2_tqagx"]
 [ext_resource type="Script" path="res://helpers/ButtonX.gd" id="3_td7w4"]
 [ext_resource type="Texture2D" uid="uid://2anmgwbjjhbo" path="res://art/controller/flatDark15.png" id="5_uqjyl"]
+[ext_resource type="FontFile" uid="uid://dofpvw42s1f6d" path="res://NormalFont.ttf" id="7_3ho2e"]
+[ext_resource type="FontFile" uid="uid://c150i2j8f5iw1" path="res://VCRosdNEUE.ttf" id="8_cdp7b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t717g"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_iki5q"]
+font = ExtResource("7_3ho2e")
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_v0xl5"]
+line_spacing = 2.0
+font = ExtResource("8_cdp7b")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_l61ga"]
+font = ExtResource("8_cdp7b")
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
 
 [node name="DescriptionGUI" type="CanvasLayer"]
 process_mode = 3
@@ -77,8 +94,10 @@ offset_bottom = 121.5
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(0.056, 0.056)
+focus_mode = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_cdp7b")
 theme_override_font_sizes/font_size = 53
 text = "Ciri-ciri"
 icon = ExtResource("5_uqjyl")
@@ -113,14 +132,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -34.0
-offset_top = -4.5
+offset_top = -3.5
 offset_right = 157.0
-offset_bottom = 21.5
+offset_bottom = 22.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.361, 0.361)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Ini judul gambar"
+label_settings = SubResource("LabelSettings_iki5q")
 horizontal_alignment = 1
 
 [node name="DeskripsiGambar" type="Label" parent="Panel"]
@@ -140,6 +160,7 @@ grow_vertical = 2
 scale = Vector2(0.227, 0.227)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "ini text yang panjang dan berisikan deskripsi beserta ciri ciri dari sebuah batik yang nanti akan ditampilkan sahdkajshdak kdjshadjwuih kdjwadj ijdaowidj oaiwjdaoiwdja ijaiwdjoawidj"
+label_settings = SubResource("LabelSettings_v0xl5")
 horizontal_alignment = 3
 autowrap_mode = 3
 text_overrun_behavior = 3
@@ -151,9 +172,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -11.0
+offset_left = -10.0
 offset_top = 4.5
-offset_right = 70.0
+offset_right = 71.0
 offset_bottom = 33.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -161,6 +182,9 @@ scale = Vector2(0.261, 0.261)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 18
 text = "Deskripsi"
+label_settings = SubResource("LabelSettings_l61ga")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Panel/ButtonX" to="." method="_on_button_x_pressed"]
 [connection signal="pressed" from="Panel/next" to="." method="_on_next_pressed"]

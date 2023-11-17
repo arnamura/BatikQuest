@@ -1,5 +1,10 @@
 extends CanvasLayer
 
+@onready var collectiblePanel: Panel = $Panel/CollectiblePanel
+
+@onready var colPan = false :
+	set(value):
+		collectiblePanel.visible = value
 
 var is_paused = false : 
 	set(value):
@@ -17,3 +22,13 @@ func _unhandled_input(event):
 func _on_resume_btn_pressed():
 	self.is_paused = false
 	get_parent().show()
+	colPan = false
+	
+func _on_batik_btn_pressed():
+	colPan =  true
+
+func _on_quest_btn_pressed():
+	colPan = false
+
+func _on_quit_btn_pressed():
+	colPan = false

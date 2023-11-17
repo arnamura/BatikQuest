@@ -1,7 +1,6 @@
 extends Control
 
 
-
 func _on_btn_new_g_pressed():
 	pass # Replace with function body.
 

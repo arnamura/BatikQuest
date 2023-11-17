@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://s1ht1iwxfmen"]
+[gd_scene load_steps=5 format=3 uid="uid://s1ht1iwxfmen"]
 
 [ext_resource type="Script" path="res://helpers/pause.gd" id="1_2okch"]
 [ext_resource type="Script" path="res://helpers/PauseMenuQuest.gd" id="2_d0qo4"]
 [ext_resource type="Texture2D" uid="uid://dddpiads1f8c1" path="res://art/InventoryRect.png" id="2_myf1s"]
+[ext_resource type="PackedScene" uid="uid://bophhpfu7t6m" path="res://scenes/Main Menu/collectible_ui.tscn" id="4_2jsxr"]
 
 [node name="Pause" type="CanvasLayer"]
 process_mode = 3
@@ -34,6 +35,28 @@ offset_right = 172.0
 offset_bottom = 114.0
 script = ExtResource("2_d0qo4")
 
+[node name="CollectiblePanel" type="Panel" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 49.0
+offset_top = 19.0
+offset_right = 128.0
+offset_bottom = 97.0
+
+[node name="CollectibleUI" parent="Panel/CollectiblePanel" instance=ExtResource("4_2jsxr")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="ResumeBtn" type="Button" parent="."]
 offset_left = 192.0
 offset_top = 16.0
@@ -58,7 +81,7 @@ offset_bottom = 84.0
 scale = Vector2(0.438, 0.438)
 text = "Batik"
 
-[node name="ExitBtn" type="Button" parent="."]
+[node name="QuitBtn" type="Button" parent="."]
 offset_left = 192.0
 offset_top = 71.0
 offset_right = 262.0
@@ -67,3 +90,6 @@ scale = Vector2(0.438, 0.438)
 text = "Quit"
 
 [connection signal="pressed" from="ResumeBtn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="QuestBtn" to="." method="_on_quest_btn_pressed"]
+[connection signal="pressed" from="BatikBtn" to="." method="_on_batik_btn_pressed"]
+[connection signal="pressed" from="QuitBtn" to="." method="_on_quit_btn_pressed"]

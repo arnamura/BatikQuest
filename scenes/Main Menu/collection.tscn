@@ -110,10 +110,10 @@ patch_margin_bottom = 10
 
 [node name="DescriptionCollection" parent="MarginContainer/VBoxContainer/HBoxContainer/Description" instance=ExtResource("6_autrq")]
 layout_mode = 1
-offset_left = 31.7801
-offset_top = -45.0256
-offset_right = 181.78
-offset_bottom = 44.9744
+offset_left = 12.0
+offset_top = -45.5
+offset_right = 203.0
+offset_bottom = 44.5
 
 [node name="BtnExt" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
