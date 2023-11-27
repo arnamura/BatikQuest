@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bu85lk1e1qt1k"]
+[gd_scene load_steps=9 format=3]
 
-[ext_resource type="Script" path="res://npc/BangDirman.gd" id="1_315d4"]
+[ext_resource type="Script" path="res://npc/old/BangDirman.gd" id="1_315d4"]
 [ext_resource type="Texture2D" uid="uid://c6ffiggdvbdos" path="res://art/char/bangdirman.png" id="2_4c1xq"]
 [ext_resource type="Texture2D" uid="uid://cl06betmhoesn" path="res://art/DialogInfo.png" id="3_2h2vw"]
 

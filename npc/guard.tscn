@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cglff21wycfgs"]
+[gd_scene load_steps=11 format=3]
 
 [ext_resource type="Script" path="res://npc/guard.gd" id="1_mfhc0"]
 [ext_resource type="Texture2D" uid="uid://d0etke32axmbp" path="res://art/char/guard.png" id="2_qslui"]

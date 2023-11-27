@@ -454,6 +454,7 @@ rotation = 2.0944
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 clip_children = 2
+z_index = 5
 texture = ExtResource("2_lwsoh")
 offset = Vector2(0, -8)
 hframes = 4
