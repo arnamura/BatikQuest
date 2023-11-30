@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dih0b8f6g40ef" path="res://art/tileset/TilesetInteriorFloor.png" id="1_1uf3n"]
 [ext_resource type="Script" path="res://scenes/dungeon.gd" id="1_cbq7f"]
-[ext_resource type="PackedScene" uid="uid://dvauw5xcq8cif" path="res://obj/kunci_emas.tscn" id="2_2htf2"]
+[ext_resource type="PackedScene" uid="uid://dvauw5xcq8cif" path="res://obj/Cincin.tscn" id="2_2htf2"]
 [ext_resource type="PackedScene" uid="uid://b8ibpe41602q4" path="res://obj/peti_harta.tscn" id="3_6uaeq"]
 [ext_resource type="PackedScene" uid="uid://0ms0bbqtfdsk" path="res://obj/kunci_dungeon.tscn" id="4_ke1lt"]
 [ext_resource type="Texture2D" uid="uid://bn1rxgfowuian" path="res://art/tileset/TilesetFloor.png" id="5_jkto2"]

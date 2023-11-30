@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3]
+[gd_scene load_steps=39 format=3 uid="uid://j78dvs2s5ndd"]
 
 [ext_resource type="Texture2D" uid="uid://bn1rxgfowuian" path="res://art/tileset/TilesetFloor.png" id="1_a0fq1"]
 [ext_resource type="Script" path="res://scenes/test_room.gd" id="1_i8iwx"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dui12k4mxn2th" path="res://art/tileset/TilesetHouse.png" id="2_wkt4l"]
 [ext_resource type="Script" path="res://camera/Player Cam.gd" id="3_3js8v"]
 [ext_resource type="PackedScene" uid="uid://b8ibpe41602q4" path="res://obj/peti_harta.tscn" id="3_dwa3i"]
-[ext_resource type="PackedScene" uid="uid://dvauw5xcq8cif" path="res://obj/kunci_emas.tscn" id="3_ih41s"]
+[ext_resource type="PackedScene" uid="uid://dvauw5xcq8cif" path="res://obj/Cincin.tscn" id="3_ih41s"]
 [ext_resource type="PackedScene" uid="uid://bteda0q8lw1cj" path="res://npc/kakek.tscn" id="4_4iddo"]
 [ext_resource type="Resource" uid="uid://xdkxtuh5wjca" path="res://dialogue/Bang Dirman.dialogue" id="4_jlbdo"]
 [ext_resource type="PackedScene" uid="uid://spjqesy8jhoc" path="res://obj/pintu.tscn" id="4_psftb"]
@@ -18,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://dacvdvtgenqnt" path="res://enemies/slime.tscn" id="9_bx1cm"]
 [ext_resource type="Resource" uid="uid://c34dd0uglpnrb" path="res://dialogue/Kakek.dialogue" id="9_ekli7"]
 [ext_resource type="PackedScene" uid="uid://tbvn2122fjtg" path="res://helpers/description_gui.tscn" id="9_ju60t"]
-[ext_resource type="PackedScene" path="res://npc/old/rahmat.tscn" id="11_uuc8r"]
 [ext_resource type="Resource" uid="uid://bahgr1srwq1oq" path="res://dialogue/Rahmat.dialogue" id="12_istxr"]
 [ext_resource type="PackedScene" uid="uid://s1ht1iwxfmen" path="res://helpers/pause.tscn" id="17_xm1li"]
 [ext_resource type="PackedScene" uid="uid://binluxttspuiq" path="res://helpers/main_ui.tscn" id="18_u1v85"]
@@ -1254,12 +1253,12 @@ radius = 8.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2xi6q"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_v4ad1"]
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_2somd"]
 radius = 13.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2keew"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v4ad1"]
 
 [node name="testRoom" type="Node2D"]
 script = ExtResource("1_i8iwx")
@@ -1377,16 +1376,6 @@ endPoint = NodePath("Marker2D")
 [node name="Marker2D" type="Marker2D" parent="TileMap/slime"]
 position = Vector2(-48, -5)
 
-[node name="Rahmat" parent="TileMap" instance=ExtResource("11_uuc8r")]
-position = Vector2(137, 24)
-
-[node name="Actionable" parent="TileMap/Rahmat" instance=ExtResource("5_kcoma")]
-dialogue_resource = ExtResource("12_istxr")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Rahmat/Actionable"]
-position = Vector2(0, 9)
-shape = SubResource("CircleShape2D_v4ad1")
-
 [node name="Actionable" parent="TileMap" instance=ExtResource("5_kcoma")]
 dialogue_resource = ExtResource("9_ekli7")
 dialogue_start = "ambilKain"
@@ -1404,6 +1393,13 @@ script = ExtResource("20_pk5ct")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/dungeon_door"]
 position = Vector2(39, -36)
 shape = SubResource("RectangleShape2D_2keew")
+
+[node name="TileMap@Rahmat@Actionable" parent="." instance=ExtResource("5_kcoma")]
+dialogue_resource = ExtResource("12_istxr")
+
+[node name="TileMap@Rahmat@Actionable@CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
+shape = SubResource("CircleShape2D_v4ad1")
 
 [node name="DescriptionGUI" parent="." instance=ExtResource("9_ju60t")]
 visible = false

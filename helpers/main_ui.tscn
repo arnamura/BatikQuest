@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://binluxttspuiq"]
+[gd_scene load_steps=9 format=3 uid="uid://binluxttspuiq"]
 
 [ext_resource type="Script" path="res://helpers/main_ui.gd" id="1_0ggmh"]
 [ext_resource type="Script" path="res://helpers/QuestListContainer.gd" id="1_4upwj"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://helpers/QuestPopUp.gd" id="2_xtwu0"]
 [ext_resource type="PackedScene" uid="uid://dywd02ye0oyh5" path="res://helpers/dpads.tscn" id="3_merot"]
 [ext_resource type="Texture2D" uid="uid://dkk1xe14wp4pd" path="res://icon.svg" id="5_vg3ny"]
+[ext_resource type="FontFile" uid="uid://c150i2j8f5iw1" path="res://VCRosdNEUE.ttf" id="6_55rjx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bebpi"]
 bg_color = Color(0.94902, 0.917647, 0.945098, 1)
@@ -96,8 +97,10 @@ offset_right = 33.0
 offset_bottom = 32.0
 scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_55rjx")
 theme_override_font_sizes/font_size = 18
 text = "HP:"
+vertical_alignment = 1
 
 [node name="poin" type="Label" parent="HpPanel"]
 layout_mode = 0
@@ -107,8 +110,10 @@ offset_right = 43.0
 offset_bottom = 32.0
 scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_55rjx")
 theme_override_font_sizes/font_size = 18
 text = "3"
+vertical_alignment = 1
 
 [node name="Menu" type="Button" parent="."]
 process_mode = 3

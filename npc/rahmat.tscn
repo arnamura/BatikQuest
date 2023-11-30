@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlx7jls3g0qw0"]
+
+[ext_resource type="PackedScene" uid="uid://bteda0q8lw1cj" path="res://npc/kakek.tscn" id="1_dwitn"]
+[ext_resource type="Texture2D" uid="uid://dynd32ekkrif8" path="res://art/char/rahmat.png" id="2_rknmc"]
+
+[node name="rahmat" instance=ExtResource("1_dwitn")]
+z_index = 2
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_rknmc")

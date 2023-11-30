@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dvauw5xcq8cif"]
 
 [ext_resource type="PackedScene" uid="uid://d28ne4l3a8l63" path="res://obj/item.tscn" id="1_ro4ib"]
-[ext_resource type="Script" path="res://obj/kunciEmas.gd" id="2_ujk7v"]
+[ext_resource type="Script" path="res://obj/cincin.gd" id="2_3weyu"]
 [ext_resource type="PackedScene" uid="uid://01ydgb5cpsky" path="res://helpers/actionable.tscn" id="3_f552d"]
 [ext_resource type="Resource" uid="uid://bahgr1srwq1oq" path="res://dialogue/Rahmat.dialogue" id="4_g184c"]
 [ext_resource type="Texture2D" uid="uid://b0wramep3cq8s" path="res://art/cincin.png" id="5_kcsu7"]
@@ -52,8 +52,9 @@ _data = {
 }
 
 [node name="cincin" instance=ExtResource("1_ro4ib")]
+z_index = 4
 scale = Vector2(0.399, 0.399)
-script = ExtResource("2_ujk7v")
+script = ExtResource("2_3weyu")
 
 [node name="Actionable" parent="." index="0" instance=ExtResource("3_f552d")]
 dialogue_resource = ExtResource("4_g184c")

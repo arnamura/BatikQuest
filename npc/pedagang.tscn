@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://crw0wta5ssp04"]
+
+[ext_resource type="PackedScene" uid="uid://bteda0q8lw1cj" path="res://npc/kakek.tscn" id="1_2kem0"]
+[ext_resource type="Texture2D" uid="uid://cioytx1bb7fu1" path="res://art/char/Pedagang.png" id="2_fyuhq"]
+
+[node name="pedagang" instance=ExtResource("1_2kem0")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_fyuhq")

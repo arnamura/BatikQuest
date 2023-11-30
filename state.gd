@@ -17,7 +17,7 @@ var quest1Status: bool = false
 var takenQuest1: bool = false
 var reqItem1: String = ""
 
-var quest1text1: String = "- Dapatkan kain mori"
+var quest1text1: String = "- Beli kain batik ke pedagang berkacamata"
 var quest1text2: String = "- Berikan kain kepada kakek"
 
 #quest 2
@@ -87,5 +87,5 @@ func _process(_delta):
 			"item": reqItem3,
 			"text1": quest3text1,
 			"text2": quest3text2
-	}
+		}
 	}

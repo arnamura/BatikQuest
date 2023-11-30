@@ -47,10 +47,22 @@ else:
 	
 => END
 
-~ ambilKain
+~ beliKain
 if takenQuest1 == true
+	Pedagang: Hai nak, ada yang bisa saya bantu?
+	- Saya diminta tolong oleh kakek untuk membeli kain
+	Pedagang: Hmm kain apa?
+	- Kain untuk membuat batik
+	Pedagang: Hoo, maksud mu kain mori ya?
+	Pedagang: Sebentar saya ambilkan dahulu
+	Pedagang: ...
+	Pedagang: Ini dia kainnya
+	Pedagang: Kain ini sangat bagus untuk digunakan dalam membuat batik
+	Pedagang: Nanti tagihannya akan ku atas namakan si kakek itu, Hahahaha
+	- Terima kasih
+	Pedagang: Sama-sama!
 	Sepertinya ini kain yang dimaksud kakek
 	set reqItem1 = "1"
 else
-	Bentuknya seperti kain
+	Pedagang: Halo anak muda!
 => END

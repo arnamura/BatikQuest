@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://gpps3nituwa5"]
+
+[ext_resource type="PackedScene" uid="uid://bteda0q8lw1cj" path="res://npc/kakek.tscn" id="1_7ifch"]
+[ext_resource type="Texture2D" uid="uid://c6ffiggdvbdos" path="res://art/char/bangdirman.png" id="2_fwm5q"]
+
+[node name="bang dirman" instance=ExtResource("1_7ifch")]
+z_index = 2
+
+[node name="Sprite2D" parent="." index="0"]
+z_index = 0
+texture = ExtResource("2_fwm5q")
