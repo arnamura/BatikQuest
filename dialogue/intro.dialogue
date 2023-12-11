@@ -1,0 +1,20 @@
+~ intro
+
+Bapak: hai
+Bima: tiba tiba aku merasa mual
+set reqItem0 = "1"
+
+=> END!
+
+~ penjaga
+Penjaga: Hai anak muda
+- Permisi, saya ada di mana ya?
+	Penjaga: Sepertinya anda bukan dari sini. Terlihat dari pakaian yang kau pakai
+	Penjaga: Hmm kejadian ini terulang kembali kah
+	Penjaga: Bicara lah kepada kakek
+	Penjaga: Dia tinggal di sebuah rumah di samping sungai, tinggal lurus saja dari sini
+	- Terimakasih banyak pak penjaga
+		Penjaga: Sama-sama anak muda, semoga perjalanan mu lanjar ya!
+		set takenQuest0 = false
+		set quest0Status = true
+		set reqItem = "0"

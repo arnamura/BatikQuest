@@ -1,8 +1,11 @@
 ~ start
-
+#cek status quest
 if quest3Status == false:
+	#cek kondisi sudah mengambil quest
 	if takenQuest3 == false:
-		if not takenQuest1 and not takenQuest2 and not takenQuest3
+		#cek kondisi apakah sedang mengambil quest atau tidak
+		if not takenQuest1 and not takenQuest2 and not takenQuest3 and not takenQuest4
+			#kondisi bila belum ambil quest
 			Bang Dirman: Oi anak muda, apakah kau suka tantangan?
 			- Engga Dulu Deh
 				Bang Dirman: Sayang Sekali
@@ -20,13 +23,16 @@ if quest3Status == false:
 				Bang Dirman: Berhati-hatilah untuk tidak terkena kontak langsung dengan monster
 				set takenQuest3 = true
 	else:
+		#kondisi bila sudah mendapatkan req item
 		if reqItem3 == "1"
 			Bang Dirman: Kerja bagus nak, aku akan segera melapor kepada kerajaan
 			Bang Dirman: Hanya kau yang berani untuk mengambilnya kedalam sana
 			Bang Dirman: Sebagai imbalan, terimalah ini hadiah dari kerajaan
 			set takenQuest3 = false
 			set quest3Status = true
+			set DataBatik.batik2.isGet = true
 		else:
+			#kondisi bila belum mendapatkan item
 			Bang Dirman: Ada yang ingin kau tanyakan?
 			- Tidak ada
 				Bang Dirman: Baiklah, semoga beruntung
@@ -43,10 +49,12 @@ if quest3Status == false:
 					Bang Dirman: Sebaiknya jangan terkena serangan musuh sampai 3 kali
 					Bang Dirman: Atau kau akan dibawa kembali ke pintu goa
 else:
+	#kondisi bila telah menyelesaikan quest
 	Bang Dirman: Kerja bagus nak, pasti raja akan senang
 => END
 
 ~ item3
+#kondisi bila sudah membuka peti harta
 terlihat seperti barang yang dideskripsikan oleh bang dirman
 seharusnya ini barang yang benar
 sebaiknya aku cepat melapor
@@ -54,12 +62,14 @@ set reqItem3 = "1"
 => END
 
 ~ kunciDungeon
+#kondisi bila telah menemukan kunci untuk membuka pintu dungeon
 Sepertinya ini merupakan kunci untuk membuka ruangan peti
 Sebaiknya aku ambil
 set kunciDungeon = true
 => END
 
 ~ pintuDungeon
+#kondisi interaksi dengan pintu yang terkunci
 if kunciDungeon == false:
 	Pintu ini terkunci, sepertinya kuncinya ada disekitar sini
 	Sebaiknya aku ambil

@@ -1,23 +1,33 @@
 ~ start
 if State.quest2Status == true:
+	#kondisi bila quest 2 rahmat selesai
 	Rahmat: Terimakasih banyak karena sudah menolongku, kawanku!
 else:
 	if State.takenQuest2 == true:
+		#kondisi ketika sudah mengambil quest 2 rahmat
 		if State.reqItem2 == "1":
+			#kondisi bila telah mendapatkan req item
 			Rahmat: Terima kasih bima, karena sudah menemukan cincin tunanganku ini
 			Rahmat: Dengan begini, aku bisa segera melamar kekasih ku
-			Rahmat: Terimalah kain batik ini,
-			Rahmat: ini merupakan kain batik terbaik buatan orang tuaku
-			Rahmat: Aku ingin kau menerimanya
+			Rahmat: Terimalah kain batik ini, kain ini memiliki motif batik bernama "Sidomukti"
+			Rahmat: Aku memiliki beberapa kain dengan motif ini karna orang tua ku membuatnya
+			Rahmat: Kain ini memiliki arti sebagai doa untuk menggapai kemuliaan dan keseimbangan untuk pasangan yang ingin menikah, kalau istilah jawanya "Kiblat papat limo pancer"
+			Rahmat: Artinyna, empat arah yang diharmonikan dengan pusat. Menyeimbangkan secara vertikal yaitu dunia dan akhirat
+			Rahmat: dan juga secara horizontal yang artinya lelaki dan perempuan.
+			Rahmat: Karena aku ingin menikah, jadinya nanti akan memakai kain ini hehe
+			Rahmat: Tapi Aku juga ingin kau menerimanya, sebagai hadiah dariku
 			Rahmat: Lain kali sepertinya aku harus lebih teliti terhadap barang bawaanku, hahaha
 			Rahmat: Sampai jumpa kawan
 			set quest2Status = true
 			set takenQuest2 = false
+			set DataBatik.batik8.isGet = true
 		else:
+			#kondisi bila belum mendapatkan reqitem
 			Rahmat: Tolonglah bima, 
 			Rahmat: Sepertinya cincin tunanganku ada di sekitar taman 
 	else:
-		if not takenQuest1 and not takenQuest2 and not takenQuest3
+		if not takenQuest1 and not takenQuest2 and not takenQuest3 and not takenQuest4
+			#kondisi menerima quest 2 rahmat
 			Rahmat: Hei! Apa kau bisa membantuku?
 			- Ada apa?
 			Rahmat: Namaku Rahmat,
@@ -35,17 +45,20 @@ else:
 				Rahmat: Sayang sekali, mungkin ada orang lain yang bisa melakukannya
 				=> END!
 		else:
+			#kondisi bila sedang mengerjakan quest lain
 			Rahmat: Sepertinya ada hal lain yang harus kau kerjakan
 => END
 
 ~ item
+#kondisi untuk interaksi dengan reqitem
 if State.takenQuest2 == true:
+	#bila menemukan reqitem
 	Bima: Sepertinya ini cincin tunangan yang di cari oleh rahman
 	Bima: Sebaiknya aku antar barang ini segera supaya ia tenang
 	set reqItem2 = "1"
 else:
+	#bila menemukan ketika quest belum diambil
 	Bima: Terlihat seperti cincin yang mahal
 	Bima: Siapa ya yang meninggalkannya disini? hmm...
-	Bima: Sebaiknya aku ambil, siapa tau ada yang mencarinya di Desa
-	set reqItem2 = "1"
+	Bima: Sebaiknya jangan diambil dulu, siapa tahu yang punya kembali mencarinya
 => END

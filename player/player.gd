@@ -115,3 +115,5 @@ func _on_hurt_box_area_entered(_area): pass
 #		hurtTimer.start()
 #		await hurtTimer.timeout
 #		effects.play("reset")
+
+

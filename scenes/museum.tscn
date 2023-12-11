@@ -1,5 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://b5tc2y4jyw05v"]
+[gd_scene load_steps=26 format=3 uid="uid://b5tc2y4jyw05v"]
 
+[ext_resource type="Script" path="res://scenes/museum.gd" id="1_7nw5d"]
 [ext_resource type="Texture2D" uid="uid://3sxuvjpjwq4u" path="res://art/tileset/TopDownHouse_FloorsAndWalls.png" id="1_ivq45"]
 [ext_resource type="PackedScene" uid="uid://dndkvxcijkvrc" path="res://player/player.tscn" id="2_7xgbq"]
 [ext_resource type="Texture2D" uid="uid://vup3ac4pey0k" path="res://art/terrain/TilesetElement.png" id="2_k0eum"]
@@ -8,6 +9,10 @@
 [ext_resource type="Script" path="res://camera/Player Cam.gd" id="6_tytx4"]
 [ext_resource type="PackedScene" uid="uid://b4k2fs1ckj4lg" path="res://helpers/interact.tscn" id="7_rmnms"]
 [ext_resource type="PackedScene" uid="uid://tbvn2122fjtg" path="res://helpers/description_gui.tscn" id="8_n62jq"]
+[ext_resource type="PackedScene" uid="uid://2vvfmcbflpgs" path="res://npc/bapak.tscn" id="9_isvft"]
+[ext_resource type="PackedScene" uid="uid://01ydgb5cpsky" path="res://helpers/actionable.tscn" id="10_b6py3"]
+[ext_resource type="Resource" uid="uid://cxok5eckdoaf3" path="res://dialogue/intro.dialogue" id="11_mdedq"]
+[ext_resource type="PackedScene" uid="uid://binluxttspuiq" path="res://helpers/main_ui.tscn" id="12_wxj8h"]
 
 [sub_resource type="Animation" id="Animation_vo8vg"]
 length = 0.001
@@ -34,38 +39,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0, 0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_x5nyq"]
-resource_name = "hurtAnim"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D/ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 0, 0, 0.498039), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_xedpr"]
-resource_name = "reset"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D/ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.6),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_j6aig"]
@@ -100,11 +73,26 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_t3a36"]
+resource_name = "teleport"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bgTransisi:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1, 2, 3.1, 4, 4.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p0ymr"]
 _data = {
 "RESET": SubResource("Animation_vo8vg"),
-"hurtAnim": SubResource("Animation_x5nyq"),
-"reset": SubResource("Animation_xedpr"),
+"teleport": SubResource("Animation_t3a36"),
 "transisiIn": SubResource("Animation_j6aig"),
 "transisiOut": SubResource("Animation_s3tp7")
 }
@@ -3443,8 +3431,11 @@ sources/3 = SubResource("TileSetAtlasSource_5fjd3")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vb8x8"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6gyiq"]
+
 [node name="Museum" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_7nw5d")
 
 [node name="bgTransisi" type="ColorRect" parent="."]
 show_behind_parent = true
@@ -3602,5 +3593,22 @@ light_mask = 32
 visibility_layer = 32
 shape = SubResource("CircleShape2D_vb8x8")
 
+[node name="NPC" type="Node2D" parent="TileMap"]
+
+[node name="bapak" parent="TileMap/NPC" instance=ExtResource("9_isvft")]
+position = Vector2(105, 13)
+
+[node name="Actionable" parent="TileMap/NPC/bapak" instance=ExtResource("10_b6py3")]
+dialogue_resource = ExtResource("11_mdedq")
+dialogue_start = "intro"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/NPC/bapak/Actionable"]
+shape = SubResource("CircleShape2D_6gyiq")
+
+[node name="MainUI" parent="." instance=ExtResource("12_wxj8h")]
+
 [node name="DescriptionGUI" parent="." instance=ExtResource("8_n62jq")]
 visible = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://2vvfmcbflpgs"]
+
+[ext_resource type="PackedScene" uid="uid://bteda0q8lw1cj" path="res://npc/kakek.tscn" id="1_el62a"]
+[ext_resource type="Texture2D" uid="uid://cg1uyjk3krsfu" path="res://art/char/Bapak.png" id="2_wi8ok"]
+
+[node name="bapak" instance=ExtResource("1_el62a")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_wi8ok")

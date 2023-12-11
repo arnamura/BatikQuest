@@ -14,3 +14,4 @@ shape = SubResource("RectangleShape2D_7nron")
 
 [node name="Actionable" parent="." index="4"]
 dialogue_resource = ExtResource("2_cmmkn")
+dialogue_start = "petiTamanBunga"

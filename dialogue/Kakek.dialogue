@@ -2,20 +2,30 @@
 if quest1Status == false:
 	Kakek: Halo anak muda
 	if takenQuest1 == true
+		#bila req item sudah didapatkan
 		if reqItem1 == "1" 
 			Ini dia kainnya
 			Kakek: Baiklah, Tunggu sebentar
 			Kakek: ...
 			Kakek: ...
 			Kakek: Nah ini dia kainnya
-			Kakek: Pergilah dan bantu orang-orang yang ada di desa ini
+			Kakek: Kain in ku beri motif batik bernama "Ceplok"
+			Kakek: Bentuk motif ini menyerupai bunga bungaan yang disusun geometris
+			Kakek: persegi, oval, bintang yang disusun melingkar menjadi sekuntum bunga
+			Kakek: Biasa dihias dengan daun disekelilingnya dalam rangka segi empat
+			Kakek: Batik ini khusus dibuat dari golongan petani atau rakyat
+			Kakek: Yang melambangkan keseimbangan, keteraturan dan kesempurnaan bagi pemakainya
+			Kakek: Pergilah dan bantu orang-orang yang ada di desa ini dan pelajari motif-motif batik yang ada
 			set quest1Status = true
+			set DataBatik.batik1.isGet = true
 			set takenQuest1 = false
 			set inQuest = false
 		else
+			#bila reqitem belum didapat
 			Kakek: Ambilkan kain Morinya, nanti ku buatkan kain batik
 	else
-		if not takenQuest2 and not takenQuest1
+		#kondisi memulai quest
+		if not takenQuest2 and not takenQuest1 and not takenQuest3 and not takenQuest4
 			Kakek: Siapa namamu?
 			- Bima
 			Kakek: Nama yang bagus, sepertinya kau bukan berasal dari sini ya?
@@ -31,23 +41,45 @@ if quest1Status == false:
 			- Bagaimana cara aku menemukannya?
 			Kakek: Berinteraksilah dengan warga setempat, dan bantulah mereka
 			Kakek: Pertama, aku dapat membantumu memberi kain batik pertama
-			Kakek: Ambillah kain mori disebelah sana, lalu aku akan membuatkanmu satu
+			Kakek: belilah kain mori pada pedagang berkacamata itu, lalu aku akan membuatkanmu satu
 			- Baik lah kakek! tunggu sebentar 
 			set takenQuest1 = true 
 			set inQuest = true
 		else:
-			Kakek: Sepertinya ada hal lain yang harus kau kerjakan
-	
+			#kondisi ketika ada quest lain yang sedang dikerjakan
+			Kakek: Sepertinya ada hal lain yang harus kau kerjakan	
 else:
-	Kakek: Pergilah dan bantu orang-orang yang ada di desa ini
-	Kakek: ingat, bantu lah orang satu per satu
-	Kakek: jangan sekaligus
-	Kakek: Nanti kewalahan, hahaha
-
+	if takenQuest4 == false
+		#kondisi bila sudah menyelesaikan quest yang berhubungan dengan kakek
+		Kakek: Pergilah dan bantu orang-orang yang ada di desa ini
+		Kakek: ingat, bantu lah orang satu per satu
+		Kakek: jangan sekaligus
+		Kakek: Nanti kewalahan, hahaha
+	else:
+		#kondisi bila sudah mengambil quest 4 menemukan kain lalu melaporkannya ke kakek
+		Bima: Kek, Aku menemukan ini di taman
+		Kakek: Mana sini biar ku lihat
+		Kakek: ...
+		Kakek: Woah hebat sekali kamu bisa menemukan ini
+		- Nama kain ini apa kek?
+		Kakek: Ini adalah kain batik bermotif "Pring Sedapur"
+		Kakek: ini kain yang berasal dari pedesaan di daerah magetan
+		Kakek: Berfilosofi tanaman bambu biasa yang hidup bergerombol membentuk satu kekuatan
+		Kakek: Dapat dilihat dari motif seperti tanaman bambu disertai ornamen bunga atau daun
+		Kakek: Bisa diartikan juga sebagai simbol ucapan terimakasih dari orang tua ke anaknya yang sudah berkeluarga
+		Kakek: Sebagai arti walau berpisah tetapi tetap satu rumpun bagi keluarga besarnya
+		Kakek: Aneh sekali kamu bisa menemukan di sana
+		Kakek: Kamu simpan saja kalau begitu
+		- Baiklah, terimakasih Kakek atas informasinya
+		set quest4Status = true
+		set DataBatik.batik.isGet = true
+		set inQuest = false
+		set takenQuest1 = false
 	
 => END
 
 ~ beliKain
+#lanjutan quest 1 untuk membeli kain ke pedagang
 if takenQuest1 == true
 	Pedagang: Hai nak, ada yang bisa saya bantu?
 	- Saya diminta tolong oleh kakek untuk membeli kain
@@ -66,3 +98,21 @@ if takenQuest1 == true
 else
 	Pedagang: Halo anak muda!
 => END
+
+~ petiTamanBunga
+#kondisi memulai quest 4 menemukan kain
+if not takenQuest2 and not takenQuest1 and not takenQuest3 and not takenQuest4
+	Bima: woah, peti apa ini?
+	- Buka peti
+	Bima: Ternyata ada kain batik di dalamnya
+	Bima: tapi motif apa ini ya?
+	Bima: Sebaiknya nanti kutanya kepada kakek
+	set takenQuest4 = true
+	set inQuest = true
+else if not quest4Status:
+	#kondisi jika sedang mengerjakan quest lain
+	Bima: Peti apa ini?
+	Bima: Aku penasaran, tetapi aku masih ada hal yang harus ku kerjakan
+	Bima: Mungkin bila sudah tidak ada pekerjaan aku akan kembali untuk mengecek peti ini
+else;
+	=>END

@@ -10,7 +10,7 @@ var batik1 := {
 		"Motif batik yang berasal dari kalangan petani dan rakyat. Inspirasinya berasal dari bunga-bunga yang tumbuh di semak-semak di pedesaan. Tidak ada filosofi khusus. Namun, dari segi geometri, motif ini dapat mencerminkan keseimbangan, keteraturan, dan kesempurnaan bagi mereka yang memakainya.",
 	"ciri" : 
 		"Motif kelompok bunga-bunga yang dihias dengan daun disekelilingnya menjadi kerangka segi empat\n(Ceplokan: Didasari bentuk-bentuk geometris persegi/oval/bintang yang disusun melingkar menjadi sekuntum bunga)",
-	"isGet": true
+	"isGet": false
 }
 
 var batik2 := {
@@ -26,7 +26,7 @@ var batik3 := {
 	"pathimg": "res://art/batik/kawung.png",
 	"deskripsi" : "tba",
 	"ciri" : "batik",
-	"isGet": true
+	"isGet": false
 }
 
 var batik4 := {

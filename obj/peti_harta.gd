@@ -6,12 +6,15 @@ extends "res://obj/item.gd"
 func _process(_delta):
 	if State.reqItem3 == "1" and i == 1:
 		buka()
+	if State.takenQuest4:
+		buka()
 
 func buka():
 	if i == 1:
 		i = 2
 		anim.play("open")
-		timer.start()
 		await anim.animation_finished
-		#super.collect()
+		timer.start()
+		await timer.timeout
+		super.collect()
 	
