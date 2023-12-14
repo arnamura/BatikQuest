@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://b8oyesujqtuvp"]
+[gd_scene load_steps=52 format=3 uid="uid://b8oyesujqtuvp"]
 
 [ext_resource type="Texture2D" uid="uid://vup3ac4pey0k" path="res://art/terrain/TilesetElement.png" id="1_ct0ab"]
 [ext_resource type="Script" path="res://scenes/desa_batik.gd" id="1_mkhs7"]
@@ -27,6 +27,8 @@
 [ext_resource type="Resource" uid="uid://xdkxtuh5wjca" path="res://dialogue/Bang Dirman.dialogue" id="23_p5ebv"]
 [ext_resource type="Script" path="res://scenes/toDungeon.gd" id="24_ees43"]
 [ext_resource type="PackedScene" uid="uid://binluxttspuiq" path="res://helpers/main_ui.tscn" id="25_dyomg"]
+[ext_resource type="PackedScene" uid="uid://jvrvdlv7plwp" path="res://npc/omsamurai.tscn" id="25_njc1y"]
+[ext_resource type="Resource" uid="uid://cxok5eckdoaf3" path="res://dialogue/intro.dialogue" id="26_vpg8c"]
 
 [sub_resource type="Animation" id="Animation_vo8vg"]
 length = 0.001
@@ -53,6 +55,22 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_t3a36"]
+resource_name = "teleport"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bgTransisi:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1, 2, 3.1, 4, 4.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_j6aig"]
@@ -85,22 +103,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_t3a36"]
-resource_name = "teleport"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("bgTransisi:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 1, 2, 3.1, 4, 4.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p0ymr"]
@@ -8688,6 +8690,9 @@ sources/12 = SubResource("TileSetScenesCollectionSource_oh763")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bnual"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fag5f"]
+radius = 17.0294
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_afwim"]
 
 [node name="DesaBatik" type="Node2D"]
@@ -8829,6 +8834,17 @@ dialogue_resource = ExtResource("23_p5ebv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/NPC/bang dirman/Actionable"]
 shape = SubResource("CircleShape2D_bnual")
+
+[node name="kakek2" parent="TileMap/NPC" instance=ExtResource("25_njc1y")]
+position = Vector2(163, 68)
+
+[node name="Actionable" parent="TileMap/NPC/kakek2" instance=ExtResource("16_4om6r")]
+dialogue_resource = ExtResource("26_vpg8c")
+dialogue_start = "penjaga"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/NPC/kakek2/Actionable"]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_fag5f")
 
 [node name="Additional" type="Node2D" parent="TileMap"]
 

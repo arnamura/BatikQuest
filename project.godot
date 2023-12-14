@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Batik Quest"
-run/main_scene="res://scenes/desa_batik.tscn"
+run/main_scene="res://scenes/museum.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -96,7 +96,7 @@ pointing/emulate_touch_from_mouse=true
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/test.dialogue", "res://dialogue/Rahmat.dialogue", "res://dialogue/Kakek.dialogue", "res://dialogue/Bang Dirman.dialogue", "res://dialogue/intro.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/test.dialogue", "res://dialogue/Rahmat.dialogue", "res://dialogue/Kakek.dialogue", "res://dialogue/Bang Dirman.dialogue", "res://dialogue/intro.dialogue", "res://dialogue/last boss.dialogue")
 
 [layer_names]
 

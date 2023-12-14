@@ -1,0 +1,14 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://c5gd6la4et2oo"
+path="res://.godot/imported/last boss.dialogue-4c48f9184e8c292ccce19878bb8115b4.tres"
+
+[deps]
+
+source_file="res://dialogue/last boss.dialogue"
+dest_files=["res://.godot/imported/last boss.dialogue-4c48f9184e8c292ccce19878bb8115b4.tres"]
+
+[params]
+
