@@ -26,6 +26,11 @@ if quest1Status == false:
 	else
 		#kondisi memulai quest
 		if not takenQuest2 and not takenQuest1 and not takenQuest3 and not takenQuest4
+			Bima: Halo Kek
+			Bima: Om Samurai di sana tadi memberi tahuku kalau kakek bisa membantu kasus ku
+			Kakek: Om Samurai mana? Sepertinya tidak ada orang seperti itu disini
+			Bima: Tadi dia juga tiba-tiba menghilang
+			Kakek: Yang benar kamu? mungkin kamu hanya sedang halu
 			Kakek: Siapa namamu?
 			- Bima
 			Kakek: Nama yang bagus, sepertinya kau bukan berasal dari sini ya?

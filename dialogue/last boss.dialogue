@@ -1,5 +1,24 @@
 ~ BossMomen
 
-
+Makhluk Astral: Hohoho, Beraninya kamu datang dihadapanku. Apa tujuan mu?
+Bima: Saya ingin kembali ketempat saya berasal
+Makhluk Astral: Ternyata kamu bukan berasal dari sini ya?
+Makhluk Astral: Baiklah Bima, Saya akan membantumu bila kau memiliki 5 kain batik dengan 5 motif berbeda
+Makhluk Astral: Setelah itu akan ku uji kau mengenai batik tersebut.
+Makhluk Astral: Apakah kau memiliki kain tersebut?
+- Tunggu sebentar nanti aku akan kembali lagi
+- Ini dia kainnya
+	Makhluk Astral: Serahkan, biar ku lihat
+	Makhluk Astral: hemm ...
+	Makhluk Astral: Hebat sekali, Baiklah sekarang kau sudah memenuhi syarat untuk mengikuti ujian
+	Makhluk Astral: Sebelum mengikuti ujian, kau diperbolehkan untuk mempelajari apa yang telah kau dapatkan sejauh ini
+	Makhluk Astral: Apakah kau sudah siap?
+	- Tunggu dulu, Aku ingin bersiap
+		Makhluk Astral: Baiklah, ku tunggu hingga kau siap
+	- Baiklah, Aku siap
+		Makhluk Astral: Bagus, Mari kita mulai
 
 => END
+
+~ Pertanyaan
+=>
