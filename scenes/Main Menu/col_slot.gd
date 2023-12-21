@@ -11,7 +11,7 @@ var empty = true
 
 func update(batik):
 	if !batik["isGet"]:
-		background.frame = 0
+		background.frame = 0 #gambar container batik
 		icon.visible = false	
 		btn.disabled = true	
 	else:
@@ -22,7 +22,7 @@ func update(batik):
 		setDescBatik = batik
 
 func _on_button_pressed():
-	if setDescBatik["isGet"] :
+	if setDescBatik["isGet"]:
 		DataBatik.pressedBatik = setDescBatik
 		DataBatik.visibleDesc = true
 	else:

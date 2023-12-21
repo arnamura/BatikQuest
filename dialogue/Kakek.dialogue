@@ -77,7 +77,7 @@ else:
 		Kakek: Kamu simpan saja kalau begitu
 		- Baiklah, terimakasih Kakek atas informasinya
 		set quest4Status = true
-		set DataBatik.batik.isGet = true
+		set DataBatik.batik1.isGet = true
 		set inQuest = false
 		set takenQuest1 = false
 	

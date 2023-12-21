@@ -1,10 +1,11 @@
 extends CanvasLayer
 
-@onready var collectiblePanel: Panel = $Panel/CollectiblePanel
+@onready var collectiblePanel: ScrollContainer = $Panel/DisplayPanel/ScrollPanelBatikList
 
 @onready var colPan = false :
 	set(value):
 		collectiblePanel.visible = value
+		State.isPause = value
 
 var is_paused = false : 
 	set(value):

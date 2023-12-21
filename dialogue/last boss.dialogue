@@ -17,8 +17,18 @@ Makhluk Astral: Apakah kau memiliki kain tersebut?
 		Makhluk Astral: Baiklah, ku tunggu hingga kau siap
 	- Baiklah, Aku siap
 		Makhluk Astral: Bagus, Mari kita mulai
+		=> Pertanyaan1
 
 => END
 
-~ Pertanyaan
-=>
+~ Pertanyaan1
+Makhluk Astral: 1+1?
+- dua
+- tiga
+- empat
+Makhluk Astral: Oke selanjutnya
+=> Pertanyaan2
+
+~ Pertanyaan2
+test
+=> END

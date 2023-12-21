@@ -26,7 +26,7 @@ var batik3 := {
 	"pathimg": "res://art/batik/kawung.png",
 	"deskripsi" : "tba",
 	"ciri" : "batik",
-	"isGet": false
+	"isGet": true
 }
 
 var batik4 := {

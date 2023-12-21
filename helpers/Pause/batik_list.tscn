@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://byuk5qamnm6vm"]
+
+[ext_resource type="Texture2D" uid="uid://dkk1xe14wp4pd" path="res://icon.svg" id="1_552ik"]
+[ext_resource type="Script" path="res://helpers/Pause/batik_list.gd" id="1_l77mp"]
+[ext_resource type="FontFile" uid="uid://c150i2j8f5iw1" path="res://VCRosdNEUE.ttf" id="2_hsar0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sfwnu"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sbama"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+shadow_color = Color(1, 1, 1, 0)
+anti_aliasing = false
+
+[node name="BatikList" type="Panel"]
+custom_minimum_size = Vector2(130, 20)
+offset_right = 130.0
+offset_bottom = 20.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sfwnu")
+script = ExtResource("1_l77mp")
+
+[node name="namaBatik" type="Label" parent="."]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 2.0
+offset_right = 61.0
+offset_bottom = 21.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_hsar0")
+text = "Batik"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 2.0
+offset_top = -8.0
+offset_right = 18.0
+offset_bottom = 8.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sbama")
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+position = Vector2(8, 8)
+scale = Vector2(0.117187, 0.117187)
+texture = ExtResource("1_552ik")
+region_rect = Rect2(14, 14, 14, 14)

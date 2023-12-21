@@ -11,6 +11,7 @@ extends Node
 var introQuest = false
 var inQuest = false
 var dungeonState = false
+var isPause = false
 
 
 #introQuest

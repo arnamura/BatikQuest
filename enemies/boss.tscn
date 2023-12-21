@@ -3,6 +3,33 @@
 [ext_resource type="Texture2D" uid="uid://dr1rkrbch1gob" path="res://art/char/Boss.png" id="1_2b0vx"]
 [ext_resource type="Script" path="res://enemies/boss.gd" id="1_i6mbu"]
 
+[sub_resource type="Animation" id="Animation_yrhjr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_gklsx"]
 resource_name = "idle"
 length = 0.5
@@ -19,20 +46,17 @@ tracks/0/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4]
 }
-
-[sub_resource type="Animation" id="Animation_yrhjr"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -2), Vector2(0, -4), Vector2(0, -2), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7etfx"]
@@ -45,7 +69,7 @@ _data = {
 radius = 243.311
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cqinw"]
-radius = 24.0
+radius = 19.0263
 
 [node name="Boss" type="CharacterBody2D"]
 z_index = 1
@@ -53,8 +77,6 @@ y_sort_enabled = true
 script = ExtResource("1_i6mbu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -3.8147e-06)
-scale = Vector2(1.507, 1.507)
 texture = ExtResource("1_2b0vx")
 offset = Vector2(0, -24)
 hframes = 5
@@ -67,6 +89,7 @@ libraries = {
 [node name="animDetection" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="animDetection"]
+visible = false
 shape = SubResource("CircleShape2D_xf6o5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

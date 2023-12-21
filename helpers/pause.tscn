@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://s1ht1iwxfmen"]
+[gd_scene load_steps=7 format=3 uid="uid://s1ht1iwxfmen"]
 
 [ext_resource type="Script" path="res://helpers/pause.gd" id="1_2okch"]
 [ext_resource type="Script" path="res://helpers/PauseMenuQuest.gd" id="2_d0qo4"]
 [ext_resource type="Texture2D" uid="uid://dddpiads1f8c1" path="res://art/InventoryRect.png" id="2_myf1s"]
-[ext_resource type="PackedScene" uid="uid://bophhpfu7t6m" path="res://scenes/Main Menu/collectible_ui.tscn" id="4_2jsxr"]
+[ext_resource type="Texture2D" uid="uid://e2vamsgxgk6x" path="res://art/DialogueBoxSimple.png" id="3_2bmws"]
+[ext_resource type="Script" path="res://helpers/BatikListContainer.gd" id="5_i0h35"]
+[ext_resource type="PackedScene" uid="uid://byuk5qamnm6vm" path="res://helpers/Pause/batik_list.tscn" id="5_t5hf8"]
 
 [node name="Pause" type="CanvasLayer"]
 process_mode = 3
@@ -27,35 +29,82 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="PauseMenuQuest" type="Panel" parent="Panel"]
+[node name="DisplayPanel" type="NinePatchRect" parent="Panel"]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 7.0
-offset_right = 172.0
-offset_bottom = 114.0
-script = ExtResource("2_d0qo4")
+offset_left = 7.0
+offset_top = 8.0
+offset_right = 173.0
+offset_bottom = 113.0
+texture = ExtResource("3_2bmws")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
 
-[node name="CollectiblePanel" type="Panel" parent="Panel"]
+[node name="PanelQuest" type="Panel" parent="Panel/DisplayPanel"]
 visible = false
-layout_mode = 0
-offset_left = 49.0
-offset_top = 19.0
-offset_right = 128.0
-offset_bottom = 97.0
-
-[node name="CollectibleUI" parent="Panel/CollectiblePanel" instance=ExtResource("4_2jsxr")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -36.0
-offset_top = -36.0
-offset_right = 36.0
-offset_bottom = 36.0
+offset_left = -77.5
+offset_top = -46.5
+offset_right = 77.5
+offset_bottom = 46.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_d0qo4")
+
+[node name="ScrollPanelBatikList" type="ScrollContainer" parent="Panel/DisplayPanel"]
+visible = false
+custom_minimum_size = Vector2(100, 75)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.036
+anchor_top = 0.057
+anchor_right = 0.97
+anchor_bottom = 0.952
+offset_left = 1.024
+offset_top = 2.015
+offset_right = -1.02
+offset_bottom = -2.96
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 2
+
+[node name="BatikListContainer" type="GridContainer" parent="Panel/DisplayPanel/ScrollPanelBatikList"]
+clip_contents = true
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 2
+script = ExtResource("5_i0h35")
+
+[node name="1" parent="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" instance=ExtResource("5_t5hf8")]
+layout_mode = 2
+
+[node name="2" parent="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" instance=ExtResource("5_t5hf8")]
+layout_mode = 2
+
+[node name="3" parent="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" instance=ExtResource("5_t5hf8")]
+layout_mode = 2
+
+[node name="4" parent="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" instance=ExtResource("5_t5hf8")]
+layout_mode = 2
+
+[node name="5" parent="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" instance=ExtResource("5_t5hf8")]
+layout_mode = 2
+
+[node name="6" parent="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" instance=ExtResource("5_t5hf8")]
+layout_mode = 2
+
+[node name="7" parent="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" instance=ExtResource("5_t5hf8")]
+layout_mode = 2
+
+[node name="8" parent="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" instance=ExtResource("5_t5hf8")]
+layout_mode = 2
+
+[node name="9" parent="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" instance=ExtResource("5_t5hf8")]
+layout_mode = 2
 
 [node name="ResumeBtn" type="Button" parent="."]
 offset_left = 192.0

@@ -36,3 +36,8 @@ if reqItem == "1"
 			set reqItem = "0"
 else:
 	Om Samurai: Hai anak muda!
+	set DataBatik.batik2["isGet"] = true
+	
+~ test
+hai
+set DataBatik.batik2["isGet"] = true

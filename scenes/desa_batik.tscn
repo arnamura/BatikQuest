@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://b8oyesujqtuvp"]
+[gd_scene load_steps=55 format=3 uid="uid://b8oyesujqtuvp"]
 
 [ext_resource type="Texture2D" uid="uid://vup3ac4pey0k" path="res://art/terrain/TilesetElement.png" id="1_ct0ab"]
 [ext_resource type="Script" path="res://scenes/desa_batik.gd" id="1_mkhs7"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://jvrvdlv7plwp" path="res://npc/omsamurai.tscn" id="25_njc1y"]
 [ext_resource type="Resource" uid="uid://cxok5eckdoaf3" path="res://dialogue/intro.dialogue" id="26_vpg8c"]
 [ext_resource type="PackedScene" uid="uid://ctmdyndakohku" path="res://enemies/boss.tscn" id="27_1nh1n"]
+[ext_resource type="Resource" uid="uid://c5gd6la4et2oo" path="res://dialogue/last boss.dialogue" id="28_gxfql"]
 
 [sub_resource type="Animation" id="Animation_vo8vg"]
 length = 0.001
@@ -8694,6 +8695,8 @@ sources/12 = SubResource("TileSetScenesCollectionSource_oh763")
 [sub_resource type="CircleShape2D" id="CircleShape2D_fag5f"]
 radius = 17.0294
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_p05no"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_afwim"]
 
 [node name="DesaBatik" type="Node2D"]
@@ -8778,7 +8781,7 @@ layer_6/tile_data = PackedInt32Array(2097205, 12, 65536, 3276811, 12, 196608)
 
 [node name="Player" parent="TileMap" instance=ExtResource("9_mev21")]
 z_index = 2
-position = Vector2(109, 29)
+position = Vector2(120, 21)
 collision_mask = 33
 
 [node name="Player Cam" type="Camera2D" parent="TileMap/Player" node_paths=PackedStringArray("tilemap")]
@@ -8836,19 +8839,26 @@ dialogue_resource = ExtResource("23_p5ebv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/NPC/bang dirman/Actionable"]
 shape = SubResource("CircleShape2D_bnual")
 
-[node name="kakek2" parent="TileMap/NPC" instance=ExtResource("25_njc1y")]
+[node name="omSamurai" parent="TileMap/NPC" instance=ExtResource("25_njc1y")]
 position = Vector2(163, 68)
 
-[node name="Actionable" parent="TileMap/NPC/kakek2" instance=ExtResource("16_4om6r")]
+[node name="Actionable" parent="TileMap/NPC/omSamurai" instance=ExtResource("16_4om6r")]
 dialogue_resource = ExtResource("26_vpg8c")
-dialogue_start = "penjaga"
+dialogue_start = "test"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/NPC/kakek2/Actionable"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/NPC/omSamurai/Actionable"]
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_fag5f")
 
 [node name="Boss" parent="TileMap/NPC" instance=ExtResource("27_1nh1n")]
 position = Vector2(847, 23)
+
+[node name="Actionable" parent="TileMap/NPC/Boss" instance=ExtResource("16_4om6r")]
+dialogue_resource = ExtResource("28_gxfql")
+dialogue_start = "BossMomen"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/NPC/Boss/Actionable"]
+shape = SubResource("CircleShape2D_p05no")
 
 [node name="Additional" type="Node2D" parent="TileMap"]
 
