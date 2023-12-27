@@ -58,7 +58,6 @@ grow_vertical = 2
 script = ExtResource("2_d0qo4")
 
 [node name="ScrollPanelBatikList" type="ScrollContainer" parent="Panel/DisplayPanel"]
-visible = false
 custom_minimum_size = Vector2(100, 75)
 layout_mode = 1
 anchors_preset = -1

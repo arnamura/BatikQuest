@@ -6,6 +6,10 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sfwnu"]
 bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sbama"]
 bg_color = Color(0, 0, 0, 0)
@@ -28,34 +32,40 @@ offset_bottom = 20.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_sfwnu")
 script = ExtResource("1_l77mp")
 
-[node name="namaBatik" type="Label" parent="."]
-layout_mode = 0
-offset_left = 21.0
-offset_top = 2.0
-offset_right = 61.0
-offset_bottom = 21.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_hsar0")
-text = "Batik"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Panel" type="Panel" parent="."]
-clip_contents = true
-custom_minimum_size = Vector2(14, 14)
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(125, 18)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 2.0
-offset_top = -8.0
-offset_right = 18.0
-offset_bottom = 8.0
+offset_left = 3.0
+offset_top = -9.0
+offset_right = 128.0
+offset_bottom = 9.0
 grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_sbama")
 
-[node name="Sprite2D" type="Sprite2D" parent="Panel"]
-position = Vector2(8, 8)
-scale = Vector2(0.117187, 0.117187)
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Panel"]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 0
+offset_right = 14.0
+offset_bottom = 14.0
 texture = ExtResource("1_552ik")
-region_rect = Rect2(14, 14, 14, 14)
+expand_mode = 4
+
+[node name="namaBatik" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 1
+theme_override_fonts/font = ExtResource("2_hsar0")
+theme_override_font_sizes/font_size = 13
+text = "Batik"
+horizontal_alignment = 1
+vertical_alignment = 1

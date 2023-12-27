@@ -1,7 +1,7 @@
 extends Panel
 
-@onready var icon: Sprite2D = $Panel/Sprite2D
-@onready var namaBatik: Label = $namaBatik
+@onready var icon: TextureRect =$HBoxContainer/Panel/TextureRect
+@onready var namaBatik: Label = $HBoxContainer/namaBatik
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
