@@ -21,6 +21,7 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 DoorHandle="*res://helpers/door_handle.tscn"
 State="*res://state.gd"
 DataBatik="*res://dataBatik.gd"
+SoundFx="*res://audio/sound_fx.tscn"
 
 [dialogue_manager]
 

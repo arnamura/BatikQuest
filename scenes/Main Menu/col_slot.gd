@@ -3,9 +3,8 @@ extends Panel
 @onready var background: Sprite2D = $Button/Background
 @onready var icon: Sprite2D = $Button/CenteredContainer/Panel/Icon
 @onready var btn: Button = $Button
-@onready var desc = preload("res://scenes/Main Menu/description_collection.tscn")
 
-var setDescBatik 
+var setDescBatik #menyimpan data batik yang dipilih sementara untuk dioper lagi
 var empty = true
 #bakal diedit variable temp nyaa 
 
@@ -22,6 +21,7 @@ func update(batik):
 		setDescBatik = batik
 
 func _on_button_pressed():
+	SoundFx.buttonClick()
 	if setDescBatik["isGet"]:
 		DataBatik.pressedBatik = setDescBatik
 		DataBatik.visibleDesc = true

@@ -22,10 +22,12 @@ func _process(_delta: float):
 #	texturerect.set_texture(gambarfix)
 
 func _on_button_x_pressed():
+	SoundFx.buttonClick()
 	ui.hide()
 	
 
 func _on_next_pressed():
+	SoundFx.buttonClick()
 	#button update deskripsi ke ciri
 	if currentPage == 0:
 		currentPage = +1

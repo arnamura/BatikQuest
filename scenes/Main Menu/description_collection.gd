@@ -22,9 +22,8 @@ func showDesc(batik):
 	else:
 		var gambar = load(batik["pathimg"])
 		pict.set_texture(gambar)
+		nama.text = batik["nama"]
 		updateText()
-#		nama.text = batik["nama"]
-#		desc.text = batik["deskripsi"]
 
 func updateText():
 	if page == 0:
@@ -35,9 +34,9 @@ func updateText():
 		next.text = "Deskripsi"
 		sub.text = "Ciri-ciri" 
 		desc.text = DataBatik.pressedBatik["ciri"]
-		print_debug(desc.text)
 
 func _on_btn_next_pressed():
+	SoundFx.buttonClick()
 	if page == 0:
 		updateText()
 		page = 1

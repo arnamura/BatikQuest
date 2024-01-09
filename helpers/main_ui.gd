@@ -18,14 +18,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	updateHp()
-	
 
 func updateHp():
 	hpPlayer = str(player.hp)
 	poin.text = hpPlayer
 	
-
-
 func _on_menu_pressed():
+	SoundFx.buttonClick()
 	pause.paused()
 	pause.show()

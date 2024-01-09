@@ -1,0 +1,126 @@
+[gd_scene load_steps=10 format=3 uid="uid://cg5dc8g4b8uru"]
+
+[ext_resource type="Texture2D" uid="uid://e2vamsgxgk6x" path="res://art/DialogueBoxSimple.png" id="1_gimed"]
+[ext_resource type="Script" path="res://helpers/Pause/DetailBatikPausePanel.gd" id="2_3yvck"]
+[ext_resource type="Texture2D" uid="uid://dkk1xe14wp4pd" path="res://icon.svg" id="2_dlebt"]
+[ext_resource type="FontFile" uid="uid://dofpvw42s1f6d" path="res://NormalFont.ttf" id="3_4ij2h"]
+[ext_resource type="Theme" uid="uid://7vpl40sax2v" path="res://styles/Deskripsitheme.tres" id="4_5m8fr"]
+[ext_resource type="StyleBox" uid="uid://cn6mbunwuv2gb" path="res://styles/buttonStyle.tres" id="6_a8cg1"]
+
+[sub_resource type="Theme" id="Theme_344nm"]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 3
+Label/font_sizes/font_size = 11
+Label/fonts/font = ExtResource("3_4ij2h")
+
+[sub_resource type="Theme" id="Theme_tabvb"]
+default_font = ExtResource("3_4ij2h")
+default_font_size = 8
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4t4rd"]
+texture = ExtResource("1_gimed")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+draw_center = false
+
+[node name="DetailBatikPausePanel" type="NinePatchRect"]
+z_index = 11
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.0
+offset_top = -52.5
+offset_right = 83.0
+offset_bottom = 52.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_gimed")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+script = ExtResource("2_3yvck")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 51.0
+offset_bottom = 39.0
+texture = ExtResource("2_dlebt")
+expand_mode = 1
+
+[node name="SubTitle" type="Label" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 42.0
+offset_right = 46.0
+offset_bottom = 51.0
+theme = ExtResource("4_5m8fr")
+text = "Deskripsi :"
+
+[node name="BatikLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 12.0
+offset_right = 116.0
+offset_bottom = 38.0
+theme = SubResource("Theme_344nm")
+text = "batik"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DescLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 49.0
+offset_right = 157.0
+offset_bottom = 86.0
+theme = ExtResource("4_5m8fr")
+text = "contoh deskripsi yang sangat amat panjang sekali sehingga membuat yang main agak malas membaca"
+autowrap_mode = 3
+
+[node name="Close" type="Button" parent="."]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 9.0
+offset_right = 156.0
+offset_bottom = 17.0
+
+[node name="BtnNext" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -31.0
+offset_top = -16.0
+offset_right = 28.0
+offset_bottom = 7.00002
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.364, 0.364)
+size_flags_horizontal = 0
+focus_mode = 0
+theme = SubResource("Theme_tabvb")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/h_separation = 0
+theme_override_styles/normal = ExtResource("6_a8cg1")
+theme_override_styles/hover = ExtResource("6_a8cg1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4t4rd")
+text = "Ciri -Ciri"
+
+[connection signal="pressed" from="Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="BtnNext" to="." method="_on_btn_next_pressed"]

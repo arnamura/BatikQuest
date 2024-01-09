@@ -1,6 +1,7 @@
 extends Node
 
-var pressedBatik
+var pressedBatik #Menyimpan data batik yang sedang dipilih
+var getBat = false #temp
 var visibleDesc = false
 
 var batik1 := {
@@ -10,7 +11,7 @@ var batik1 := {
 		"Motif batik yang berasal dari kalangan petani dan rakyat. Inspirasinya berasal dari bunga-bunga yang tumbuh di semak-semak di pedesaan. Tidak ada filosofi khusus. Namun, dari segi geometri, motif ini dapat mencerminkan keseimbangan, keteraturan, dan kesempurnaan bagi mereka yang memakainya.",
 	"ciri" :
 		"Motif kelompok bunga-bunga yang dihias dengan daun disekelilingnya menjadi kerangka segi empat\n(Ceplokan: Didasari bentuk-bentuk geometris persegi/oval/bintang yang disusun melingkar menjadi sekuntum bunga)",
-	"isGet": false
+	"isGet": true
 }
 
 var batik2 := {
@@ -18,11 +19,11 @@ var batik2 := {
 	"pathimg": "res://art/batik/gringsing.png",
 	"deskripsi" : "Kain ini dipakai sebagai hiasan pada kereta megah yang telah ada sejak zaman Raden Wijaya di Majapahit. Kain ini juga merupakah hadiah untuk panglima perang yang telah berjasa. Konon, kain ini memiliki kekuatan untuk menyembuhkan luka",
 	"ciri" : "Memiliki motif lingkaran kecil-kecil sebagai latar dari kain dengan sebuah titik di tengah lingkaran tersebut",
-	"isGet": false
+	"isGet": true
 }
 
 var batik3 := {
-	"nama": "kawung",
+	"nama": "Kawung",
 	"pathimg": "res://art/batik/kawung.png",
 	"deskripsi" : "Diciptakan oleh Sultan Mataran, yaitu Sultan Agung Hanyokrokusumo. Motif Batik ini merupakan larangan di Keraton Yogyakarta yang hanya boleh dipakai oleh Raja dan Sentono dalem(Keluarga Raja)",
 	"ciri" : "Berbentuk seperti 4 buah kolang-kaling yang disusun menjadi lingkaran dan terdapat ornamen kecil ditengahnya",

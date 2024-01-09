@@ -2,19 +2,28 @@ extends Panel
 
 @onready var icon: TextureRect =$HBoxContainer/Panel/TextureRect
 @onready var namaBatik: Label = $HBoxContainer/namaBatik
+@onready var panel: Panel = $"."
+@onready var btn: Button = $HBoxContainer/Button
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+var pressed = false
+var batikTemp
+var i
+signal pressedSign(is_pressed: bool)
 
 func update(batik):
 	if !batik["isGet"]:
 		namaBatik.text = "???"
+		btn.disabled = true
 	else:
 		namaBatik.text = batik["nama"]
 		icon.texture = load(batik["pathimg"])
+		batikTemp = batik
+		
+func _on_button_pressed():
+	SoundFx.buttonClick()
+	if batikTemp["isGet"] == true :
+			DataBatik.pressedBatik = batikTemp
+			DataBatik.getBat = true
+	pressed = !pressed
+	pressedSign.emit(pressed)
+	pressed = !pressed

@@ -11,6 +11,6 @@ func _process(delta):
 
 func updateCol():
 	for i in range(min(9, slots.size())):
-		var data_name = "batik" + str(i+1)
-		slots[i].update(DataBatik[data_name])
+		var nomorBatik = "batik" + str(i+1)
+		slots[i].update(DataBatik[nomorBatik])
 
