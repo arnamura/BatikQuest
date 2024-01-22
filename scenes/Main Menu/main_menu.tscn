@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://bt3oquybtan00"]
+[gd_scene load_steps=12 format=3 uid="uid://bt3oquybtan00"]
 
 [ext_resource type="FontFile" uid="uid://dofpvw42s1f6d" path="res://NormalFont.ttf" id="1_72bcx"]
 [ext_resource type="Script" path="res://scenes/Main Menu/main_menu.gd" id="1_enl23"]
 [ext_resource type="StyleBox" uid="uid://cn6mbunwuv2gb" path="res://styles/buttonStyle.tres" id="2_5gt5y"]
 [ext_resource type="Texture2D" uid="uid://e2vamsgxgk6x" path="res://art/DialogueBoxSimple.png" id="3_14l6q"]
-[ext_resource type="AudioStream" uid="uid://c5spx353f3uy4" path="res://audio/20 - Good Time.ogg" id="5_du6uw"]
 
 [sub_resource type="Theme" id="Theme_fwml8"]
 default_font = ExtResource("1_72bcx")
@@ -246,10 +245,6 @@ vertical_alignment = 1
 libraries = {
 "": SubResource("AnimationLibrary_p0ymr")
 }
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_du6uw")
-autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/BtnNewG" to="." method="_on_btn_new_g_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/BtnLoadG" to="." method="_on_btn_load_g_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://b8oyesujqtuvp"]
+[gd_scene load_steps=55 format=3 uid="uid://b8oyesujqtuvp"]
 
 [ext_resource type="Texture2D" uid="uid://vup3ac4pey0k" path="res://art/terrain/TilesetElement.png" id="1_ct0ab"]
 [ext_resource type="Script" path="res://scenes/desa_batik.gd" id="1_mkhs7"]
@@ -31,8 +31,6 @@
 [ext_resource type="Resource" uid="uid://cxok5eckdoaf3" path="res://dialogue/intro.dialogue" id="26_vpg8c"]
 [ext_resource type="PackedScene" uid="uid://ctmdyndakohku" path="res://enemies/boss.tscn" id="27_1nh1n"]
 [ext_resource type="Resource" uid="uid://c5gd6la4et2oo" path="res://dialogue/last boss.dialogue" id="28_gxfql"]
-[ext_resource type="AudioStream" uid="uid://cqtcp5jobbxii" path="res://audio/4 - Village.ogg" id="32_lcvk7"]
-[ext_resource type="AudioStream" uid="uid://cb0igdu3hobfp" path="res://audio/22 - Dream.ogg" id="33_hpaby"]
 
 [sub_resource type="Animation" id="Animation_vo8vg"]
 length = 0.001
@@ -8783,7 +8781,7 @@ layer_6/tile_data = PackedInt32Array(2097205, 12, 65536, 3276811, 12, 196608)
 
 [node name="Player" parent="TileMap" instance=ExtResource("9_mev21")]
 z_index = 2
-position = Vector2(120, 21)
+position = Vector2(261, 320)
 collision_mask = 33
 
 [node name="Player Cam" type="Camera2D" parent="TileMap/Player" node_paths=PackedStringArray("tilemap")]
@@ -8882,13 +8880,15 @@ shape = SubResource("CircleShape2D_afwim")
 [node name="Area" type="Node2D" parent="TileMap"]
 
 [node name="Village" type="Area2D" parent="TileMap/Area"]
-light_mask = 3
-visibility_layer = 3
+light_mask = 512
+visibility_layer = 512
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/Area/Village"]
 polygon = PackedVector2Array(-1, -9, -1, -73, 583, -73, 583, 135, 519, 135, 519, 439, 207, 439, 207, 175, -1, 175)
 
 [node name="Forrest" type="Area2D" parent="TileMap/Area"]
+light_mask = 512
+visibility_layer = 512
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/Area/Forrest"]
 polygon = PackedVector2Array(-1, 183, 207, 183, 207, 439, 519, 439, 927, 439, 927, 663, -17, 663, -17, 183)
@@ -8900,21 +8900,14 @@ polygon = PackedVector2Array(-17, 663, 447, 663, 447, 975, -25, 975, -25, 663)
 
 [node name="Dessert" type="Area2D" parent="TileMap/Area"]
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/Area/Dessert"]
+polygon = PackedVector2Array(583, 135, 519, 135, 519, 436, 1000, 436, 1001, 95, 582, 95)
+
 [node name="Boss" type="Area2D" parent="TileMap/Area"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/Area/Boss"]
+polygon = PackedVector2Array(583, 95, 1001, 95, 1001, -81, 581, -81)
 
 [node name="MainUI" parent="." instance=ExtResource("25_dyomg")]
 
-[node name="BGM" type="Node" parent="."]
-
-[node name="Villagebgm" type="AudioStreamPlayer" parent="BGM"]
-stream = ExtResource("32_lcvk7")
-autoplay = true
-
-[node name="Forrestbgm" type="AudioStreamPlayer" parent="BGM"]
-stream = ExtResource("33_hpaby")
-
 [connection signal="body_entered" from="TileMap/Helpers/toDungeon" to="TileMap/Helpers/toDungeon" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/Area/Village" to="." method="_on_village_body_entered"]
-[connection signal="body_exited" from="TileMap/Area/Village" to="." method="_on_village_body_exited"]
-[connection signal="body_entered" from="TileMap/Area/Forrest" to="." method="_on_forrest_body_entered"]
-[connection signal="body_exited" from="TileMap/Area/Forrest" to="." method="_on_forrest_body_exited"]

@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://caxoryrj8eqdi"
-path="res://.godot/imported/DIRT - Run 1.wav-d4a5f12843a5faf36c8f0d2cac8d31fb.sample"
+uid="uid://ssbs30mu4och"
+path="res://.godot/imported/hurt.wav-070a1d90b4f20e0190267ae2225dc033.sample"
 
 [deps]
 
-source_file="res://audio/DIRT - Run 1.wav"
-dest_files=["res://.godot/imported/DIRT - Run 1.wav-d4a5f12843a5faf36c8f0d2cac8d31fb.sample"]
+source_file="res://audio/sfx/hurt.wav"
+dest_files=["res://.godot/imported/hurt.wav-070a1d90b4f20e0190267ae2225dc033.sample"]
 
 [params]
 

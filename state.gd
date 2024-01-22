@@ -12,6 +12,8 @@ var introQuest = false
 var inQuest = false
 var dungeonState = false
 var isPause = false
+var playerPosLoad
+var playerMapLoad
 
 
 #introQuest
@@ -101,6 +103,8 @@ var questInfo = {
 }
 
 func _process(_delta):
+	playerMapLoad
+	playerPosLoad
 	questInfo = {
 	0: {
 		"status": quest0Status,

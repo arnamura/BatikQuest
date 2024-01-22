@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b5tc2y4jyw05v"]
+[gd_scene load_steps=27 format=3 uid="uid://b5tc2y4jyw05v"]
 
 [ext_resource type="Script" path="res://scenes/museum.gd" id="1_7nw5d"]
 [ext_resource type="Texture2D" uid="uid://3sxuvjpjwq4u" path="res://art/tileset/TopDownHouse_FloorsAndWalls.png" id="1_ivq45"]
@@ -3433,6 +3433,9 @@ sources/3 = SubResource("TileSetAtlasSource_5fjd3")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6gyiq"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7620g"]
+size = Vector2(425, 258)
+
 [node name="Museum" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_7nw5d")
@@ -3608,6 +3611,12 @@ dialogue_start = "intro"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/NPC/bapak/Actionable"]
 shape = SubResource("CircleShape2D_6gyiq")
+
+[node name="Museum" type="Area2D" parent="TileMap"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Museum"]
+position = Vector2(199.5, 72)
+shape = SubResource("RectangleShape2D_7620g")
 
 [node name="MainUI" parent="." instance=ExtResource("12_wxj8h")]
 

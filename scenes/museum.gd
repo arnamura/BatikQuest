@@ -5,20 +5,19 @@ extends Node2D
 @onready var item = State.questInfo
 @onready var ui = $MainUI
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	anim.play("transisiIn")
-	if not State.introQuest:
+	if not State.introQuest: #untuk mengaktifkan quest intro saat game baru dimulai
 		State.takenQuest0 = true
 
 func _process(delta):
-	if not State.introQuest:
+	if not State.introQuest: #untuk mengecek kondisi quest supaya bisa berpindah ke main world
 		if State.questInfo[0]["item"] == "1":
 			State.introQuest = true
-			print_debug(State.introQuest)
 			teleport()
 		
-func teleport():
+func teleport(): #fungsi untuk berpindah ke main world
 	ui.visible = false
 	$MainUI/Dpads.visible = false
 	anim.play("transisiOut")

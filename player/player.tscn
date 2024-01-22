@@ -475,10 +475,12 @@ libraries = {
 position = Vector2(0, -2.375)
 shape = SubResource("RectangleShape2D_gr0ne")
 
-[node name="hurtBox" type="Area2D" parent="."]
+[node name="MapDetection" type="Area2D" parent="."]
+light_mask = 513
+visibility_layer = 513
 collision_mask = 35
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapDetection"]
 position = Vector2(0, -4.5)
 shape = SubResource("RectangleShape2D_hsgqu")
 
@@ -501,5 +503,5 @@ libraries = {
 "": SubResource("AnimationLibrary_p0ymr")
 }
 
-[connection signal="area_entered" from="hurtBox" to="." method="_on_hurt_box_area_entered"]
-[connection signal="area_exited" from="hurtBox" to="." method="_on_hurt_box_area_exited"]
+[connection signal="area_entered" from="MapDetection" to="." method="_on_map_detection_area_entered"]
+[connection signal="area_exited" from="MapDetection" to="." method="_on_map_detection_area_exited"]

@@ -45,6 +45,6 @@ func _physics_process(_delta):
 	updateAnimation()
 
 func _on_hit_box_area_entered(area):
-	if area.name == "hurtBox":
+	if area.name == "MapDetection":
 		#velocity = -velocity * 50
 		move_and_slide()

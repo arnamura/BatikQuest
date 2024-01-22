@@ -4,10 +4,13 @@ extends Control
 
 		
 func _ready():
-	pass
+	if  SoundFx.bgmPlay == false:
+		SoundFx.bgmPlay = true
+		SoundFx.mainmenuBgm()
 	
 func _on_btn_new_g_pressed():
 	SoundFx.buttonClick()
+	SoundFx.bgmPlay = false
 	anim.play("transisiOut")
 	await anim.animation_finished
 	DoorHandle.changeStage(DoorHandle.museum)

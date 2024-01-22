@@ -7,16 +7,21 @@ extends CharacterBody2D
 @onready var animations = $AnimationPlayer
 @onready var effects = $Effect
 @onready var hurtTimer = $Timer
-@onready var hurtBox = $hurtBox
+@onready var MapDetect = $MapDetection
 @onready var playerSprite = $Sprite2D
 @onready var weapon = $Weapon
+
 @export var respawnMark : Marker2D
+@export var hp = 3
 
 var respawnPoint
 var isHurt: bool = false
 var lastDirect: String = "Down"
 var isAttack: bool = false
-@export var hp = 3
+
+var playerPos
+var playerMap
+
 
 func _ready():
 	#agar diawal warna player default
@@ -25,7 +30,15 @@ func _ready():
 		respawnPoint = respawnMark.global_position
 	else:
 		respawnPoint = Vector2.ZERO
+
+#untuk mengetahui posisi player (guna untuk spawn saat load game nanti)
+func playerPosition():
+	playerPos = global_position
+	playerMap = get_tree().current_scene	
 	
+	State.playerPosLoad = playerPos
+	State.playerMapLoad = playerMap
+
 #untuk handle input action
 func _unhandled_input(_event: InputEvent) -> void:
 	#untuk tombol berlari
@@ -71,24 +84,25 @@ func updateAnimation():
 		animations.play("walk"+ direction)
 		lastDirect = direction
 	
-func _physics_process(_delta):
+func _physics_process(_delta): #ketika area dari player berupa "mapDetection" menyentuh area musuh "hitBox" akan memanggil fungsi Onhit()
 	handleInput()
 	move_and_slide()
 	updateAnimation()
 	if !isHurt:
-		for area in hurtBox.get_overlapping_areas():
+		for area in MapDetect.get_overlapping_areas():
 			if area.name == "hitBox":
 				onHit(area)
 				
-func knockback2(enemyVelocity: Vector2):
+func knockback2(enemyVelocity: Vector2): #mengambil vector arah musuh bergerak saat menyentuh player
 	var knockDir = (enemyVelocity - velocity).normalized() * knockbackPower
 	velocity = knockDir
 	move_and_slide()
 
-func onHit(area):
+func onHit(area): #fungsi akbiat dari saat player menyentuh musuh yang menyebabkan knockback dan hp berkurang
 	hp = hp-1	
 	isHurt = true
 	knockback2(area.get_parent().velocity)
+	SoundFx.hurtFx()
 	effects.play("hurtAnim")
 	hurtTimer.start()
 	await hurtTimer.timeout
@@ -97,23 +111,49 @@ func onHit(area):
 	if hp == 0:
 		hp = 3
 	isHurt = false	
+	
+func _on_map_detection_area_entered(area): #mendeteksi area player berada untuk play bgm song
+	match area.name:
+			"Village":
+				SoundFx.playBgm(area.name)
+			"Forrest":
+				SoundFx.playBgm(area.name)
+			"Dessert":
+				SoundFx.playBgm(area.name)
+			"Boss":
+				SoundFx.playBgm(area.name)
+			"Dungeon":
+				SoundFx.playBgm(area.name)
+			"Museum":
+				SoundFx.playBgm(area.name)
+			"TamanBunga":
+				SoundFx.playBgm(area.name)
 
-func respawn():
+func _on_map_detection_area_exited(area): #mendeteksi area player berada untuk stop bgm song 
+	match area.name:
+		"Village":
+			SoundFx.stopBgm(area.name)
+		"Forrest":
+			SoundFx.stopBgm(area.name)
+		"Dessert":
+			SoundFx.stopBgm(area.name)
+		"Boss":
+			SoundFx.stopBgm(area.name)
+		"Dungeon":
+			SoundFx.stopBgm(area.name)
+		"Museum":
+			SoundFx.stopBgm(area.name)
+		"TamanBunga":
+				SoundFx.stopBgm(area.name)
+
+func respawn(): #fungsi spawn ke lokasi awal dungeon ketika hp menyentuh 0
 	position = respawnPoint
 	#effects.play("transisiIn")
 	
 #tidak dipakai
-func _on_hurt_box_area_exited(_area): pass
-
-func _on_hurt_box_area_entered(_area): pass
-	# cek kondisi untuk fungsi interaksi
-	#if area.name == "Interact":
-	#	print_debug(area.get_parent().name)
-
 #func timerknock():
 #		effects.play("hurtAnim")
 #		hurtTimer.start()
 #		await hurtTimer.timeout
 #		effects.play("reset")
-
 

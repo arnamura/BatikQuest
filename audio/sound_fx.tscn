@@ -1,16 +1,53 @@
-[gd_scene load_steps=4 format=3 uid="uid://di45vaso65aso"]
+[gd_scene load_steps=12 format=3 uid="uid://di45vaso65aso"]
 
 [ext_resource type="Script" path="res://audio/SoundFx.gd" id="1_uccg4"]
-[ext_resource type="AudioStream" uid="uid://cgeecstatb8im" path="res://audio/Menu1.wav" id="2_0siah"]
-[ext_resource type="AudioStream" uid="uid://bs7bnrmj717ny" path="res://audio/Menu12.wav" id="3_bhy36"]
+[ext_resource type="AudioStream" uid="uid://cg660iwvjnit0" path="res://audio/23 - Road.ogg" id="2_1qas1"]
+[ext_resource type="AudioStream" uid="uid://c5spx353f3uy4" path="res://audio/MainMenuBGM.ogg" id="2_hx0dh"]
+[ext_resource type="AudioStream" uid="uid://bqfiwalwo6ula" path="res://audio/forest.ogg" id="3_earht"]
+[ext_resource type="AudioStream" uid="uid://ydyyprdjv4lm" path="res://audio/21 - Dungeon.ogg" id="3_wddnl"]
+[ext_resource type="AudioStream" uid="uid://d4hj6x5xbxkyj" path="res://audio/27 - Chill.ogg" id="4_xepa2"]
+[ext_resource type="AudioStream" uid="uid://o88ja3m6u6ei" path="res://audio/24 - Final Area.ogg" id="6_gsra3"]
+[ext_resource type="AudioStream" uid="uid://cgeecstatb8im" path="res://audio/sfx/Menu1.wav" id="7_ohvns"]
+[ext_resource type="AudioStream" uid="uid://bvuf7iox3grc3" path="res://audio/14 - Curse.ogg" id="8_qabw0"]
+[ext_resource type="AudioStream" uid="uid://ssbs30mu4och" path="res://audio/sfx/hurt.wav" id="9_akcfd"]
+[ext_resource type="AudioStream" uid="uid://dvf3t3a5uvhbf" path="res://audio/sfx/Exit.wav" id="9_r76o7"]
 
 [node name="SoundFx" type="Node"]
 script = ExtResource("1_uccg4")
 
+[node name="Bgm" type="Node" parent="."]
+
+[node name="village" type="AudioStreamPlayer" parent="Bgm"]
+stream = ExtResource("2_1qas1")
+
+[node name="dungeon" type="AudioStreamPlayer" parent="Bgm"]
+stream = ExtResource("3_wddnl")
+
+[node name="museum" type="AudioStreamPlayer" parent="Bgm"]
+stream = ExtResource("4_xepa2")
+
+[node name="forest" type="AudioStreamPlayer" parent="Bgm"]
+stream = ExtResource("3_earht")
+
+[node name="mainmenu" type="AudioStreamPlayer" parent="Bgm"]
+stream = ExtResource("2_hx0dh")
+
+[node name="boss" type="AudioStreamPlayer" parent="Bgm"]
+stream = ExtResource("6_gsra3")
+
+[node name="dessert" type="AudioStreamPlayer" parent="Bgm"]
+stream = ExtResource("8_qabw0")
+
+[node name="flower" type="AudioStreamPlayer" parent="Bgm"]
+stream = ExtResource("8_qabw0")
+
 [node name="ButtonClick" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_0siah")
+stream = ExtResource("7_ohvns")
 
 [node name="ButtonExit" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_bhy36")
+stream = ExtResource("9_r76o7")
 
 [node name="walk" type="AudioStreamPlayer2D" parent="."]
+
+[node name="hurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_akcfd")
