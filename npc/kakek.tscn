@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://bteda0q8lw1cj"]
+[gd_scene load_steps=17 format=3 uid="uid://bteda0q8lw1cj"]
 
 [ext_resource type="Script" path="res://npc/kakek.gd" id="1_6rnts"]
 [ext_resource type="Texture2D" uid="uid://diuyrwdms8rmy" path="res://art/char/kakek.png" id="2_mtn2c"]
 [ext_resource type="Texture2D" uid="uid://cl06betmhoesn" path="res://art/DialogInfo.png" id="3_4xltu"]
+[ext_resource type="FontFile" uid="uid://c150i2j8f5iw1" path="res://VCRosdNEUE.ttf" id="4_0rrp0"]
 
 [sub_resource type="Animation" id="Animation_oxmg8"]
 length = 0.001
@@ -117,7 +118,7 @@ _data = {
 size = Vector2(14, 6)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mong3"]
-radius = 14.0
+radius = 29.0
 
 [sub_resource type="Animation" id="Animation_turly"]
 length = 0.001
@@ -157,7 +158,7 @@ _data = {
 "standby": SubResource("Animation_x5sx1")
 }
 
-[node name="kakek" type="CharacterBody2D"]
+[node name="Kakek" type="CharacterBody2D"]
 z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_6rnts")
@@ -188,7 +189,7 @@ shape = SubResource("CircleShape2D_mong3")
 [node name="Notice" type="Sprite2D" parent="Area2D"]
 visible = false
 z_index = 1
-position = Vector2(-3, -14)
+position = Vector2(8, -25)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_4xltu")
 hframes = 4
@@ -197,6 +198,23 @@ hframes = 4
 libraries = {
 "": SubResource("AnimationLibrary_f1uo6")
 }
+
+[node name="nama" type="Label" parent="."]
+visible = false
+z_index = 5
+y_sort_enabled = true
+offset_left = -15.0
+offset_top = -17.0
+offset_right = 17.0
+offset_bottom = -7.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_0rrp0")
+theme_override_font_sizes/font_size = 6
+text = "Nama"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

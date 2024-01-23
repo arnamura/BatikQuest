@@ -11,12 +11,15 @@ var fadingbgm = false
 @onready var Boss = $Bgm/boss
 @onready var Desert = $Bgm/dessert
 @onready var Flower = $Bgm/flower
+@onready var walk = $walk
 
 func buttonClick():
 	$ButtonClick.play()
 
 func walkFx():
-	$walk.play()
+	walk.pitch_scale = randf_range(.8, 1.2)
+	walk.volume_db = -10
+	walk.play()
 
 func hurtFx():
 	$hurt.play()
@@ -27,7 +30,7 @@ func mainmenuBgm():
 	
 func fade_in(bgm: AudioStreamPlayer): #fungsi agar saat bgm mulai, ada efek fade in
 	var tween = create_tween()
-	tween.tween_property(bgm, "volume_db", -10, 5)
+	tween.tween_property(bgm, "volume_db", -10, 5).from(-30)
 	
 func fade_out(bgm: AudioStreamPlayer): #fungsi agar saat bgm berhenti, ada efek fade out
 	var tween = create_tween()
@@ -53,31 +56,24 @@ func stopBgm(bgm): #Untuk menghentikan bgm ketika player berada di sebuah area
 func playBgm(bgm): #Untuk memutar bgm ketika player berada di sebuah area
 	match(bgm):
 		"Village":
-			Village.volume_db = -30
 			Village.play()
 			fade_in(Village)
 		"Forrest":
-			Forest.volume_db = -30
 			Forest.play()
 			fade_in(Forest)
 		"Dungeon":
-			Dungeon.volume_db = -30
 			Dungeon.play()
 			fade_in(Dungeon)
 		"Museum":
-			Museum.volume_db = -30
 			Museum.play()
 			fade_in(Museum)
 		"Boss":
-			Boss.volume_db = -30
 			Boss.play()
 			fade_in(Boss)
 		"Desert":
-			Desert.volume_db = -30
 			Desert.play()
 			fade_in(Desert)
 		"TamanBunga":
-			Flower.volume_db = -30
 			Flower.play()
 			fade_in(Flower)
 			

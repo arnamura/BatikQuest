@@ -10,6 +10,7 @@ func _ready():
 	
 func _physics_process (_delta):
 	if player.hp == 0:
+		player.speed = 0 # membuat player tidak dapat bergerak saat hp = 0
 		if not onTrans:
 			respawn()
 	
@@ -24,5 +25,7 @@ func transAnim():
 	effect.play("transisiIn")
 	await effect.animation_finished
 	onTrans = false
+	player.speed = 50 #membuat player dapat bergerak kembali
+
 	
 	

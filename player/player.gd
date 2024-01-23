@@ -11,6 +11,7 @@ extends CharacterBody2D
 @onready var playerSprite = $Sprite2D
 @onready var weapon = $Weapon
 
+
 @export var respawnMark : Marker2D
 @export var hp = 3
 
@@ -43,7 +44,7 @@ func playerPosition():
 func _unhandled_input(_event: InputEvent) -> void:
 	#untuk tombol berlari
 	if Input.is_action_just_pressed("ui_shift"):
-		speed = 150
+		speed = 100
 	elif Input.is_action_just_released("ui_shift"):
 		speed = 50
 	#untuk tombol interaksi
@@ -57,7 +58,6 @@ func _unhandled_input(_event: InputEvent) -> void:
 func handleInput():
 	var moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = moveDirection*speed
-	
 	if Input.is_action_just_pressed("ui_attack"):
 		attack()
 
@@ -81,6 +81,10 @@ func updateAnimation():
 		if velocity.x < 0: direction = "Left"
 		elif velocity.x > 0: direction = "Right"
 		elif velocity.y <0: direction = "Up"
+		if speed == 100:
+			animations.speed_scale = 2
+		else:
+			animations.speed_scale = 1
 		animations.play("walk"+ direction)
 		lastDirect = direction
 	
@@ -94,13 +98,15 @@ func _physics_process(_delta): #ketika area dari player berupa "mapDetection" me
 				onHit(area)
 				
 func knockback2(enemyVelocity: Vector2): #mengambil vector arah musuh bergerak saat menyentuh player
-	var knockDir = (enemyVelocity - velocity).normalized() * knockbackPower
-	velocity = knockDir
+	if hp != 0:
+		var knockDir = (enemyVelocity - velocity).normalized() * knockbackPower
+		velocity = knockDir
 	move_and_slide()
 
 func onHit(area): #fungsi akbiat dari saat player menyentuh musuh yang menyebabkan knockback dan hp berkurang
 	hp = hp-1	
 	isHurt = true
+	
 	knockback2(area.get_parent().velocity)
 	SoundFx.hurtFx()
 	effects.play("hurtAnim")
@@ -111,7 +117,10 @@ func onHit(area): #fungsi akbiat dari saat player menyentuh musuh yang menyebabk
 	if hp == 0:
 		hp = 3
 	isHurt = false	
-	
+
+func _stepSfx(): #trigger walk sfx
+	SoundFx.walkFx()
+
 func _on_map_detection_area_entered(area): #mendeteksi area player berada untuk play bgm song
 	match area.name:
 			"Village":

@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://b8oyesujqtuvp"]
+[gd_scene load_steps=56 format=3 uid="uid://b8oyesujqtuvp"]
 
 [ext_resource type="Texture2D" uid="uid://vup3ac4pey0k" path="res://art/terrain/TilesetElement.png" id="1_ct0ab"]
 [ext_resource type="Script" path="res://scenes/desa_batik.gd" id="1_mkhs7"]
@@ -8697,6 +8697,8 @@ radius = 17.0294
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p05no"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0hn52"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_afwim"]
 
 [node name="DesaBatik" type="Node2D"]
@@ -8819,26 +8821,6 @@ dialogue_start = "beliKain"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/NPC/pedagang/Actionable"]
 shape = SubResource("CircleShape2D_bnual")
 
-[node name="rahmat" parent="TileMap/NPC" instance=ExtResource("19_pdwds")]
-z_index = 0
-position = Vector2(439, 176)
-
-[node name="Actionable" parent="TileMap/NPC/rahmat" instance=ExtResource("16_4om6r")]
-dialogue_resource = ExtResource("21_5wjmn")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/NPC/rahmat/Actionable"]
-shape = SubResource("CircleShape2D_bnual")
-
-[node name="bang dirman" parent="TileMap/NPC" instance=ExtResource("22_abfib")]
-z_index = 1
-position = Vector2(726, 246)
-
-[node name="Actionable" parent="TileMap/NPC/bang dirman" instance=ExtResource("16_4om6r")]
-dialogue_resource = ExtResource("23_p5ebv")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/NPC/bang dirman/Actionable"]
-shape = SubResource("CircleShape2D_bnual")
-
 [node name="omSamurai" parent="TileMap/NPC" instance=ExtResource("25_njc1y")]
 position = Vector2(163, 68)
 
@@ -8859,6 +8841,26 @@ dialogue_start = "BossMomen"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/NPC/Boss/Actionable"]
 shape = SubResource("CircleShape2D_p05no")
+
+[node name="rahmat" parent="TileMap/NPC" instance=ExtResource("19_pdwds")]
+z_index = 0
+position = Vector2(439, 176)
+
+[node name="Actionable" parent="TileMap/NPC/rahmat" instance=ExtResource("16_4om6r")]
+dialogue_resource = ExtResource("21_5wjmn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/NPC/rahmat/Actionable"]
+shape = SubResource("CircleShape2D_bnual")
+
+[node name="bang dirman" parent="TileMap/NPC" instance=ExtResource("22_abfib")]
+z_index = 0
+position = Vector2(691, 255)
+
+[node name="Actionable" parent="TileMap/NPC/bang dirman" instance=ExtResource("16_4om6r")]
+dialogue_resource = ExtResource("23_p5ebv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/NPC/bang dirman/Actionable"]
+shape = SubResource("CircleShape2D_0hn52")
 
 [node name="Additional" type="Node2D" parent="TileMap"]
 
@@ -8899,6 +8901,7 @@ polygon = PackedVector2Array(-1, 183, 207, 183, 207, 439, 519, 439, 927, 439, 92
 polygon = PackedVector2Array(-17, 663, 447, 663, 447, 975, -25, 975, -25, 663)
 
 [node name="Dessert" type="Area2D" parent="TileMap/Area"]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/Area/Dessert"]
 polygon = PackedVector2Array(583, 135, 519, 135, 519, 436, 1000, 436, 1001, 95, 582, 95)

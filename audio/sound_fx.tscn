@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://di45vaso65aso"]
+[gd_scene load_steps=13 format=3 uid="uid://di45vaso65aso"]
 
 [ext_resource type="Script" path="res://audio/SoundFx.gd" id="1_uccg4"]
 [ext_resource type="AudioStream" uid="uid://cg660iwvjnit0" path="res://audio/23 - Road.ogg" id="2_1qas1"]
@@ -9,8 +9,9 @@
 [ext_resource type="AudioStream" uid="uid://o88ja3m6u6ei" path="res://audio/24 - Final Area.ogg" id="6_gsra3"]
 [ext_resource type="AudioStream" uid="uid://cgeecstatb8im" path="res://audio/sfx/Menu1.wav" id="7_ohvns"]
 [ext_resource type="AudioStream" uid="uid://bvuf7iox3grc3" path="res://audio/14 - Curse.ogg" id="8_qabw0"]
-[ext_resource type="AudioStream" uid="uid://ssbs30mu4och" path="res://audio/sfx/hurt.wav" id="9_akcfd"]
 [ext_resource type="AudioStream" uid="uid://dvf3t3a5uvhbf" path="res://audio/sfx/Exit.wav" id="9_r76o7"]
+[ext_resource type="AudioStream" uid="uid://bm734jqlmbi8e" path="res://audio/sfx/Steps_tiles-006.ogg" id="11_r7crl"]
+[ext_resource type="AudioStream" uid="uid://06fcm2oovdj2" path="res://audio/sfx/Hit.wav" id="12_4qoge"]
 
 [node name="SoundFx" type="Node"]
 script = ExtResource("1_uccg4")
@@ -48,6 +49,7 @@ stream = ExtResource("7_ohvns")
 stream = ExtResource("9_r76o7")
 
 [node name="walk" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_r7crl")
 
 [node name="hurt" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_akcfd")
+stream = ExtResource("12_4qoge")
