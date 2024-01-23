@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://tbvn2122fjtg"]
+[gd_scene load_steps=12 format=3 uid="uid://tbvn2122fjtg"]
 
 [ext_resource type="Script" path="res://helpers/description_gui.gd" id="1_sas3c"]
 [ext_resource type="Texture2D" uid="uid://e2vamsgxgk6x" path="res://art/DialogueBoxSimple.png" id="2_jl062"]
@@ -6,14 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://cdudngtp2q14p" path="res://art/183578050_473107943801943_6185835635627700778_n.png" id="2_tqagx"]
 [ext_resource type="Script" path="res://helpers/ButtonX.gd" id="3_td7w4"]
 [ext_resource type="Texture2D" uid="uid://2anmgwbjjhbo" path="res://art/controller/flatDark15.png" id="5_uqjyl"]
-[ext_resource type="FontFile" uid="uid://dofpvw42s1f6d" path="res://NormalFont.ttf" id="7_3ho2e"]
 [ext_resource type="FontFile" uid="uid://c150i2j8f5iw1" path="res://VCRosdNEUE.ttf" id="8_cdp7b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t717g"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_iki5q"]
-font = ExtResource("7_3ho2e")
+font = ExtResource("8_cdp7b")
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
@@ -139,6 +138,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.361, 0.361)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 500
 text = "Ini judul gambar"
 label_settings = SubResource("LabelSettings_iki5q")
 horizontal_alignment = 1

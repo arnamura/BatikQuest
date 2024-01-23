@@ -48,7 +48,7 @@ func stopBgm(bgm): #Untuk menghentikan bgm ketika player berada di sebuah area
 			fade_out(Museum)
 		"Boss":
 			fade_out(Boss)
-		"Desert":
+		"Dessert":
 			fade_out(Desert)
 		"TamanBunga":
 			fade_out(Flower)
@@ -70,7 +70,7 @@ func playBgm(bgm): #Untuk memutar bgm ketika player berada di sebuah area
 		"Boss":
 			Boss.play()
 			fade_in(Boss)
-		"Desert":
+		"Dessert":
 			Desert.play()
 			fade_in(Desert)
 		"TamanBunga":

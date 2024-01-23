@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b5tc2y4jyw05v"]
+[gd_scene load_steps=30 format=3 uid="uid://b5tc2y4jyw05v"]
 
 [ext_resource type="Script" path="res://scenes/museum.gd" id="1_7nw5d"]
 [ext_resource type="Texture2D" uid="uid://3sxuvjpjwq4u" path="res://art/tileset/TopDownHouse_FloorsAndWalls.png" id="1_ivq45"]
@@ -95,6 +95,72 @@ _data = {
 "teleport": SubResource("Animation_t3a36"),
 "transisiIn": SubResource("Animation_j6aig"),
 "transisiOut": SubResource("Animation_s3tp7")
+}
+
+[sub_resource type="Animation" id="Animation_122od"]
+resource_name = "intro_quest"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TileMap/Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(22, 28), Vector2(86, 28), Vector2(86, 43), Vector2(105, 43)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TileMap/Player")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 3, 4, 4.1, 4.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"values": [{
+"args": ["walkRight"],
+"method": &"_play_anim"
+}, {
+"args": ["walkDown"],
+"method": &"_play_anim"
+}, {
+"args": ["walkRight"],
+"method": &"_play_anim"
+}, {
+"args": ["walkUp"],
+"method": &"_play_anim"
+}, {
+"args": [],
+"method": &"_stop_anim"
+}, {
+"args": [],
+"method": &"interactCutscene"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_wav2c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TileMap/Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(22, 28)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mmli3"]
+_data = {
+"RESET": SubResource("Animation_wav2c"),
+"intro_quest": SubResource("Animation_122od")
 }
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_octtg"]
@@ -3465,6 +3531,11 @@ libraries = {
 "": SubResource("AnimationLibrary_p0ymr")
 }
 
+[node name="Cutscene" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mmli3")
+}
+
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
 tile_set = SubResource("TileSet_vxkti")
@@ -3498,7 +3569,7 @@ layer_3/tile_data = PackedInt32Array(-131064, 327683, 1, -131069, 65539, 1, -131
 [node name="Player" parent="TileMap" instance=ExtResource("2_7xgbq")]
 visibility_layer = 33
 z_index = 2
-position = Vector2(58, 37)
+position = Vector2(22, 28)
 collision_mask = 33
 
 [node name="Player Cam" type="Camera2D" parent="TileMap/Player" node_paths=PackedStringArray("tilemap")]

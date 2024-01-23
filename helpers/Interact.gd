@@ -35,9 +35,8 @@ func updateText():
 		uiDesc.desk =DataBatik[label_batik]["ciri"]
 
 func _on_area_entered(area):
-	if area.name == "hurtBox":
+	if area.name == "MapDetection":
 		player_in_range = true
-		print_debug("halo")
 
 func _unhandled_input(_event):
 	if player_in_range == true:
@@ -45,5 +44,5 @@ func _unhandled_input(_event):
 			showUi()
 
 func _on_area_exited(area):
-	if area.name == "hurtBox":
+	if area.name == "MapDetection":
 		player_in_range = false

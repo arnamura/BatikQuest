@@ -4,6 +4,9 @@ extends CharacterBody2D
 
 @onready var namaNpc: Label = $nama
 @onready var animations = $AnimationPlayer
+@onready var namaPosition = namaNpc.global_position.y
+
+
 
 var active = false
 
@@ -15,14 +18,15 @@ func _physics_process(_delta):
 
 func _on_area_2d_body_entered(body):
 	if body.name == 'Player':
+		var namaAfterTween: int = namaPosition - 15
+		print_debug(namaPosition, namaAfterTween)
 		namaNpc.visible = true
 		$Area2D/Notice.visible = true
-		create_tween().tween_property(namaNpc, "global_position:y", 6, 0.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
+		create_tween().tween_property(namaNpc, "global_position:y", namaAfterTween, 0.5).from(namaPosition).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
 		$Area2D/Notice/AnimationPlayer.play('standby')
 
 func _on_area_2d_body_exited(body):
 	if body.name == 'Player':
 		namaNpc.visible = false
-		namaNpc.global_position.y = 15
 		$Area2D/Notice.visible = false
 		

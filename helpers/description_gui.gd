@@ -47,5 +47,5 @@ func update():
 		deskripsi.text = ciri
 		sub.text = "Ciri-ciri:"
 		nextbtn.text = "Deskripsi"
-	label.text = "Batik " + title
+	label.text = "Batik"+ " " + title
 	

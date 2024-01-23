@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://06fcm2oovdj2" path="res://audio/sfx/Hit.wav" id="12_4qoge"]
 
 [node name="SoundFx" type="Node"]
+process_mode = 3
 script = ExtResource("1_uccg4")
 
 [node name="Bgm" type="Node" parent="."]

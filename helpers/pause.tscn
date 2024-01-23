@@ -114,6 +114,7 @@ horizontal_scroll_mode = 3
 vertical_scroll_mode = 2
 
 [node name="BatikListContainer" type="GridContainer" parent="Panel/DisplayPanel/ScrollPanelBatikList"]
+visible = false
 custom_minimum_size = Vector2(140, 200)
 layout_mode = 2
 script = ExtResource("5_i0h35")

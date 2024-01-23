@@ -14,7 +14,7 @@ set reqItem0 = "1"
 => END!
 
 ~ penjaga
-if reqItem == "1"
+if reqItem0 == "1"
 	Om Samurai: Hai anak muda
 	Om Samurai: Kau ingin kemana?
 	Bima: Aku bahkan tidak tau dimana ini
@@ -33,11 +33,8 @@ if reqItem == "1"
 			Om Samurai: Oh iya ini, bawalah kain ini untuk menemani perjalanan Mu untuk kembali ke "Asal" mu
 			set takenQuest0 = false 
 			set quest0Status = true
-			set reqItem = "0"
+			set reqItem0 = "0"
 else:
 	Om Samurai: Hai anak muda!
 	set DataBatik.batik2["isGet"] = true
 	
-~ test
-hai
-set DataBatik.batik2["isGet"] = true

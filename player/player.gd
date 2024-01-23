@@ -19,6 +19,7 @@ var respawnPoint
 var isHurt: bool = false
 var lastDirect: String = "Down"
 var isAttack: bool = false
+var isCinematic = false
 
 var playerPos
 var playerMap
@@ -73,9 +74,11 @@ func attack():
 #animasi berjalan
 func updateAnimation():
 	if isAttack: return
+	
 	if velocity.length() == 0:
-		if  animations.is_playing():
-			animations.stop()
+		if not isCinematic:
+			if  animations.is_playing():
+				animations.stop()
 	else:
 		var direction = "Down"
 		if velocity.x < 0: direction = "Left"
@@ -159,6 +162,17 @@ func respawn(): #fungsi spawn ke lokasi awal dungeon ketika hp menyentuh 0
 	position = respawnPoint
 	#effects.play("transisiIn")
 	
+func _play_anim(nameAnim) -> void:
+	animations.play(nameAnim)
+
+func _stop_anim() -> void:
+	animations.stop()
+
+func interactCutscene():
+	var actionable = actionable_finder.get_overlapping_areas()
+	if actionable.size() > 0:
+		actionable[0].action()
+		return
 #tidak dipakai
 #func timerknock():
 #		effects.play("hurtAnim")

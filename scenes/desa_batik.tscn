@@ -8783,7 +8783,7 @@ layer_6/tile_data = PackedInt32Array(2097205, 12, 65536, 3276811, 12, 196608)
 
 [node name="Player" parent="TileMap" instance=ExtResource("9_mev21")]
 z_index = 2
-position = Vector2(261, 320)
+position = Vector2(98, 10)
 collision_mask = 33
 
 [node name="Player Cam" type="Camera2D" parent="TileMap/Player" node_paths=PackedStringArray("tilemap")]
@@ -8822,11 +8822,12 @@ dialogue_start = "beliKain"
 shape = SubResource("CircleShape2D_bnual")
 
 [node name="omSamurai" parent="TileMap/NPC" instance=ExtResource("25_njc1y")]
+z_index = 0
 position = Vector2(163, 68)
 
 [node name="Actionable" parent="TileMap/NPC/omSamurai" instance=ExtResource("16_4om6r")]
 dialogue_resource = ExtResource("26_vpg8c")
-dialogue_start = "test"
+dialogue_start = "penjaga"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/NPC/omSamurai/Actionable"]
 position = Vector2(0, -5)
@@ -8880,6 +8881,7 @@ position = Vector2(824, 203)
 shape = SubResource("CircleShape2D_afwim")
 
 [node name="Area" type="Node2D" parent="TileMap"]
+visible = false
 
 [node name="Village" type="Area2D" parent="TileMap/Area"]
 light_mask = 512
