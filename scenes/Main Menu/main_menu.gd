@@ -15,7 +15,7 @@ func _on_btn_new_g_pressed():
 	
 	anim.play("transisiOut")
 	await anim.animation_finished
-
+	print(playerMap)
 	match(playerMap):
 		"DesaBatik":
 			DoorHandle.changeStage(DoorHandle.DesaBatik)
@@ -23,6 +23,8 @@ func _on_btn_new_g_pressed():
 			DoorHandle.changeStage(DoorHandle.museum)
 		"Dungeon":
 			DoorHandle.changeStage(DoorHandle.Dungeon)	
+		_:
+			DoorHandle.changeStage(DoorHandle.museum)
 
 
 func _on_btn_load_g_pressed():
