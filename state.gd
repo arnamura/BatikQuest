@@ -142,3 +142,38 @@ func _process(_delta):
 		"text2": quest4text2
 		}
 }
+
+func save():
+	var save_dict = {
+		"playerPos" : playerPosLoad,
+		"playerMap" : playerMapLoad,
+		"qs0" : quest0Status,
+		"tq0" : takenQuest0,
+		"ri0" : reqItem0,
+		"b0" : DataBatik.batik3["isGet"]
+	}
+	return save_dict
+	
+func save_game():
+	var save_game = FileAccess.open("user://savegame.save", FileAccess.WRITE)
+	var json_string = JSON.stringify(save())
+	save_game.store_line(json_string)
+
+func load_game():
+	if not FileAccess.file_exists("user://savegame.save"):
+		return
+	
+	var load_game = FileAccess.open("user://savegame.save", FileAccess.READ)
+	
+	while load_game.get_position() < load_game.get_length():
+		var json_string = load_game.get_line()
+		var json = JSON.new()
+		var parse_result = json.parse(json_string)
+		var data = json.get_data()
+		
+		#set value
+		DataBatik.batik3["isGet"] = data["b0"]
+		playerMapLoad = data["playerMap"]
+		playerPosLoad = data["playerPos"]
+		
+		print(data)

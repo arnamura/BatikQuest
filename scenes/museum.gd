@@ -25,7 +25,7 @@ func teleport(): #fungsi untuk berpindah ke main world
 	anim.play("transisiOut")
 	await anim.animation_finished
 	anim.stop()
-	DoorHandle.changeStage(DoorHandle.MainWorld)
+	DoorHandle.changeStage(DoorHandle.DesaBatik)
  
 func cutscene():
 	if State.takenQuest0 == false:

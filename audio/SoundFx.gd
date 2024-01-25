@@ -28,6 +28,9 @@ func mainmenuBgm():
 	fade_in($Bgm/mainmenu)
 	$Bgm/mainmenu.play()
 	
+func mainmenuBgmStop():
+	fade_out($Bgm/mainmenu)
+	$Bgm/mainmenu.stop()
 func fade_in(bgm: AudioStreamPlayer): #fungsi agar saat bgm mulai, ada efek fade in
 	var tween = create_tween()
 	tween.tween_property(bgm, "volume_db", -10, 5).from(-30)

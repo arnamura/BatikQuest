@@ -34,7 +34,7 @@ if reqItem0 == "1"
 			set takenQuest0 = false 
 			set quest0Status = true
 			set reqItem0 = "0"
+			set DataBatik.batik3["isGet"] = true
 else:
 	Om Samurai: Hai anak muda!
-	set DataBatik.batik2["isGet"] = true
 	

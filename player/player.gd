@@ -36,11 +36,14 @@ func _ready():
 #untuk mengetahui posisi player (guna untuk spawn saat load game nanti)
 func playerPosition():
 	playerPos = global_position
-	playerMap = get_tree().current_scene	
+	playerMap = get_tree().current_scene.name	
 	
 	State.playerPosLoad = playerPos
 	State.playerMapLoad = playerMap
 
+func _process(delta):
+	playerPosition()
+	
 #untuk handle input action
 func _unhandled_input(_event: InputEvent) -> void:
 	#untuk tombol berlari

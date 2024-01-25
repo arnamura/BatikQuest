@@ -4,16 +4,25 @@ extends Control
 
 		
 func _ready():
-	if  SoundFx.bgmPlay == false:
-		SoundFx.bgmPlay = true
-		SoundFx.mainmenuBgm()
+	State.load_game()
+	SoundFx.mainmenuBgm()
 	
 func _on_btn_new_g_pressed():
+	var playerMap = State.playerMapLoad
+
 	SoundFx.buttonClick()
-	SoundFx.bgmPlay = false
+	SoundFx.mainmenuBgmStop()
+	
 	anim.play("transisiOut")
 	await anim.animation_finished
-	DoorHandle.changeStage(DoorHandle.museum)
+
+	match(playerMap):
+		"DesaBatik":
+			DoorHandle.changeStage(DoorHandle.DesaBatik)
+		"Museum":
+			DoorHandle.changeStage(DoorHandle.museum)
+		"Dungeon":
+			DoorHandle.changeStage(DoorHandle.Dungeon)	
 
 
 func _on_btn_load_g_pressed():

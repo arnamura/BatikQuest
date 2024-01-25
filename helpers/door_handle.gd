@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-const MainWorld = ("res://scenes/desa_batik.tscn")
+const DesaBatik = ("res://scenes/desa_batik.tscn")
 const Dungeon = ("res://scenes/dungeon.tscn")
 const testRoom = ("res://scenes/test_room.tscn")
 const museum = ("res://scenes/museum.tscn")

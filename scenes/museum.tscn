@@ -97,6 +97,21 @@ _data = {
 "transisiOut": SubResource("Animation_s3tp7")
 }
 
+[sub_resource type="Animation" id="Animation_wav2c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TileMap/Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(22, 28)]
+}
+
 [sub_resource type="Animation" id="Animation_122od"]
 resource_name = "intro_quest"
 length = 5.0
@@ -140,21 +155,6 @@ tracks/1/keys = {
 "args": [],
 "method": &"interactCutscene"
 }]
-}
-
-[sub_resource type="Animation" id="Animation_wav2c"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TileMap/Player:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(22, 28)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mmli3"]
