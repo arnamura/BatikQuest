@@ -6,6 +6,7 @@ extends Node2D
 var onTrans = false
 
 func _ready():
+	State.dungeonState = true
 	effect.play("transisiIn")
 	
 func _physics_process (_delta):

@@ -18,7 +18,7 @@ func buttonClick():
 
 func walkFx():
 	walk.pitch_scale = randf_range(.8, 1.2)
-	walk.volume_db = -10
+	walk.volume_db = -5
 	walk.play()
 
 func hurtFx():

@@ -46,24 +46,29 @@ func _process(delta):
 	
 #untuk handle input action
 func _unhandled_input(_event: InputEvent) -> void:
+	#untuk tombol interaksi
+	if Input.is_action_just_pressed("ui_accept"):
+		var actionable = actionable_finder.get_overlapping_areas()
+		if actionable.size() > 0:
+			State.notMove = true
+			actionable[0].action()
+			return
 	#untuk tombol berlari
 	if Input.is_action_just_pressed("ui_shift"):
 		speed = 100
 	elif Input.is_action_just_released("ui_shift"):
 		speed = 50
-	#untuk tombol interaksi
-	if Input.is_action_just_pressed("ui_accept"):
-		var actionable = actionable_finder.get_overlapping_areas()
-		if actionable.size() > 0:
-			actionable[0].action()
-			return
- 
+
+	
 #untuk handle input gerakan 
 func handleInput():
-	var moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	velocity = moveDirection*speed
-	if Input.is_action_just_pressed("ui_attack"):
-		attack()
+	if not State.notMove:
+		var moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+		velocity = moveDirection*speed
+		if Input.is_action_just_pressed("ui_attack"):
+			attack()
+	else: 
+		velocity = Vector2.ZERO
 
 #Animasi Attack
 func attack():
@@ -77,7 +82,6 @@ func attack():
 #animasi berjalan
 func updateAnimation():
 	if isAttack: return
-	
 	if velocity.length() == 0:
 		if not isCinematic:
 			if  animations.is_playing():
@@ -165,6 +169,7 @@ func respawn(): #fungsi spawn ke lokasi awal dungeon ketika hp menyentuh 0
 	position = respawnPoint
 	#effects.play("transisiIn")
 	
+#---------------------------------Bagian Animasi Cutscene----------------------------------------#
 func _play_anim(nameAnim) -> void:
 	animations.play(nameAnim)
 

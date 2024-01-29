@@ -13,6 +13,7 @@ func _ready():
 	if not State.introQuest: #untuk mengaktifkan quest intro saat game baru dimulai
 		State.takenQuest0 = true
 	cutscene()
+
 func _process(delta):
 	if not State.introQuest: #untuk mengecek kondisi quest supaya bisa berpindah ke main world
 		if State.questInfo[0]["item"] == "1":

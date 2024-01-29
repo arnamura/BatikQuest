@@ -21,24 +21,28 @@ transform = Transform2D(0.285, 0, 0, 0.285, 0, 0)
 position = Vector2(28.0702, 312.482)
 texture_normal = ExtResource("1_xrxn3")
 texture_pressed = ExtResource("2_1arp8")
+passby_press = true
 action = "ui_left"
 
 [node name="Right" type="TouchScreenButton" parent="."]
 position = Vector2(127.821, 312.482)
 texture_normal = ExtResource("3_7adfs")
 texture_pressed = ExtResource("4_87la4")
+passby_press = true
 action = "ui_right"
 
 [node name="Up" type="TouchScreenButton" parent="."]
 position = Vector2(87.9206, 252.632)
 texture_normal = ExtResource("5_xoi1s")
 texture_pressed = ExtResource("6_mpklm")
+passby_press = true
 action = "ui_up"
 
 [node name="Down" type="TouchScreenButton" parent="."]
 position = Vector2(87.9206, 352.382)
 texture_normal = ExtResource("7_g565p")
 texture_pressed = ExtResource("8_2ep7h")
+passby_press = true
 action = "ui_down"
 
 [node name="Action" type="TouchScreenButton" parent="."]

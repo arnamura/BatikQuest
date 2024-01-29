@@ -8,6 +8,8 @@ extends CanvasLayer
 @onready var responses_menu: VBoxContainer = $Balloon/Margin/VBox/Responses
 @onready var response_template: RichTextLabel = %ResponseTemplate
 
+@onready var player = preload("res://player/player.tscn")
+
 ## The dialogue resource
 var resource: DialogueResource
 
@@ -27,6 +29,7 @@ var dialogue_line: DialogueLine:
 		
 		if not next_dialogue_line:
 			queue_free()
+			State.notMove = false
 			return
 		
 		# Remove any previous responses

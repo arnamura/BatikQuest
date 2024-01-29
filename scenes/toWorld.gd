@@ -7,4 +7,3 @@ func _on_body_entered(body):
 		effect.play("transisiOut")
 		await effect.animation_finished
 		DoorHandle.changeStage(DoorHandle.DesaBatik)
-		State.dungeonState = false

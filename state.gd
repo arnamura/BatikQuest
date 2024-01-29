@@ -12,6 +12,7 @@ var introQuest = false
 var inQuest = false
 var dungeonState = false
 var isPause = false
+var notMove = false
 var playerPosLoad
 var playerMapLoad
 

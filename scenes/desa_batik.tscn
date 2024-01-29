@@ -8880,6 +8880,9 @@ script = ExtResource("24_ees43")
 position = Vector2(824, 203)
 shape = SubResource("CircleShape2D_afwim")
 
+[node name="SpawnFromDungeon" type="Marker2D" parent="TileMap/Helpers"]
+position = Vector2(825, 225)
+
 [node name="Area" type="Node2D" parent="TileMap"]
 visible = false
 
