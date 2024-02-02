@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://b361p61jmf257"]
+[gd_scene load_steps=12 format=3 uid="uid://b361p61jmf257"]
 
 [ext_resource type="Script" path="res://dialogue/balloon.gd" id="1_4u26j"]
 [ext_resource type="Texture2D" uid="uid://e2vamsgxgk6x" path="res://art/DialogueBoxSimple.png" id="2_2wd5b"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Texture2D" uid="uid://ceki5avr4r78j" path="res://dialogue/flatDark24.png" id="4_feptj"]
+[ext_resource type="Texture2D" uid="uid://cyr0xdq8lnqf" path="res://art/DialogueBubble.png" id="4_o5h1g"]
 [ext_resource type="AudioStream" uid="uid://bx2hdvss5gmyu" path="res://audio/sfx/Voice3.wav" id="5_444qp"]
 
 [sub_resource type="Theme" id="Theme_isg48"]
@@ -15,20 +16,15 @@ default_font_size = 9
 [sub_resource type="Theme" id="Theme_fakos"]
 default_font_size = 9
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5d24i"]
-content_margin_left = 20.0
-content_margin_top = 2.0
-content_margin_right = 2.0
-content_margin_bottom = 2.0
-bg_color = Color(0, 0, 0, 0.407843)
-border_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pm0d"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oj3c8"]
-content_margin_left = 20.0
-content_margin_top = 2.0
-content_margin_right = 2.0
-content_margin_bottom = 2.0
-draw_center = false
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e5ik1"]
+texture = ExtResource("4_o5h1g")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
 
 [node name="smallBalloon" type="CanvasLayer"]
 process_mode = 3
@@ -89,13 +85,20 @@ theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/selection_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 6
 text = "Dialogue"
-seconds_per_step = 0.01
 
-[node name="Responses" type="VBoxContainer" parent="Balloon/Margin/VBox"]
+[node name="ResponseMargin" type="MarginContainer" parent="Balloon"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = -49.0
+offset_right = 305.0
+offset_bottom = -20.0
+scale = Vector2(0.564, 0.564)
+
+[node name="Responses" type="VBoxContainer" parent="Balloon/ResponseMargin"]
 layout_mode = 2
 theme_override_constants/separation = 1
 
-[node name="ResponseTemplate" type="RichTextLabel" parent="Balloon/Margin/VBox"]
+[node name="ResponseTemplate" type="RichTextLabel" parent="Balloon/ResponseMargin"]
 unique_name_in_owner = true
 layout_mode = 2
 focus_mode = 2
@@ -105,8 +108,8 @@ theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_colors/selection_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 6
-theme_override_styles/focus = SubResource("StyleBoxFlat_5d24i")
-theme_override_styles/normal = SubResource("StyleBoxFlat_oj3c8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5pm0d")
+theme_override_styles/normal = SubResource("StyleBoxTexture_e5ik1")
 bbcode_enabled = true
 text = "response"
 fit_content = true
