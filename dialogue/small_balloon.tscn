@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b361p61jmf257"]
+[gd_scene load_steps=11 format=3 uid="uid://b361p61jmf257"]
 
 [ext_resource type="Script" path="res://dialogue/balloon.gd" id="1_4u26j"]
 [ext_resource type="Texture2D" uid="uid://e2vamsgxgk6x" path="res://art/DialogueBoxSimple.png" id="2_2wd5b"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Texture2D" uid="uid://ceki5avr4r78j" path="res://dialogue/flatDark24.png" id="4_feptj"]
+[ext_resource type="AudioStream" uid="uid://bx2hdvss5gmyu" path="res://audio/sfx/Voice3.wav" id="5_444qp"]
 
 [sub_resource type="Theme" id="Theme_isg48"]
 default_font_size = 9
@@ -88,6 +89,7 @@ theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/selection_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 6
 text = "Dialogue"
+seconds_per_step = 0.01
 
 [node name="Responses" type="VBoxContainer" parent="Balloon/Margin/VBox"]
 layout_mode = 2
@@ -122,5 +124,9 @@ scale = Vector2(0.508509, 2.82199)
 texture_normal = ExtResource("4_feptj")
 action = "ui_accept"
 
+[node name="talk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_444qp")
+
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="resized" from="Balloon/Margin" to="." method="_on_margin_resized"]
+[connection signal="spoke" from="Balloon/Margin/VBox/DialogueLabel" to="." method="_on_dialogue_label_spoke"]
