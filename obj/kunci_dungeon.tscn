@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://0ms0bbqtfdsk"]
+[gd_scene load_steps=11 format=3 uid="uid://0ms0bbqtfdsk"]
 
 [ext_resource type="PackedScene" uid="uid://d28ne4l3a8l63" path="res://obj/item.tscn" id="1_bps7m"]
 [ext_resource type="Script" path="res://obj/KunciDungeon.gd" id="2_3xc54"]
@@ -12,6 +12,44 @@ size = Vector2(16, 8)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_npr7f"]
 radius = 16.0
+
+[sub_resource type="Animation" id="Animation_ew8q3"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -5), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_eftoo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uabs0"]
+_data = {
+"RESET": SubResource("Animation_eftoo"),
+"idle": SubResource("Animation_ew8q3")
+}
 
 [node name="KunciDungeon" instance=ExtResource("1_bps7m")]
 script = ExtResource("2_3xc54")
@@ -29,3 +67,8 @@ dialogue_start = "kunciDungeon"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable" index="0"]
 shape = SubResource("CircleShape2D_npr7f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_uabs0")
+}

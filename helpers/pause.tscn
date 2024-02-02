@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://s1ht1iwxfmen"]
+[gd_scene load_steps=9 format=3 uid="uid://s1ht1iwxfmen"]
 
 [ext_resource type="Script" path="res://helpers/pause.gd" id="1_2okch"]
 [ext_resource type="Script" path="res://helpers/PauseMenuQuest.gd" id="2_d0qo4"]
@@ -6,46 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://e2vamsgxgk6x" path="res://art/DialogueBoxSimple.png" id="3_2bmws"]
 [ext_resource type="Script" path="res://helpers/BatikListContainer.gd" id="5_i0h35"]
 [ext_resource type="PackedScene" uid="uid://byuk5qamnm6vm" path="res://helpers/Pause/batik_list.tscn" id="5_t5hf8"]
+[ext_resource type="Theme" uid="uid://2gf1lcs0dtc2" path="res://helpers/scroll.tres" id="5_uv0we"]
 [ext_resource type="PackedScene" uid="uid://cg5dc8g4b8uru" path="res://helpers/Pause/DetailBatikPausePanel.tscn" id="7_gthj5"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q07nb"]
-bg_color = Color(0.827451, 0.52549, 0.372549, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-anti_aliasing_size = 0.25
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfdah"]
-bg_color = Color(0.827451, 0.52549, 0.372549, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-anti_aliasing_size = 0.25
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3if1"]
-bg_color = Color(0.588235, 0.32549, 0.25098, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-anti_aliasing_size = 0.25
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rbo2"]
-content_margin_left = 3.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_81olf"]
-
-[sub_resource type="Theme" id="Theme_grfch"]
-VScrollBar/styles/grabber = SubResource("StyleBoxFlat_q07nb")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_yfdah")
-VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_x3if1")
-VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_1rbo2")
-VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_81olf")
 
 [node name="Pause" type="CanvasLayer"]
 process_mode = 3
@@ -98,7 +60,6 @@ grow_vertical = 2
 script = ExtResource("2_d0qo4")
 
 [node name="ScrollPanelBatikList" type="ScrollContainer" parent="Panel/DisplayPanel"]
-visible = false
 custom_minimum_size = Vector2(100, 75)
 layout_mode = 1
 anchors_preset = -1
@@ -110,7 +71,7 @@ offset_left = 1.024
 offset_top = 2.015
 offset_right = -2.02
 offset_bottom = -2.96
-theme = SubResource("Theme_grfch")
+theme = ExtResource("5_uv0we")
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 2
 

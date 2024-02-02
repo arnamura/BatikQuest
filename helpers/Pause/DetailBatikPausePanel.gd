@@ -2,7 +2,7 @@ extends NinePatchRect
 
 @onready var pict: TextureRect = $TextureRect
 @onready var batikLabel: Label = $BatikLabel
-@onready var desc: Label = $DescLabel
+@onready var desc: RichTextLabel = $DescLabel
 @onready var btnNext: Button = $BtnNext
 @onready var subTitle: Label = $SubTitle
 

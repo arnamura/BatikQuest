@@ -1,6 +1,6 @@
 [remap]
 
-importer="dialogue_manager_compiler_8"
+importer="dialogue_manager_compiler_11"
 type="Resource"
 uid="uid://xdkxtuh5wjca"
 path="res://.godot/imported/Bang Dirman.dialogue-06ac02fe1b9c51ecbe0778c4a60a0dee.tres"
@@ -12,3 +12,4 @@ dest_files=["res://.godot/imported/Bang Dirman.dialogue-06ac02fe1b9c51ecbe0778c4
 
 [params]
 
+defaults=true

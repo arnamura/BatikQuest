@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://br2lcrvvn5cjc"]
+
+[ext_resource type="PackedScene" uid="uid://d28ne4l3a8l63" path="res://obj/item.tscn" id="1_0tlly"]
+[ext_resource type="Texture2D" uid="uid://b53ma8c66c033" path="res://art/terrain/bunga gerak.png" id="2_ni2pw"]
+[ext_resource type="Script" path="res://obj/bunga.gd" id="2_xxdys"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v85me"]
+resource_local_to_scene = true
+size = Vector2(16, 7)
+
+[sub_resource type="Animation" id="Animation_x0uic"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_v2t5e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6knpt"]
+_data = {
+"RESET": SubResource("Animation_v2t5e"),
+"idle": SubResource("Animation_x0uic")
+}
+
+[node name="bunga" instance=ExtResource("1_0tlly")]
+script = ExtResource("2_xxdys")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_v85me")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_ni2pw")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_6knpt")
+}

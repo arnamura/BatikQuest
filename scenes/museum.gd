@@ -12,7 +12,7 @@ func _ready():
 	anim.play("transisiIn")
 	if not State.introQuest: #untuk mengaktifkan quest intro saat game baru dimulai
 		State.takenQuest0 = true
-	cutscene()
+	#cutscene()
 
 func _process(delta):
 	if not State.introQuest: #untuk mengecek kondisi quest supaya bisa berpindah ke main world
@@ -34,5 +34,7 @@ func cutscene():
 	else:
 		player.isCinematic = true
 		cinematic.play("intro_quest")
+		State.notMove = true
 		await cinematic.animation_finished
 		player.isCinematic = false
+

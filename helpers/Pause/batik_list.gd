@@ -18,6 +18,7 @@ func update(batik):
 		namaBatik.text = batik["nama"]
 		icon.texture = load(batik["pathimg"])
 		batikTemp = batik
+		btn.disabled = false
 		
 func _on_button_pressed():
 	SoundFx.buttonClick()

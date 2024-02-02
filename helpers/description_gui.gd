@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var texturerect : TextureRect = $Panel/TextureRect
 @onready var label : Label = $Panel/label
-@onready var deskripsi : Label  = $Panel/DeskripsiGambar
+@onready var deskripsi : RichTextLabel  = $Panel/DeskripsiGambar
 @onready var buttonX : Button = $Panel/ButtonX
 @onready var sub : Label = $Panel/subJudul
 @onready var nextbtn : Button = $Panel/next

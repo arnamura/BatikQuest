@@ -10,6 +10,7 @@ Bapak: Kamu kenapa Bim?
 Bapak: Bim?
 Bapak: ...
 set reqItem0 = "1"
+set notMove = false
 
 => END!
 

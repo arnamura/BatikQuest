@@ -8,6 +8,7 @@ extends Node
 #inQuest digunakan agar pemain hanya bisa mengerjakan satu quest dalam satu waktu
 #dungeonState digunakan untuk memunculkan ui hp saat berada di dungeon
 
+
 var introQuest = false
 var inQuest = false
 var dungeonState = false
@@ -154,20 +155,30 @@ func save():
 		"b0" : DataBatik.batik3["isGet"]
 	}
 	return save_dict
+
+
+func new_game(): #note: coba pake dictionary
+	var save_path = "user://savegame.save"
+	# Pastikan file ada sebelum dihapus
+	if FileAccess.file_exists(save_path):
+
+		print("Save game deleted.")
+	else:
+		print("Save game not found.")
 	
 func save_game():
-	var save_game = FileAccess.open("user://savegame.save", FileAccess.WRITE)
+	var saveGame = FileAccess.open("user://savegame.save", FileAccess.WRITE)
 	var json_string = JSON.stringify(save())
-	save_game.store_line(json_string)
+	saveGame.store_line(json_string)
 
 func load_game():
 	if not FileAccess.file_exists("user://savegame.save"):
 		return
 	
-	var load_game = FileAccess.open("user://savegame.save", FileAccess.READ)
+	var loadGame = FileAccess.open("user://savegame.save", FileAccess.READ)
 	
-	while load_game.get_position() < load_game.get_length():
-		var json_string = load_game.get_line()
+	while loadGame.get_position() < loadGame.get_length():
+		var json_string = loadGame.get_line()
 		var json = JSON.new()
 		var parse_result = json.parse(json_string)
 		var data = json.get_data()
@@ -176,5 +187,4 @@ func load_game():
 		DataBatik.batik3["isGet"] = data["b0"]
 		playerMapLoad = data["playerMap"]
 		playerPosLoad = data["playerPos"]
-		
-		print(data)
+

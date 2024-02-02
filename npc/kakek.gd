@@ -18,10 +18,11 @@ func _physics_process(_delta):
 
 func _on_area_2d_body_entered(body):
 	if body.name == 'Player':
-		var namaAfterTween: int = namaPosition - 15
-		print_debug(namaPosition, namaAfterTween)
 		namaNpc.visible = true
 		$Area2D/Notice.visible = true
+		
+		#Fungsi agar nama ada animasi memantul
+		var namaAfterTween: int = namaPosition - 15
 		create_tween().tween_property(namaNpc, "global_position:y", namaAfterTween, 0.5).from(namaPosition).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
 		$Area2D/Notice/AnimationPlayer.play('standby')
 

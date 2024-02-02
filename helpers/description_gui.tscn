@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://tbvn2122fjtg"]
+[gd_scene load_steps=17 format=3 uid="uid://tbvn2122fjtg"]
 
 [ext_resource type="Script" path="res://helpers/description_gui.gd" id="1_sas3c"]
 [ext_resource type="Texture2D" uid="uid://e2vamsgxgk6x" path="res://art/DialogueBoxSimple.png" id="2_jl062"]
@@ -16,10 +16,53 @@ font = ExtResource("8_cdp7b")
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_v0xl5"]
-line_spacing = 2.0
-font = ExtResource("8_cdp7b")
-font_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q07nb"]
+bg_color = Color(0.827451, 0.52549, 0.372549, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+anti_aliasing_size = 0.25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfdah"]
+bg_color = Color(0.827451, 0.52549, 0.372549, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+anti_aliasing_size = 0.25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3if1"]
+bg_color = Color(0.588235, 0.32549, 0.25098, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+anti_aliasing_size = 0.25
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rbo2"]
+content_margin_left = 3.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_81olf"]
+
+[sub_resource type="Theme" id="Theme_jisb6"]
+Label/constants/line_spacing = 2
+RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/line_separation = 2
+RichTextLabel/constants/outline_size = 2
+RichTextLabel/constants/table_h_separation = 12
+RichTextLabel/constants/table_v_separation = 13
+RichTextLabel/font_sizes/normal_font_size = 6
+RichTextLabel/fonts/normal_font = ExtResource("8_cdp7b")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_q07nb")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_yfdah")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_x3if1")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_1rbo2")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_81olf")
 
 [sub_resource type="LabelSettings" id="LabelSettings_l61ga"]
 font = ExtResource("8_cdp7b")
@@ -143,27 +186,15 @@ text = "Ini judul gambar"
 label_settings = SubResource("LabelSettings_iki5q")
 horizontal_alignment = 1
 
-[node name="DeskripsiGambar" type="Label" parent="Panel"]
-custom_minimum_size = Vector2(98, 0)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -49.0
-offset_top = 13.5
-offset_right = 378.0
-offset_bottom = 161.5
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.227, 0.227)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="DeskripsiGambar" type="RichTextLabel" parent="Panel"]
+custom_minimum_size = Vector2(80, 20)
+layout_mode = 0
+offset_left = 13.0
+offset_top = 80.0
+offset_right = 118.0
+offset_bottom = 110.0
+theme = SubResource("Theme_jisb6")
 text = "ini text yang panjang dan berisikan deskripsi beserta ciri ciri dari sebuah batik yang nanti akan ditampilkan sahdkajshdak kdjshadjwuih kdjwadj ijdaowidj oaiwjdaoiwdja ijaiwdjoawidj"
-label_settings = SubResource("LabelSettings_v0xl5")
-horizontal_alignment = 3
-autowrap_mode = 3
-text_overrun_behavior = 3
 
 [node name="subJudul" type="Label" parent="Panel"]
 layout_mode = 1

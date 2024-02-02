@@ -163,7 +163,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_constants/separation = 4
 
-[node name="BtnNewG" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="BtnContinue" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
 theme = SubResource("Theme_fwml8")
@@ -176,7 +176,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_cj05l")
 text = "Play
 "
 
-[node name="BtnLoadG" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="BtnNewG" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 0
@@ -188,7 +188,7 @@ theme_override_constants/h_separation = 0
 theme_override_styles/normal = ExtResource("2_5gt5y")
 theme_override_styles/hover = ExtResource("2_5gt5y")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_cj05l")
-text = "Load Game"
+text = "New Game"
 
 [node name="BtnCol" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -246,8 +246,8 @@ libraries = {
 "": SubResource("AnimationLibrary_p0ymr")
 }
 
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/BtnContinue" to="." method="_on_btn_continue_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/BtnNewG" to="." method="_on_btn_new_g_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/BtnLoadG" to="." method="_on_btn_load_g_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/BtnCol" to="." method="_on_btn_col_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/BtnSett" to="." method="_on_btn_sett_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/BtnExt" to="." method="_on_btn_ext_pressed"]

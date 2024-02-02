@@ -11,7 +11,8 @@ func _ready():
 
 func _process(delta):
 	if State.dungeonState == true:
-		player.position = spawnFromDungeon.positions
+		player.position = spawnFromDungeon.position
+		#player.position = spawnFromDungeon.global_positions
 		State.dungeonState = false
 	else:
 		pass

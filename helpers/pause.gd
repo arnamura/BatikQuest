@@ -2,7 +2,6 @@ extends CanvasLayer
 
 @onready var collectiblePanel: ScrollContainer = $Panel/DisplayPanel/ScrollPanelBatikList
 
-
 @onready var colPan = false :
 	set(value):
 		collectiblePanel.visible = value

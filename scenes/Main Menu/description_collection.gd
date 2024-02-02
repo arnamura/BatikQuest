@@ -2,7 +2,7 @@ extends Control
 
 @onready var pict : TextureRect = $Panel/TextureRect
 @onready var nama : Label = $Panel/nama
-@onready var desc : Label = $Panel/deskripsi
+@onready var desc : RichTextLabel = $Panel/deskripsi
 @onready var next : Button = $Panel/BtnNext
 @onready var sub : Label = $Panel/sub
 
