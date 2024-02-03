@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://da22spe0hg66l"]
+
+[ext_resource type="PackedScene" uid="uid://blmchh5cmnguy" path="res://npc/animals/rakun.tscn" id="1_71252"]
+[ext_resource type="Texture2D" uid="uid://c345hi7scrl4j" path="res://art/char/Animals/monyet.png" id="2_76peb"]
+
+[node name="monyet" instance=ExtResource("1_71252")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_76peb")

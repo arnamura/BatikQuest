@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bb3qnpusxy128"]
+[gd_scene load_steps=38 format=3 uid="uid://bb3qnpusxy128"]
 
 [ext_resource type="Texture2D" uid="uid://dih0b8f6g40ef" path="res://art/tileset/TilesetInteriorFloor.png" id="1_1uf3n"]
 [ext_resource type="Script" path="res://scenes/dungeon.gd" id="1_cbq7f"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" path="res://scenes/toWorld.gd" id="15_n7ivh"]
 [ext_resource type="PackedScene" uid="uid://dacvdvtgenqnt" path="res://enemies/slime.tscn" id="16_fxmo5"]
 [ext_resource type="PackedScene" uid="uid://dbjvr4c4hlqml" path="res://enemies/skeleton.tscn" id="17_id1a4"]
+[ext_resource type="PackedScene" uid="uid://blmchh5cmnguy" path="res://npc/animals/rakun.tscn" id="20_f5tne"]
 
 [sub_resource type="Animation" id="Animation_vo8vg"]
 length = 0.001
@@ -5661,6 +5662,14 @@ endPoint = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="TileMap/Enemies/cyclope3"]
 position = Vector2(-60, 0)
+
+[node name="Rakun" parent="TileMap/Enemies" node_paths=PackedStringArray("endPoint") instance=ExtResource("20_f5tne")]
+z_index = 2
+position = Vector2(88, 73)
+endPoint = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="TileMap/Enemies/Rakun"]
+position = Vector2(40, -1)
 
 [node name="Dungeon" type="Area2D" parent="TileMap"]
 visible = false

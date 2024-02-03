@@ -9,7 +9,7 @@ extends Node2D
 func _ready():
 	anim.play("transisiIn")
 
-func _process(delta):
+func _process(_delta):
 	if State.dungeonState == true:
 		player.position = spawnFromDungeon.position
 		#player.position = spawnFromDungeon.global_positions

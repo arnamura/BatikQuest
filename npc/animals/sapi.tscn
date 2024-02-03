@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://kelwj44s03pg"]
+
+[ext_resource type="PackedScene" uid="uid://blmchh5cmnguy" path="res://npc/animals/rakun.tscn" id="1_t87gu"]
+[ext_resource type="Texture2D" uid="uid://3wuhly2ns7sh" path="res://art/char/Animals/sapi.png" id="2_o31qt"]
+
+[node name="sapi" instance=ExtResource("1_t87gu")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_o31qt")

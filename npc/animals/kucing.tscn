@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw1ov0hgmjpy5"]
+
+[ext_resource type="PackedScene" uid="uid://blmchh5cmnguy" path="res://npc/animals/rakun.tscn" id="1_i7yeu"]
+[ext_resource type="Texture2D" uid="uid://bojw6yn316nl7" path="res://art/char/Animals/kucing.png" id="2_g76vd"]
+
+[node name="kucing" instance=ExtResource("1_i7yeu")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_g76vd")

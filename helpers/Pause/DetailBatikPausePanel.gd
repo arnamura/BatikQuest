@@ -8,7 +8,7 @@ extends NinePatchRect
 
 var i = false #penanda untuk btn next
 		
-func _process(delta):
+func _process(_delta):
 	if DataBatik.getBat == true:
 		updateDetail(DataBatik.pressedBatik)
 	else:

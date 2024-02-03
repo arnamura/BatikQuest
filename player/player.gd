@@ -41,7 +41,7 @@ func playerPosition():
 	State.playerPosLoad = playerPos
 	State.playerMapLoad = playerMap
 
-func _process(delta):
+func _process(_delta):
 	playerPosition()
 	
 #untuk handle input action

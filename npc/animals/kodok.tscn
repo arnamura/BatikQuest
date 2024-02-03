@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj00pd1bptwaw"]
+
+[ext_resource type="PackedScene" uid="uid://blmchh5cmnguy" path="res://npc/animals/rakun.tscn" id="1_5kht3"]
+[ext_resource type="Texture2D" uid="uid://hgditrknlbph" path="res://art/char/Animals/kodok.png" id="2_j55u5"]
+
+[node name="kodok" instance=ExtResource("1_5kht3")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_j55u5")

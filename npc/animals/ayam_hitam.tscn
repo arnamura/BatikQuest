@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvgrpqthvfcu2"]
+
+[ext_resource type="PackedScene" uid="uid://blmchh5cmnguy" path="res://npc/animals/rakun.tscn" id="1_rob0s"]
+[ext_resource type="Texture2D" uid="uid://bbr5i84i6usj4" path="res://art/char/Animals/ayamHitam.png" id="2_mf3ru"]
+
+[node name="ayamHitam" instance=ExtResource("1_rob0s")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_mf3ru")

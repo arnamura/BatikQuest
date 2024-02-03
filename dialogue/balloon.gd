@@ -216,7 +216,7 @@ func _on_margin_resized() -> void:
 	handle_resize()
 
 
-func _on_dialogue_label_spoke(letter, letter_index, speed):
+func _on_dialogue_label_spoke(letter, _letter_index, _speed):
 	if not letter in [".", " "]:
 		talkSfx.pitch_scale = randf_range(0.8, 1.2)
 		talkSfx.play()

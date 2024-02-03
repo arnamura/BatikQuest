@@ -8,7 +8,7 @@ extends GridContainer
 func _ready():
 	updateCol()
 
-func _process(delta):
+func _process(_delta):
 	updateCol()
 
 func updateCol():
