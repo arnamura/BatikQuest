@@ -3,14 +3,14 @@ extends CanvasLayer
 
 @onready var balloon: NinePatchRect = $Balloon
 @onready var margin: MarginContainer = $Balloon/Margin
-@onready var character_label: RichTextLabel = $Balloon/Margin/VBox/CharacterLabel
-@onready var dialogue_label := $Balloon/Margin/VBox/DialogueLabel
+@onready var character_label: RichTextLabel = $Balloon/Margin/HBoxContainer/VBox/CharacterLabel
+@onready var dialogue_label := $Balloon/Margin/HBoxContainer/VBox/DialogueLabel
 @onready var responses_menu: VBoxContainer = $Balloon/ResponseMargin/Responses
 @onready var response_template: RichTextLabel = %ResponseTemplate
 @onready var talkSfx: AudioStreamPlayer = $talk
 
 @onready var player = preload("res://player/player.tscn")
-
+@onready var potrait = $Balloon/Margin/HBoxContainer/Potrait
 ## The dialogue resource
 var resource: DialogueResource
 
@@ -42,7 +42,12 @@ var dialogue_line: DialogueLine:
 		
 		character_label.visible = not dialogue_line.character.is_empty()
 		character_label.text = tr(dialogue_line.character, "dialogue")
-		
+		var potrait_path: String = "res://art/char/potrait/%s.png" % dialogue_line.character.to_lower()
+		if FileAccess.file_exists(potrait_path):
+			potrait.texture = load(potrait_path)
+		else:
+			potrait.texture = null
+			
 		dialogue_label.modulate.a = 0
 		dialogue_label.custom_minimum_size.x = dialogue_label.get_parent().size.x - 1
 		dialogue_label.dialogue_line = dialogue_line

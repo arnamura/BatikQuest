@@ -8,6 +8,7 @@ resource_local_to_scene = true
 size = Vector2(16, 8)
 
 [node name="petiHartaBunga" instance=ExtResource("1_fylfi")]
+z_index = 0
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource("RectangleShape2D_7nron")

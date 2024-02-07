@@ -16,26 +16,26 @@ set notMove = false
 
 ~ penjaga
 if reqItem0 == "1"
-	Om Samurai: Hai anak muda
-	Om Samurai: Kau ingin kemana?
+	Penjaga: Hai anak muda
+	Penjaga: Kau ingin kemana?
 	Bima: Aku bahkan tidak tau dimana ini
 	Bima: Yang terakhir aku ingat, aku sedang jalan jalan dengan Bapak
 	Bima: Lalu ...
-	Om Samurai: Apakah kau tiba-tiba merasa tidak enak badan?
+	Penjaga: Apakah kau tiba-tiba merasa tidak enak badan?
 	Bima: Bagaimana kau ... ?
-	Om Samurai: Sepertinya anda bukan dari sini. Terlihat dari pakaian yang kau pakai
-	Om Samurai: Hmm kejadian ini terulang kembali kah
-	- Apa Maksudmu Om Samurai?
-		Om Samurai: Bicara lah kepada kakek
-		Om Samurai: Dia tinggal di sebuah rumah di samping sungai, tinggal lurus saja dari sini
-		Om Samurai: Si Kakek tau apa yang harus dilakukan
+	Penjaga: Sepertinya anda bukan dari sini. Terlihat dari pakaian yang kau pakai
+	Penjaga: Hmm kejadian ini terulang kembali kah
+	- Apa Maksudmu Tuan Penjaga?
+		Penjaga: Bicara lah kepada kakek
+		Penjaga: Dia tinggal di sebuah rumah di samping sungai, tinggal lurus saja dari sini
+		Penjaga: Si Kakek tau apa yang harus dilakukan
 		- Terimakasih banyak pak penjaga
-			Om Samurai: Sama-sama anak muda, semoga perjalanan mu lanjar ya!
-			Om Samurai: Oh iya ini, bawalah kain ini untuk menemani perjalanan Mu untuk kembali ke "Asal" mu
+			Penjaga: Sama-sama anak muda, semoga perjalanan mu lanjar ya!
+			Penjaga: Oh iya ini, bawalah kain ini untuk menemani perjalanan Mu untuk kembali ke "Asal" mu
 			set takenQuest0 = false 
 			set quest0Status = true
 			set reqItem0 = "0"
 			set DataBatik.batik3["isGet"] = true
 else:
-	Om Samurai: Hai anak muda!
+	Penjaga: Hai anak muda!
 	

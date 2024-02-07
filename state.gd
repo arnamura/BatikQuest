@@ -16,6 +16,8 @@ var isPause = false
 var notMove = false
 var playerPosLoad
 var playerMapLoad
+var bossPass = false
+
 
 
 #introQuest
@@ -26,6 +28,7 @@ var reqItem0: String = ""
 
 var quest0text1: String = "- Bicara dengan Bapak"
 var quest0text2: String = "- Bicara dengan Penjaga didepan"
+var ikan = true
 
 #quest 1
 var quest1title: String = "Desa Batik "
@@ -65,6 +68,15 @@ var reqItem4: String = "1"
 
 var quest4text1: String = "-"
 var quest4text2: String = "- Bawa temuan kain batik kepada kakek"
+
+#quest kucing
+var quest5title: String = "Berbuat baik kepada sesama mahkluk hidup"
+var quest5Status: bool = false
+var takenQuest5: bool = false
+var reqItem5: String = "" #didapatkan dari penjaga saat intro quest 
+
+var quest5text1: String = "Ikuti Kucing"
+var quest5text2: String = "Bicara dengan Kucing?"
 
 var questInfo = {
 	0: {
@@ -107,6 +119,7 @@ var questInfo = {
 func _process(_delta):
 	playerMapLoad
 	playerPosLoad
+	ikan
 	questInfo = {
 	0: {
 		"status": quest0Status,
@@ -142,7 +155,15 @@ func _process(_delta):
 		"item": reqItem4,
 		"text1": quest4text1,
 		"text2": quest4text2
+		},
+	5: {
+		"status": quest5Status,
+		"taken": takenQuest5,
+		"item": reqItem5,
+		"text1": quest5text1,
+		"text2": quest5text2
 		}
+	
 }
 
 func save():

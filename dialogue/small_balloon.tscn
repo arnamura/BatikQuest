@@ -1,8 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://b361p61jmf257"]
+[gd_scene load_steps=14 format=3 uid="uid://b361p61jmf257"]
 
 [ext_resource type="Script" path="res://dialogue/balloon.gd" id="1_4u26j"]
 [ext_resource type="Texture2D" uid="uid://e2vamsgxgk6x" path="res://art/DialogueBoxSimple.png" id="2_2wd5b"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
+[ext_resource type="Texture2D" uid="uid://0umyfe8w7soy" path="res://art/char/potrait/boy.png" id="3_1vit6"]
+[ext_resource type="FontFile" uid="uid://c150i2j8f5iw1" path="res://VCRosdNEUE.ttf" id="3_73a7y"]
 [ext_resource type="Texture2D" uid="uid://ceki5avr4r78j" path="res://dialogue/flatDark24.png" id="4_feptj"]
 [ext_resource type="Texture2D" uid="uid://cyr0xdq8lnqf" path="res://art/DialogueBubble.png" id="4_o5h1g"]
 [ext_resource type="AudioStream" uid="uid://bx2hdvss5gmyu" path="res://audio/sfx/Voice3.wav" id="5_444qp"]
@@ -32,10 +34,12 @@ layer = 100
 script = ExtResource("1_4u26j")
 
 [node name="Balloon" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(238, 57)
 offset_left = 1.0
-offset_top = 79.0
-offset_right = 141.0
-offset_bottom = 136.0
+offset_top = 77.0
+offset_right = 239.0
+offset_bottom = 134.0
+size_flags_horizontal = 0
 texture = ExtResource("2_2wd5b")
 region_rect = Rect2(-0.194588, -0.121246, 317.301, 59.758)
 patch_margin_left = 69
@@ -44,11 +48,13 @@ patch_margin_right = 71
 patch_margin_bottom = 24
 
 [node name="Margin" type="MarginContainer" parent="Balloon"]
+custom_minimum_size = Vector2(0, 38)
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.0545455
-anchor_right = 0.916
-anchor_bottom = 0.143
+anchor_left = 0.0378151
+anchor_top = 0.122807
+anchor_right = 0.942185
+anchor_bottom = 0.087179
 offset_left = -10.0
 offset_top = -7.0
 offset_right = 8.75999
@@ -60,30 +66,44 @@ theme_override_constants/margin_bottom = 10
 metadata/_edit_layout_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="VBox" type="VBoxContainer" parent="Balloon/Margin"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Balloon/Margin"]
 layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Potrait" type="TextureRect" parent="Balloon/Margin/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+texture = ExtResource("3_1vit6")
+stretch_mode = 3
+
+[node name="VBox" type="VBoxContainer" parent="Balloon/Margin/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/separation = 4
 
-[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/Margin/VBox"]
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/Margin/HBoxContainer/VBox"]
 modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
 mouse_filter = 1
 theme = SubResource("Theme_isg48")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_73a7y")
 theme_override_font_sizes/normal_font_size = 7
 bbcode_enabled = true
 text = "Character"
 fit_content = true
 scroll_active = false
 
-[node name="DialogueLabel" parent="Balloon/Margin/VBox" instance=ExtResource("2_a8ve6")]
+[node name="DialogueLabel" parent="Balloon/Margin/HBoxContainer/VBox" instance=ExtResource("2_a8ve6")]
 layout_mode = 2
 theme = SubResource("Theme_owda0")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/selection_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 6
+theme_override_fonts/normal_font = ExtResource("3_73a7y")
+theme_override_font_sizes/normal_font_size = 7
 text = "Dialogue"
 
 [node name="ResponseMargin" type="MarginContainer" parent="Balloon"]
@@ -107,6 +127,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_colors/selection_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_73a7y")
 theme_override_font_sizes/normal_font_size = 6
 theme_override_styles/focus = SubResource("StyleBoxFlat_5pm0d")
 theme_override_styles/normal = SubResource("StyleBoxTexture_e5ik1")
@@ -120,6 +141,7 @@ hint_underlined = false
 selection_enabled = true
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0)
 position = Vector2(232.986, 86.7996)
 rotation = 1.5708
@@ -132,4 +154,4 @@ stream = ExtResource("5_444qp")
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="resized" from="Balloon/Margin" to="." method="_on_margin_resized"]
-[connection signal="spoke" from="Balloon/Margin/VBox/DialogueLabel" to="." method="_on_dialogue_label_spoke"]
+[connection signal="spoke" from="Balloon/Margin/HBoxContainer/VBox/DialogueLabel" to="." method="_on_dialogue_label_spoke"]

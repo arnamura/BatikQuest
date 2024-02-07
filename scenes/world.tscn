@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dw1tavph1lenb" path="res://art/tileset/TilesetWater.png" id="7_jshxu"]
 [ext_resource type="Texture2D" uid="uid://dhw8hjfkujy22" path="res://art/tileset/TilesetRelief.png" id="8_3v4xa"]
 [ext_resource type="PackedScene" uid="uid://bteda0q8lw1cj" path="res://npc/kakek.tscn" id="8_da03o"]
-[ext_resource type="PackedScene" path="res://npc/guard.tscn" id="8_gnovn"]
+[ext_resource type="PackedScene" uid="uid://cjdsoae22hikk" path="res://npc/old/guard.tscn" id="8_gnovn"]
 [ext_resource type="PackedScene" uid="uid://01ydgb5cpsky" path="res://helpers/actionable.tscn" id="9_cpqxd"]
 [ext_resource type="Texture2D" uid="uid://cld5np4uacn4v" path="res://art/tileset/TilesetReliefDetail.png" id="9_p37bb"]
 [ext_resource type="Texture2D" uid="uid://dih0b8f6g40ef" path="res://art/tileset/TilesetInteriorFloor.png" id="10_3pimi"]

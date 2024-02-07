@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_0emo5"]
 [ext_resource type="PackedScene" uid="uid://b7wsg71k3c0r" path="res://player/weap.tscn" id="2_vjsyy"]
-[ext_resource type="Texture2D" uid="uid://b27cscp31jvqm" path="res://art/char/mc.png" id="3_mlntc"]
+[ext_resource type="Texture2D" uid="uid://llf5sndwqnid" path="res://art/char/player.png" id="3_3e8w5"]
 
 [sub_resource type="Animation" id="Animation_wv0uj"]
 length = 0.001
@@ -524,7 +524,7 @@ rotation = 2.0944
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 clip_children = 2
-texture = ExtResource("3_mlntc")
+texture = ExtResource("3_3e8w5")
 offset = Vector2(0, -8)
 hframes = 4
 vframes = 7

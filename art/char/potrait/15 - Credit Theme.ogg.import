@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bmbmtbipheqol"
+path="res://.godot/imported/15 - Credit Theme.ogg-9d658743f08d932c444ad377a8f25310.oggvorbisstr"
+
+[deps]
+
+source_file="res://art/char/potrait/15 - Credit Theme.ogg"
+dest_files=["res://.godot/imported/15 - Credit Theme.ogg-9d658743f08d932c444ad377a8f25310.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

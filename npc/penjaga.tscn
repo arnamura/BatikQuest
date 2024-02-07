@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://jvrvdlv7plwp"]
+
+[ext_resource type="PackedScene" uid="uid://bteda0q8lw1cj" path="res://npc/kakek.tscn" id="1_vgqru"]
+[ext_resource type="Texture2D" uid="uid://d0etke32axmbp" path="res://art/char/guard.png" id="2_dpse8"]
+
+[node name="penjaga" instance=ExtResource("1_vgqru")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_dpse8")

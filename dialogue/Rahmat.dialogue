@@ -26,7 +26,7 @@ else:
 			Rahmat: Tolonglah bima, 
 			Rahmat: Sepertinya cincin tunanganku ada di sekitar taman 
 	else:
-		if not takenQuest1 and not takenQuest2 and not takenQuest3 and not takenQuest4
+		if not takenQuest1 and not takenQuest2 and not takenQuest3 and not takenQuest4 and not takenQuest5
 			#kondisi menerima quest 2 rahmat
 			Rahmat: Hei! Apa kau bisa membantuku?
 			- Ada apa?

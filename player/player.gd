@@ -147,6 +147,8 @@ func _on_map_detection_area_entered(area): #mendeteksi area player berada untuk 
 				SoundFx.playBgm(area.name)
 			"TamanBunga":
 				SoundFx.playBgm(area.name)
+			"PortalArea":
+				SoundFx.playBgm(area.name)
 
 func _on_map_detection_area_exited(area): #mendeteksi area player berada untuk stop bgm song 
 	match area.name:
@@ -163,7 +165,9 @@ func _on_map_detection_area_exited(area): #mendeteksi area player berada untuk s
 		"Museum":
 			SoundFx.stopBgm(area.name)
 		"TamanBunga":
-				SoundFx.stopBgm(area.name)
+			SoundFx.stopBgm(area.name)
+		"PortalArea":
+			SoundFx.stopBgm(area.name)
 
 func respawn(): #fungsi spawn ke lokasi awal dungeon ketika hp menyentuh 0
 	position = respawnPoint

@@ -1,0 +1,68 @@
+~ samurai
+if reqItem2 == ""
+	Om Samurai: Hadeuh sapi ku pada keluar semua nih
+	Om Samurai: Bahkan tadi sepertinya tadi saya melihat salah satu sapi membawa perhiasan
+	Bima: Seperti apa Om Samurai?
+	Om Samurai: Seperti berbentuk cincin ku rasa
+	Bima: Mungkin punya seseorang yang berada di Desa?
+	Om Samurai: Bisa jadi, Cari saja cincin tersebut dan bawa ke dalam Desa
+else:
+	Om Samurai: Jangan patah semangat dalam melewati kesulitan.
+	Om Samurai: Sesungguhnya setiap kesulitan pasti ada kemudahan,
+	Om Samurai: Hahahaa
+=> END
+
+~ kucing
+if quest5Status == false:
+	if takenQuest5 == true:
+		if reqItem5 == "1":
+			Kucing: Meaaawwwww
+			Bima: Woahhh kain batik apa ini???
+			Kucing: Miiiaaww miawww miw!
+			Bima: Ohh begitu *aku tidak paham sih hehe
+			Bima: Akan ku tanyakan kepada kakek
+			Bima: Terimakasih kucing
+			Kucing: Meaaww!!!
+			Bima: Namun, tempat apa ini? Seperti sudah ditinggalkan sejak lama
+			KKucing: Miaw?
+			set quest5Status = true
+		else:
+			Kucing: Rawr
+			Bima: Huh?
+	else:
+		if not takenQuest1 and not takenQuest2 and not takenQuest3 and not takenQuest4 and not takenQuest5
+			Kucing: Meow?
+			Bima: Sepertinya kucing ini kelaparan
+			Kucing: meow meow meooowww ~~~
+			if ikan == true:
+				- Beri dia Ikan
+				Kucing: Meoongggg meow meow
+				Bima: Hehe sama-sama
+				Kucing: Nyam nyam nyam
+				Kucing: Meoooww
+				Bima: Kau ingin aku mengikutimu?
+				Kucing: Meow!!!
+				set takenQuest5 = true
+			else:
+				Bima: Andai aku punya ikan
+		else:
+			Kucing: Meawww
+			Bima: Aku ingin memberi makan kucing ini, namun ada yang harus kulakukan terlebih dahulu
+			Bima: Maaf kucing, Aku akan Kembali
+	else:
+		Kucing: Meaw meaw!
+else:
+	Kucing: Miaw!
+=> END
+
+~ penjagaBoss
+Penjaga: Disini adalah tempat sakral, hanya orang terpilih dari Desa yang boleh melewati ini
+Penjaga: Apakah kau sudah membantu para warga di Desa Batik ini?
+if quest0Status and quest1Status and quest2Status and quest3Status and quest4Status and quest5Status:
+	Bima: Sudah
+	Penjaga: Baiklah silakan lewat
+	Penjaga: Semoga perjalanan anda lancar
+	set bossPass = true
+else
+	Bima: Belum pak
+	Penjaga: Pergilah bantu para warga terlebih dahulu sebelum ku izinkan lewat

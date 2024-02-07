@@ -17,4 +17,15 @@ func _process(_delta):
 	else:
 		pass
 		
+	if State.bossPass == true:
+		anim.play("bossPass")
+		State.bossPass = false
+		
 
+
+
+func _on_teleport_area_body_entered(body):
+	if body.name == "Player":
+		anim.play("transisiOut")
+		await anim.animation_finished
+		DoorHandle.changeStage(DoorHandle.museum)

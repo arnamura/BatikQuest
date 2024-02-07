@@ -12,6 +12,8 @@ var fadingbgm = false
 @onready var Desert = $Bgm/dessert
 @onready var Flower = $Bgm/flower
 @onready var walk = $walk
+@onready var meow = $meow
+@onready var PortalArea = $Bgm/portal
 
 func buttonClick():
 	$ButtonClick.play()
@@ -21,6 +23,9 @@ func walkFx():
 	walk.volume_db = -5
 	walk.play()
 
+func meowFx():
+	meow.play()
+	
 func hurtFx():
 	$hurt.play()
 	
@@ -55,6 +60,8 @@ func stopBgm(bgm): #Untuk menghentikan bgm ketika player berada di sebuah area
 			fade_out(Desert)
 		"TamanBunga":
 			fade_out(Flower)
+		"PortalArea":
+			fade_out(PortalArea)
 	
 func playBgm(bgm): #Untuk memutar bgm ketika player berada di sebuah area
 	match(bgm):
@@ -79,4 +86,7 @@ func playBgm(bgm): #Untuk memutar bgm ketika player berada di sebuah area
 		"TamanBunga":
 			Flower.play()
 			fade_in(Flower)
+		"PortalArea":
+			PortalArea.play()
+			fade_in(PortalArea)
 			

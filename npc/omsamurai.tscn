@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://jvrvdlv7plwp"]
-
-[ext_resource type="PackedScene" uid="uid://bteda0q8lw1cj" path="res://npc/kakek.tscn" id="1_421lk"]
-[ext_resource type="Texture2D" uid="uid://dq6x8x4eaqmla" path="res://art/char/Om Samurai.png" id="2_0b78v"]
-
-[node name="kakek" instance=ExtResource("1_421lk")]
-
-[node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("2_0b78v")
