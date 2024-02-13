@@ -10,8 +10,8 @@ var batik1 := { # misi 1 Kakek
 	"deskripsi" :
 		"Motif batik yang berasal dari kalangan petani dan rakyat. Inspirasinya berasal dari bunga-bunga yang tumbuh di semak-semak di pedesaan. Tidak ada filosofi khusus. Namun, dari segi geometri, motif ini dapat mencerminkan keseimbangan, keteraturan, dan kesempurnaan bagi mereka yang memakainya.",
 	"ciri" :
-		"Motif kelompok bunga-bunga yang dihias dengan daun disekelilingnya menjadi kerangka segi empat\n(Ceplokan: Didasari bentuk-bentuk geometris persegi/oval/bintang yang disusun melingkar menjadi sekuntum bunga)",
-	"isGet": true
+		"Motif kelompok bunga-bunga yang dihias dengan daun disekelilingnya menjadi kerangka segi empat (Ceplokan: Didasari bentuk-bentuk geometris persegi/oval/bintang yang disusun melingkar menjadi sekuntum bunga) Batik truntum dan kawung juga menggunakan ceplok sebagai dasar motifnya",
+	"isGet": false
 }
 
 var batik2 := { # misi 1 bang dirman
@@ -30,7 +30,7 @@ var batik3 := { # intro quest
 	"isGet": false
 }
 
-var batik4 := {
+var batik4 := { #Pemberian akhir dari kakek
 	"nama": "Parang",
 	"pathimg": "res://art/batik/parang.png",
 	"deskripsi" : "Ikon Batik Indonesia yang mudah dikenali. Diciptkan oleh Panembahan Senopati. Dipakai oleh Raja, Pemaisuri dan Putra Putri Keraton Surakarta yang merupakan 'ageman luhur' ",
@@ -46,7 +46,7 @@ var batik5 := { # misi 2 kakek taman bunga
 	"isGet": false
 }
 
-var batik6 := { # tolong diriset lebih jauh
+var batik6 := { # tolong diriset lebih jauh misi batik petarung bang dirman 2
 	"nama": "Sawat",
 	"pathimg": "res://art/batik/sawat.png",
 	"deskripsi" : "Batik yang berasal dari Pekalongan. Sawat memiliki arti sayap garuda di kiri dan kanan serta mengembang dan menampakan ekor ditengahnya",
@@ -54,7 +54,7 @@ var batik6 := { # tolong diriset lebih jauh
 	"isGet": false
 }
 
-var batik7 := { # misi 2 rahmat "riset soal deskripsi"
+var batik7 := { # misi 6 peti harta desa
 	"nama": "Sekar Jagad",
 	"pathimg": "res://art/batik/sekarjagad.png",
 	"deskripsi" : "Secara makna berarti 'Bunga jagad raya yang menampilkan keindahan berbagai motif'. Batik yang dibawa menyebrang dari Majapahit ke Juwana. Dibuat oleh pembatik kraton yang dijuluki Nyai Majapahit",
@@ -67,10 +67,10 @@ var batik8 := { # misi 1 rahmat
 	"pathimg": "res://art/batik/sidomukti.png",
 	"deskripsi" : "Memiliki filosofi 'Kiblat papat, limo pancer' yang berati empat arah yang diharmonikan dengan pusat. Berarti menyeimbangkan secara vertikal antara dunia atas (akhirat) dengan dunia bawah (fana) dan horizontal yaitu bertemunya unsur lelaki dan perempuan. Kain dengan tingkat tertinggi di lingkungan kraton saat upacara ijab atau panggin(temu). Diberikan pada pengantin sebagai doa untuk menggapai kemuliaan, kemakmuran dan kesuburan. Sepasang batik sidomukti disebut sawitan",
 	"ciri" : "Bermotif belah ketupat yang disusun beraturan dan memiliki ornamen di tengahnya",
-	"isGet": true
+	"isGet": false
 }
 
-var batik9 := { #riset lagi soal ciri
+var batik9 := { # misi kucing "riset lagi soal ciri"
 	"nama": "truntum",
 	"pathimg": "res://art/batik/truntum.png",
 	"deskripsi" : "Kain ini dibuat karena Kanjeng ratu beruk yang hatinya gundah karena pakubuwono VIII memiliki istri baru. Motif tersebut dipakai karena Kanjeng Ratu Beruk melihat keindahan Bunga Tanjung yang berguguran. Kain ini dibuat agar Pakubuwono VIII tertari terhadap Kanjeng Ratu Beruk lagi. Truntum melambangkan Harapan walau langit malam tanpa penerangan, masih ada bintang yang menyinari. Yang berarti selalu ada kesulitan dalam kemudahan",

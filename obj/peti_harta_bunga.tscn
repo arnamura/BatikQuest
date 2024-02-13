@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ffr2u2gv3kni"]
+[gd_scene load_steps=5 format=3 uid="uid://ffr2u2gv3kni"]
 
 [ext_resource type="PackedScene" uid="uid://b8ibpe41602q4" path="res://obj/peti_harta.tscn" id="1_fylfi"]
+[ext_resource type="Script" path="res://obj/peti_harta_bunga.gd" id="2_1sasq"]
 [ext_resource type="Resource" uid="uid://c34dd0uglpnrb" path="res://dialogue/Kakek.dialogue" id="2_cmmkn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7nron"]
@@ -9,10 +10,12 @@ size = Vector2(16, 8)
 
 [node name="petiHartaBunga" instance=ExtResource("1_fylfi")]
 z_index = 0
+script = ExtResource("2_1sasq")
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource("RectangleShape2D_7nron")
 
 [node name="Actionable" parent="." index="4"]
+y_sort_enabled = true
 dialogue_resource = ExtResource("2_cmmkn")
 dialogue_start = "petiTamanBunga"

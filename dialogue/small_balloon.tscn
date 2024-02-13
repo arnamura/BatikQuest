@@ -19,7 +19,16 @@ default_font_size = 9
 default_font_size = 9
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pm0d"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+bg_color = Color(0.380392, 0.380392, 0.380392, 0.501961)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e5ik1"]
 texture = ExtResource("4_o5h1g")
@@ -52,7 +61,7 @@ custom_minimum_size = Vector2(0, 38)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0378151
-anchor_top = 0.122807
+anchor_top = 0.087179
 anchor_right = 0.942185
 anchor_bottom = 0.087179
 offset_left = -10.0
@@ -97,6 +106,7 @@ fit_content = true
 scroll_active = false
 
 [node name="DialogueLabel" parent="Balloon/Margin/HBoxContainer/VBox" instance=ExtResource("2_a8ve6")]
+custom_minimum_size = Vector2(141, 28)
 layout_mode = 2
 theme = SubResource("Theme_owda0")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -104,7 +114,8 @@ theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/selection_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_73a7y")
 theme_override_font_sizes/normal_font_size = 7
-text = "Dialogue"
+text = "Dialogue awalkwl alwk acus hdiuw haod  oduwa houaihewdfoais ehfo uiah wo dihj aoidhaosduha owu dhaow udhaowudhoasudhaouwh do auh"
+scroll_active = true
 
 [node name="ResponseMargin" type="MarginContainer" parent="Balloon"]
 layout_mode = 0

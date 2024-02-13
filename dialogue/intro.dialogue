@@ -1,16 +1,18 @@
 ~ intro
-
-Bapak: Kamu sudah bawa tiketnya kan bima?
-Bima: Sudah kok!
-Bapak: Kalau begitu kita langsung masuk saja
-Bima: Baiklah
-Bima: ...
-Bima: Tunggu, aku merasa tidak enak badan
-Bapak: Kamu kenapa Bim?
-Bapak: Bim?
-Bapak: ...
-set reqItem0 = "1"
-set notMove = false
+if introQuest == false
+	Bapak: Kamu sudah bawa tiketnya kan bima?
+	Bima: Sudah kok!
+	Bapak: Kalau begitu kita langsung masuk saja
+	Bima: Baiklah
+	Bima: ...
+	Bima: Tunggu, aku merasa tidak enak badan
+	Bapak: Kamu kenapa Bim?
+	Bapak: Bim?
+	Bapak: ...
+	set reqItem0 = "1"
+	set notMove = false #supaya tidak bergerak
+else:
+	Bapak: Yuk bim kita lihat lihat kedalam
 
 => END!
 
@@ -26,16 +28,17 @@ if reqItem0 == "1"
 	Penjaga: Sepertinya anda bukan dari sini. Terlihat dari pakaian yang kau pakai
 	Penjaga: Hmm kejadian ini terulang kembali kah
 	- Apa Maksudmu Tuan Penjaga?
-		Penjaga: Bicara lah kepada kakek
+		Penjaga: Bicara lah kepada Kakek
 		Penjaga: Dia tinggal di sebuah rumah di samping sungai, tinggal lurus saja dari sini
 		Penjaga: Si Kakek tau apa yang harus dilakukan
 		- Terimakasih banyak pak penjaga
 			Penjaga: Sama-sama anak muda, semoga perjalanan mu lanjar ya!
-			Penjaga: Oh iya ini, bawalah kain ini untuk menemani perjalanan Mu untuk kembali ke "Asal" mu
+			Penjaga: Oh iya ini, bawalah ikan asap ini sebagai bekal dan juga kain ini untuk menemani perjalanan Mu untuk kembali ke "Asal" mu
 			set takenQuest0 = false 
 			set quest0Status = true
-			set reqItem0 = "0"
+			set reqItem0 = ""
 			set DataBatik.batik3["isGet"] = true
+			set ikan = true
 else:
 	Penjaga: Hai anak muda!
 	

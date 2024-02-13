@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b8ibpe41602q4"]
+[gd_scene load_steps=12 format=3 uid="uid://b8ibpe41602q4"]
 
 [ext_resource type="PackedScene" uid="uid://d28ne4l3a8l63" path="res://obj/item.tscn" id="1_1tee8"]
 [ext_resource type="Script" path="res://obj/peti_harta.gd" id="2_tqxat"]
@@ -24,6 +24,30 @@ tracks/0/keys = {
 "update": 1,
 "values": [Vector2i(0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1)]
+}
 
 [sub_resource type="Animation" id="Animation_j2yeh"]
 resource_name = "open"
@@ -40,9 +64,39 @@ tracks/0/keys = {
 "values": [Vector2i(0, 0), Vector2i(1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_yjklm"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.0872665, 0.0872665, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -1), Vector2(0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_crgqn"]
 _data = {
 "RESET": SubResource("Animation_173f5"),
+"idle": SubResource("Animation_yjklm"),
 "open": SubResource("Animation_j2yeh")
 }
 
@@ -51,11 +105,13 @@ radius = 16.0
 
 [node name="petiHarta" instance=ExtResource("1_1tee8")]
 z_index = 1
+position = Vector2(0, -6)
 collision_layer = 33
 collision_mask = 33
 script = ExtResource("2_tqxat")
 
 [node name="CollisionShape2D" parent="." index="0"]
+visible = false
 light_mask = 33
 visibility_layer = 33
 position = Vector2(0, 3)
@@ -65,6 +121,7 @@ shape = SubResource("RectangleShape2D_vgc2j")
 one_shot = true
 
 [node name="Sprite2D" parent="." index="2"]
+position = Vector2(0, -1)
 texture = ExtResource("5_dla3g")
 hframes = 2
 
@@ -74,6 +131,7 @@ libraries = {
 }
 
 [node name="Actionable" parent="." index="4" instance=ExtResource("4_rxxnr")]
+visible = false
 dialogue_resource = ExtResource("5_fwnqy")
 dialogue_start = "item3"
 

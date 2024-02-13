@@ -43,6 +43,7 @@ func playerPosition():
 
 func _process(_delta):
 	playerPosition()
+	print_debug(State.benar)
 	
 #untuk handle input action
 func _unhandled_input(_event: InputEvent) -> void:

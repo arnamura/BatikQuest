@@ -30,7 +30,7 @@ func _on_btn_continue_pressed():
 	
 	anim.play("transisiOut")
 	await anim.animation_finished
-	print(playerMap)
+	
 	match(playerMap):
 		"DesaBatik":
 			DoorHandle.changeStage(DoorHandle.DesaBatik)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://binluxttspuiq"]
+[gd_scene load_steps=10 format=3 uid="uid://binluxttspuiq"]
 
 [ext_resource type="Script" path="res://helpers/main_ui.gd" id="1_0ggmh"]
 [ext_resource type="Script" path="res://helpers/QuestListContainer.gd" id="1_4upwj"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dywd02ye0oyh5" path="res://helpers/dpads.tscn" id="3_merot"]
 [ext_resource type="FontFile" uid="uid://c150i2j8f5iw1" path="res://VCRosdNEUE.ttf" id="6_55rjx"]
 [ext_resource type="Texture2D" uid="uid://d2o06rvvh1476" path="res://art/pause.png" id="7_pmjvb"]
+[ext_resource type="PackedScene" uid="uid://b8pqbb1qllrdu" path="res://helpers/QuizImage.tscn" id="8_5ttd2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bebpi"]
 bg_color = Color(0.94902, 0.917647, 0.945098, 1)
@@ -124,5 +125,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 icon = ExtResource("7_pmjvb")
 flat = true
+
+[node name="QuizImage" parent="." instance=ExtResource("8_5ttd2")]
 
 [connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]

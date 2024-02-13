@@ -1,34 +1,182 @@
 ~ BossMomen
-
-Makhluk Astral: Hohoho, Beraninya kamu datang dihadapanku. Apa tujuan mu?
-Bima: Saya ingin kembali ketempat saya berasal
-Makhluk Astral: Ternyata kamu bukan berasal dari sini ya?
-Makhluk Astral: Baiklah Bima, Saya akan membantumu bila kau memiliki 5 kain batik dengan 5 motif berbeda
-Makhluk Astral: Setelah itu akan ku uji kau mengenai batik tersebut.
-Makhluk Astral: Apakah kau memiliki kain tersebut?
-- Tunggu sebentar nanti aku akan kembali lagi
-- Ini dia kainnya
-	Makhluk Astral: Serahkan, biar ku lihat
-	Makhluk Astral: hemm ...
-	Makhluk Astral: Hebat sekali, Baiklah sekarang kau sudah memenuhi syarat untuk mengikuti ujian
-	Makhluk Astral: Sebelum mengikuti ujian, kau diperbolehkan untuk mempelajari apa yang telah kau dapatkan sejauh ini
-	Makhluk Astral: Apakah kau sudah siap?
-	- Tunggu dulu, Aku ingin bersiap
-		Makhluk Astral: Baiklah, ku tunggu hingga kau siap
-	- Baiklah, Aku siap
-		Makhluk Astral: Bagus, Mari kita mulai
-		=> Pertanyaan1
-
+if pertanyaan == false
+	Makhluk Astral: Hohoho, Beraninya kamu datang dihadapanku. Apa tujuan mu?
+	Bima: Saya ingin kembali ketempat saya berasal
+	Makhluk Astral: Ternyata kamu bukan berasal dari sini ya?
+	Makhluk Astral: Baiklah Bima, Saya akan membantumu bila kau memiliki 5 kain batik dengan 5 motif berbeda
+	Makhluk Astral: Setelah itu akan ku uji kau mengenai batik tersebut.
+	Makhluk Astral: Apakah kau memiliki kain tersebut? 
+	- Tunggu sebentar nanti aku akan kembali lagi
+	- Ini dia kainnya
+		Makhluk Astral: Serahkan, biar ku lihat
+		Makhluk Astral: hemm ...
+		Makhluk Astral: Hebat sekali, Baiklah sekarang kau sudah memenuhi syarat untuk mengikuti ujian
+		Makhluk Astral: Sebelum mengikuti ujian, kau diperbolehkan untuk mempelajari apa yang telah kau dapatkan sejauh ini
+		set pertanyaan = true
+else
+	=> MemulaiPertanyaan
 => END
 
-~ Pertanyaan1
-Makhluk Astral: 1+1?
-- dua
-- tiga
-- empat
-Makhluk Astral: Oke selanjutnya
-=> Pertanyaan2
+~ MemulaiPertanyaan
+Makhluk Astral: Apakah kau sudah siap?
+- Tunggu dulu, Aku ingin bersiap
+	Makhluk Astral: Baiklah, ku tunggu hingga kau siap
+- Baiklah, Aku siap
+	Makhluk Astral: Bagus, Mari kita mulai
+	Makhluk Astral: Baiklah pertanyaan pertama
+	set benar = 0
+	set salah = 0
+	=>< batik1
+	Makhluk Astral: Hmmm boleh lah, selanjutnya
+	=>< batik2
+	Makhluk Astral: Kita lanjut
+	=>< batik3
+	Makhluk Astral: Apakah kau masih kuat?
+	Bima: Ini tidak ada apa-apanya
+	Makhluk Astral: HAHAHA, Mari kita lanjut
+	=>< batik4
+	Makhluk Astral: Bagus bagus, pertanyaan ke-lima
+	=>< batik5
+	Makhluk Astral: Bagaimana dengan pertanyaan ini
+	=>< batik6
+	Makhluk Astral: Sejauh ini baik, selanjutnya
+	=>< batik7
+	=>< batik8
+	Makhluk Astral: Baiklah pertanyaan terakhir
+	=>< batik9
+	Makhluk Astral: Hmmm
+	if benar > salah
+		Makhluk Astral: Hoooo selamat kau lulus ujian ku dengan poin benar = {{benar}} dan poin salah = {{salah}}
+		Makhluk Astral: Untuk kembali ke masamu, silakan pergi melewati portal yang ada di belakangku ini
+	else
+		Makhluk Astral: HAHAHAHAHAHA, sayang sekali nak poin benar mu hanya {{benar}}, sedangkan poin salahmu {{salah}}
+		Makhluk Astral: Masih kurang
+		Makhluk Astral: Sayang sekali kau harus mengulanginya lagi
+		=> MemulaiPertanyaan
+	
+=> END
 
-~ Pertanyaan2
-test
+#-------------------------------------- List Pertanyaan -------------------------------------------
+~ batik1
+#ceplok
+do QuizImage.gambarQuiz("batik1")
+Makhluk Astral: Apa Kau tahu batik ini?
+Makhluk Astral: Batik petani atau rakyat ini merupakan kumpulan motif batik bunga bungaan yang berbentuk oval atau persegi yang disusun simetris melingkar menjadi sekuntum bunga
+- Ini Motif Ceplok
+	set benar = benar + 1
+- Ini Sekar jagad
+	set salah = salah + 1
+- Ini Pring Sedapur
+	set salah = salah + 1
+do QuizImage.close()
+=> END
+
+~ batik2
+#gringsing
+do QuizImage.gambarQuiz("batik2")
+% Makhluk Astral: Memiliki motif latar kain berbentuk lingkaran-lingkaran kecil dengan titik ditengahnya. Motif batik apa itu?
+% Makhluk Astral: Merupakan Hadiah untuk panglima yang telah berjasa dalam perang dan sudah ditemukan pada zaman Raden Wijaya Majapahit, Batik motif apa itu?
+- Gringsing
+	set benar = benar + 1
+- Parang
+	set salah = salah + 1
+- Sekar Jagad
+	set salah = salah + 1
+do QuizImage.close()
+=> END
+
+~ batik3
+#kawung
+do QuizImage.gambarQuiz("batik3")
+% Makhluk Astral: Berbentuk seperti 4 kolang kaling yang disusun melingkar dengan tambahan ornamen kecil ditengahnya. Motif batik apa itu?
+% Makhluk Astral: Apa kau tau batik apa yang ku tunjukan ini? 
+- Gringsing
+	set salah = salah + 1
+- Kawung
+	set benar = benar + 1
+- Sekar Jagad
+	set salah = salah + 1
+do QuizImage.close()
+=> END
+
+~ batik4
+#parang
+do QuizImage.gambarQuiz("batik4")
+% Makhluk Astral: Merupakan batik ikon di Indonesia, bermotifkan seperti lerenng yang miring/suatu tebing yang berbentuk diagonal disebut?
+% Makhluk Astral: Batik ini merupakan batik keraton yang dipakai oleh raja, permaisuri dan putra-putrinya, batik apa kah ini?
+- Parang
+	set benar = benar + 1
+- Pring Sedapur
+	set salah = salah + 1
+- Kawung
+	set salah = salah + 1
+do QuizImage.close()
+=> END
+
+~ batik5
+#pringsedapur
+% Makhluk Astral: [do QuizImage.gambarQuiz("batik5")]Batik bercirikan motif tanaman bambu yang disertai ragam bunga dan dedaunan seperti di gambar merupakan batik?
+% Makhluk Astral: [do QuizImage.gambarQuiz("batik5")]Batik keraton yang berfilosofikan Tanaman bambu hidup bergerombol membentuk satu kekuatan seperti hubungan anak yang telah berkeluarga kepada orang tuanya merupakan batik?
+- Kawung
+	set salah = salah + 1
+- Gringsing
+	set salah = salah + 1
+- Pring Sedapur
+	set benar = benar + 1
+do QuizImage.close()
+=> END
+
+~ batik6
+#sawat
+do QuizImage.gambarQuiz("batik6")
+% Makhluk Astral: Apa kau tau batik apa ini? ia memiliki motif berupa sepasang sayap dan terdapat hiasan pohon hayat
+- Sekar Jagad
+	set salah = salah + 1
+- Sawat
+	set benar = benar + 1
+- Pring Sedapur
+	set salah = salah + 1
+do QuizImage.close()
+=> END
+
+~ batik7
+#sekarjagad
+do QuizImage.gambarQuiz("batik7")
+Makhluk Astral: Memiliki makna bunga jagad raya yang menampilkan keindahan berbagai motif dan dibuat oleh pembatik kraton yang dijuluki Nyai Majapahit adalah batik?
+- Kawung
+	set salah = salah + 1
+- Pring Sedapur
+	set salah = salah + 1
+- Sekar jagad
+	set benar = benar + 1
+do QuizImage.close()
+=> END 
+
+~ batik8
+#sidomukti
+do QuizImage.gambarQuiz("batik8")
+% Makhluk Astral: Bermotif belah ketupat dan terdapat berbagai ornamen sebagai isinya motif dari kain batik?
+% Makhluk Astral: Apakah kau tahu motif batik apa ini?
+- Kawung
+	set salah = salah + 1
+- Sidomukti
+	set benar = benar + 1
+- Sekar jagad
+	set salah = salah + 1
+do QuizImage.close()
+=> END
+
+~ batik9
+#truntum
+do QuizImage.gambarQuiz("batik9")
+% Makhluk Astral: Bermotifkan bunga tanjung yang disusun rapih merupakan motif kain batik?
+% Makhluk Astral: Kain yang dibuat oleh Kanjeng Ratu Beruk yang sedang gundah dan terinspirasi membuat kain setelah melihat bunga tanjung yang berguguran merupakan cerita dari batik?
+% Makhluk Astral: Lihatlah ini, Apa kau tau motif batik apa ini?
+- Truntum
+	set benar = benar + 1
+- Parang
+	set salah = salah + 1
+- Grinsing
+	set salah = salah + 1
+do QuizImage.close()
 => END

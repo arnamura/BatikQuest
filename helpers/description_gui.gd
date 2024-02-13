@@ -35,7 +35,6 @@ func _on_next_pressed():
 	elif currentPage == 1:
 		currentPage = 0
 		update()
-	print_debug(currentPage, desk)
 	
 func update():
 	#untuk mengganti teks deskripsi dan teks button

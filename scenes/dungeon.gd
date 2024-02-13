@@ -5,7 +5,7 @@ extends Node2D
 
 var onTrans = false
 
-func _ready():
+func _ready():			
 	State.dungeonState = true
 	effect.play("transisiIn")
 	

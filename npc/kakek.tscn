@@ -118,7 +118,7 @@ _data = {
 size = Vector2(14, 6)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mong3"]
-radius = 29.0
+radius = 20.025
 
 [sub_resource type="Animation" id="Animation_turly"]
 length = 0.001

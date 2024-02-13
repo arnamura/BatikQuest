@@ -28,9 +28,15 @@ if quest3Status == false:
 			Bang Dirman: Kerja bagus nak, aku akan segera melapor kepada kerajaan
 			Bang Dirman: Hanya kau yang berani untuk mengambilnya kedalam sana
 			Bang Dirman: Sebagai imbalan, terimalah ini hadiah dari kerajaan
+			Bang Dirman: Ini merupakan kain batik bermotif Gringsing
+			Bang Dirman: Kain ini merupakan imbalan bagi panglima perang yang sudah berjasa untuk Kerajaan
+			Bang Dirman: Konon Katanya kain ini bahkan bisa menyembuhkan luka
+			Bang Dirman: Memiliki motif lingkaran kecil-kecil sebagai latar dari kain dengan sebuah titik di tengah lingkaran tersebut
+			Bang Dirman: Kain ini sangat berharga, jadi jangan disia siakan yaa
+			Bang Dirman: Pahlawan Bima
 			set takenQuest3 = false
 			set quest3Status = true
-			set DataBatik.batik2.isGet = true
+			set DataBatik.batik2["isGet"] = true
 		else:
 			#kondisi bila belum mendapatkan item
 			Bang Dirman: Ada yang ingin kau tanyakan?
@@ -50,31 +56,73 @@ if quest3Status == false:
 					Bang Dirman: Atau kau akan dibawa kembali ke pintu goa
 else:
 	#kondisi bila telah menyelesaikan quest
-	Bang Dirman: Kerja bagus nak, pasti raja akan senang
+	if quest7Status == false
+		=> dirmanPetarung
+	else:
+		Bang Dirman: Terimakasih atas semua pertolongan mu bim
 => END
+
+~ petarung
+if quest7Status == false
+	if takenQuest7 == false
+		Petarung: Tolong ... , aku butuh obat
+		Bima: Baik Tunggu sebentar
+		Mungkin aku akan tanyakan ke Bang Dirman
+	else
+		Bima: Ini Bang obatnya. Aku juga sudah mengabari Bang Dirman mengenai kondisi mu
+		Petarung: Terimakasih banyak nak! Kalau begitu permisi sebentar, akan saya minum
+		Petarung: ... glek
+		Petarung: Huhh jauh lebih baik, Aku akan istirahat sebentar di sini menuggu kondisi ku prima
+		Petarung: Sebelum kau pergi, ini ambil lah kain yang kudapatkan selagi membasmi monster yang berkeliaran di sini
+		Petarung: -------------- Isi deskripsi batik sawat ------------------------
+		set takenQuest7 = false
+		set quest7Status = true
+		set DataBatik.batik6["isGet"] = true
+else:
+	Petarung: Terimakasih telah menyelamatkan ku!
+
+=> END
+
+~ dirmanPetarung
+if reqItem7 == ""
+	Bima: Bang, Aku tadi menemukan Petarung yang terluka dan butuh obat di dungeon
+	Bang Dirman: Hahh? Yang benar kamu?
+	Bang Dirman: Pantas saja sudah 2 hari sejak sang petarung pergi, dia tidak memberikan kabar apapun
+	Bang Dirman: Bagaimana kondisinya?
+	Bima: Sepertinya aman sih, tapi dia terlihat kesulitan berjalan
+	Bang Dirman: Baiklah, kalau begitu aku minta tolong sekali lagi bima
+	Bang Dirman: Berikan obat ini untuk si Petarung
+	Bima: Baiklah bang akan ku usahakan
+	set reqItem7 = "1"
+	set takenQuest7 = true
+else:
+	Bang Dirman: Cepatlah bantu si Petarung bim
+=> END 
 
 ~ item3
 #kondisi bila sudah membuka peti harta
-terlihat seperti barang yang dideskripsikan oleh bang dirman
-seharusnya ini barang yang benar
-sebaiknya aku cepat melapor
+Bima: terlihat seperti barang yang dideskripsikan oleh bang dirman
+Bima: seharusnya ini barang yang benar
+Bima: sebaiknya aku cepat melapor
 set reqItem3 = "1"
 => END
 
 ~ kunciDungeon
 #kondisi bila telah menemukan kunci untuk membuka pintu dungeon
-Sepertinya ini merupakan kunci untuk membuka ruangan peti
-Sebaiknya aku ambil
+Bima: Sepertinya ini merupakan kunci untuk membuka ruangan peti
+Bima:Sebaiknya aku ambil
 set kunciDungeon = true
 => END
 
 ~ pintuDungeon
 #kondisi interaksi dengan pintu yang terkunci
 if kunciDungeon == false:
-	Pintu ini terkunci, sepertinya kuncinya ada disekitar sini
-	Sebaiknya aku ambil
+	Bima: Pintu ini terkunci, sepertinya kuncinya ada disekitar sini
+	Bima: Sebaiknya aku ambil
 else:
-	Terbuka!
-	Kuncinya ternyata cocok
+	Bima: Terbuka!
+	Bima: Kuncinya ternyata cocok
 	set pintuDungeon = true
 	=> END
+	
+

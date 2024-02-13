@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://b8oyesujqtuvp"]
+[gd_scene load_steps=73 format=3 uid="uid://b8oyesujqtuvp"]
 
 [ext_resource type="Texture2D" uid="uid://vup3ac4pey0k" path="res://art/terrain/TilesetElement.png" id="1_ct0ab"]
 [ext_resource type="Script" path="res://scenes/desa_batik.gd" id="1_mkhs7"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ffr2u2gv3kni" path="res://obj/peti_harta_bunga.tscn" id="6_hqumr"]
 [ext_resource type="Texture2D" uid="uid://dw1tavph1lenb" path="res://art/tileset/TilesetWater.png" id="7_p04gk"]
 [ext_resource type="PackedScene" uid="uid://br2lcrvvn5cjc" path="res://obj/bunga.tscn" id="8_3khlf"]
+[ext_resource type="PackedScene" uid="uid://nkaeyijyu2ym" path="res://obj/peti_harta_desa.tscn" id="8_bhno3"]
 [ext_resource type="Texture2D" uid="uid://dhw8hjfkujy22" path="res://art/tileset/TilesetRelief.png" id="8_r5kgg"]
 [ext_resource type="PackedScene" uid="uid://dndkvxcijkvrc" path="res://player/player.tscn" id="9_mev21"]
 [ext_resource type="Texture2D" uid="uid://c4hxk2auadr1" path="res://art/tileset/TilesetField.png" id="9_x7oh1"]
@@ -3247,7 +3248,9 @@ texture = ExtResource("4_t2fi3")
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_oh763"]
 resource_name = "items"
 scenes/1/scene = ExtResource("5_lty3q")
+scenes/2/scene = ExtResource("6_hqumr")
 scenes/3/scene = ExtResource("6_hqumr")
+scenes/4/scene = ExtResource("8_bhno3")
 scenes/5/scene = ExtResource("8_3khlf")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vg4xj"]
@@ -8828,11 +8831,11 @@ layer_6/modulate = Color(1, 1, 1, 1)
 layer_6/y_sort_enabled = true
 layer_6/y_sort_origin = 0
 layer_6/z_index = 2
-layer_6/tile_data = PackedInt32Array(3276811, 12, 196608, 2293756, 12, 65536)
+layer_6/tile_data = PackedInt32Array(3276811, 12, 196608, 2293756, 12, 65536, 2293813, 12, 262144)
 
 [node name="Player" parent="TileMap" instance=ExtResource("9_mev21")]
 z_index = 2
-position = Vector2(752, -25)
+position = Vector2(386, 36)
 collision_layer = 39
 collision_mask = 39
 
@@ -8882,6 +8885,7 @@ shape = SubResource("CircleShape2D_afwim")
 position = Vector2(825, 225)
 
 [node name="Area" type="Node2D" parent="TileMap"]
+visible = false
 
 [node name="Village" type="Area2D" parent="TileMap/Area"]
 light_mask = 512
@@ -8939,6 +8943,7 @@ position = Vector2(511, 23)
 
 [node name="Actionable" parent="TileMap/NPC/kakek" instance=ExtResource("16_4om6r")]
 dialogue_resource = ExtResource("17_moebm")
+dialogue_start = "test"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/NPC/kakek/Actionable"]
 shape = SubResource("CircleShape2D_bnual")

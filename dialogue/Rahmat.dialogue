@@ -1,12 +1,9 @@
 ~ start
-if State.quest2Status == true:
-	#kondisi bila quest 2 rahmat selesai
+if State.quest2Status == true:#kondisi bila quest 2 rahmat selesai
 	Rahmat: Terimakasih banyak karena sudah menolongku, kawanku!
 else:
-	if State.takenQuest2 == true:
-		#kondisi ketika sudah mengambil quest 2 rahmat
-		if State.reqItem2 == "1":
-			#kondisi bila telah mendapatkan req item
+	if State.takenQuest2 == true:#kondisi ketika sudah mengambil quest 2 rahmat
+		if State.reqItem2 == "1":#kondisi bila telah mendapatkan req item
 			Rahmat: Terima kasih bima, karena sudah menemukan cincin tunanganku ini
 			Rahmat: Dengan begini, aku bisa segera melamar kekasih ku
 			Rahmat: Terimalah kain batik ini, kain ini memiliki motif batik bernama "Sidomukti"
@@ -20,11 +17,12 @@ else:
 			Rahmat: Sampai jumpa kawan
 			set quest2Status = true
 			set takenQuest2 = false
-			set DataBatik.batik8.isGet = true
+			set DataBatik.batik8["isGet"] = true
 		else:
 			#kondisi bila belum mendapatkan reqitem
 			Rahmat: Tolonglah bima, 
-			Rahmat: Sepertinya cincin tunanganku ada di sekitar taman 
+			Rahmat: Sepertinya cincin tunanganku ada di sekitar taman
+			Rahmat: dan seperti ada banyak kawanan sapi di daerah sana
 	else:
 		if not takenQuest1 and not takenQuest2 and not takenQuest3 and not takenQuest4 and not takenQuest5
 			#kondisi menerima quest 2 rahmat
@@ -34,12 +32,15 @@ else:
 			Rahmat: Tadi aku habis bermain bersama kekasih ku di taman 
 			Rahmat: Niatnya setelah pulang dari taman,
 			Rahmat: Aku ingin melamar kekasihku dengan memberikannya cincin berlian
-			Rahmat: Namun, sepertinya cincintersebut jatuh di taman
+			Rahmat: Namun, sepertinya cincin tersebut sepertinya tertinggal atau jatuh saat aku kembali ke Desa
 			Rahmat: Apa kau bisa membantuku mencarinnya?
 			Rahmat: Kumohon, aku ingin segera melamar kekasihku
 			- Aku bisa membantumu
 				Rahmat: Terimakasih banyak!
-				Rahmat: Seharusnya cincin tersebut berada di sekitar patung taman
+				Rahmat: Seharusnya cincin tersebut berada di sekitar taman
+				Rahmat: Dan juga tadi saat kami bermain, ada banyak sekali kawanan sapi
+				Rahmat: Semoga saja tidak dimakan oleh sapi-sapi tersebut hahaha
+				Rahmat: Tidak akan kan ya ... ?
 				set takenQuest2 = true
 			- Maaf, ada yang harus bisa ku lakukan
 				Rahmat: Sayang sekali, mungkin ada orang lain yang bisa melakukannya
@@ -53,7 +54,7 @@ else:
 #kondisi untuk interaksi dengan reqitem
 if State.takenQuest2 == true:
 	#bila menemukan reqitem
-	Bima: Sepertinya ini cincin tunangan yang di cari oleh rahman
+	Bima: Sepertinya ini cincin tunangan yang di cari oleh Rahmat
 	Bima: Sebaiknya aku antar barang ini segera supaya ia tenang
 	set reqItem2 = "1"
 else:

@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8pqbb1qllrdu"]
+
+[ext_resource type="Script" path="res://helpers/QuizImage.gd" id="1_4fimd"]
+[ext_resource type="Texture2D" uid="uid://tprloiler3ar" path="res://art/211601851_4144758722284278_3610844652128989081_n.jpg" id="2_fvxtt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k7s5o"]
+bg_color = Color(0.258824, 0.258824, 0.258824, 0.52549)
+
+[node name="QuizImage" type="CanvasLayer"]
+script = ExtResource("1_4fimd")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(75, 55)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -52.5
+offset_right = 5.0
+offset_bottom = -2.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k7s5o")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("2_fvxtt")
+expand_mode = 1
+stretch_mode = 5

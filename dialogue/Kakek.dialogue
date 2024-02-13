@@ -1,9 +1,38 @@
+~ test
+Kakek: Halo anak muda
+Bima: Hai kek!
+if quest1Status == false and not quest4Status and not quest6Status
+	=> start
+elif quest4Status == false and takenQuest4 == true
+	=> questbunga1
+elif quest6Status == false and takenQuest6 == true
+	=> questbunga2
+else
+	if takenQuest8 == true
+		=> finalQuest
+	else
+		- Aku ingin bertanya
+			Kakek: Silakan nak
+			=> pertanyaan
+		- Tidak jadi
+			Kakek: Pergilah dan bantu orang-orang yang ada di desa ini
+			Kakek: Ingat, bantu lah orang satu per satu
+			Kakek: Jangan sekaligus
+			Kakek: Nanti kewalahan, hahaha
+=> END
+
+~ pertanyaan
+- Bagaimana cara keluar dari sini?
+	Kakek: Jadi gini
+- Siapa saja yang butuh bantuan?
+- Ga jadi deh
+	Kakek: Hati-hati dijalan
+=> END
+
 ~ start
 if quest1Status == false:
-	Kakek: Halo anak muda
-	if takenQuest1 == true
-		#bila req item sudah didapatkan
-		if reqItem1 == "1" 
+	if takenQuest1 == true #cek apakah quest sudah diambil
+		if reqItem1 == "1" #bila kain sudah didapat
 			Ini dia kainnya
 			Kakek: Baiklah, Tunggu sebentar
 			Kakek: ...
@@ -16,21 +45,23 @@ if quest1Status == false:
 			Kakek: Batik ini khusus dibuat dari golongan petani atau rakyat
 			Kakek: Yang melambangkan keseimbangan, keteraturan dan kesempurnaan bagi pemakainya
 			Kakek: Pergilah dan bantu orang-orang yang ada di desa ini dan pelajari motif-motif batik yang ada
+			Kakek: Setelah kau mengumpulkan ke-8 kain Batik, aku akan memberikan mu kain batik khusus sebagai tanda kau adalah orang yang telah berjasa untuk Desa ini!
+			Bima: Terimakasih banyak kek!
 			set quest1Status = true
-			set DataBatik.batik1.isGet = true
+			set DataBatik.batik1["isGet"] = true
 			set takenQuest1 = false
 			set inQuest = false
-		else
-			#bila reqitem belum didapat
+			=> END
+		else #bila reqitem belum didapat
 			Kakek: Ambilkan kain Morinya, nanti ku buatkan kain batik
-	else
-		#kondisi memulai quest
-		if not takenQuest2 and not takenQuest1 and not takenQuest3 and not takenQuest4
+			=> END
+	else:#kondisi mengambil quest
+		if not takenQuest0 and not takenQuest2 and not takenQuest1 and not takenQuest3 and not takenQuest4 and not takenQuest5
 			Bima: Halo Kek
-			Bima: Om Samurai di sana tadi memberi tahuku kalau kakek bisa membantu kasus ku
-			Kakek: Om Samurai mana? Sepertinya tidak ada orang seperti itu disini
-			Bima: Tadi dia juga tiba-tiba menghilang
-			Kakek: Yang benar kamu? mungkin kamu hanya sedang halu
+			Bima: Penjaga di sana tadi memberi tahuku kalau kakek bisa membantu kasus ku
+			Kakek: Penjaga apa? Aku tidak ingat kalau di sana ada penjaga
+			Bima: Masa sebesar itu tidak terlihat kek?
+			Kakek: Mungkin saya sudah mata tua, hahahaha
 			Kakek: Siapa namamu?
 			- Bima
 			Kakek: Nama yang bagus, sepertinya kau bukan berasal dari sini ya?
@@ -41,7 +72,7 @@ if quest1Status == false:
 			Kakek: Sepertinya kau tidak seharusnya ada disini
 			Kakek: Saya bisa membantumu untuk kembali ke waktumu
 			Kakek: tapi kau harus mengumpulkan beberapa benda terlebih dahulu
-			Kakek: Kau harus mengumpulkan 5 Batik yang ada di Desa ini dan mempelajarinya
+			Kakek: Kau harus mengumpulkan 8 Batik yang ada di Desa ini dan mempelajarinya
 			Kakek: Setelah itu kau baru bisa menghadapi penjaga portal untuk kembai ke asalmu
 			- Bagaimana cara aku menemukannya?
 			Kakek: Berinteraksilah dengan warga setempat, dan bantulah mereka
@@ -50,37 +81,12 @@ if quest1Status == false:
 			- Baik lah kakek! tunggu sebentar 
 			set takenQuest1 = true 
 			set inQuest = true
-		else:
-			#kondisi ketika ada quest lain yang sedang dikerjakan
+			=> END
+		else:#kondisi ketika ada quest lain yang sedang dikerjakan
 			Kakek: Sepertinya ada hal lain yang harus kau kerjakan	
+			=> END
 else:
-	if takenQuest4 == false
-		#kondisi bila sudah menyelesaikan quest yang berhubungan dengan kakek
-		Kakek: Pergilah dan bantu orang-orang yang ada di desa ini
-		Kakek: ingat, bantu lah orang satu per satu
-		Kakek: jangan sekaligus
-		Kakek: Nanti kewalahan, hahaha
-	else:
-		#kondisi bila sudah mengambil quest 4 menemukan kain lalu melaporkannya ke kakek
-		Bima: Kek, Aku menemukan ini di taman
-		Kakek: Mana sini biar ku lihat
-		Kakek: ...
-		Kakek: Woah hebat sekali kamu bisa menemukan ini
-		- Nama kain ini apa kek?
-		Kakek: Ini adalah kain batik bermotif "Pring Sedapur"
-		Kakek: ini kain yang berasal dari pedesaan di daerah magetan
-		Kakek: Berfilosofi tanaman bambu biasa yang hidup bergerombol membentuk satu kekuatan
-		Kakek: Dapat dilihat dari motif seperti tanaman bambu disertai ornamen bunga atau daun
-		Kakek: Bisa diartikan juga sebagai simbol ucapan terimakasih dari orang tua ke anaknya yang sudah berkeluarga
-		Kakek: Sebagai arti walau berpisah tetapi tetap satu rumpun bagi keluarga besarnya
-		Kakek: Aneh sekali kamu bisa menemukan di sana
-		Kakek: Kamu simpan saja kalau begitu
-		- Baiklah, terimakasih Kakek atas informasinya
-		set quest4Status = true
-		set DataBatik.batik1.isGet = true
-		set inQuest = false
-		set takenQuest1 = false
-	
+	Kakek: Bantulah orang orang desa	
 => END
 
 ~ beliKain
@@ -104,20 +110,102 @@ else
 	Pedagang: Halo anak muda!
 => END
 
+
 ~ petiTamanBunga
 #kondisi memulai quest 4 menemukan kain
-if not takenQuest2 and not takenQuest1 and not takenQuest3 and not takenQuest4
+if not takenQuest0 and not takenQuest1 and not takenQuest2 and not takenQuest3 and not takenQuest4 and not takenQuest5
 	Bima: woah, peti apa ini?
 	- Buka peti
 	Bima: Ternyata ada kain batik di dalamnya
 	Bima: tapi motif apa ini ya?
 	Bima: Sebaiknya nanti kutanya kepada kakek
 	set takenQuest4 = true
-	set inQuest = true
-else if not quest4Status:
+	=> END
+else if not quest4Status:#supaya tidak dapat mengambil quest lain (mengatasi bug)
 	#kondisi jika sedang mengerjakan quest lain
 	Bima: Peti apa ini?
 	Bima: Aku penasaran, tetapi aku masih ada hal yang harus ku kerjakan
 	Bima: Mungkin bila sudah tidak ada pekerjaan aku akan kembali untuk mengecek peti ini
+	=> END
+else:
+	=> END
+	
+~ petiTamanBunga2
+#kondisi memulai quest 6 menemukan kain
+if not takenQuest0 and not takenQuest1 and not takenQuest2 and not takenQuest3 and not takenQuest4 and not takenQuest5
+	Bima: woah, peti apa ini?
+	- Buka peti
+	Bima: Ternyata ada kain batik di dalamnya
+	Bima: tapi motif apa ini ya?
+	Bima: Sebaiknya nanti kutanya kepada kakek
+	set takenQuest6 = true
+	=> END
+else if not quest6Status:#supaya tidak dapat mengambil quest lain (mengatasi bug)
+	#kondisi jika sedang mengerjakan quest lain
+	Bima: Peti apa ini?
+	Bima: Aku penasaran, tetapi aku masih ada hal yang harus ku kerjakan
+	Bima: Mungkin bila sudah tidak ada pekerjaan aku akan kembali untuk mengecek peti ini
+	=> END
 else;
-	=>END
+	=> END
+
+~ questbunga1
+Bima: Aku menemukan sesuatu kek di taman bunga
+if takenQuest4 == true :
+	Bima: Kek, Aku menemukan ini di taman
+	Kakek: Mana sini biar ku lihat
+	Kakek: ...
+	Kakek: Woah hebat sekali kamu bisa menemukan ini
+	Bima: Nama kain ini apa kek?
+	Kakek: Ini adalah kain batik bermotif "Pring Sedapur"
+	Kakek: ini kain yang berasal dari pedesaan di daerah magetan
+	Kakek: Berfilosofi tanaman bambu biasa yang hidup bergerombol membentuk satu kekuatan
+	Kakek: Dapat dilihat dari motif seperti tanaman bambu disertai ornamen bunga atau daun
+	Kakek: Bisa diartikan juga sebagai simbol ucapan terimakasih dari orang tua ke anaknya yang sudah berkeluarga
+	Kakek: Sebagai arti walau berpisah tetapi tetap satu rumpun bagi keluarga besarnya
+	Kakek: Aneh sekali kamu bisa menemukan di sana
+	Kakek: Kamu simpan saja kalau begitu
+	Bima: Baiklah, terimakasih Kakek atas informasinya
+	set quest4Status = true
+	set DataBatik.batik5["isGet"] = true
+	set takenQuest4 = false
+	=> END
+else
+	Bima: tapi boong hayu
+	=> END
+
+~ questbunga2
+Bima: Aku menemukan ini di Desa yang sudah terbengkalai
+if takenQuest6 == true :
+	Kakek: Hoo temuan bagus
+	Bima: Apa Kakek tau itu Desa apa?
+	Kakek: Ya, itu merupakan bagian dari Desa Batik juga yang berisi para imigran dari Kerajaan sebelah
+	Kakek: Namun sejak penyerangan monster liar, para penduduk di luar mulai pindah kedalam
+	Kakek: Ngomong-ngomong, temuan mu ini merupakan kain yang dibawa dari imigran tersebut
+	Kakek: Kain ini dibuat oleh pembatik keraton yang dijuluki Nyai Majapahit
+	Kakek: Motif ini disebut motif Sekar Jagad yang berarti Bunga jagad raya yang menampilkan keindahan berbagai motif
+	Kakek: Susunan dari batik ini merupakan kombinasi dari banyak elemen dan gabungan motif berbeda yang dituangkan dan berbentuk secara spesifik
+	Kakek: Simpan kain ini baik baik ya
+	Bima: Siap kek!
+	set quest6Status = true
+	set DataBatik.batik7["isGet"] = true
+	set takenQuest6 = false
+	=> END
+else
+	Bima: tapi boong hayu
+	=> END
+	
+~ finalQuest
+Kakek: Sepertinya kamu sudah mendapatkan ke-8 batik yang ada di Desa ini ya bim
+Bima: Iya kek
+Kakek: Terimakasih juga karna telah membantu semua warga yang ada di sini
+Kakek: Karena kamu telah mengumpulkan ke-8 batik yang ada, sesuai janji akan kuberikan batik ke-9
+#------------------------  Input lore batik ke 4 ----------------------------
+Kakek: Kamu sudah mengoleksi ke-9 batik yang ada. Sekarang kamu berhak menantang boss terakhir
+Kakek: Pergilah ke Bukit Es yang berada di utara gurun, di sana ada penjaga yang akan meminta bukti bahwa kamu telah mengumpulkan semua batik
+Kakek: Jangan lupa pelajari lah semua batik yang sudah kamu kumpulkan untuk menghadapinya
+Kakek: Semoga kamu berhasil menghadapinya
+Bima: Terimakasih banyak atas bimbingannya ya kek
+set reqItem8 = "1"
+set DataBatik.batik4["isGet"] = true
+#bersambung ke dialog boss

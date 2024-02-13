@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bb3qnpusxy128"]
+[gd_scene load_steps=41 format=3 uid="uid://bb3qnpusxy128"]
 
 [ext_resource type="Texture2D" uid="uid://dih0b8f6g40ef" path="res://art/tileset/TilesetInteriorFloor.png" id="1_1uf3n"]
 [ext_resource type="Script" path="res://scenes/dungeon.gd" id="1_cbq7f"]
@@ -18,8 +18,10 @@
 [ext_resource type="PackedScene" uid="uid://spjqesy8jhoc" path="res://obj/pintu.tscn" id="14_no046"]
 [ext_resource type="Script" path="res://scenes/toWorld.gd" id="15_n7ivh"]
 [ext_resource type="PackedScene" uid="uid://dacvdvtgenqnt" path="res://enemies/slime.tscn" id="16_fxmo5"]
+[ext_resource type="PackedScene" uid="uid://cdqygl6yw2ruy" path="res://npc/petarung.tscn" id="16_qjna3"]
+[ext_resource type="PackedScene" uid="uid://01ydgb5cpsky" path="res://helpers/actionable.tscn" id="17_2uybh"]
 [ext_resource type="PackedScene" uid="uid://dbjvr4c4hlqml" path="res://enemies/skeleton.tscn" id="17_id1a4"]
-[ext_resource type="PackedScene" uid="uid://blmchh5cmnguy" path="res://npc/animals/rakun.tscn" id="20_f5tne"]
+[ext_resource type="Resource" uid="uid://xdkxtuh5wjca" path="res://dialogue/Bang Dirman.dialogue" id="18_n2p1e"]
 
 [sub_resource type="Animation" id="Animation_vo8vg"]
 length = 0.001
@@ -5525,6 +5527,9 @@ sources/1 = SubResource("TileSetScenesCollectionSource_cb3ag")
 sources/2 = SubResource("TileSetAtlasSource_0qitx")
 sources/3 = SubResource("TileSetAtlasSource_4r6sv")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_2b24f"]
+radius = 15.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r4jlj"]
 size = Vector2(20, 15)
 
@@ -5597,7 +5602,7 @@ layer_4/z_index = 0
 layer_4/tile_data = PackedInt32Array(786452, 851971, 4, 851988, 851971, 5, 917524, 851971, 6, 786453, 917507, 4, 851989, 917507, 5, 917525, 917507, 6, 786454, 983043, 4, 851990, 983043, 5, 917526, 983043, 6, 1114103, 786435, 5, 1310721, 851971, 4, 1310722, 983043, 4, 1376257, 851971, 5, 1441793, 851971, 6, 1376258, 983043, 5, 1441794, 983043, 6, 1179659, 65539, 10, 655383, 65539, 10, 262134, 65539, 10)
 
 [node name="Player" parent="TileMap" node_paths=PackedStringArray("respawnMark") instance=ExtResource("6_jcvc3")]
-position = Vector2(290, 206)
+position = Vector2(96, 18)
 collision_layer = 33
 collision_mask = 33
 respawnMark = NodePath("Marker2D")
@@ -5608,6 +5613,17 @@ tilemap = NodePath("../..")
 
 [node name="Marker2D" type="Marker2D" parent="TileMap/Player"]
 position = Vector2(-19, 26)
+
+[node name="Petarung" parent="TileMap" instance=ExtResource("16_qjna3")]
+position = Vector2(56, 333)
+
+[node name="Actionable" parent="TileMap/Petarung" instance=ExtResource("17_2uybh")]
+dialogue_resource = ExtResource("18_n2p1e")
+dialogue_start = "petarung"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Petarung/Actionable"]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_2b24f")
 
 [node name="World_door" type="Area2D" parent="TileMap"]
 script = ExtResource("15_n7ivh")
@@ -5662,14 +5678,6 @@ endPoint = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="TileMap/Enemies/cyclope3"]
 position = Vector2(-60, 0)
-
-[node name="Rakun" parent="TileMap/Enemies" node_paths=PackedStringArray("endPoint") instance=ExtResource("20_f5tne")]
-z_index = 2
-position = Vector2(88, 73)
-endPoint = NodePath("Marker2D")
-
-[node name="Marker2D" type="Marker2D" parent="TileMap/Enemies/Rakun"]
-position = Vector2(40, -1)
 
 [node name="Dungeon" type="Area2D" parent="TileMap"]
 visible = false

@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://nkaeyijyu2ym"]
+
+[ext_resource type="PackedScene" uid="uid://b8ibpe41602q4" path="res://obj/peti_harta.tscn" id="1_vex3r"]
+[ext_resource type="Resource" uid="uid://c34dd0uglpnrb" path="res://dialogue/Kakek.dialogue" id="2_8jc5u"]
+[ext_resource type="Script" path="res://obj/peti_harta_desa.gd" id="2_53hcq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyqoe"]
+resource_local_to_scene = true
+size = Vector2(16, 8)
+
+[node name="petiHartaDesa" instance=ExtResource("1_vex3r")]
+script = ExtResource("2_53hcq")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_jyqoe")
+
+[node name="Actionable" parent="." index="4"]
+y_sort_enabled = true
+dialogue_resource = ExtResource("2_8jc5u")
+dialogue_start = "petiTamanBunga2"

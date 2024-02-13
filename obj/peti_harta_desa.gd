@@ -7,7 +7,7 @@ extends "res://obj/item.gd"
 func _ready():
 	anim.play("idle")
 func _process(_delta):
-	if State.reqItem3 == "1" and i == 1:
+	if State.takenQuest6 and i == 1:
 		buka()
 
 func buka():

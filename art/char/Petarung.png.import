@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi3kp8vohw4ah"
-path="res://.godot/imported/bima.png-8775bedd9aa42d2f6a6bae16b33731eb.ctex"
+uid="uid://c6i23tlmyil2p"
+path="res://.godot/imported/Petarung.png-8c35f85ec8ebe2efb363b2a02d5d4950.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/char/potrait/bima.png"
-dest_files=["res://.godot/imported/bima.png-8775bedd9aa42d2f6a6bae16b33731eb.ctex"]
+source_file="res://art/char/Petarung.png"
+dest_files=["res://.godot/imported/Petarung.png-8c35f85ec8ebe2efb363b2a02d5d4950.ctex"]
 
 [params]
 

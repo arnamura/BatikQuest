@@ -18,41 +18,41 @@ scale = Vector2(0.285, 0.285)
 transform = Transform2D(0.285, 0, 0, 0.285, 0, 0)
 
 [node name="Left" type="TouchScreenButton" parent="."]
-position = Vector2(28.0702, 312.482)
+position = Vector2(35.0877, 340.552)
 texture_normal = ExtResource("1_xrxn3")
 texture_pressed = ExtResource("2_1arp8")
 passby_press = true
 action = "ui_left"
 
 [node name="Right" type="TouchScreenButton" parent="."]
-position = Vector2(127.821, 312.482)
+position = Vector2(134.839, 340.552)
 texture_normal = ExtResource("3_7adfs")
 texture_pressed = ExtResource("4_87la4")
 passby_press = true
 action = "ui_right"
 
 [node name="Up" type="TouchScreenButton" parent="."]
-position = Vector2(87.9206, 252.632)
+position = Vector2(94.9381, 280.702)
 texture_normal = ExtResource("5_xoi1s")
 texture_pressed = ExtResource("6_mpklm")
 passby_press = true
 action = "ui_up"
 
 [node name="Down" type="TouchScreenButton" parent="."]
-position = Vector2(87.9206, 352.382)
+position = Vector2(94.9381, 380.452)
 texture_normal = ExtResource("7_g565p")
 texture_pressed = ExtResource("8_2ep7h")
 passby_press = true
 action = "ui_down"
 
 [node name="Action" type="TouchScreenButton" parent="."]
-position = Vector2(717.295, 280.702)
+position = Vector2(724.313, 308.772)
 texture_normal = ExtResource("9_8dpll")
 texture_pressed = ExtResource("10_g4vif")
 action = "ui_accept"
 
 [node name="Sprint" type="TouchScreenButton" parent="."]
-position = Vector2(617.544, 320.602)
+position = Vector2(624.562, 348.672)
 texture_normal = ExtResource("11_0yxoo")
 texture_pressed = ExtResource("12_gr58m")
 action = "ui_shift"

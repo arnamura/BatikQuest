@@ -26,6 +26,8 @@ if quest5Status == false:
 			Bima: Namun, tempat apa ini? Seperti sudah ditinggalkan sejak lama
 			KKucing: Miaw?
 			set quest5Status = true
+			set DataBatik.batik9["isGet"] = true
+			set takenQuest5 = false
 		else:
 			Kucing: Rawr
 			Bima: Huh?
@@ -58,8 +60,12 @@ else:
 ~ penjagaBoss
 Penjaga: Disini adalah tempat sakral, hanya orang terpilih dari Desa yang boleh melewati ini
 Penjaga: Apakah kau sudah membantu para warga di Desa Batik ini?
-if quest0Status and quest1Status and quest2Status and quest3Status and quest4Status and quest5Status:
+if takenQuest8 == true
 	Bima: Sudah
+	Penjaga: Hoo, serahkan buktinya
+	Bima: ini pak Kain Batik dengan motif Parang
+	Penjaga: Sepertinya ini otentik dari Kepala Desa
+	Bima: Maksudmu Kakek yang tinggal di sebrang sungai adalah Kepala Desa Batik??
 	Penjaga: Baiklah silakan lewat
 	Penjaga: Semoga perjalanan anda lancar
 	set bossPass = true
