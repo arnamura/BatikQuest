@@ -69,7 +69,7 @@ _data = {
 radius = 243.311
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cqinw"]
-radius = 19.0263
+radius = 23.0217
 
 [node name="Boss" type="CharacterBody2D"]
 z_index = 1

@@ -57,7 +57,6 @@ if quest1Status == false:
 			=> END
 	else:#kondisi mengambil quest
 		if not takenQuest0 and not takenQuest2 and not takenQuest1 and not takenQuest3 and not takenQuest4 and not takenQuest5
-			Bima: Halo Kek
 			Bima: Penjaga di sana tadi memberi tahuku kalau kakek bisa membantu kasus ku
 			Kakek: Penjaga apa? Aku tidak ingat kalau di sana ada penjaga
 			Bima: Masa sebesar itu tidak terlihat kek?
@@ -117,7 +116,7 @@ if not takenQuest0 and not takenQuest1 and not takenQuest2 and not takenQuest3 a
 	Bima: woah, peti apa ini?
 	- Buka peti
 	Bima: Ternyata ada kain batik di dalamnya
-	Bima: tapi motif apa ini ya?
+	Bima: Tapi motif apa ini ya?
 	Bima: Sebaiknya nanti kutanya kepada kakek
 	set takenQuest4 = true
 	=> END
@@ -136,7 +135,7 @@ if not takenQuest0 and not takenQuest1 and not takenQuest2 and not takenQuest3 a
 	Bima: woah, peti apa ini?
 	- Buka peti
 	Bima: Ternyata ada kain batik di dalamnya
-	Bima: tapi motif apa ini ya?
+	Bima: Tapi motif apa ini ya?
 	Bima: Sebaiknya nanti kutanya kepada kakek
 	set takenQuest6 = true
 	=> END

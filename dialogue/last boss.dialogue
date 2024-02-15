@@ -1,20 +1,23 @@
 ~ BossMomen
-if pertanyaan == false
-	Makhluk Astral: Hohoho, Beraninya kamu datang dihadapanku. Apa tujuan mu?
-	Bima: Saya ingin kembali ketempat saya berasal
-	Makhluk Astral: Ternyata kamu bukan berasal dari sini ya?
-	Makhluk Astral: Baiklah Bima, Saya akan membantumu bila kau memiliki 5 kain batik dengan 5 motif berbeda
-	Makhluk Astral: Setelah itu akan ku uji kau mengenai batik tersebut.
-	Makhluk Astral: Apakah kau memiliki kain tersebut? 
-	- Tunggu sebentar nanti aku akan kembali lagi
-	- Ini dia kainnya
-		Makhluk Astral: Serahkan, biar ku lihat
-		Makhluk Astral: hemm ...
-		Makhluk Astral: Hebat sekali, Baiklah sekarang kau sudah memenuhi syarat untuk mengikuti ujian
-		Makhluk Astral: Sebelum mengikuti ujian, kau diperbolehkan untuk mempelajari apa yang telah kau dapatkan sejauh ini
-		set pertanyaan = true
+if quest8Status == false
+	if pertanyaan == false
+		Makhluk Astral: Hohoho, Beraninya kamu datang dihadapanku. Apa tujuan mu?
+		Bima: Saya ingin kembali ketempat saya berasal
+		Makhluk Astral: Ternyata kamu bukan berasal dari sini ya?
+		Makhluk Astral: Baiklah Bima, Saya akan membantumu bila kau memiliki 5 kain batik dengan 5 motif berbeda
+		Makhluk Astral: Setelah itu akan ku uji kau mengenai batik tersebut.
+		Makhluk Astral: Apakah kau memiliki kain tersebut? 
+		- Tunggu sebentar nanti aku akan kembali lagi
+		- Ini dia kainnya
+			Makhluk Astral: Serahkan, biar ku lihat
+			Makhluk Astral: hemm ...
+			Makhluk Astral: Hebat sekali, Baiklah sekarang kau sudah memenuhi syarat untuk mengikuti ujian
+			Makhluk Astral: Sebelum mengikuti ujian, kau diperbolehkan untuk mempelajari apa yang telah kau dapatkan sejauh ini
+			set pertanyaan = true
+	else
+		=> MemulaiPertanyaan
 else
-	=> MemulaiPertanyaan
+	Makhluk Astral: Silakan pergi melalui protal di belakang ku, kau layak untuk melewatinya
 => END
 
 ~ MemulaiPertanyaan
@@ -48,6 +51,8 @@ Makhluk Astral: Apakah kau sudah siap?
 	if benar > salah
 		Makhluk Astral: Hoooo selamat kau lulus ujian ku dengan poin benar = {{benar}} dan poin salah = {{salah}}
 		Makhluk Astral: Untuk kembali ke masamu, silakan pergi melewati portal yang ada di belakangku ini
+		set quest8Status = true
+		set takenQuest8 = false
 	else
 		Makhluk Astral: HAHAHAHAHAHA, sayang sekali nak poin benar mu hanya {{benar}}, sedangkan poin salahmu {{salah}}
 		Makhluk Astral: Masih kurang
