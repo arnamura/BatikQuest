@@ -15,12 +15,13 @@ var pertanyaan = false
 
 var introQuest = false
 var inQuest = false
-var dungeonState = false
+var dungeonState = false #kondisi untuk menentukan ui hp tampil hanya dalam dungeon
 var isPause = false
 var notMove = false
-var playerPosLoad
-var playerMapLoad
-var bossPass = false
+var playerPosLoad #posisi terakhir player berada
+var playerMapLoad #map terakhir player berada
+var bossPass = false #kondisi untuk penjaga boss bergeser
+var getBatik: bool = false #untuk mengetahui jika player baru mendapat batik
 
 
 
@@ -166,7 +167,7 @@ var questInfo = {
 		"text1": quest7text1,
 		"text2": quest7text2
 		},
-8: {
+	8: {
 		"status": quest8Status,
 		"taken": takenQuest8,
 		"item": reqItem8,
@@ -182,8 +183,10 @@ func _process(_delta):
 	benar
 	salah
 	
+	#agar langsung menerima quest akhir
 	if quest0Status and quest1Status and quest2Status and quest3Status and quest4Status and quest5Status and quest6Status and quest7Status:
 		takenQuest8 = true
+		
 	questInfo = {
 	0: {
 		"status": quest0Status,
@@ -254,13 +257,57 @@ func save():
 	var save_dict = {
 		"playerPos" : playerPosLoad,
 		"playerMap" : playerMapLoad,
+		"ikan": ikan,
+		"benar": benar,
+		"salah": salah,
+		
+		#quest variable
 		"qs0" : quest0Status,
 		"tq0" : takenQuest0,
 		"ri0" : reqItem0,
-		"b0" : DataBatik.batik3["isGet"]
+		"b0" : DataBatik.batik1["isGet"],
+		
+		"qs1" : quest1Status,
+		"tq1" : takenQuest1,
+		"ri1" : reqItem1,
+		"b1" : DataBatik.batik2["isGet"],
+		
+		"qs2" : quest2Status,
+		"tq2" : takenQuest2,
+		"ri2" : reqItem2,
+		"b2" : DataBatik.batik3["isGet"],
+		
+		"qs3" : quest3Status,
+		"tq3" : takenQuest3,
+		"ri3" : reqItem3,
+		"b3" : DataBatik.batik4["isGet"],
+		
+		"qs4" : quest4Status,
+		"tq4" : takenQuest4,
+		"ri4" : reqItem4,
+		"b4" : DataBatik.batik5["isGet"],
+		
+		"qs5" : quest5Status,
+		"tq5" : takenQuest5,
+		"ri5" : reqItem5,
+		"b5" : DataBatik.batik6["isGet"],
+		
+		"qs6" : quest6Status,
+		"tq6" : takenQuest6,
+		"ri6" : reqItem6,
+		"b6" : DataBatik.batik7["isGet"],
+		
+		"qs7" : quest7Status,
+		"tq7" : takenQuest7,
+		"ri7" : reqItem7,
+		"b7" : DataBatik.batik8["isGet"],
+		
+		"qs8" : quest8Status,
+		"tq8" : takenQuest8,
+		"ri8" : reqItem8,
+		"b8" : DataBatik.batik9["isGet"]
 	}
 	return save_dict
-
 
 func new_game(): #note: coba pake dictionary
 	var save_path = "user://savegame.save"
@@ -288,8 +335,58 @@ func load_game():
 		var parse_result = json.parse(json_string)
 		var data = json.get_data()
 		
-		#set value
-		DataBatik.batik3["isGet"] = data["b0"]
+		#----------------- set value -----------------
+		# bagian batik
+		DataBatik.batik1["isGet"] = data["b0"]
+		DataBatik.batik2["isGet"] = data["b1"]
+		DataBatik.batik3["isGet"] = data["b2"]
+		DataBatik.batik4["isGet"] = data["b3"]
+		DataBatik.batik5["isGet"] = data["b4"]
+		DataBatik.batik6["isGet"] = data["b5"]
+		DataBatik.batik7["isGet"] = data["b6"]
+		DataBatik.batik8["isGet"] = data["b7"]
+		DataBatik.batik9["isGet"] = data["b8"]
+		
 		playerMapLoad = data["playerMap"]
 		playerPosLoad = data["playerPos"]
-
+		ikan = data["ikan"]
+		benar = data["benar"]
+		salah = data["salah"]
+		
+		# quest
+		quest0Status = data["qs0"]
+		takenQuest0 = data["tq0"]
+		reqItem0 = data["ri0"]
+		
+		quest1Status = data["qs1"]
+		takenQuest1 = data["tq1"]
+		reqItem1 = data["ri1"]
+		
+		quest2Status = data["qs2"]
+		takenQuest2 = data["tq2"]
+		reqItem2 = data["ri2"]
+		
+		quest3Status = data["qs3"]
+		takenQuest3 = data["tq3"]
+		reqItem3 = data["ri3"]
+		
+		quest4Status = data["qs4"]
+		takenQuest4 = data["tq4"]
+		reqItem4 = data["ri4"]
+		
+		quest5Status = data["qs5"]
+		takenQuest5 = data["tq5"]
+		reqItem5 = data["ri5"]
+		
+		quest6Status = data["qs6"]
+		takenQuest6 = data["tq6"]
+		reqItem6 = data["ri6"]
+		
+		quest7Status = data["qs7"]
+		takenQuest7 = data["tq7"]
+		reqItem7 = data["ri7"]
+		
+		quest8Status = data["qs8"]
+		takenQuest8 = data["tq8"]
+		reqItem8 = data["ri8"]
+		

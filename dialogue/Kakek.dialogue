@@ -22,11 +22,22 @@ else
 => END
 
 ~ pertanyaan
-- Bagaimana cara keluar dari sini?
-	Kakek: Jadi gini
+- Bagaimana caranya kembali ke tempat asalku?
+	Kakek: Kau harus mengumpulkan ke-8 kain batik
+	Kakek: Caranya bantulah warga disekitar sini
+	Kakek: Jika sudah, kembalilah kepadaku dan akan ku beri kain terakhir untuk menghadapi ujian akhir
 - Siapa saja yang butuh bantuan?
-- Ga jadi deh
-	Kakek: Hati-hati dijalan
+	Kakek: Seperti Rahmat, Bang Dirman, Petarung di dalam dungeon, dan memberi makan kucing
+	Kakek: Kamu juga bisa mendapatkan 2 peti yang berada di hutan lalu kamu bawa kembali ke sini
+- Lainnya ...
+	- Bagaimana caraku untuk mempelajari batik yang aku punya?
+		Kakek: Caranya, kamu bisa menekan tombol pause yang ada di pojok kiri atas layarmu
+		Kakek: Lalu tekan tombol batik dan pilih batik mana yang mau kau pelajari
+	- Tidak jadi
+	- (kembali ke awal)
+		=> pertanyaan
+Bima: Terimakasih kek!
+Kakek: Hati-hati dijalan
 => END
 
 ~ start
@@ -49,6 +60,7 @@ if quest1Status == false:
 			Bima: Terimakasih banyak kek!
 			set quest1Status = true
 			set DataBatik.batik1["isGet"] = true
+			set getBatik = true
 			set takenQuest1 = false
 			set inQuest = false
 			=> END
@@ -167,6 +179,7 @@ if takenQuest4 == true :
 	Bima: Baiklah, terimakasih Kakek atas informasinya
 	set quest4Status = true
 	set DataBatik.batik5["isGet"] = true
+	set getBatik = true
 	set takenQuest4 = false
 	=> END
 else
@@ -188,6 +201,7 @@ if takenQuest6 == true :
 	Bima: Siap kek!
 	set quest6Status = true
 	set DataBatik.batik7["isGet"] = true
+	set getBatik = true
 	set takenQuest6 = false
 	=> END
 else
@@ -207,4 +221,5 @@ Kakek: Semoga kamu berhasil menghadapinya
 Bima: Terimakasih banyak atas bimbingannya ya kek
 set reqItem8 = "1"
 set DataBatik.batik4["isGet"] = true
+set getBatik = true
 #bersambung ke dialog boss

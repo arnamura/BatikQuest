@@ -8,6 +8,7 @@ func _process(_delta):
 		open()
 
 func open():
+	SoundFx.getItem()
 	$close.queue_free()
 	$Collisionclose.queue_free()
 	i = 1

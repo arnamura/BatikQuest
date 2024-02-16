@@ -34,11 +34,17 @@ if reqItem0 == "1"
 		- Terimakasih banyak pak penjaga
 			Penjaga: Sama-sama anak muda, semoga perjalanan mu lanjar ya!
 			Penjaga: Oh iya ini, bawalah ikan asap ini sebagai bekal dan juga kain ini untuk menemani perjalanan Mu untuk kembali ke "Asal" mu
+			Penjaga: Nama motif kain batik ini adalah Batik Kawung
+			Penjaga: Ciri ciri dari kain ini adalah motifnya seperti 4 kolang-kaling yang dibentuk melingkar dengan ornamen kecil ditengahnya
+			Penjaga: Diciptakan oleh Sultan Agung Hanyokrokusumo, dan sebenarnya kain ini adalah kain keraton dan hanya orang keraton saja yang boleh pakai
+			Penjaga: Tapi kau bawa saja, sepertinya akan berguna untuk membawamu pulang ke "asal"-mu
+			Bima: Terimakasih bang
 			set takenQuest0 = false 
 			set quest0Status = true
 			set reqItem0 = ""
 			set DataBatik.batik3["isGet"] = true
 			set ikan = true
+			set getBatik = true
 else:
 	Penjaga: Hai anak muda!
 	

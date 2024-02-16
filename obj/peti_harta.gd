@@ -8,6 +8,7 @@ func _ready():
 	anim.play("idle")
 func _process(_delta):
 	if State.reqItem3 == "1" and i == 1:
+		SoundFx.getItem()
 		buka()
 
 func buka():

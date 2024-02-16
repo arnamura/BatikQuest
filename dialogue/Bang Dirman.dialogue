@@ -37,6 +37,7 @@ if quest3Status == false:
 			set takenQuest3 = false
 			set quest3Status = true
 			set DataBatik.batik2["isGet"] = true
+			set getBatik = true
 		else:
 			#kondisi bila belum mendapatkan item
 			Bang Dirman: Ada yang ingin kau tanyakan?
@@ -78,6 +79,7 @@ if quest7Status == false
 		set takenQuest7 = false
 		set quest7Status = true
 		set DataBatik.batik6["isGet"] = true
+		set getBatik = true
 else:
 	Petarung: Terimakasih telah menyelamatkan ku!
 

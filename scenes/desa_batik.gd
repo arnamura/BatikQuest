@@ -20,6 +20,9 @@ func _process(_delta):
 	if State.bossPass == true:
 		anim.play("bossPass")
 		State.bossPass = false
+	
+	if State.quest8Status == true:
+		anim.play("gatekeep")
 		
 
 

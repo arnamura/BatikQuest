@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://dndkvxcijkvrc"]
+[gd_scene load_steps=26 format=3 uid="uid://dndkvxcijkvrc"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_0emo5"]
 [ext_resource type="PackedScene" uid="uid://b7wsg71k3c0r" path="res://player/weap.tscn" id="2_vjsyy"]
 [ext_resource type="Texture2D" uid="uid://llf5sndwqnid" path="res://art/char/player.png" id="3_3e8w5"]
+[ext_resource type="FontFile" uid="uid://dofpvw42s1f6d" path="res://NormalFont.ttf" id="4_5b3l0"]
 
 [sub_resource type="Animation" id="Animation_wv0uj"]
 length = 0.001
@@ -568,10 +569,28 @@ shape = SubResource("CircleShape2D_1jhbf")
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.549
+one_shot = true
+
 [node name="Effect" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_p0ymr")
 }
+
+[node name="statusBatik" type="Label" parent="."]
+visible = false
+z_index = 6
+y_sort_enabled = true
+offset_left = -41.0
+offset_top = -17.0
+offset_right = 42.0
+offset_bottom = -4.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_5b3l0")
+theme_override_font_sizes/font_size = 7
+text = "Mendapat Batik Baru"
 
 [connection signal="area_entered" from="MapDetection" to="." method="_on_map_detection_area_entered"]
 [connection signal="area_exited" from="MapDetection" to="." method="_on_map_detection_area_exited"]

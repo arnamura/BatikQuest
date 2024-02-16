@@ -3,26 +3,30 @@ extends CharacterBody2D
 @export var speed: int = 35
 @export var knockbackPower: int = 750
 
+@onready var player = $"."
 @onready var actionable_finder = $Direction/ActionableFinder
 @onready var animations = $AnimationPlayer
 @onready var effects = $Effect
 @onready var hurtTimer = $Timer
+@onready var animTimer = $Timer2
 @onready var MapDetect = $MapDetection
 @onready var playerSprite = $Sprite2D
 @onready var weapon = $Weapon
 
 
+@onready var statusBatik: Label = $statusBatik
+
 @export var respawnMark : Marker2D
 @export var hp = 3
 
-var respawnPoint
+var respawnPoint #tempat player respawn saat hp menyentuh 0
 var isHurt: bool = false
 var lastDirect: String = "Down"
 var isAttack: bool = false
 var isCinematic = false
 
-var playerPos
-var playerMap
+var playerPos #mencatat kordinasi player
+var playerMap #mencatat area/map dari player
 
 
 func _ready():
@@ -43,7 +47,9 @@ func playerPosition():
 
 func _process(_delta):
 	playerPosition()
-	print_debug(State.benar)
+	if State.getBatik == true:
+		State.getBatik = false
+		getBatikAnim()
 	
 #untuk handle input action
 func _unhandled_input(_event: InputEvent) -> void:
@@ -67,7 +73,7 @@ func handleInput():
 		var moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 		velocity = moveDirection*speed
 		if Input.is_action_just_pressed("ui_attack"):
-			attack()
+			getBatikAnim()
 	else: 
 		velocity = Vector2.ZERO
 
@@ -186,6 +192,21 @@ func interactCutscene():
 	if actionable.size() > 0:
 		actionable[0].action()
 		return
+
+func getBatikAnim():
+	statusBatik.visible = true
+	var statusBatikPos = player.global_position.y
+	var namaAfterTween: int = statusBatikPos - 35
+	var tween = create_tween().tween_property(statusBatik, "global_position:y", namaAfterTween, 0.5).from(player.global_position.y).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
+	SoundFx.getItem()
+	await tween.finished
+	animTimer.start()
+	await animTimer.timeout
+	statusBatik.global_position.y = player.global_position.y
+	
+	statusBatik.visible = false
+	pass
+
 #tidak dipakai
 #func timerknock():
 #		effects.play("hurtAnim")

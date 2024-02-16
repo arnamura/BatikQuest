@@ -19,7 +19,7 @@ if quest5Status == false:
 			Kucing: Meaaawwwww
 			Bima: Woahhh kain batik apa ini???
 			Kucing: Miiiaaww miawww miw!
-			Bima: Ohh begitu *aku tidak paham sih hehe
+			Bima: Bentuknya seperti Bunga Tanjung sihh, dan motifnya sangat tersusub beraturan
 			Bima: Akan ku tanyakan kepada kakek
 			Bima: Terimakasih kucing
 			Kucing: Meaaww!!!
@@ -27,6 +27,7 @@ if quest5Status == false:
 			KKucing: Miaw?
 			set quest5Status = true
 			set DataBatik.batik9["isGet"] = true
+			set getBatik = true
 			set takenQuest5 = false
 		else:
 			Kucing: Rawr
@@ -68,7 +69,7 @@ if takenQuest8 == true
 	Bima: Maksudmu Kakek yang tinggal di sebrang sungai adalah Kepala Desa Batik??
 	Penjaga: Baiklah silakan lewat
 	Penjaga: Semoga perjalanan anda lancar
-	set bossPass = true
+	set bossPass = true #trigger animasi bergesernya penjaga
 else
 	Bima: Belum pak
 	Penjaga: Pergilah bantu para warga terlebih dahulu sebelum ku izinkan lewat

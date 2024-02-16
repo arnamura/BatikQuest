@@ -14,4 +14,5 @@ func _process(_delta):
 
 func ambil():
 	if State.reqItem2 == "1":
+		SoundFx.getItem()
 		super.collect()

@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 DoorHandle="*res://helpers/door_handle.tscn"
-State="*res://art/terrain/state.gd"
+State="*res://state.gd"
 DataBatik="*res://dataBatik.gd"
 SoundFx="*res://audio/sound_fx.tscn"
 QuizImage="*res://helpers/QuizImage.tscn"

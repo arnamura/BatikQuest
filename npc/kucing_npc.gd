@@ -51,7 +51,6 @@ func updateAnimation():
 		animations.play("walk"+ direction)
 	
 func _physics_process(_delta):
-	print(State.reqItem5)
 	pos = get_position()
 	if State.takenQuest5 == true and not arrive:
 		updateVelocity()

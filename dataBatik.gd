@@ -25,7 +25,7 @@ var batik2 := { # misi 1 bang dirman
 var batik3 := { # intro quest
 	"nama": "Kawung",
 	"pathimg": "res://art/batik/kawung.png",
-	"deskripsi" : "Diciptakan oleh Sultan Mataran, yaitu Sultan Agung Hanyokrokusumo. Motif Batik ini merupakan larangan di Keraton Yogyakarta yang hanya boleh dipakai oleh Raja dan Sentono dalem(Keluarga Raja)",
+	"deskripsi" : "Diciptakan oleh Sultan Mataram, yaitu Sultan Agung Hanyokrokusumo. Motif Batik ini merupakan larangan di Keraton Yogyakarta yang hanya boleh dipakai oleh Raja dan Sentono dalem(Keluarga Raja)",
 	"ciri" : "Berbentuk seperti 4 buah kolang-kaling yang disusun menjadi lingkaran dan terdapat ornamen kecil ditengahnya",
 	"isGet": false
 }

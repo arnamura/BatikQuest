@@ -23,6 +23,9 @@ func walkFx():
 	walk.volume_db = -5
 	walk.play()
 
+func getItem():
+	$getItem.play()
+	
 func meowFx():
 	meow.play()
 	

@@ -55,9 +55,7 @@ func _physics_process(_delta):
 
 func _on_stop_box_body_entered(body): #agar animals diam saat bertemu player
 	if body.name == "Player":
-		print(namaBinatang)
 		if namaBinatang == "Rakun":
-			print("kena")
 			isStop = true
 			speed = 0
 			animations.stop()

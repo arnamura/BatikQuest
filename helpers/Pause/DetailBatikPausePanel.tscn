@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cg5dc8g4b8uru"]
+[gd_scene load_steps=14 format=3 uid="uid://cg5dc8g4b8uru"]
 
 [ext_resource type="Texture2D" uid="uid://e2vamsgxgk6x" path="res://art/DialogueBoxSimple.png" id="1_gimed"]
 [ext_resource type="Script" path="res://helpers/Pause/DetailBatikPausePanel.gd" id="2_3yvck"]
@@ -7,6 +7,7 @@
 [ext_resource type="Theme" uid="uid://7vpl40sax2v" path="res://styles/Deskripsitheme.tres" id="4_5m8fr"]
 [ext_resource type="StyleBox" uid="uid://cn6mbunwuv2gb" path="res://styles/buttonStyle.tres" id="6_a8cg1"]
 [ext_resource type="Theme" uid="uid://c3nnrl2sn5ipu" path="res://styles/richTextScrollable.tres" id="6_rxl6f"]
+[ext_resource type="Texture2D" uid="uid://dtr1io5brfxbs" path="res://art/x.png" id="7_bb7r6"]
 
 [sub_resource type="Theme" id="Theme_344nm"]
 Label/colors/font_color = Color(1, 1, 1, 1)
@@ -14,6 +15,10 @@ Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/outline_size = 3
 Label/font_sizes/font_size = 11
 Label/fonts/font = ExtResource("3_4ij2h")
+
+[sub_resource type="Theme" id="Theme_ab032"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_80ypm"]
 
 [sub_resource type="Theme" id="Theme_tabvb"]
 default_font = ExtResource("3_4ij2h")
@@ -93,11 +98,17 @@ text = "contoh deskripsi yang sangat amat panjang sekali sehingga membuat yang m
 tab_size = 3
 
 [node name="Close" type="Button" parent="."]
+custom_minimum_size = Vector2(15, 15)
 layout_mode = 0
-offset_left = 148.0
-offset_top = 9.0
-offset_right = 156.0
-offset_bottom = 17.0
+offset_left = 144.0
+offset_top = 6.0
+offset_right = 159.0
+offset_bottom = 21.0
+theme = SubResource("Theme_ab032")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_80ypm")
+icon = ExtResource("7_bb7r6")
+flat = true
+expand_icon = true
 
 [node name="BtnNext" type="Button" parent="."]
 layout_mode = 1

@@ -7,8 +7,6 @@ extends Area2D
 func _on_interact_area_entered(area):
 	if area.name == "hurtBox":
 		ui_in_range = true
-		print_debug("kepencet")
-		print_debug("player menyentuh sign")
 	else:
 		ui_in_range = false
 
