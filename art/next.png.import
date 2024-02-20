@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br0qj0wdyjg7g"
-path="res://.godot/imported/petarung.png-ca5989c4a91af0c64864bd006010b70a.ctex"
+uid="uid://bk3ytsgm3p8lb"
+path="res://.godot/imported/next.png-e389991789fea33e1e01ede207f4833b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/char/potrait/petarung.png"
-dest_files=["res://.godot/imported/petarung.png-ca5989c4a91af0c64864bd006010b70a.ctex"]
+source_file="res://art/next.png"
+dest_files=["res://.godot/imported/next.png-e389991789fea33e1e01ede207f4833b.ctex"]
 
 [params]
 

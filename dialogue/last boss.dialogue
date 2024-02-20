@@ -4,7 +4,7 @@ if quest8Status == false
 		Makhluk Astral: Hohoho, Beraninya kamu datang dihadapanku. Apa tujuan mu?
 		Bima: Saya ingin kembali ketempat saya berasal
 		Makhluk Astral: Ternyata kamu bukan berasal dari sini ya?
-		Makhluk Astral: Baiklah Bima, Saya akan membantumu bila kau memiliki 5 kain batik dengan 5 motif berbeda
+		Makhluk Astral: Baiklah Anak Muda, Saya akan membantumu bila kau memiliki 9 kain batik dengan 9 motif berbeda
 		Makhluk Astral: Setelah itu akan ku uji kau mengenai batik tersebut.
 		Makhluk Astral: Apakah kau memiliki kain tersebut? 
 		- Tunggu sebentar nanti aku akan kembali lagi
@@ -36,7 +36,7 @@ Makhluk Astral: Apakah kau sudah siap?
 	=>< batik3
 	Makhluk Astral: Apakah kau masih kuat?
 	Bima: Ini tidak ada apa-apanya
-	Makhluk Astral: HAHAHA, Mari kita lanjut
+	Makhluk Astral: [shake]HAHAHA[/shake], Mari kita lanjut
 	=>< batik4
 	Makhluk Astral: Bagus bagus, pertanyaan ke-lima
 	=>< batik5
@@ -53,8 +53,10 @@ Makhluk Astral: Apakah kau sudah siap?
 		Makhluk Astral: Untuk kembali ke masamu, silakan pergi melewati portal yang ada di belakangku ini
 		set quest8Status = true
 		set takenQuest8 = false
+		set tamat = true
+		do save_game()
 	else
-		Makhluk Astral: HAHAHAHAHAHA, sayang sekali nak poin benar mu hanya {{benar}}, sedangkan poin salahmu {{salah}}
+		Makhluk Astral: [shake]HAHAHAHAHAHA[/shake], sayang sekali nak poin benar mu hanya {{benar}}, sedangkan poin salahmu {{salah}}
 		Makhluk Astral: Masih kurang
 		Makhluk Astral: Sayang sekali kau harus mengulanginya lagi
 		=> MemulaiPertanyaan
@@ -66,7 +68,7 @@ Makhluk Astral: Apakah kau sudah siap?
 #ceplok
 do QuizImage.gambarQuiz("batik1")
 Makhluk Astral: Apa Kau tahu batik ini?
-Makhluk Astral: Batik petani atau rakyat ini merupakan kumpulan motif batik bunga bungaan yang berbentuk oval atau persegi yang disusun simetris melingkar menjadi sekuntum bunga
+Makhluk Astral: [color=#965340]Batik petani atau rakyat[/color] ini merupakan kumpulan motif batik bunga-bungaan yang berbentuk oval atau persegi yang disusun simetris melingkar menjadi sekuntum bunga
 - Ini Motif Ceplok
 	set benar = benar + 1
 - Ini Sekar jagad
@@ -79,8 +81,8 @@ do QuizImage.close()
 ~ batik2
 #gringsing
 do QuizImage.gambarQuiz("batik2")
-% Makhluk Astral: Memiliki motif latar kain berbentuk lingkaran-lingkaran kecil dengan titik ditengahnya. Motif batik apa itu?
-% Makhluk Astral: Merupakan Hadiah untuk panglima yang telah berjasa dalam perang dan sudah ditemukan pada zaman Raden Wijaya Majapahit, Batik motif apa itu?
+% Makhluk Astral: Memiliki motif latar kain berbentuk [color=#965340]lingkaran-lingkaran kecil dengan titik ditengahnya[/color]. Lalu terdapat ornamen besar di atasnya. Motif batik apa itu?
+% Makhluk Astral: Merupakan Hadiah untuk [color=#965340]panglima yang telah berjasa[/color] dalam perang dan sudah ditemukan pada zaman Raden Wijaya Majapahit, Batik motif apa itu?
 - Gringsing
 	set benar = benar + 1
 - Parang
@@ -93,7 +95,7 @@ do QuizImage.close()
 ~ batik3
 #kawung
 do QuizImage.gambarQuiz("batik3")
-% Makhluk Astral: Berbentuk seperti 4 kolang kaling yang disusun melingkar dengan tambahan ornamen kecil ditengahnya. Motif batik apa itu?
+% Makhluk Astral: Berbentuk seperti [color=#965340]4 kolang kaling[/color] yang disusun melingkar dengan tambahan ornamen kecil ditengahnya. Motif batik apa itu?
 % Makhluk Astral: Apa kau tau batik apa yang ku tunjukan ini? 
 - Gringsing
 	set salah = salah + 1
@@ -107,7 +109,7 @@ do QuizImage.close()
 ~ batik4
 #parang
 do QuizImage.gambarQuiz("batik4")
-% Makhluk Astral: Merupakan batik ikon di Indonesia, bermotifkan seperti lerenng yang miring/suatu tebing yang berbentuk diagonal disebut?
+% Makhluk Astral: Merupakan [color=#965340]batik ikon di Indonesia[/color], bermotifkan seperti lerenng yang miring/suatu tebing yang berbentuk diagonal disebut?
 % Makhluk Astral: Batik ini merupakan batik keraton yang dipakai oleh raja, permaisuri dan putra-putrinya, batik apa kah ini?
 - Parang
 	set benar = benar + 1
@@ -120,7 +122,7 @@ do QuizImage.close()
 
 ~ batik5
 #pringsedapur
-% Makhluk Astral: [do QuizImage.gambarQuiz("batik5")]Batik bercirikan motif tanaman bambu yang disertai ragam bunga dan dedaunan seperti di gambar merupakan batik?
+% Makhluk Astral: [do QuizImage.gambarQuiz("batik5")]Batik bercirikan motif [color=#965340]tanaman bambu[/color] yang disertai ragam bunga dan dedaunan seperti di gambar merupakan batik?
 % Makhluk Astral: [do QuizImage.gambarQuiz("batik5")]Batik keraton yang berfilosofikan Tanaman bambu hidup bergerombol membentuk satu kekuatan seperti hubungan anak yang telah berkeluarga kepada orang tuanya merupakan batik?
 - Kawung
 	set salah = salah + 1

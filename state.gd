@@ -13,8 +13,8 @@ var benar = 0
 var salah = 0
 var pertanyaan = false
 
-var introQuest = false
-var inQuest = false
+var introQuest = false #untuk trigger cut scene intro quest museum
+var inQuest = false #keknya ga kepake
 var dungeonState = false #kondisi untuk menentukan ui hp tampil hanya dalam dungeon
 var isPause = false
 var notMove = false
@@ -22,7 +22,7 @@ var playerPosLoad #posisi terakhir player berada
 var playerMapLoad #map terakhir player berada
 var bossPass = false #kondisi untuk penjaga boss bergeser
 var getBatik: bool = false #untuk mengetahui jika player baru mendapat batik
-
+var tamat: bool = false #bila sudah menyelesaikan game
 
 
 #introQuest
@@ -182,6 +182,7 @@ func _process(_delta):
 	ikan
 	benar
 	salah
+	tamat
 	
 	#agar langsung menerima quest akhir
 	if quest0Status and quest1Status and quest2Status and quest3Status and quest4Status and quest5Status and quest6Status and quest7Status:
@@ -255,6 +256,10 @@ func _process(_delta):
 
 func save():
 	var save_dict = {
+		"ds" : dungeonState,
+		"pd" : pintuDungeon,
+		"kd" : kunciDungeon,
+		"tamat" : tamat,
 		"playerPos" : playerPosLoad,
 		"playerMap" : playerMapLoad,
 		"ikan": ikan,
@@ -347,11 +352,15 @@ func load_game():
 		DataBatik.batik8["isGet"] = data["b7"]
 		DataBatik.batik9["isGet"] = data["b8"]
 		
+		dungeonState = data["ds"]
+		pintuDungeon = data ["pd"]
+		kunciDungeon = data["kd"]
 		playerMapLoad = data["playerMap"]
 		playerPosLoad = data["playerPos"]
 		ikan = data["ikan"]
 		benar = data["benar"]
 		salah = data["salah"]
+		tamat = data["tamat"]
 		
 		# quest
 		quest0Status = data["qs0"]

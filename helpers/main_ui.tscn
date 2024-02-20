@@ -127,5 +127,6 @@ icon = ExtResource("7_pmjvb")
 flat = true
 
 [node name="QuizImage" parent="." instance=ExtResource("8_5ttd2")]
+visible = false
 
 [connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]

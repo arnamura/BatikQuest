@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Texture2D" uid="uid://0umyfe8w7soy" path="res://art/char/potrait/boy.png" id="3_1vit6"]
 [ext_resource type="FontFile" uid="uid://c150i2j8f5iw1" path="res://VCRosdNEUE.ttf" id="3_73a7y"]
-[ext_resource type="Texture2D" uid="uid://ceki5avr4r78j" path="res://dialogue/flatDark24.png" id="4_feptj"]
 [ext_resource type="Texture2D" uid="uid://cyr0xdq8lnqf" path="res://art/DialogueBubble.png" id="4_o5h1g"]
 [ext_resource type="AudioStream" uid="uid://bx2hdvss5gmyu" path="res://audio/sfx/Voice3.wav" id="5_444qp"]
+[ext_resource type="Texture2D" uid="uid://bk3ytsgm3p8lb" path="res://art/next.png" id="7_qejij"]
 
 [sub_resource type="Theme" id="Theme_isg48"]
 default_font_size = 9
@@ -84,7 +84,6 @@ theme_override_constants/separation = 4
 [node name="CharacterLabel" type="RichTextLabel" parent="Balloon/Margin/HBoxContainer/VBox"]
 modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
-mouse_filter = 1
 theme = SubResource("Theme_isg48")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
@@ -141,17 +140,14 @@ meta_underlined = false
 hint_underlined = false
 selection_enabled = true
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
-visible = false
-modulate = Color(1, 1, 1, 0)
-position = Vector2(232.986, 86.7996)
-rotation = 1.5708
-scale = Vector2(0.508509, 2.82199)
-texture_normal = ExtResource("4_feptj")
+[node name="Button" type="TouchScreenButton" parent="Balloon"]
+position = Vector2(213, 35)
+texture_normal = ExtResource("7_qejij")
 action = "ui_accept"
 
 [node name="talk" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_444qp")
+volume_db = -10.0
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="resized" from="Balloon/Margin" to="." method="_on_margin_resized"]

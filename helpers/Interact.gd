@@ -6,7 +6,12 @@ class_name Interact extends Area2D
 @export_multiline var deskripsi_batik = "none"
 @export var value = "none"
 @export var path_gambar = "none"
+
 @onready var uiDesc: CanvasLayer = $"../../../DescriptionGUI"
+@onready var anim = $AnimationPlayer
+@onready var nama: Label = $namaBatik
+@onready var namaPosition = nama.global_position.y
+
 var player_in_range = false
 
 #const Gui = preload("res://helpers/description_gui.tscn")
@@ -17,6 +22,8 @@ var player_in_range = false
 	#gui.start(interact_label)
 	
 func _ready():
+	nama.visible = false
+	anim.play("idle")
 	set_process(true)
 
 func showUi():
@@ -36,6 +43,10 @@ func updateText():
 
 func _on_area_entered(area):
 	if area.name == "MapDetection":
+		nama.visible = true
+		nama.text = "Batik " + DataBatik[label_batik]["nama"]
+		var namaAfterTween: int = namaPosition - 5
+		create_tween().tween_property(nama, "global_position:y", namaAfterTween, 0.5).from(namaPosition).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
 		player_in_range = true
 
 func _unhandled_input(_event):
@@ -45,4 +56,5 @@ func _unhandled_input(_event):
 
 func _on_area_exited(area):
 	if area.name == "MapDetection":
+		nama.visible = false
 		player_in_range = false

@@ -43,7 +43,7 @@ var dialogue_line: DialogueLine:
 		character_label.visible = not dialogue_line.character.is_empty()
 		character_label.text = tr(dialogue_line.character, "dialogue")
 		var potrait_path: String = "res://art/char/potrait/%s.png" % dialogue_line.character.to_lower()
-		if FileAccess.file_exists(potrait_path):
+		if ResourceLoader.exists(potrait_path):
 			potrait.texture = load(potrait_path)
 		else:
 			potrait.texture = null

@@ -18,9 +18,9 @@ if quest3Status == false:
 				Bang Dirman: Untuk itu, Barang siapa yang dapat mengembalikan kain batik yang telah dicuri,
 				Bang Dirman: Akan diberikan hadiah batik khusus yang biasa diberikan kepada panglima perang yang telah berjasa
 				Bang Dirman: Menarik bukan?
-				Bang Dirman: Untuk Memulainya, pergilah ke dalam hutan
-				Bang Dirman: Batik tersebut seharusnya ada di perkemahan monster didalam hutan
-				Bang Dirman: Berhati-hatilah untuk tidak terkena kontak langsung dengan monster
+				Bang Dirman: Untuk Memulainya, pergilah kearah kanan, nanti kau akan menemukan sebuah goa dengan penjaga di sampingnya. Langsung masuk saja
+				Bang Dirman: Batik tersebut seharusnya ada di suatu peti di dalam goa dungeon itu
+				Bang Dirman: Berhati-hatilah untuk tidak terkena [color=red]kontak langsung dengan monster[/color]
 				set takenQuest3 = true
 	else:
 		#kondisi bila sudah mendapatkan req item
@@ -28,8 +28,8 @@ if quest3Status == false:
 			Bang Dirman: Kerja bagus nak, aku akan segera melapor kepada kerajaan
 			Bang Dirman: Hanya kau yang berani untuk mengambilnya kedalam sana
 			Bang Dirman: Sebagai imbalan, terimalah ini hadiah dari kerajaan
-			Bang Dirman: Ini merupakan kain batik bermotif Gringsing
-			Bang Dirman: Kain ini merupakan imbalan bagi panglima perang yang sudah berjasa untuk Kerajaan
+			Bang Dirman: Ini merupakan kain batik bermotif [color=#965340]Gringsing[/color]
+			Bang Dirman: Kain ini merupakan imbalan bagi [color=#965340]panglima perang yang sudah berjasa[/color] untuk Kerajaan
 			Bang Dirman: Konon Katanya kain ini bahkan bisa menyembuhkan luka
 			Bang Dirman: Memiliki motif lingkaran kecil-kecil sebagai latar dari kain dengan sebuah titik di tengah lingkaran tersebut
 			Bang Dirman: Kain ini sangat berharga, jadi jangan disia siakan yaa
@@ -38,6 +38,9 @@ if quest3Status == false:
 			set quest3Status = true
 			set DataBatik.batik2["isGet"] = true
 			set getBatik = true
+			do save_game()
+			- Tunggu Bang, aku baru ingat
+			=> dirmanPetarung
 		else:
 			#kondisi bila belum mendapatkan item
 			Bang Dirman: Ada yang ingin kau tanyakan?
@@ -49,7 +52,9 @@ if quest3Status == false:
 					Bang Dirman: Masuklah kedalam goa, lalu ikuti saja jalannya
 					Bang Dirman: Terakhirku ingat sih jalannya tidak sulit
 					Bang Dirman: Semoga, hahaha
-					Bang Dirman: aku yakin kau bisa menemukannya 
+					Bang Dirman: Aku yakin kau bisa menemukannya 
+					Bang Dirman: Oh iya, sepertinya terdapat [color=#965340]kunci[/color] di suatu ruangan untuk membuka pintu ruangan harta
+					Bang Dirman: Mungkin kau perlu mencarinya terlebih dahulu
 				- Apa yang terjadi bila aku terkena musuh?
 					Bang Dirman: Waduh!
 					Bang Dirman: Rasanya akan sangat menyakitkan
@@ -68,18 +73,21 @@ if quest7Status == false
 	if takenQuest7 == false
 		Petarung: Tolong ... , aku butuh obat
 		Bima: Baik Tunggu sebentar
-		Mungkin aku akan tanyakan ke Bang Dirman
+		Bima: Akan ku laporkan ka Bang Dirman
 	else
 		Bima: Ini Bang obatnya. Aku juga sudah mengabari Bang Dirman mengenai kondisi mu
 		Petarung: Terimakasih banyak nak! Kalau begitu permisi sebentar, akan saya minum
 		Petarung: ... glek
 		Petarung: Huhh jauh lebih baik, Aku akan istirahat sebentar di sini menuggu kondisi ku prima
-		Petarung: Sebelum kau pergi, ini ambil lah kain yang kudapatkan selagi membasmi monster yang berkeliaran di sini
-		Petarung: -------------- Isi deskripsi batik sawat ------------------------
+		Petarung: Sebelum kau pergi, ini ambil lah kain yang kudapatkan selagi membasmi monster bersayap
+		Petarung: Nama motif dari kain ini adalah [color=#965340]Sawat[/color]. Seperti nama motifnya, Sawat berarti bentuk motif [color=#965340]sepasang sayap garuda[/color] yang mengembang dan menampakan ekor di tengahnya
+		Petarung: Jika dilihat, motif dari sawat terderi dari ragam hias pohon hayat, hias garuda, dan burung
+		Petarung: Itu saja, terimakasih banyak karena telah menyelamatkan ku
 		set takenQuest7 = false
 		set quest7Status = true
 		set DataBatik.batik6["isGet"] = true
 		set getBatik = true
+		do save_game()
 else:
 	Petarung: Terimakasih telah menyelamatkan ku!
 
@@ -103,28 +111,31 @@ else:
 
 ~ item3
 #kondisi bila sudah membuka peti harta
-Bima: terlihat seperti barang yang dideskripsikan oleh bang dirman
-Bima: seharusnya ini barang yang benar
-Bima: sebaiknya aku cepat melapor
+Bima: Terlihat seperti barang yang dideskripsikan oleh bang dirman
+Bima: Seharusnya ini barang yang benar
+Bima: Sebaiknya aku cepat melapor
 set reqItem3 = "1"
 => END
 
 ~ kunciDungeon
 #kondisi bila telah menemukan kunci untuk membuka pintu dungeon
 Bima: Sepertinya ini merupakan kunci untuk membuka ruangan peti
-Bima:Sebaiknya aku ambil
+Bima: Sebaiknya aku ambil
 set kunciDungeon = true
 => END
 
 ~ pintuDungeon
 #kondisi interaksi dengan pintu yang terkunci
-if kunciDungeon == false:
-	Bima: Pintu ini terkunci, sepertinya kuncinya ada disekitar sini
-	Bima: Sebaiknya aku ambil
-else:
-	Bima: Terbuka!
-	Bima: Kuncinya ternyata cocok
-	set pintuDungeon = true
+if pintuDungeon == true
 	=> END
+else
+	if kunciDungeon == false:
+		Bima: Pintu ini terkunci, sepertinya kuncinya ada disekitar sini
+		Bima: Sebaiknya aku ambil
+	else:
+		Bima: Terbuka!
+		Bima: Kuncinya ternyata cocok
+		set pintuDungeon = true
+		=> END
 	
 

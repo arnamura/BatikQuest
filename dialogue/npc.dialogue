@@ -19,8 +19,8 @@ if quest5Status == false:
 			Kucing: Meaaawwwww
 			Bima: Woahhh kain batik apa ini???
 			Kucing: Miiiaaww miawww miw!
-			Bima: Bentuknya seperti Bunga Tanjung sihh, dan motifnya sangat tersusub beraturan
-			Bima: Akan ku tanyakan kepada kakek
+			Bima: Bentuknya seperti [color=#965340]Bunga Tanjung[/color] sihh, dan motifnya sangat tersusun beraturan
+			Bima: Akan ku cari tahu nanti pada [color=#965340]menu batik[/color]
 			Bima: Terimakasih kucing
 			Kucing: Meaaww!!!
 			Bima: Namun, tempat apa ini? Seperti sudah ditinggalkan sejak lama
@@ -29,6 +29,7 @@ if quest5Status == false:
 			set DataBatik.batik9["isGet"] = true
 			set getBatik = true
 			set takenQuest5 = false
+			do save_game()
 		else:
 			Kucing: Rawr
 			Bima: Huh?
@@ -64,7 +65,7 @@ Penjaga: Apakah kau sudah membantu para warga di Desa Batik ini?
 if takenQuest8 == true
 	Bima: Sudah
 	Penjaga: Hoo, serahkan buktinya
-	Bima: ini pak Kain Batik dengan motif Parang
+	Bima: Ini pak Kain Batik dengan motif Parang
 	Penjaga: Sepertinya ini otentik dari Kepala Desa
 	Bima: Maksudmu Kakek yang tinggal di sebrang sungai adalah Kepala Desa Batik??
 	Penjaga: Baiklah silakan lewat

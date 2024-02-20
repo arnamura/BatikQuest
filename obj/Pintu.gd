@@ -11,4 +11,5 @@ func open():
 	SoundFx.getItem()
 	$close.queue_free()
 	$Collisionclose.queue_free()
+	$Actionable.queue_free()
 	i = 1

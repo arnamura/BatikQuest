@@ -31,7 +31,7 @@ else
 	Kakek: Kamu juga bisa mendapatkan 2 peti yang berada di hutan lalu kamu bawa kembali ke sini
 - Lainnya ...
 	- Bagaimana caraku untuk mempelajari batik yang aku punya?
-		Kakek: Caranya, kamu bisa menekan tombol pause yang ada di pojok kiri atas layarmu
+		Kakek: Caranya, kamu bisa menekan [color=#965340]tombol pause[/color] yang ada di pojok kiri atas layarmu
 		Kakek: Lalu tekan tombol batik dan pilih batik mana yang mau kau pelajari
 	- Tidak jadi
 	- (kembali ke awal)
@@ -49,20 +49,21 @@ if quest1Status == false:
 			Kakek: ...
 			Kakek: ...
 			Kakek: Nah ini dia kainnya
-			Kakek: Kain in ku beri motif batik bernama "Ceplok"
+			Kakek: Kain in ku beri motif batik bernama [color=#965340]Ceplok[/color]
 			Kakek: Bentuk motif ini menyerupai bunga bungaan yang disusun geometris
-			Kakek: persegi, oval, bintang yang disusun melingkar menjadi sekuntum bunga
+			Kakek: Persegi, oval, bintang yang disusun melingkar menjadi sekuntum bunga
 			Kakek: Biasa dihias dengan daun disekelilingnya dalam rangka segi empat
-			Kakek: Batik ini khusus dibuat dari golongan petani atau rakyat
+			Kakek: Batik ini khusus dibuat dari golongan [color=#965340]petani atau rakyat[/color]
 			Kakek: Yang melambangkan keseimbangan, keteraturan dan kesempurnaan bagi pemakainya
 			Kakek: Pergilah dan bantu orang-orang yang ada di desa ini dan pelajari motif-motif batik yang ada
-			Kakek: Setelah kau mengumpulkan ke-8 kain Batik, aku akan memberikan mu kain batik khusus sebagai tanda kau adalah orang yang telah berjasa untuk Desa ini!
+			Kakek: Setelah kau mengumpulkan [color=#965340]ke-8 kain Batik[/color], aku akan memberikan mu kain batik khusus sebagai tanda kau adalah orang yang telah berjasa untuk Desa ini!
 			Bima: Terimakasih banyak kek!
 			set quest1Status = true
 			set DataBatik.batik1["isGet"] = true
 			set getBatik = true
 			set takenQuest1 = false
 			set inQuest = false
+			do save_game()
 			=> END
 		else #bila reqitem belum didapat
 			Kakek: Ambilkan kain Morinya, nanti ku buatkan kain batik
@@ -83,12 +84,12 @@ if quest1Status == false:
 			Kakek: Sepertinya kau tidak seharusnya ada disini
 			Kakek: Saya bisa membantumu untuk kembali ke waktumu
 			Kakek: tapi kau harus mengumpulkan beberapa benda terlebih dahulu
-			Kakek: Kau harus mengumpulkan 8 Batik yang ada di Desa ini dan mempelajarinya
+			Kakek: Kau harus mengumpulkan [color=#965340]8 Batik[/color] yang ada di Desa ini dan [color=#965340]mempelajarinya[/color]
 			Kakek: Setelah itu kau baru bisa menghadapi penjaga portal untuk kembai ke asalmu
 			- Bagaimana cara aku menemukannya?
 			Kakek: Berinteraksilah dengan warga setempat, dan bantulah mereka
 			Kakek: Pertama, aku dapat membantumu memberi kain batik pertama
-			Kakek: belilah kain mori pada pedagang berkacamata itu, lalu aku akan membuatkanmu satu
+			Kakek: Belilah kain mori pada pedagang berkacamata itu, lalu aku akan membuatkanmu satu
 			- Baik lah kakek! tunggu sebentar 
 			set takenQuest1 = true 
 			set inQuest = true
@@ -125,7 +126,7 @@ else
 ~ petiTamanBunga
 #kondisi memulai quest 4 menemukan kain
 if not takenQuest0 and not takenQuest1 and not takenQuest2 and not takenQuest3 and not takenQuest4 and not takenQuest5
-	Bima: woah, peti apa ini?
+	Bima: Woah, peti apa ini?
 	- Buka peti
 	Bima: Ternyata ada kain batik di dalamnya
 	Bima: Tapi motif apa ini ya?
@@ -168,9 +169,9 @@ if takenQuest4 == true :
 	Kakek: ...
 	Kakek: Woah hebat sekali kamu bisa menemukan ini
 	Bima: Nama kain ini apa kek?
-	Kakek: Ini adalah kain batik bermotif "Pring Sedapur"
-	Kakek: ini kain yang berasal dari pedesaan di daerah magetan
-	Kakek: Berfilosofi tanaman bambu biasa yang hidup bergerombol membentuk satu kekuatan
+	Kakek: Ini adalah kain batik bermotif [[color=#965340]Pring Sedapur[/color]
+	Kakek: Ini kain yang berasal dari pedesaan di daerah magetan
+	Kakek: Berfilosofi [color=#965340]tanaman bambu[/color] biasa yang hidup bergerombol membentuk satu kekuatan
 	Kakek: Dapat dilihat dari motif seperti tanaman bambu disertai ornamen bunga atau daun
 	Kakek: Bisa diartikan juga sebagai simbol ucapan terimakasih dari orang tua ke anaknya yang sudah berkeluarga
 	Kakek: Sebagai arti walau berpisah tetapi tetap satu rumpun bagi keluarga besarnya
@@ -181,6 +182,7 @@ if takenQuest4 == true :
 	set DataBatik.batik5["isGet"] = true
 	set getBatik = true
 	set takenQuest4 = false
+	do save_game()
 	=> END
 else
 	Bima: tapi boong hayu
@@ -194,15 +196,16 @@ if takenQuest6 == true :
 	Kakek: Ya, itu merupakan bagian dari Desa Batik juga yang berisi para imigran dari Kerajaan sebelah
 	Kakek: Namun sejak penyerangan monster liar, para penduduk di luar mulai pindah kedalam
 	Kakek: Ngomong-ngomong, temuan mu ini merupakan kain yang dibawa dari imigran tersebut
-	Kakek: Kain ini dibuat oleh pembatik keraton yang dijuluki Nyai Majapahit
-	Kakek: Motif ini disebut motif Sekar Jagad yang berarti Bunga jagad raya yang menampilkan keindahan berbagai motif
-	Kakek: Susunan dari batik ini merupakan kombinasi dari banyak elemen dan gabungan motif berbeda yang dituangkan dan berbentuk secara spesifik
+	Kakek: Kain ini dibuat oleh pembatik keraton yang dijuluki [color=#965340]Nyai Majapahit[/color]
+	Kakek: Motif ini disebut motif [color=#965340]Sekar Jagad[/color] yang berarti Bunga jagad raya yang menampilkan keindahan berbagai motif
+	Kakek: Susunan dari batik ini merupakan [color=#965340]kombinasi dari banyak elemen[/color] dan gabungan motif berbeda yang dituangkan dan berbentuk secara spesifik
 	Kakek: Simpan kain ini baik baik ya
 	Bima: Siap kek!
 	set quest6Status = true
 	set DataBatik.batik7["isGet"] = true
 	set getBatik = true
 	set takenQuest6 = false
+	do save_game()
 	=> END
 else
 	Bima: tapi boong hayu
@@ -214,6 +217,11 @@ Bima: Iya kek
 Kakek: Terimakasih juga karna telah membantu semua warga yang ada di sini
 Kakek: Karena kamu telah mengumpulkan ke-8 batik yang ada, sesuai janji akan kuberikan batik ke-9
 #------------------------  Input lore batik ke 4 ----------------------------
+Kakek: Ini adalah kain batik dengan motif [color=#965340]Parang[/color]
+Kakek: Motif ini terinspirasi dari meditas Penembagan Senopati yang dang memperhatikan gejolak ombak pantai selatan yang menghantam batu karang
+Kakek: Kata Parang sendiri berasal dari kata pereng yang berarti lereng atau pinggiran yang miring atau suatu tebing yang berbentuk diagonal
+Kakek: Batik ini dipakai oleh Raja, Permaisuri dan Putra-Putrinya di Keraton Surakarta yang merupakan [i]ageman luhur[/i]
+Kakek: Kau berhak mendapatkan batik ini
 Kakek: Kamu sudah mengoleksi ke-9 batik yang ada. Sekarang kamu berhak menantang boss terakhir
 Kakek: Pergilah ke Bukit Es yang berada di utara gurun, di sana ada penjaga yang akan meminta bukti bahwa kamu telah mengumpulkan semua batik
 Kakek: Jangan lupa pelajari lah semua batik yang sudah kamu kumpulkan untuk menghadapinya
@@ -222,4 +230,5 @@ Bima: Terimakasih banyak atas bimbingannya ya kek
 set reqItem8 = "1"
 set DataBatik.batik4["isGet"] = true
 set getBatik = true
+do save_game()
 #bersambung ke dialog boss

@@ -4,6 +4,7 @@ extends Node2D
 @onready var player = $TileMap/Player
 @onready var spawnFromDungeon = $TileMap/Helpers/SpawnFromDungeon
 
+var i = true
 
 
 func _ready():
@@ -22,9 +23,7 @@ func _process(_delta):
 		State.bossPass = false
 	
 	if State.quest8Status == true:
-		anim.play("gatekeep")
-		
-
+		clearedBoss()
 
 
 func _on_teleport_area_body_entered(body):
@@ -32,3 +31,8 @@ func _on_teleport_area_body_entered(body):
 		anim.play("transisiOut")
 		await anim.animation_finished
 		DoorHandle.changeStage(DoorHandle.museum)
+
+func clearedBoss():
+	if i == true:
+		anim.play("gatekeep")
+		i = false

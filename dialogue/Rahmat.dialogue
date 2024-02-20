@@ -6,9 +6,9 @@ else:
 		if State.reqItem2 == "1":#kondisi bila telah mendapatkan req item
 			Rahmat: Terima kasih bima, karena sudah menemukan cincin tunanganku ini
 			Rahmat: Dengan begini, aku bisa segera melamar kekasih ku
-			Rahmat: Terimalah kain batik ini, kain ini memiliki motif batik bernama "Sidomukti"
-			Rahmat: Aku memiliki beberapa kain dengan motif ini karna orang tua ku membuatnya
-			Rahmat: Kain ini memiliki arti sebagai doa untuk menggapai kemuliaan dan keseimbangan untuk pasangan yang ingin menikah, kalau istilah jawanya "Kiblat papat limo pancer"
+			Rahmat: Terimalah kain batik ini, kain ini memiliki motif batik bernama [color=#965340]Sidomukti[/color]
+			Rahmat: Aku memiliki beberapa kain dengan motif ini karna orang tua ku membuatnya. Ciri ciri dari batik ini adalah ia [color=#965340]berbentuk belah ketupat dengan ornamen ditengahnya[/color]
+			Rahmat: Kain ini memiliki arti sebagai doa untuk menggapai kemuliaan dan keseimbangan untuk pasangan yang ingin menikah, kalau istilah jawanya [color=#965340]Kiblat papat limo pancer[/color]
 			Rahmat: Artinyna, empat arah yang diharmonikan dengan pusat. Menyeimbangkan secara vertikal yaitu dunia dan akhirat
 			Rahmat: dan juga secara horizontal yang artinya lelaki dan perempuan.
 			Rahmat: Karena aku ingin menikah, jadinya nanti akan memakai kain ini hehe
@@ -19,11 +19,12 @@ else:
 			set takenQuest2 = false
 			set DataBatik.batik8["isGet"] = true
 			set getBatik = true
+			do save_game()
 		else:
 			#kondisi bila belum mendapatkan reqitem
 			Rahmat: Tolonglah bima, 
 			Rahmat: Sepertinya cincin tunanganku ada di sekitar taman
-			Rahmat: dan seperti ada banyak kawanan sapi di daerah sana
+			Rahmat: dan seperti ada banyak [color=#965340]kawanan sapi[/color] di daerah sana
 	else:
 		if not takenQuest1 and not takenQuest2 and not takenQuest3 and not takenQuest4 and not takenQuest5
 			#kondisi menerima quest 2 rahmat
@@ -39,7 +40,7 @@ else:
 			- Aku bisa membantumu
 				Rahmat: Terimakasih banyak!
 				Rahmat: Seharusnya cincin tersebut berada di sekitar taman
-				Rahmat: Dan juga tadi saat kami bermain, ada banyak sekali kawanan sapi
+				Rahmat: Dan juga tadi saat kami bermain, ada banyak sekali [color=#965340]kawanan sapi[/color]
 				Rahmat: Semoga saja tidak dimakan oleh sapi-sapi tersebut hahaha
 				Rahmat: Tidak akan kan ya ... ?
 				set takenQuest2 = true
