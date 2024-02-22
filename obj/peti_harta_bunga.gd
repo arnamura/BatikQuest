@@ -6,9 +6,9 @@ extends "res://obj/item.gd"
 
 func _ready():
 	anim.play("idle")
+	
 func _process(_delta):
-	if State.takenQuest4 and i == 1:
-		SoundFx.getItem()
+	if State.reqItem4 == "1" and i == 1:
 		buka()
 
 func buka():

@@ -69,7 +69,7 @@ var pintuDungeon: bool = false
 var quest4title: String = "Kain bermotif bunga"
 var quest4Status: bool = false
 var takenQuest4: bool = false
-var reqItem4: String = "1"
+var reqItem4: String = ""
 
 var quest4text1: String = "-"
 var quest4text2: String = "- Bawa temuan kain batik kepada kakek"
@@ -87,7 +87,7 @@ var quest5text2: String = "Bicara dengan Kucing?"
 var quest6title: String = "Kain bermotif bunga"
 var quest6Status: bool = false
 var takenQuest6: bool = false
-var reqItem6: String = "1"
+var reqItem6: String = ""
 
 var quest6text1: String = "-"
 var quest6text2: String = "- Bawa temuan kain batik kepada kakek"
@@ -112,6 +112,7 @@ var quest8text2: String = "- Tantang Boss terakhir"
 
 var questInfo = {
 	0: {
+		"judul": quest0title,
 		"status": quest0Status,
 		"taken": takenQuest0,
 		"item": reqItem0,
@@ -119,6 +120,7 @@ var questInfo = {
 		"text2": quest0text2
 		},
 	1: {
+		"judul": quest1title,
 		"status": quest1Status,
 		"taken": takenQuest1,
 		"item": reqItem1,
@@ -126,6 +128,7 @@ var questInfo = {
 		"text2": quest1text2
 		},
 	2: {
+		"judul": quest2title,
 		"status": quest2Status,
 		"taken": takenQuest2,
 		"item": reqItem2,
@@ -133,6 +136,7 @@ var questInfo = {
 		"text2": quest2text2
 		},
 	3: {
+		"judul": quest3title,
 		"status": quest3Status,
 		"taken": takenQuest3,
 		"item": reqItem3,
@@ -140,6 +144,7 @@ var questInfo = {
 		"text2": quest3text2
 		},
 	4: {
+		"judul": quest4title,
 		"status": quest4Status,
 		"taken": takenQuest4,
 		"item": reqItem4,
@@ -147,6 +152,7 @@ var questInfo = {
 		"text2": quest4text2
 		},
 	5: {
+		"judul": quest5title,
 		"status": quest5Status,
 		"taken": takenQuest5,
 		"item": reqItem5,
@@ -154,6 +160,7 @@ var questInfo = {
 		"text2": quest5text2
 		},
 	6: {
+		"judul": quest6title,
 		"status": quest6Status,
 		"taken": takenQuest6,
 		"item": reqItem6,
@@ -161,6 +168,7 @@ var questInfo = {
 		"text2": quest6text2
 		},
 	7: {
+		"judul": quest7title,
 		"status": quest7Status,
 		"taken": takenQuest7,
 		"item": reqItem7,
@@ -168,6 +176,7 @@ var questInfo = {
 		"text2": quest7text2
 		},
 	8: {
+		"judul": quest8title,
 		"status": quest8Status,
 		"taken": takenQuest8,
 		"item": reqItem8,
@@ -185,11 +194,14 @@ func _process(_delta):
 	tamat
 	
 	#agar langsung menerima quest akhir
-	if quest0Status and quest1Status and quest2Status and quest3Status and quest4Status and quest5Status and quest6Status and quest7Status:
+	if quest0Status and quest1Status and quest2Status and quest3Status and quest4Status and quest5Status and quest6Status and quest7Status and not tamat:
 		takenQuest8 = true
+	else:
+		takenQuest8 = false
 		
 	questInfo = {
 	0: {
+		"judul": quest0title,
 		"status": quest0Status,
 		"taken": takenQuest0,
 		"item": reqItem0,
@@ -197,6 +209,7 @@ func _process(_delta):
 		"text2": quest0text2
 		},
 	1: {
+		"judul": quest1title,
 		"status": quest1Status,
 		"taken": takenQuest1,
 		"item": reqItem1,
@@ -204,6 +217,7 @@ func _process(_delta):
 		"text2": quest1text2
 		},
 	2: {
+		"judul": quest2title,
 		"status": quest2Status,
 		"taken": takenQuest2,
 		"item": reqItem2,
@@ -211,6 +225,7 @@ func _process(_delta):
 		"text2": quest2text2
 		},
 	3: {
+		"judul": quest3title,
 		"status": quest3Status,
 		"taken": takenQuest3,
 		"item": reqItem3,
@@ -218,6 +233,7 @@ func _process(_delta):
 		"text2": quest3text2
 		},
 	4: {
+		"judul": quest4title,
 		"status": quest4Status,
 		"taken": takenQuest4,
 		"item": reqItem4,
@@ -225,6 +241,7 @@ func _process(_delta):
 		"text2": quest4text2
 		},
 	5: {
+		"judul": quest5title,
 		"status": quest5Status,
 		"taken": takenQuest5,
 		"item": reqItem5,
@@ -232,6 +249,7 @@ func _process(_delta):
 		"text2": quest5text2
 		},
 	6: {
+		"judul": quest6title,
 		"status": quest6Status,
 		"taken": takenQuest6,
 		"item": reqItem6,
@@ -239,6 +257,7 @@ func _process(_delta):
 		"text2": quest6text2
 		},
 	7: {
+		"judul": quest7title,
 		"status": quest7Status,
 		"taken": takenQuest7,
 		"item": reqItem7,
@@ -246,6 +265,7 @@ func _process(_delta):
 		"text2": quest7text2
 		},
 	8: {
+		"judul": quest8title,
 		"status": quest8Status,
 		"taken": takenQuest8,
 		"item": reqItem8,

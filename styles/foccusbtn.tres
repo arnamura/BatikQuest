@@ -1,0 +1,12 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://fxtyv27qfepy"]
+
+[ext_resource type="Texture2D" uid="uid://dddpiads1f8c1" path="res://art/InventoryRect.png" id="1_j2xpe"]
+
+[resource]
+texture = ExtResource("1_j2xpe")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+expand_margin_left = 4.0
+expand_margin_right = 4.0

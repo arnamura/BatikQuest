@@ -7,8 +7,10 @@ extends Node2D
 var i = true
 
 
-func _ready():
-	anim.play("transisiIn")
+#func _ready():
+#	anim.play("transisiIn")
+#	await anim.animation_finished
+#	anim.play("RESET")
 
 func _process(_delta):
 	if State.dungeonState == true:
@@ -18,11 +20,11 @@ func _process(_delta):
 	else:
 		pass
 		
-	if State.bossPass == true:
-		anim.play("bossPass")
-		State.bossPass = false
+	if State.bossPass:
+			anim.play("bossPass")
+			State.bossPass = false
 	
-	if State.quest8Status == true:
+	if State.quest8Status or State.tamat:
 		clearedBoss()
 
 
@@ -33,6 +35,6 @@ func _on_teleport_area_body_entered(body):
 		DoorHandle.changeStage(DoorHandle.museum)
 
 func clearedBoss():
-	if i == true:
+	if i == true :
 		anim.play("gatekeep")
 		i = false

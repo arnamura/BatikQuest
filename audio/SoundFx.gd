@@ -26,6 +26,7 @@ func walkFx():
 func getItem():
 	$getItem.play()
 	
+	
 func meowFx():
 	meow.play()
 	

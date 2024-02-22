@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://byuk5qamnm6vm"]
 
-[ext_resource type="Texture2D" uid="uid://dkk1xe14wp4pd" path="res://icon.svg" id="1_552ik"]
 [ext_resource type="Script" path="res://helpers/Pause/batik_list.gd" id="1_l77mp"]
+[ext_resource type="Texture2D" uid="uid://bl516egnl75tv" path="res://art/questionmark.png" id="2_1i0x3"]
 [ext_resource type="FontFile" uid="uid://c150i2j8f5iw1" path="res://VCRosdNEUE.ttf" id="2_hsar0"]
 [ext_resource type="Texture2D" uid="uid://l733n3215nwo" path="res://art/List.png" id="4_bl65e"]
 
@@ -55,7 +55,7 @@ custom_minimum_size = Vector2(14, 14)
 layout_mode = 0
 offset_right = 14.0
 offset_bottom = 14.0
-texture = ExtResource("1_552ik")
+texture = ExtResource("2_1i0x3")
 expand_mode = 4
 
 [node name="namaBatik" type="Label" parent="HBoxContainer"]

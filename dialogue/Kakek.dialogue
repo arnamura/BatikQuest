@@ -44,7 +44,7 @@ Kakek: Hati-hati dijalan
 if quest1Status == false:
 	if takenQuest1 == true #cek apakah quest sudah diambil
 		if reqItem1 == "1" #bila kain sudah didapat
-			Ini dia kainnya
+			- Ini dia kainnya
 			Kakek: Baiklah, Tunggu sebentar
 			Kakek: ...
 			Kakek: ...
@@ -118,6 +118,7 @@ if takenQuest1 == true
 	Pedagang: Sama-sama!
 	Sepertinya ini kain yang dimaksud kakek
 	set reqItem1 = "1"
+	do SoundFx.getItem()
 else
 	Pedagang: Halo anak muda!
 => END
@@ -132,6 +133,8 @@ if not takenQuest0 and not takenQuest1 and not takenQuest2 and not takenQuest3 a
 	Bima: Tapi motif apa ini ya?
 	Bima: Sebaiknya nanti kutanya kepada kakek
 	set takenQuest4 = true
+	set reqItem4 = "1"
+	do SoundFx.getItem()
 	=> END
 else if not quest4Status:#supaya tidak dapat mengambil quest lain (mengatasi bug)
 	#kondisi jika sedang mengerjakan quest lain
@@ -151,6 +154,8 @@ if not takenQuest0 and not takenQuest1 and not takenQuest2 and not takenQuest3 a
 	Bima: Tapi motif apa ini ya?
 	Bima: Sebaiknya nanti kutanya kepada kakek
 	set takenQuest6 = true
+	set reqItem6 = "1"
+	do SoundFx.getItem()
 	=> END
 else if not quest6Status:#supaya tidak dapat mengambil quest lain (mengatasi bug)
 	#kondisi jika sedang mengerjakan quest lain
@@ -164,12 +169,11 @@ else;
 ~ questbunga1
 Bima: Aku menemukan sesuatu kek di taman bunga
 if takenQuest4 == true :
-	Bima: Kek, Aku menemukan ini di taman
 	Kakek: Mana sini biar ku lihat
 	Kakek: ...
 	Kakek: Woah hebat sekali kamu bisa menemukan ini
 	Bima: Nama kain ini apa kek?
-	Kakek: Ini adalah kain batik bermotif [[color=#965340]Pring Sedapur[/color]
+	Kakek: Ini adalah kain batik bermotif [color=#965340]Pring Sedapur[/color]
 	Kakek: Ini kain yang berasal dari pedesaan di daerah magetan
 	Kakek: Berfilosofi [color=#965340]tanaman bambu[/color] biasa yang hidup bergerombol membentuk satu kekuatan
 	Kakek: Dapat dilihat dari motif seperti tanaman bambu disertai ornamen bunga atau daun
@@ -218,7 +222,7 @@ Kakek: Terimakasih juga karna telah membantu semua warga yang ada di sini
 Kakek: Karena kamu telah mengumpulkan ke-8 batik yang ada, sesuai janji akan kuberikan batik ke-9
 #------------------------  Input lore batik ke 4 ----------------------------
 Kakek: Ini adalah kain batik dengan motif [color=#965340]Parang[/color]
-Kakek: Motif ini terinspirasi dari meditas Penembagan Senopati yang dang memperhatikan gejolak ombak pantai selatan yang menghantam batu karang
+Kakek: Motif ini terinspirasi dari meditasi Penembagan Senopati yang dang memperhatikan gejolak ombak pantai selatan yang menghantam batu karang
 Kakek: Kata Parang sendiri berasal dari kata pereng yang berarti lereng atau pinggiran yang miring atau suatu tebing yang berbentuk diagonal
 Kakek: Batik ini dipakai oleh Raja, Permaisuri dan Putra-Putrinya di Keraton Surakarta yang merupakan [i]ageman luhur[/i]
 Kakek: Kau berhak mendapatkan batik ini

@@ -105,6 +105,7 @@ if reqItem7 == ""
 	Bima: Baiklah bang akan ku usahakan
 	set reqItem7 = "1"
 	set takenQuest7 = true
+	do SoundFx.getItem()
 else:
 	Bang Dirman: Cepatlah bantu si Petarung bim
 => END 
@@ -115,6 +116,7 @@ Bima: Terlihat seperti barang yang dideskripsikan oleh bang dirman
 Bima: Seharusnya ini barang yang benar
 Bima: Sebaiknya aku cepat melapor
 set reqItem3 = "1"
+do SoundFx.getItem()
 => END
 
 ~ kunciDungeon
@@ -122,6 +124,7 @@ set reqItem3 = "1"
 Bima: Sepertinya ini merupakan kunci untuk membuka ruangan peti
 Bima: Sebaiknya aku ambil
 set kunciDungeon = true
+do SoundFx.getItem()
 => END
 
 ~ pintuDungeon
@@ -136,6 +139,7 @@ else
 		Bima: Terbuka!
 		Bima: Kuncinya ternyata cocok
 		set pintuDungeon = true
+		do SoundFx.getItem()
 		=> END
 	
 

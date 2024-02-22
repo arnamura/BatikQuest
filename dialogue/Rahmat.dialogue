@@ -59,6 +59,7 @@ if State.takenQuest2 == true:
 	Bima: Sepertinya ini cincin tunangan yang di cari oleh Rahmat
 	Bima: Sebaiknya aku antar barang ini segera supaya ia tenang
 	set reqItem2 = "1"
+	do SoundFx.getItem()
 else:
 	#bila menemukan ketika quest belum diambil
 	Bima: Terlihat seperti cincin yang mahal

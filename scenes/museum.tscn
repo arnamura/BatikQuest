@@ -5654,6 +5654,7 @@ dialogue_start = "intro"
 shape = SubResource("CircleShape2D_6gyiq")
 
 [node name="Museum" type="Area2D" parent="TileMap"]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Museum"]
 position = Vector2(434.5, 72)

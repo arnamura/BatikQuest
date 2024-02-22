@@ -10,7 +10,7 @@ extends Node2D
 
 func _ready():
 	anim.play("transisiIn")
-	if not State.introQuest: #untuk mengaktifkan quest intro saat game baru dimulai
+	if not State.introQuest and not State.tamat: #untuk mengaktifkan quest intro saat game baru dimulai
 		State.takenQuest0 = true
 		cutscene()
 

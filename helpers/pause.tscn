@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://s1ht1iwxfmen"]
+[gd_scene load_steps=14 format=3 uid="uid://s1ht1iwxfmen"]
 
 [ext_resource type="Script" path="res://helpers/pause.gd" id="1_2okch"]
 [ext_resource type="Script" path="res://helpers/PauseMenuQuest.gd" id="2_d0qo4"]
@@ -8,6 +8,31 @@
 [ext_resource type="PackedScene" uid="uid://byuk5qamnm6vm" path="res://helpers/Pause/batik_list.tscn" id="5_t5hf8"]
 [ext_resource type="Theme" uid="uid://2gf1lcs0dtc2" path="res://helpers/scroll.tres" id="5_uv0we"]
 [ext_resource type="PackedScene" uid="uid://cg5dc8g4b8uru" path="res://helpers/Pause/DetailBatikPausePanel.tscn" id="7_gthj5"]
+[ext_resource type="FontFile" uid="uid://c150i2j8f5iw1" path="res://VCRosdNEUE.ttf" id="9_jjj1p"]
+[ext_resource type="StyleBox" uid="uid://fxtyv27qfepy" path="res://styles/foccusbtn.tres" id="10_46j8c"]
+[ext_resource type="StyleBox" uid="uid://cn6mbunwuv2gb" path="res://styles/buttonStyle.tres" id="10_tsr6l"]
+
+[sub_resource type="Theme" id="Theme_cjq6p"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/constants/outline_size = 9
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("9_jjj1p")
+Button/styles/focus = ExtResource("10_46j8c")
+Button/styles/hover = ExtResource("10_46j8c")
+Button/styles/normal = ExtResource("10_tsr6l")
+Button/styles/pressed = ExtResource("10_46j8c")
+
+[sub_resource type="Theme" id="Theme_yoe1f"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/constants/outline_size = 9
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("9_jjj1p")
+Button/styles/focus = ExtResource("10_46j8c")
+Button/styles/hover = ExtResource("10_46j8c")
+Button/styles/normal = ExtResource("10_tsr6l")
+Button/styles/pressed = ExtResource("10_46j8c")
 
 [node name="Pause" type="CanvasLayer"]
 process_mode = 3
@@ -115,35 +140,40 @@ offset_right = 61.0
 offset_bottom = 53.5
 
 [node name="ResumeBtn" type="Button" parent="."]
-offset_left = 192.0
-offset_top = 16.0
-offset_right = 262.0
-offset_bottom = 47.0
+offset_left = 190.0
+offset_top = 46.0
+offset_right = 260.0
+offset_bottom = 77.0
 scale = Vector2(0.438, 0.438)
+theme = SubResource("Theme_cjq6p")
 text = "Resume"
 
 [node name="QuestBtn" type="Button" parent="."]
+visible = false
 offset_left = 192.0
 offset_top = 35.0
 offset_right = 262.0
 offset_bottom = 66.0
 scale = Vector2(0.438, 0.438)
+theme = SubResource("Theme_yoe1f")
 text = "Quest"
 
 [node name="BatikBtn" type="Button" parent="."]
-offset_left = 192.0
-offset_top = 53.0
-offset_right = 262.0
-offset_bottom = 84.0
+offset_left = 190.0
+offset_top = 63.0
+offset_right = 260.0
+offset_bottom = 94.0
 scale = Vector2(0.438, 0.438)
+theme = SubResource("Theme_yoe1f")
 text = "Batik"
 
 [node name="QuitBtn" type="Button" parent="."]
-offset_left = 192.0
-offset_top = 71.0
-offset_right = 262.0
-offset_bottom = 102.0
+offset_left = 190.0
+offset_top = 80.0
+offset_right = 260.0
+offset_bottom = 111.0
 scale = Vector2(0.438, 0.438)
+theme = SubResource("Theme_yoe1f")
 text = "Quit"
 
 [connection signal="pressedSign" from="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer/1" to="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" method="_on__pressed_sign"]

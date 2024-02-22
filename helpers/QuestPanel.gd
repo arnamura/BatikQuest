@@ -1,8 +1,9 @@
 extends Panel
 
 #@onready var quest = "res://state.gd"
-@onready var questLabel = get_node("Label")
+@onready var questLabel: Label = $VBoxContainer/Label
 @onready var questtext: String = ""
+@onready var questJudul: Label = $VBoxContainer/Judul
 
 func _process(delta):
 	cekQuest()
@@ -11,6 +12,7 @@ func cekQuest():
 	var quest = State.questInfo
 	var taken = false
 	var takenMission = -1
+	questJudul.text = ""
 	questLabel.text = "Cari Quest Dulu"
 	for i in range(9):
 		if quest[i]["taken"]:
@@ -18,10 +20,15 @@ func cekQuest():
 			takenMission = i
 			
 	if taken:
-		if quest[takenMission]["item"] == "1":
-			questLabel.text = quest[takenMission]["text2"]
+		if State.tamat:
+			questLabel.text = "Semua Quest telah selesai"
 		else:
-			questLabel.text = quest[takenMission]["text1"]
+			if quest[takenMission]["item"] == "1":
+				questJudul.text = quest[takenMission]["judul"]
+				questLabel.text = quest[takenMission]["text2"]
+			else:
+				questJudul.text = quest[takenMission]["judul"]
+				questLabel.text = quest[takenMission]["text1"]
 
 
 
