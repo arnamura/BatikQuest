@@ -34,7 +34,8 @@ theme_override_constants/line_spacing = 1
 theme_override_fonts/font = ExtResource("2_q65ve")
 theme_override_font_sizes/font_size = 11
 theme_override_styles/normal = SubResource("StyleBoxEmpty_5b7v5")
-text = "ini Judul :"
+text = "ini Judul panjang juga"
+autowrap_mode = 3
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2

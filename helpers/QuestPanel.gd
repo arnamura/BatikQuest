@@ -24,10 +24,10 @@ func cekQuest():
 			questLabel.text = "Semua Quest telah selesai"
 		else:
 			if quest[takenMission]["item"] == "1":
-				questJudul.text = quest[takenMission]["judul"]
+				questJudul.text = quest[takenMission]["judul"] + " :"
 				questLabel.text = quest[takenMission]["text2"]
 			else:
-				questJudul.text = quest[takenMission]["judul"]
+				questJudul.text = quest[takenMission]["judul"] + " :"
 				questLabel.text = quest[takenMission]["text1"]
 
 
