@@ -62,7 +62,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("TileMap/NPC/penjagaBoss:position")
+tracks/1/path = NodePath("TileMap/NPC/penjaga Boss:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -89,7 +89,7 @@ resource_name = "bossPass"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TileMap/NPC/penjagaBoss:position")
+tracks/0/path = NodePath("TileMap/NPC/penjaga Boss:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -8786,10 +8786,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -541.0
-offset_top = -454.0
-offset_right = 1596.0
-offset_bottom = 1021.0
+offset_left = -501.0
+offset_top = -425.0
+offset_right = 1636.0
+offset_bottom = 1050.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -9036,30 +9036,30 @@ dialogue_start = "penjaga"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/NPC/penjaga/Actionable"]
 shape = SubResource("CircleShape2D_6qom1")
 
-[node name="penjaga2" parent="TileMap/NPC" instance=ExtResource("31_3ybj0")]
+[node name="Penjaga Dungeon" parent="TileMap/NPC" instance=ExtResource("31_3ybj0")]
 z_index = 0
 position = Vector2(856, 215)
 
-[node name="Actionable" parent="TileMap/NPC/penjaga2" instance=ExtResource("16_4om6r")]
+[node name="Actionable" parent="TileMap/NPC/Penjaga Dungeon" instance=ExtResource("16_4om6r")]
 dialogue_resource = ExtResource("31_gpah0")
 dialogue_start = "penjaga"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/NPC/penjaga2/Actionable"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/NPC/Penjaga Dungeon/Actionable"]
 shape = SubResource("CircleShape2D_6qom1")
 
-[node name="penjaga3" parent="TileMap/NPC" instance=ExtResource("31_3ybj0")]
+[node name="Penjaga Tower" parent="TileMap/NPC" instance=ExtResource("31_3ybj0")]
 z_index = 3
 position = Vector2(239, 180)
 
-[node name="penjagaBoss" parent="TileMap/NPC" instance=ExtResource("31_3ybj0")]
+[node name="penjaga Boss" parent="TileMap/NPC" instance=ExtResource("31_3ybj0")]
 z_index = 0
 position = Vector2(664, 70)
 
-[node name="Actionable" parent="TileMap/NPC/penjagaBoss" instance=ExtResource("16_4om6r")]
+[node name="Actionable" parent="TileMap/NPC/penjaga Boss" instance=ExtResource("16_4om6r")]
 dialogue_resource = ExtResource("31_gpah0")
 dialogue_start = "penjagaBoss"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/NPC/penjagaBoss/Actionable"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/NPC/penjaga Boss/Actionable"]
 shape = SubResource("CircleShape2D_6qom1")
 
 [node name="OmSamurai" parent="TileMap/NPC" instance=ExtResource("34_suq4w")]
