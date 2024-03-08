@@ -1,0 +1,10 @@
+diff a/helpers/QuestPanel.gd b/helpers/QuestPanel.gd	(rejected hunks)
+@@ -5,7 +5,7 @@
+ @onready var questtext: String = ""
+ @onready var questJudul: Label = $VBoxContainer/Judul
+ 
+-func _process(_delta):
++func _process(delta):
+ 	cekQuest()
+ 
+ func cekQuest():
