@@ -5,7 +5,7 @@ extends Panel
 @onready var questtext: String = ""
 @onready var questJudul: Label = $VBoxContainer/Judul
 
-func _process(_delta):
+func _process(delta):
 	cekQuest()
 
 func cekQuest():
