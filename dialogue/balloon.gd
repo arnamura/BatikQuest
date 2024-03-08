@@ -26,10 +26,12 @@ var will_hide_balloon: bool = false
 ## The current line
 var dialogue_line: DialogueLine:
 	set(next_dialogue_line):
+		$Balloon/Button.visible = true
 		is_waiting_for_input = false
 		
 		if not next_dialogue_line:
 			queue_free()
+			#supaya tidak bergerak
 			State.notMove = false
 			return
 		
@@ -55,6 +57,7 @@ var dialogue_line: DialogueLine:
 		# Show any responses we have
 		responses_menu.modulate.a = 0
 		if dialogue_line.responses.size() > 0:
+			$Balloon/Button.visible = false
 			for response in dialogue_line.responses:
 				# Duplicate the template so we can grab the fonts, sizing, etc
 				var item: RichTextLabel = response_template.duplicate(0)

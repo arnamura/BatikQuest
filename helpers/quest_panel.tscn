@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmfwggxm8eieo"]
+[gd_scene load_steps=5 format=3 uid="uid://dmfwggxm8eieo"]
 
 [ext_resource type="Script" path="res://helpers/QuestPanel.gd" id="1_qg0tp"]
 [ext_resource type="FontFile" uid="uid://c150i2j8f5iw1" path="res://VCRosdNEUE.ttf" id="2_q65ve"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu5xa"]
+content_margin_top = 1.0
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5b7v5"]
+content_margin_left = 4.0
 
 [node name="QuestPanel" type="Panel"]
 custom_minimum_size = Vector2(80, 77)
@@ -19,14 +23,17 @@ custom_minimum_size = Vector2(80, 77)
 layout_mode = 0
 offset_right = 87.0
 offset_bottom = 77.0
+alignment = 1
 
 [node name="Judul" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
+theme_override_constants/line_spacing = 1
 theme_override_fonts/font = ExtResource("2_q65ve")
 theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5b7v5")
 text = "ini Judul :"
 
 [node name="Label" type="Label" parent="VBoxContainer"]
@@ -34,7 +41,9 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
+theme_override_constants/line_spacing = 1
 theme_override_fonts/font = ExtResource("2_q65ve")
 theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5b7v5")
 text = "- ini quest yang panjang"
 autowrap_mode = 3

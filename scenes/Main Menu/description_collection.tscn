@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://17xmobuyhomw"]
+[gd_scene load_steps=12 format=3 uid="uid://17xmobuyhomw"]
 
 [ext_resource type="Script" path="res://scenes/Main Menu/description_collection.gd" id="1_7ilpk"]
 [ext_resource type="Texture2D" uid="uid://tprloiler3ar" path="res://art/211601851_4144758722284278_3610844652128989081_n.jpg" id="1_8okrx"]
@@ -16,6 +16,9 @@ font = ExtResource("2_gmawj")
 font_size = 7
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_orlnr"]
+content_margin_left = 3.0
 
 [sub_resource type="Theme" id="Theme_2y44q"]
 default_font = ExtResource("2_gmawj")
@@ -93,6 +96,7 @@ offset_top = 25.0
 offset_right = 179.0
 offset_bottom = 67.0
 theme = ExtResource("4_08dqf")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_orlnr")
 text = "blablabla ini deskripsi batik panjang banget gila gapaham gua jadi semangat membaca, jangan pernah malas untuk membaca ya kawan kawan"
 
 [node name="BtnNext" type="Button" parent="Panel"]

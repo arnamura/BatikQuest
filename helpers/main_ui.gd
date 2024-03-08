@@ -5,10 +5,11 @@ extends CanvasLayer
 @onready var player = $"../TileMap/Player"
 @onready var hpPlayer = str(player.hp)
 @onready var pause = $Pause
-
+@onready var dpad = $Dpads
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	updateHp()
+	dpad.visible = true
 	if State.dungeonState:
 		hp.show()
 	else:
@@ -18,6 +19,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	updateHp()
+	if State.notMove == true:
+		dpad.visible = false
+	else:
+		dpad.visible = true
 
 func updateHp():
 	hpPlayer = str(player.hp)

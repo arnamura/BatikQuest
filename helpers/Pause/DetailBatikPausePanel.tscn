@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cg5dc8g4b8uru"]
+[gd_scene load_steps=15 format=3 uid="uid://cg5dc8g4b8uru"]
 
 [ext_resource type="Texture2D" uid="uid://e2vamsgxgk6x" path="res://art/DialogueBoxSimple.png" id="1_gimed"]
 [ext_resource type="Script" path="res://helpers/Pause/DetailBatikPausePanel.gd" id="2_3yvck"]
@@ -15,6 +15,9 @@ Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/outline_size = 3
 Label/font_sizes/font_size = 11
 Label/fonts/font = ExtResource("3_4ij2h")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cwxer"]
+content_margin_left = 3.0
 
 [sub_resource type="Theme" id="Theme_ab032"]
 
@@ -94,6 +97,7 @@ offset_top = 49.0
 offset_right = 155.0
 offset_bottom = 84.0
 theme = ExtResource("6_rxl6f")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cwxer")
 text = "contoh deskripsi yang sangat amat panjang sekali sehingga membuat yang main agak malas membaca blbalbalbablalbablablablalbalbablablablalbalbalbalbablablablabalblablablablabalablablablablablabl"
 tab_size = 3
 

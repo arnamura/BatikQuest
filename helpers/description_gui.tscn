@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://tbvn2122fjtg"]
+[gd_scene load_steps=21 format=3 uid="uid://tbvn2122fjtg"]
 
 [ext_resource type="Script" path="res://helpers/description_gui.gd" id="1_sas3c"]
 [ext_resource type="Texture2D" uid="uid://e2vamsgxgk6x" path="res://art/DialogueBoxSimple.png" id="2_jl062"]
@@ -76,6 +76,9 @@ VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_yfdah")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_x3if1")
 VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_1rbo2")
 VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_81olf")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ytl0e"]
+content_margin_left = 3.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_l61ga"]
 font = ExtResource("8_cdp7b")
@@ -209,6 +212,7 @@ offset_top = 80.0
 offset_right = 118.0
 offset_bottom = 110.0
 theme = SubResource("Theme_jisb6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ytl0e")
 text = "ini text yang panjang dan berisikan deskripsi beserta ciri ciri dari sebuah batik yang nanti akan ditampilkan sahdkajshdak kdjshadjwuih kdjwadj ijdaowidj oaiwjdaoiwdja ijaiwdjoawidj"
 
 [node name="subJudul" type="Label" parent="Panel"]
