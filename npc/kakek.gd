@@ -6,8 +6,6 @@ extends CharacterBody2D
 @onready var animations = $AnimationPlayer
 @onready var namaPosition = namaNpc.global_position.y
 
-
-
 var active = false
 
 func _ready():

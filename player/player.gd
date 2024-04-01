@@ -64,7 +64,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_shift"):
 		speed = 100
 	elif Input.is_action_just_released("ui_shift"):
-		speed = 50
+		speed = 35
 
 	
 #untuk handle input gerakan 

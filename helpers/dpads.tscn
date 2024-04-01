@@ -18,6 +18,7 @@ scale = Vector2(0.285, 0.285)
 transform = Transform2D(0.285, 0, 0, 0.285, 0, 0)
 
 [node name="Left" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.545098)
 position = Vector2(38.5965, 340.351)
 texture_normal = ExtResource("1_xrxn3")
 texture_pressed = ExtResource("2_1arp8")
@@ -25,6 +26,7 @@ passby_press = true
 action = "ui_left"
 
 [node name="Right" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.545098)
 position = Vector2(134.839, 340.552)
 texture_normal = ExtResource("3_7adfs")
 texture_pressed = ExtResource("4_87la4")
@@ -32,6 +34,7 @@ passby_press = true
 action = "ui_right"
 
 [node name="Up" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.545098)
 position = Vector2(94.9381, 280.702)
 texture_normal = ExtResource("5_xoi1s")
 texture_pressed = ExtResource("6_mpklm")
@@ -39,6 +42,7 @@ passby_press = true
 action = "ui_up"
 
 [node name="Down" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.545098)
 position = Vector2(94.9381, 380.452)
 texture_normal = ExtResource("7_g565p")
 texture_pressed = ExtResource("8_2ep7h")
@@ -46,6 +50,7 @@ passby_press = true
 action = "ui_down"
 
 [node name="Action" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.545098)
 position = Vector2(694.737, 242.105)
 scale = Vector2(0.566631, 0.566631)
 texture_normal = ExtResource("9_14i7y")
@@ -53,11 +58,13 @@ texture_pressed = ExtResource("10_bi0q7")
 action = "ui_accept"
 
 [node name="Sprite2D" type="Sprite2D" parent="Action"]
+modulate = Color(1, 1, 1, 0.545098)
 position = Vector2(81.5928, 81.5917)
 scale = Vector2(4.76573, 4.76573)
 texture = ExtResource("11_8a6k0")
 
 [node name="Sprint" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.545098)
 position = Vector2(564.912, 319.298)
 scale = Vector2(0.572547, 0.572547)
 texture_normal = ExtResource("9_14i7y")
@@ -65,6 +72,7 @@ texture_pressed = ExtResource("10_bi0q7")
 action = "ui_shift"
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprint"]
+modulate = Color(1, 1, 1, 0.545098)
 position = Vector2(80.0006, 80.0002)
 scale = Vector2(6.20005, 6.20005)
 texture = ExtResource("12_haard")

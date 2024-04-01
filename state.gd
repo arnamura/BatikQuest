@@ -331,7 +331,7 @@ func save():
 		"tq8" : takenQuest8,
 		"ri8" : reqItem8,
 		"b8" : DataBatik.batik9["isGet"]
-	}
+	} #berisi variabel quest
 	return save_dict
 
 func new_game(): #note: coba pake dictionary
