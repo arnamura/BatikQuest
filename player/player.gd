@@ -12,7 +12,7 @@ extends CharacterBody2D
 @onready var MapDetect = $MapDetection
 @onready var playerSprite = $Sprite2D
 @onready var weapon = $Weapon
-
+@onready var dpad = load("res://helpers/joystick.gd")
 
 @onready var statusBatik: Label = $statusBatik
 
@@ -70,7 +70,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 #untuk handle input gerakan 
 func handleInput():
 	if not State.notMove:
-		var moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+		var moveDirection = State.posVector#Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 		velocity = moveDirection*speed
 		if Input.is_action_just_pressed("ui_attack"):
 			getBatikAnim()

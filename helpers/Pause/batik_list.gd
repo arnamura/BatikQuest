@@ -13,7 +13,8 @@ signal pressedSign(is_pressed: bool)
 func update(batik):
 	if !batik["isGet"]:
 		namaBatik.text = "???"
-		btn.disabled = true
+		batikTemp = batik
+		#btn.disabled = true
 	else:
 		namaBatik.text = batik["nama"]
 		icon.texture = load(batik["pathimg"])
@@ -23,8 +24,11 @@ func update(batik):
 func _on_button_pressed():
 	SoundFx.buttonClick()
 	if batikTemp["isGet"] == true :
-			DataBatik.pressedBatik = batikTemp
-			DataBatik.getBat = true
+		DataBatik.pressedBatik = batikTemp
+		DataBatik.getBat = true
+	else:
+		DataBatik.pressedBatik = batikTemp
+		
 	pressed = !pressed
 	pressedSign.emit(pressed)
 	pressed = !pressed

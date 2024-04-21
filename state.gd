@@ -20,6 +20,7 @@ var isPause = false
 var notMove = false
 var playerPosLoad #posisi terakhir player berada
 var playerMapLoad #map terakhir player berada
+var posVector: Vector2
 var bossPass = false #kondisi untuk penjaga boss bergeser
 var getBatik: bool = false #untuk mengetahui jika player baru mendapat batik
 var tamat: bool = false #bila sudah menyelesaikan game
@@ -192,6 +193,7 @@ func _process(_delta):
 	benar
 	salah
 	tamat
+	posVector
 	
 	#agar langsung menerima quest akhir
 	if quest0Status and quest1Status and quest2Status and quest3Status and quest4Status and quest5Status and quest6Status and quest7Status and not tamat:

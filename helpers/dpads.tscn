@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://dywd02ye0oyh5"]
+[gd_scene load_steps=17 format=3 uid="uid://dywd02ye0oyh5"]
 
 [ext_resource type="Texture2D" uid="uid://dt572ah0575y" path="res://art/controller/flatDark04.png" id="1_xrxn3"]
 [ext_resource type="Texture2D" uid="uid://bujwe01nq7juy" path="res://art/controller/lineDark00.png" id="2_1arp8"]
 [ext_resource type="Texture2D" uid="uid://di6oi5arx3xe8" path="res://art/controller/flatDark05.png" id="3_7adfs"]
+[ext_resource type="Script" path="res://helpers/SmallCircle.gd" id="4_1x5rn"]
 [ext_resource type="Texture2D" uid="uid://bxm8jakc4qgwo" path="res://art/controller/lineDark01.png" id="4_87la4"]
 [ext_resource type="Texture2D" uid="uid://3we4uy0o4fu8" path="res://art/controller/flatDark02.png" id="5_xoi1s"]
 [ext_resource type="Texture2D" uid="uid://dykp7np0m5jtw" path="res://art/controller/lineDark48.png" id="6_mpklm"]
@@ -12,12 +13,37 @@
 [ext_resource type="Texture2D" uid="uid://vomf7a6sm55b" path="res://art/lineDark02.png" id="10_bi0q7"]
 [ext_resource type="Texture2D" uid="uid://gbgcoce6psvb" path="res://art/chat buble.png" id="11_8a6k0"]
 [ext_resource type="Texture2D" uid="uid://daldbegdf24wr" path="res://art/runui.png" id="12_haard"]
+[ext_resource type="Script" path="res://helpers/joystick.gd" id="13_6vbbq"]
+[ext_resource type="Texture2D" uid="uid://kafopdkl73tc" path="res://art/controller/shadedDark11.png" id="14_3suf4"]
+[ext_resource type="Texture2D" uid="uid://ccnywqc2ifnpw" path="res://art/controller/transparentLight09.png" id="15_s53x3"]
 
-[node name="Dpads" type="CanvasLayer"]
+[node name="Dpads" type="Node2D"]
 scale = Vector2(0.285, 0.285)
-transform = Transform2D(0.285, 0, 0, 0.285, 0, 0)
+
+[node name="joystick" type="Node2D" parent="."]
+position = Vector2(115.789, 354.386)
+script = ExtResource("13_6vbbq")
+
+[node name="BigCircle" type="Sprite2D" parent="joystick"]
+position = Vector2(-0.368439, -0.315796)
+texture = ExtResource("14_3suf4")
+
+[node name="SmallCircle" type="Sprite2D" parent="joystick"]
+position = Vector2(-0.36853, -0.315674)
+scale = Vector2(0.302632, 0.302632)
+texture = ExtResource("15_s53x3")
+script = ExtResource("4_1x5rn")
+
+[node name="Button" type="Button" parent="joystick"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -80.7018
+offset_top = -80.7018
+offset_right = 80.2982
+offset_bottom = 80.2982
+metadata/_edit_use_anchors_ = true
 
 [node name="Left" type="TouchScreenButton" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.545098)
 position = Vector2(38.5965, 340.351)
 texture_normal = ExtResource("1_xrxn3")
@@ -26,6 +52,7 @@ passby_press = true
 action = "ui_left"
 
 [node name="Right" type="TouchScreenButton" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.545098)
 position = Vector2(134.839, 340.552)
 texture_normal = ExtResource("3_7adfs")
@@ -34,6 +61,7 @@ passby_press = true
 action = "ui_right"
 
 [node name="Up" type="TouchScreenButton" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.545098)
 position = Vector2(94.9381, 280.702)
 texture_normal = ExtResource("5_xoi1s")
@@ -42,6 +70,7 @@ passby_press = true
 action = "ui_up"
 
 [node name="Down" type="TouchScreenButton" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.545098)
 position = Vector2(94.9381, 380.452)
 texture_normal = ExtResource("7_g565p")
@@ -76,3 +105,6 @@ modulate = Color(1, 1, 1, 0.545098)
 position = Vector2(80.0006, 80.0002)
 scale = Vector2(6.20005, 6.20005)
 texture = ExtResource("12_haard")
+
+[connection signal="button_down" from="joystick/Button" to="joystick/SmallCircle" method="_on_button_button_down"]
+[connection signal="button_up" from="joystick/Button" to="joystick/SmallCircle" method="_on_button_button_up"]

@@ -28,6 +28,7 @@ script = ExtResource("1_0ggmh")
 visible = false
 
 [node name="Dpads" parent="." instance=ExtResource("3_merot")]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(50, 40)

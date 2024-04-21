@@ -10,15 +10,26 @@ var i = false #penanda untuk btn next
 		
 func _process(_delta):
 	if DataBatik.getBat == true:
+		btnNext.visible = true
 		updateDetail(DataBatik.pressedBatik)
 	else:
-		pass
+		hintDetail(DataBatik.pressedBatik)
 
 func updateDetail(data):
 	pict.set_texture(load(data["pathimg"]))
 	batikLabel.text = data["nama"]
 	updateText()
 
+func hintDetail(data): #untuk memberikan info tentang cara mendapatkan kain batik
+	batikLabel.text = "???"
+	subTitle.text = "Cara mendapatkannya"
+	pict.set_texture(load("res://art/questionmark.png"))
+	if data == null:
+		pass
+	else:
+		desc.text = data["how"]
+	btnNext.visible= false
+	
 func updateText():
 	if i == true:
 		desc.text = DataBatik.pressedBatik["ciri"]
