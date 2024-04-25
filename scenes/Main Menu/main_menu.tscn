@@ -3,11 +3,8 @@
 [ext_resource type="FontFile" uid="uid://dofpvw42s1f6d" path="res://NormalFont.ttf" id="1_72bcx"]
 [ext_resource type="Script" path="res://scenes/Main Menu/main_menu.gd" id="1_enl23"]
 [ext_resource type="StyleBox" uid="uid://cn6mbunwuv2gb" path="res://styles/buttonStyle.tres" id="2_5gt5y"]
+[ext_resource type="Theme" uid="uid://2n5gbj21e6e5" path="res://styles/button.tres" id="2_jhgdr"]
 [ext_resource type="Texture2D" uid="uid://e2vamsgxgk6x" path="res://art/DialogueBoxSimple.png" id="3_14l6q"]
-
-[sub_resource type="Theme" id="Theme_fwml8"]
-default_font = ExtResource("1_72bcx")
-default_font_size = 8
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cj05l"]
 texture = ExtResource("3_14l6q")
@@ -170,7 +167,7 @@ theme_override_constants/separation = 4
 [node name="BtnContinue" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
-theme = SubResource("Theme_fwml8")
+theme = ExtResource("2_jhgdr")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_constants/h_separation = 0
@@ -185,7 +182,7 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 0
 focus_mode = 0
-theme = SubResource("Theme_fwml8")
+theme = ExtResource("2_jhgdr")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_constants/h_separation = 0
@@ -197,7 +194,7 @@ text = "New Game"
 [node name="BtnCol" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
-theme = SubResource("Theme_fwml8")
+theme = ExtResource("2_jhgdr")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_styles/normal = ExtResource("2_5gt5y")
@@ -210,7 +207,7 @@ text = "Collection
 visible = false
 layout_mode = 2
 focus_mode = 0
-theme = SubResource("Theme_fwml8")
+theme = ExtResource("2_jhgdr")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_styles/normal = ExtResource("2_5gt5y")
@@ -221,7 +218,7 @@ text = "Setting"
 [node name="BtnExt" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
-theme = SubResource("Theme_fwml8")
+theme = ExtResource("2_jhgdr")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_constants/h_separation = 0

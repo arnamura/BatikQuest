@@ -23,23 +23,25 @@ func _on_btn_ext_pressed():
 
 
 func _on_btn_continue_pressed():
-	var playerMap = State.playerMapLoad
-
+#	var playerMap = State.playerMapLoad
+#
 	SoundFx.buttonClick()
 	SoundFx.mainmenuBgmStop()
-	
+#
 	anim.play("transisiOut")
 	await anim.animation_finished
 	
-	match(playerMap):
-		"DesaBatik":
-			DoorHandle.changeStage(DoorHandle.DesaBatik)
-		"Museum":
-			DoorHandle.changeStage(DoorHandle.museum)
-		"Dungeon":
-			DoorHandle.changeStage(DoorHandle.Dungeon)	
-		_:
-			DoorHandle.changeStage(DoorHandle.museum)
+	get_tree().change_scene_to_file("res://scenes/how_to_play.tscn")
+#
+#	match(playerMap):
+#		"DesaBatik":
+#			DoorHandle.changeStage(DoorHandle.DesaBatik)
+#		"Museum":
+#			DoorHandle.changeStage(DoorHandle.museum)
+#		"Dungeon":
+#			DoorHandle.changeStage(DoorHandle.Dungeon)	
+#		_:
+#			DoorHandle.changeStage(DoorHandle.museum)
 
 
 func _on_btn_new_g_pressed():

@@ -1,0 +1,348 @@
+[gd_scene load_steps=15 format=3 uid="uid://bda74anmpdcj2"]
+
+[ext_resource type="FontFile" uid="uid://dofpvw42s1f6d" path="res://NormalFont.ttf" id="1_257ft"]
+[ext_resource type="Script" path="res://scenes/how_to_play.gd" id="1_ongdi"]
+[ext_resource type="Texture2D" uid="uid://ppdmc7i2y7lr" path="res://art/ss/analogss.png" id="3_gtd2u"]
+[ext_resource type="FontFile" uid="uid://c150i2j8f5iw1" path="res://VCRosdNEUE.ttf" id="3_llv1o"]
+[ext_resource type="StyleBox" uid="uid://cn6mbunwuv2gb" path="res://styles/buttonStyle.tres" id="4_qq7xd"]
+[ext_resource type="Texture2D" uid="uid://e2vamsgxgk6x" path="res://art/DialogueBoxSimple.png" id="5_f6e5i"]
+[ext_resource type="Texture2D" uid="uid://driktmouxhmjl" path="res://art/ss/runss.png" id="5_hteet"]
+[ext_resource type="Texture2D" uid="uid://el8klud64ciw" path="res://art/ss/interactss.png" id="6_1nb10"]
+[ext_resource type="Texture2D" uid="uid://dpj33nvmyyya6" path="res://art/ss/npcss.png" id="7_gip27"]
+[ext_resource type="Texture2D" uid="uid://bm5qwiaeg18l7" path="res://art/ss/interact2ss.png" id="8_rctna"]
+[ext_resource type="Texture2D" uid="uid://1ttwgyhhy0o5" path="res://art/ss/inteact3ss.png" id="9_3xdws"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e4m5n"]
+content_margin_left = 1.0
+content_margin_top = 1.0
+content_margin_right = 1.0
+content_margin_bottom = 1.0
+
+[sub_resource type="Theme" id="Theme_cgvkc"]
+default_font = ExtResource("1_257ft")
+default_font_size = 5
+Button/constants/outline_size = 0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_do0kk"]
+texture = ExtResource("5_f6e5i")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+draw_center = false
+
+[node name="HowToPlay" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ongdi")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 240.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.788235, 0.537255, 0.309804, 1)
+
+[node name="Title" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 0
+offset_left = 72.0
+offset_right = 182.0
+offset_bottom = 26.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/normal_font = ExtResource("1_257ft")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e4m5n")
+bbcode_enabled = true
+text = "[wave]How To Play"
+scroll_active = false
+
+[node name="Panel" type="Panel" parent="ColorRect"]
+visible = false
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -40.0
+offset_right = 100.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/Panel"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="Analog" type="Control" parent="ColorRect/Panel/HBoxContainer"]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/Panel/HBoxContainer/Analog"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.5
+offset_top = -31.5
+offset_right = 13.5
+offset_bottom = -2.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_gtd2u")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ColorRect/Panel/HBoxContainer/Analog"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.5
+offset_top = -3.5
+offset_right = 26.5
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("3_llv1o")
+theme_override_font_sizes/font_size = 5
+text = "Gunakan Analog ini untuk menggerakkan player"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Analog2" type="Control" parent="ColorRect/Panel/HBoxContainer"]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/Panel/HBoxContainer/Analog2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.5
+offset_top = -31.5
+offset_right = 13.5
+offset_bottom = -2.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_hteet")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ColorRect/Panel/HBoxContainer/Analog2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.5
+offset_top = -3.5
+offset_right = 26.5
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("3_llv1o")
+theme_override_font_sizes/font_size = 5
+text = "Gunakan tombol ini untuk berlari"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Analog3" type="Control" parent="ColorRect/Panel/HBoxContainer"]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/Panel/HBoxContainer/Analog3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.5
+offset_top = -31.5
+offset_right = 13.5
+offset_bottom = -2.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_1nb10")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ColorRect/Panel/HBoxContainer/Analog3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.5
+offset_top = -3.5
+offset_right = 26.5
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("3_llv1o")
+theme_override_font_sizes/font_size = 5
+text = "Gunakan tombol ini untuk berinteraksi"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Panel2" type="Panel" parent="ColorRect"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -40.0
+offset_right = 100.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/Panel2"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="Analog" type="Control" parent="ColorRect/Panel2/HBoxContainer"]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/Panel2/HBoxContainer/Analog"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -26.0
+offset_right = 65.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 9
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/Panel2/HBoxContainer/Analog/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/Panel2/HBoxContainer/Analog/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(37, 37)
+layout_mode = 2
+texture = ExtResource("7_gip27")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="ColorRect/Panel2/HBoxContainer/Analog/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(37, 37)
+layout_mode = 2
+texture = ExtResource("8_rctna")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="ColorRect/Panel2/HBoxContainer/Analog/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(37, 37)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("9_3xdws")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ColorRect/Panel2/HBoxContainer/Analog/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("3_llv1o")
+theme_override_font_sizes/font_size = 5
+text = "Gunakan tombol interaksi ke NPC, Peti dan Objek lainnya"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="prev" type="Button" parent="ColorRect"]
+offset_left = 69.0
+offset_top = 111.0
+offset_right = 95.0
+offset_bottom = 131.0
+focus_mode = 0
+theme = SubResource("Theme_cgvkc")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/h_separation = 0
+theme_override_styles/normal = ExtResource("4_qq7xd")
+theme_override_styles/hover = ExtResource("4_qq7xd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_do0kk")
+text = "Prev
+"
+
+[node name="next" type="Button" parent="ColorRect"]
+offset_left = 111.0
+offset_top = 111.0
+offset_right = 137.0
+offset_bottom = 131.0
+focus_mode = 0
+theme = SubResource("Theme_cgvkc")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/h_separation = 0
+theme_override_styles/normal = ExtResource("4_qq7xd")
+theme_override_styles/hover = ExtResource("4_qq7xd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_do0kk")
+text = "Next
+"
+
+[node name="play" type="Button" parent="ColorRect"]
+offset_left = 153.0
+offset_top = 111.0
+offset_right = 179.0
+offset_bottom = 131.0
+focus_mode = 0
+theme = SubResource("Theme_cgvkc")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/h_separation = 0
+theme_override_styles/normal = ExtResource("4_qq7xd")
+theme_override_styles/hover = ExtResource("4_qq7xd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_do0kk")
+text = "Play
+"
+
+[connection signal="pressed" from="ColorRect/prev" to="." method="_on_prev_pressed"]
+[connection signal="pressed" from="ColorRect/next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="ColorRect/play" to="." method="_on_play_pressed"]

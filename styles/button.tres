@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://2n5gbj21e6e5"]
+
+[ext_resource type="FontFile" uid="uid://dofpvw42s1f6d" path="res://NormalFont.ttf" id="1_68vhc"]
+
+[resource]
+default_font = ExtResource("1_68vhc")
+default_font_size = 8
+Button/constants/outline_size = 0
