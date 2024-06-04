@@ -14,7 +14,6 @@ func _ready():
 	play.visible = false
 
 func _process(delta):
-	print(i)
 	if i == 0:
 		prev.visible = false
 		next.visible = true

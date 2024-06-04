@@ -78,7 +78,7 @@ if takenQuest8 == true or tamat == true
 else
 	Bima: Belum pak
 	Penjaga: Pergilah bantu para warga terlebih dahulu sebelum ku izinkan lewat
-=>END
+=> END
 
 ~ penjaga
 Penjaga: Halo nak!

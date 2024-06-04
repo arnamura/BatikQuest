@@ -32,6 +32,7 @@ anti_aliasing = false
 custom_minimum_size = Vector2(130, 20)
 offset_right = 130.0
 offset_bottom = 20.0
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_sfwnu")
 script = ExtResource("1_l77mp")
 

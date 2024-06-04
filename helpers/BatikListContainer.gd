@@ -10,7 +10,7 @@ func _ready():
 
 func _process(_delta):
 	updateCol()
-
+		
 func updateCol():
 	for i in range(min(9, slots.size())):
 		var data_name = "batik" + str(i+1)

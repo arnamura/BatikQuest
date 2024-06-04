@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpa16lo31x3u6"]
+
+[ext_resource type="PackedScene" uid="uid://bteda0q8lw1cj" path="res://npc/kakek.tscn" id="1_4kejl"]
+[ext_resource type="Texture2D" uid="uid://b27cscp31jvqm" path="res://art/char/mc.png" id="2_u4jvp"]
+
+[node name="Boy" instance=ExtResource("1_4kejl")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_u4jvp")

@@ -70,8 +70,10 @@ func _unhandled_input(_event: InputEvent) -> void:
 #untuk handle input gerakan 
 func handleInput():
 	if not State.notMove:
-		var moveDirection = State.posVector#Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-		velocity = moveDirection*speed
+		#var moveDirection = State.posVector
+		var moveDirectionKeyboard = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+		#velocity = moveDirection*speed
+		velocity = moveDirectionKeyboard*speed
 		if Input.is_action_just_pressed("ui_attack"):
 			getBatikAnim()
 	else: 
@@ -187,13 +189,14 @@ func _play_anim(nameAnim) -> void:
 func _stop_anim() -> void:
 	animations.stop()
 
-func interactCutscene():
+func interactCutscene(): #Untuk triger cutscene awal permainan
 	var actionable = actionable_finder.get_overlapping_areas()
 	if actionable.size() > 0:
 		actionable[0].action()
 		return
 
-func getBatikAnim():
+#--------------------------------------------------------------------------------------------------#
+func getBatikAnim(): #Animasi memunculkan teks mendapatkan batik
 	statusBatik.visible = true
 	var statusBatikPos = player.global_position.y
 	var namaAfterTween: int = statusBatikPos - 35

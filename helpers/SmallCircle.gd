@@ -22,7 +22,7 @@ func _process(delta):
 		global_position = lerp(global_position, parent.global_position, delta*10)
 		parent.posVector = Vector2(0,0)
 		State.posVector = parent.posVector
-	print(parent.posVector)
+	
 	
 func itungVector(): #untuk mengetahui value 0 - 1 untuk pergerakan player
 	if abs((global_position.x - parent.global_position.x)) >= deadzone:

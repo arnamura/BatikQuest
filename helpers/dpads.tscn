@@ -21,6 +21,7 @@
 scale = Vector2(0.285, 0.285)
 
 [node name="joystick" type="Node2D" parent="."]
+visible = false
 position = Vector2(115.789, 354.386)
 script = ExtResource("13_6vbbq")
 
@@ -43,7 +44,6 @@ offset_bottom = 80.2982
 metadata/_edit_use_anchors_ = true
 
 [node name="Left" type="TouchScreenButton" parent="."]
-visible = false
 modulate = Color(1, 1, 1, 0.545098)
 position = Vector2(38.5965, 340.351)
 texture_normal = ExtResource("1_xrxn3")
@@ -52,7 +52,6 @@ passby_press = true
 action = "ui_left"
 
 [node name="Right" type="TouchScreenButton" parent="."]
-visible = false
 modulate = Color(1, 1, 1, 0.545098)
 position = Vector2(134.839, 340.552)
 texture_normal = ExtResource("3_7adfs")
@@ -61,7 +60,6 @@ passby_press = true
 action = "ui_right"
 
 [node name="Up" type="TouchScreenButton" parent="."]
-visible = false
 modulate = Color(1, 1, 1, 0.545098)
 position = Vector2(94.9381, 280.702)
 texture_normal = ExtResource("5_xoi1s")
@@ -70,7 +68,6 @@ passby_press = true
 action = "ui_up"
 
 [node name="Down" type="TouchScreenButton" parent="."]
-visible = false
 modulate = Color(1, 1, 1, 0.545098)
 position = Vector2(94.9381, 380.452)
 texture_normal = ExtResource("7_g565p")
