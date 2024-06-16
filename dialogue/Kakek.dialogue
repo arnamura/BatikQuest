@@ -104,21 +104,24 @@ else:
 ~ beliKain
 #lanjutan quest 1 untuk membeli kain ke pedagang
 if takenQuest1 == true
-	Pedagang: Hai nak, ada yang bisa saya bantu?
-	- Saya diminta tolong oleh kakek untuk membeli kain
-	Pedagang: Hmm kain apa?
-	- Kain untuk membuat batik
-	Pedagang: Hoo, maksud mu kain mori ya?
-	Pedagang: Sebentar saya ambilkan dahulu
-	Pedagang: ...
-	Pedagang: Ini dia kainnya
-	Pedagang: Kain ini sangat bagus untuk digunakan dalam membuat batik
-	Pedagang: Nanti tagihannya akan ku atas namakan si kakek itu, Hahahaha
-	- Terima kasih
-	Pedagang: Sama-sama!
-	Sepertinya ini kain yang dimaksud kakek
-	set reqItem1 = "1"
-	do SoundFx.getItem()
+	if reqItem1 == ""
+		Pedagang: Hai nak, ada yang bisa saya bantu?
+		- Saya diminta tolong oleh kakek untuk membeli kain
+		Pedagang: Hmm kain apa?
+		- Kain untuk membuat batik
+		Pedagang: Hoo, maksud mu kain mori ya?
+		Pedagang: Sebentar saya ambilkan dahulu
+		Pedagang: ...
+		Pedagang: Ini dia kainnya
+		Pedagang: Kain ini sangat bagus untuk digunakan dalam membuat batik
+		Pedagang: Nanti tagihannya akan ku atas namakan si kakek itu, Hahahaha
+		- Terima kasih
+		Pedagang: Sama-sama!
+		Bima: Sepertinya ini kain yang dimaksud kakek
+		set reqItem1 = "1"
+		do SoundFx.getItem()
+	else
+		Pedagang: Nanti tagihannya akan ku atas namakan si kakek itu, Hahahaha
 else
 	Pedagang: Halo anak muda!
 => END
@@ -126,7 +129,7 @@ else
 
 ~ petiTamanBunga
 #kondisi memulai quest 4 menemukan kain
-if not takenQuest0 and not takenQuest1 and not takenQuest2 and not takenQuest3 and not takenQuest4 and not takenQuest5
+if not takenQuest0 and not takenQuest1 and not takenQuest2 and not takenQuest3 and not takenQuest5 and not takenQuest6 and not takenQuest7
 	Bima: Woah, peti apa ini?
 	- Buka peti
 	Bima: Ternyata ada kain batik di dalamnya
@@ -147,7 +150,7 @@ else:
 	
 ~ petiTamanBunga2
 #kondisi memulai quest 6 menemukan kain
-if not takenQuest0 and not takenQuest1 and not takenQuest2 and not takenQuest3 and not takenQuest4 and not takenQuest5
+if not takenQuest0 and not takenQuest1 and not takenQuest2 and not takenQuest3 and not takenQuest4 and not takenQuest5 and not takenQuest7
 	Bima: woah, peti apa ini?
 	- Buka peti
 	Bima: Ternyata ada kain batik di dalamnya
@@ -216,23 +219,26 @@ else
 	=> END
 	
 ~ finalQuest
-Kakek: Sepertinya kamu sudah mendapatkan ke-8 batik yang ada di Desa ini ya bim
-Bima: Iya kek
-Kakek: Terimakasih juga karna telah membantu semua warga yang ada di sini
-Kakek: Karena kamu telah mengumpulkan ke-8 batik yang ada, sesuai janji akan kuberikan batik ke-9
-#------------------------  Input lore batik ke 4 ----------------------------
-Kakek: Ini adalah kain batik dengan motif [color=#965340]Parang[/color]
-Kakek: Motif ini terinspirasi dari meditasi Penembagan Senopati yang dang memperhatikan gejolak ombak pantai selatan yang menghantam batu karang
-Kakek: Kata Parang sendiri berasal dari kata pereng yang berarti lereng atau pinggiran yang miring atau suatu tebing yang berbentuk diagonal
-Kakek: Batik ini dipakai oleh Raja, Permaisuri dan Putra-Putrinya di Keraton Surakarta yang merupakan [i]ageman luhur[/i]
-Kakek: Kau berhak mendapatkan batik ini
-Kakek: Kamu sudah mengoleksi ke-9 batik yang ada. Sekarang kamu berhak menantang boss terakhir
-Kakek: Pergilah ke Bukit Es yang berada di utara gurun, di sana ada penjaga yang akan meminta bukti bahwa kamu telah mengumpulkan semua batik
-Kakek: Jangan lupa pelajari lah semua batik yang sudah kamu kumpulkan untuk menghadapinya
-Kakek: Semoga kamu berhasil menghadapinya
-Bima: Terimakasih banyak atas bimbingannya ya kek
-set reqItem8 = "1"
-set DataBatik.batik4["isGet"] = true
-set getBatik = true
-do save_game()
-#bersambung ke dialog boss
+if reqItem8 =="1"
+	Kakek: Semoga kau berhasil kembali dengan selamat
+else
+	Kakek: Sepertinya kamu sudah mendapatkan ke-8 batik yang ada di Desa ini ya bim
+	Bima: Iya kek
+	Kakek: Terimakasih juga karna telah membantu semua warga yang ada di sini
+	Kakek: Karena kamu telah mengumpulkan ke-8 batik yang ada, sesuai janji akan kuberikan batik ke-9
+	#------------------------  Input lore batik ke 4 ----------------------------
+	Kakek: Ini adalah kain batik dengan motif [color=#965340]Parang[/color]
+	Kakek: Motif ini terinspirasi dari meditasi Penembagan Senopati yang dang memperhatikan gejolak ombak pantai selatan yang menghantam batu karang
+	Kakek: Kata Parang sendiri berasal dari kata pereng yang berarti lereng atau pinggiran yang miring atau suatu tebing yang berbentuk diagonal
+	Kakek: Batik ini dipakai oleh Raja, Permaisuri dan Putra-Putrinya di Keraton Surakarta yang merupakan [i]ageman luhur[/i]
+	Kakek: Kau berhak mendapatkan batik ini
+	Kakek: Kamu sudah mengoleksi ke-9 batik yang ada. Sekarang kamu berhak menantang boss terakhir
+	Kakek: Pergilah ke Bukit Es yang berada di utara gurun, di sana ada penjaga yang akan meminta bukti bahwa kamu telah mengumpulkan semua batik
+	Kakek: Jangan lupa pelajari lah semua batik yang sudah kamu kumpulkan untuk menghadapinya
+	Kakek: Semoga kamu berhasil menghadapinya
+	Bima: Terimakasih banyak atas bimbingannya ya kek
+	set reqItem8 = "1"
+	set DataBatik.batik4["isGet"] = true
+	set getBatik = true
+	do save_game()
+	#bersambung ke dialog boss

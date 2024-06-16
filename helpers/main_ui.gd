@@ -10,15 +10,16 @@ extends CanvasLayer
 func _ready():
 	updateHp()
 	dpad.visible = true
-	if State.dungeonState:
-		hp.show()
-	else:
-		hp.hide()
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	updateHp()
+	if State.dungeonState:
+		updateHp()
+		hp.show()
+	else:
+		hp.hide()
 	if State.notMove == true:
 		dpad.visible = false
 	else:

@@ -1,5 +1,5 @@
 ~ intro
-if introQuest == false
+if introQuest == false and quest8Status == false
 	Bapak: Kamu sudah bawa tiketnya kan bima?
 	Bima: Sudah kok!
 	Bapak: Kalau begitu kita langsung masuk saja
@@ -33,7 +33,7 @@ if reqItem0 == "1"
 		Penjaga: Si Kakek tau apa yang harus dilakukan
 		- Terimakasih banyak pak penjaga
 			Penjaga: Sama-sama anak muda, semoga perjalanan mu lanjar ya!
-			Penjaga: Oh iya ini, bawalah ikan asap ini sebagai bekal dan juga kain ini untuk menemani perjalanan Mu untuk kembali ke "Asal" mu
+			Penjaga: Oh iya ini, bawalah [color=#965340]ikan asap[/color] ini sebagai bekal dan juga kain ini untuk menemani perjalanan Mu untuk kembali ke "Asal" mu
 			Penjaga: Nama motif kain batik ini adalah [color=#965340]Batik Kawung[/color]
 			Penjaga: Ciri ciri dari kain ini adalah motifnya seperti [color=#965340]4 kolang-kaling[/color] yang dibentuk melingkar dengan ornamen kecil ditengahnya
 			Penjaga: Diciptakan oleh Sultan Agung Hanyokrokusumo, dan sebenarnya kain ini adalah kain keraton dan [color=#965340]hanya orang keraton saja yang boleh pakai[/color]

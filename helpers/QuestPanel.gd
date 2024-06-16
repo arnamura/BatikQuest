@@ -13,14 +13,17 @@ func cekQuest():
 	var taken = false
 	var takenMission = -1
 	questJudul.text = ""
-	questLabel.text = "Cari Quest Dulu"
+	if State.quest8Status == true:
+		questLabel.text = "Semua Quest telah selesai"
+	else:
+		questLabel.text = "Cari Quest Dulu"
 	for i in range(9):
 		if quest[i]["taken"]:
 			taken = true
 			takenMission = i
 			
 	if taken:
-		if State.tamat:
+		if State.quest8Status:
 			questLabel.text = "Semua Quest telah selesai"
 		else:
 			if quest[takenMission]["item"] == "1":

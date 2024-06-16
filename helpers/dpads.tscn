@@ -51,6 +51,16 @@ texture_pressed = ExtResource("2_1arp8")
 passby_press = true
 action = "ui_left"
 
+[node name="Left2" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.545098)
+position = Vector2(33.1742, 435.685)
+rotation = -0.785398
+scale = Vector2(0.685576, 0.66653)
+texture_normal = ExtResource("1_xrxn3")
+texture_pressed = ExtResource("2_1arp8")
+passby_press = true
+action = "ui_left and ui_down"
+
 [node name="Right" type="TouchScreenButton" parent="."]
 modulate = Color(1, 1, 1, 0.545098)
 position = Vector2(134.839, 340.552)

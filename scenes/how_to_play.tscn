@@ -217,7 +217,6 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="Panel2" type="Panel" parent="ColorRect"]
-visible = false
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 1
 anchors_preset = 8
@@ -290,7 +289,8 @@ theme_override_constants/outline_size = 3
 theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("3_llv1o")
 theme_override_font_sizes/font_size = 5
-text = "Gunakan tombol interaksi ke NPC, Peti dan Objek lainnya"
+text = "Gunakan tombol interaksi ke NPC, Peti dan Objek lainnya.
+Bertanyalah ke Kakek untuk mengetahui quest yang ada"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3

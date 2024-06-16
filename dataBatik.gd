@@ -81,7 +81,7 @@ var batik8 := { # misi 1 rahmat
 var batik9 := { # misi kucing "riset lagi soal ciri"
 	"nama": "Truntum",
 	"pathimg": "res://art/batik/truntum.png",
-	"deskripsi" : "Kain ini dibuat karena Kanjeng ratu beruk yang hatinya gundah karena pakubuwono VIII memiliki istri baru. Motif tersebut dipakai karena Kanjeng Ratu Beruk melihat keindahan Bunga Tanjung yang berguguran. Kain ini dibuat agar Pakubuwono VIII tertari terhadap Kanjeng Ratu Beruk lagi. Truntum melambangkan Harapan walau langit malam tanpa penerangan, masih ada bintang yang menyinari. Yang berarti selalu ada kesulitan dalam kemudahan",
+	"deskripsi" : "Kain ini dibuat karena Kanjeng ratu beruk yang hatinya gundah karena pakubuwono VIII memiliki istri baru. Motif tersebut dipakai karena Kanjeng Ratu Beruk melihat keindahan Bunga Tanjung yang berguguran. Kain ini dibuat agar Pakubuwono VIII tertari terhadap Kanjeng Ratu Beruk lagi. Truntum melambangkan Harapan walau langit malam tanpa penerangan, masih ada bintang yang menyinari. Yang berarti dalam kesulitan pasti ada kemudahan setelahnya",
 	"ciri" : "Memiliki motif berbentuk bunga-bunga kecil yang disusun rapih sebagai latar dari kain",
 	"isGet": false,
 	"how": "Membantu seekor kucing"

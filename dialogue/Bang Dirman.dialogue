@@ -39,8 +39,6 @@ if quest3Status == false:
 			set DataBatik.batik2["isGet"] = true
 			set getBatik = true
 			do save_game()
-			- Tunggu Bang, aku baru ingat
-			=> dirmanPetarung
 		else:
 			#kondisi bila belum mendapatkan item
 			Bang Dirman: Ada yang ingin kau tanyakan?
@@ -75,7 +73,7 @@ if quest7Status == false
 		Bima: Baik Tunggu sebentar
 		Bima: Akan ku laporkan ka Bang Dirman
 	else
-		Bima: Ini Bang obatnya. Aku juga sudah mengabari Bang Dirman mengenai kondisi mu
+		Bima: Ini Bang obatnya.
 		Petarung: Terimakasih banyak nak! Kalau begitu permisi sebentar, akan saya minum
 		Petarung: ... glek
 		Petarung: Huhh jauh lebih baik, Aku akan istirahat sebentar di sini menuggu kondisi ku prima
@@ -95,16 +93,21 @@ else:
 
 ~ dirmanPetarung
 if reqItem7 == ""
-	Bima: Bang, Aku tadi menemukan Petarung yang terluka dan butuh obat di dungeon
-	Bang Dirman: Hahh? Yang benar kamu?
-	Bang Dirman: Pantas saja sudah 2 hari sejak sang petarung pergi, dia tidak memberikan kabar apapun
-	Bang Dirman: Bagaimana kondisinya?
-	Bima: Sepertinya aman sih, tapi dia terlihat kesulitan berjalan
-	Bang Dirman: Baiklah, kalau begitu aku minta tolong sekali lagi bima
-	Bang Dirman: Berikan obat ini untuk si Petarung
-	Bima: Baiklah bang akan ku usahakan
-	set reqItem7 = "1"
 	set takenQuest7 = true
+	Penjaga: Bang Dirman, Gawat!!!
+	Bang Dirman: Ada apa??
+	Penjaga: Ada seorang petarung yang terluka di dalam dungeon
+	Bang Dirman: [shake]APAA????[/shake]
+	Bang Dirman: Pantas saja sudah 3 hari sejak ia menjelajahi dungeon itu, ia tak kunjung pulang
+	Penjaga: Ia butuh obat penyembuhan, tapi saya tidak punya dan saya harus berjaga agar monster tidak keluar dungeon
+	Bang Dirman: Uh, kebetulan ada kau di sini Bima
+	Bang Dirman: Apakah kau bersedia menolong ku sekali lagi untuk mengantarkan obat ini ke petarung di dalam?
+	- Siap Bang
+	- Laksanakan
+	Bang Dirman: Itu baru semangat anak muda
+	Bang Dirman: Ini obatnya dan bawakan segera kepada Petarung itu
+	set reqItem7 = "1"
+
 	do SoundFx.getItem()
 else:
 	Bang Dirman: Cepatlah bantu si Petarung bim

@@ -85,7 +85,7 @@ var quest5text1: String = "Ikuti Kucing"
 var quest5text2: String = "Bicara dengan Kucing?"
 
 #quest 6 peti desa
-var quest6title: String = "Kain bermotif bunga"
+var quest6title: String = "Kain Desa Terbengkalai"
 var quest6Status: bool = false
 var takenQuest6: bool = false
 var reqItem6: String = ""

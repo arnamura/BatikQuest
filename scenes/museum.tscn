@@ -7905,7 +7905,6 @@ y_sort_enabled = true
 script = ExtResource("1_7nw5d")
 
 [node name="bgTransisi" type="ColorRect" parent="."]
-visible = false
 show_behind_parent = true
 z_index = 10
 y_sort_enabled = true
@@ -7915,8 +7914,8 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -31.0
-offset_top = -42.0
-offset_right = 901.0
+offset_top = -82.0
+offset_right = 1072.0
 offset_bottom = 310.0
 grow_horizontal = 2
 grow_vertical = 2

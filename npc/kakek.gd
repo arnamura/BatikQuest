@@ -12,7 +12,10 @@ func _ready():
 	namaNpc.text = $".".name.capitalize()
 		
 func _physics_process(_delta):
-	animations.play("idle")
+	if not State.notMove:
+		animations.play("idle")
+	else:
+		pass
 
 func _on_area_2d_body_entered(body):
 	if body.name == 'Player':
@@ -29,3 +32,8 @@ func _on_area_2d_body_exited(body):
 		namaNpc.visible = false
 		$Area2D/Notice.visible = false
 		
+func _play_anim(nameAnim) -> void:
+	animations.play(nameAnim)
+
+func _stop_anim() -> void:
+	animations.stop()
