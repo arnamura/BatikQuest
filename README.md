@@ -1,9 +1,6 @@
 # Game_batik
 Ini adalah projek skripsi sekalian belajar make godot
 
-Game Batik Quest adalah game 2d RPG adventure yang berfokus untuk memperkenalkan berbagai macam motif batik klasik yang ada di Indonesia. 
-Game ini menceritakan tentang seorang pemuda bernama Bima yang tiba-tiba berpindah tempat ke daerah yang ia tidak ketahui. Daerah tersebut dinamakan Desa Batik. Untuk kembali ke tempat asalnya, Bima diharuskan mengumpulkan ke-9 batik yang ada untuk menghadap ke mahkluk Astral agar dapat membukakakn portal menuju daerah asalnya.
-
 Game ini memiliki fitur:
 - Melihat deskripsi dan ciri-ciri batik yang sudah dikumpulkan pada main menu dan pause menu
 - fitur percakapan dan interaksi yang dibuat menggunakan AssetLib Dialogue Manager buatan Nathan Hoad
