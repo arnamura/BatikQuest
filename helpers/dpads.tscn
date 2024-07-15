@@ -45,25 +45,17 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Left" type="TouchScreenButton" parent="."]
 modulate = Color(1, 1, 1, 0.545098)
-position = Vector2(38.5965, 340.351)
+position = Vector2(35.0877, 301.754)
+scale = Vector2(1.3, 1.3)
 texture_normal = ExtResource("1_xrxn3")
 texture_pressed = ExtResource("2_1arp8")
 passby_press = true
 action = "ui_left"
 
-[node name="Left2" type="TouchScreenButton" parent="."]
-modulate = Color(1, 1, 1, 0.545098)
-position = Vector2(33.1742, 435.685)
-rotation = -0.785398
-scale = Vector2(0.685576, 0.66653)
-texture_normal = ExtResource("1_xrxn3")
-texture_pressed = ExtResource("2_1arp8")
-passby_press = true
-action = "ui_left and ui_down"
-
 [node name="Right" type="TouchScreenButton" parent="."]
 modulate = Color(1, 1, 1, 0.545098)
-position = Vector2(134.839, 340.552)
+position = Vector2(141.857, 301.955)
+scale = Vector2(1.3, 1.3)
 texture_normal = ExtResource("3_7adfs")
 texture_pressed = ExtResource("4_87la4")
 passby_press = true
@@ -71,7 +63,8 @@ action = "ui_right"
 
 [node name="Up" type="TouchScreenButton" parent="."]
 modulate = Color(1, 1, 1, 0.545098)
-position = Vector2(94.9381, 280.702)
+position = Vector2(98.2456, 235.088)
+scale = Vector2(1.3, 1.3)
 texture_normal = ExtResource("5_xoi1s")
 texture_pressed = ExtResource("6_mpklm")
 passby_press = true
@@ -79,7 +72,8 @@ action = "ui_up"
 
 [node name="Down" type="TouchScreenButton" parent="."]
 modulate = Color(1, 1, 1, 0.545098)
-position = Vector2(94.9381, 380.452)
+position = Vector2(98.2456, 350.877)
+scale = Vector2(1.3, 1.3)
 texture_normal = ExtResource("7_g565p")
 texture_pressed = ExtResource("8_2ep7h")
 passby_press = true

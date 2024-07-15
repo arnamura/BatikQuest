@@ -549,7 +549,7 @@ shape = SubResource("RectangleShape2D_gr0ne")
 [node name="MapDetection" type="Area2D" parent="."]
 light_mask = 513
 visibility_layer = 513
-collision_mask = 35
+collision_mask = 163
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapDetection"]
 position = Vector2(0, -4.5)
@@ -594,3 +594,4 @@ text = "Mendapat Batik Baru"
 
 [connection signal="area_entered" from="MapDetection" to="." method="_on_map_detection_area_entered"]
 [connection signal="area_exited" from="MapDetection" to="." method="_on_map_detection_area_exited"]
+[connection signal="body_entered" from="MapDetection" to="." method="_on_map_detection_body_entered"]

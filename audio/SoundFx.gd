@@ -25,8 +25,10 @@ func walkFx():
 
 func getItem():
 	$getItem.play()
-	
-	
+
+func getKain():
+	$getKain.play()
+
 func meowFx():
 	meow.play()
 	

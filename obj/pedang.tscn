@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cei0q65gup8iy"]
+
+[ext_resource type="PackedScene" uid="uid://btx3a2ufitkuj" path="res://obj/kain_mori.tscn" id="1_c2kh8"]
+[ext_resource type="Texture2D" uid="uid://b2vjxc5blrcbm" path="res://art/Sword.png" id="2_mwhl8"]
+
+[node name="pedang" instance=ExtResource("1_c2kh8")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-0.1055, -0.26375)
+rotation = 3.13291
+scale = Vector2(0.701833, 0.701833)
+texture = ExtResource("2_mwhl8")

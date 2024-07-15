@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://di45vaso65aso"]
+[gd_scene load_steps=17 format=3 uid="uid://di45vaso65aso"]
 
 [ext_resource type="Script" path="res://audio/SoundFx.gd" id="1_uccg4"]
 [ext_resource type="AudioStream" uid="uid://cg660iwvjnit0" path="res://audio/23 - Road.ogg" id="2_1qas1"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://06fcm2oovdj2" path="res://audio/sfx/Hit.wav" id="12_4qoge"]
 [ext_resource type="AudioStream" uid="uid://1jknicrwabqy" path="res://audio/sfx/cat-purr-meow-8327.mp3" id="13_dyoff"]
 [ext_resource type="AudioStream" uid="uid://ctk1wqfqsnas2" path="res://audio/sfx/Success1.wav" id="15_cwja5"]
+[ext_resource type="AudioStream" uid="uid://fo52cy1ddr74" path="res://audio/sfx/Coin.wav" id="16_vahq3"]
 
 [node name="SoundFx" type="Node"]
 process_mode = 3
@@ -66,3 +67,6 @@ stream = ExtResource("13_dyoff")
 
 [node name="getItem" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_cwja5")
+
+[node name="getKain" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_vahq3")

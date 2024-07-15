@@ -28,6 +28,7 @@ var isCinematic = false
 var playerPos #mencatat kordinasi player
 var playerMap #mencatat area/map dari player
 
+signal score_point
 
 func _ready():
 	#agar diawal warna player default
@@ -58,7 +59,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 		var actionable = actionable_finder.get_overlapping_areas()
 		if actionable.size() > 0:
 			State.notMove = true
-			actionable[0].action()
+			actionable[0].action() #aktivasi area pertama yang tumpang tindih
 			return
 	#untuk tombol berlari
 	if Input.is_action_just_pressed("ui_shift"):
@@ -74,8 +75,8 @@ func handleInput():
 		var moveDirectionKeyboard = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 		#velocity = moveDirection*speed
 		velocity = moveDirectionKeyboard*speed
-		if Input.is_action_just_pressed("ui_attack"):
-			getBatikAnim()
+#		if Input.is_action_just_pressed("ui_attack"):
+#			getBatikAnim()
 	else: 
 		velocity = Vector2.ZERO
 
@@ -217,3 +218,11 @@ func getBatikAnim(): #Animasi memunculkan teks mendapatkan batik
 #		await hurtTimer.timeout
 #		effects.play("reset")
 
+
+
+func _on_map_detection_body_entered(body):
+	if body.is_in_group("kain"):
+		SoundFx.getKain()
+		print("+1")
+		emit_signal("score_point")
+		body.queue_free()

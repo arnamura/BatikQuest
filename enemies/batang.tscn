@@ -1,0 +1,122 @@
+[gd_scene load_steps=18 format=3 uid="uid://cp64fc26emn5c"]
+
+[ext_resource type="Script" path="res://batang.gd" id="1_2017v"]
+[ext_resource type="Texture2D" uid="uid://x18uir07rlso" path="res://art/char/Batang.png" id="2_dqtjp"]
+[ext_resource type="PackedScene" uid="uid://btx3a2ufitkuj" path="res://obj/kain_mori.tscn" id="2_y2gs2"]
+[ext_resource type="PackedScene" uid="uid://cei0q65gup8iy" path="res://obj/pedang.tscn" id="3_sihr1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyjh0"]
+atlas = ExtResource("2_dqtjp")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvguo"]
+atlas = ExtResource("2_dqtjp")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ijk3"]
+atlas = ExtResource("2_dqtjp")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hq6f"]
+atlas = ExtResource("2_dqtjp")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mu8g"]
+atlas = ExtResource("2_dqtjp")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bp6dq"]
+atlas = ExtResource("2_dqtjp")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5tk8"]
+atlas = ExtResource("2_dqtjp")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxvow"]
+atlas = ExtResource("2_dqtjp")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sskqj"]
+atlas = ExtResource("2_dqtjp")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eghe0"]
+atlas = ExtResource("2_dqtjp")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yabt2"]
+atlas = ExtResource("2_dqtjp")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kga5r"]
+atlas = ExtResource("2_dqtjp")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wsrqy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kyjh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvguo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kyjh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvguo")
+}],
+"loop": true,
+"name": &"pup",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ijk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hq6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mu8g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bp6dq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5tk8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxvow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sskqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eghe0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yabt2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kga5r")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="batang" type="Node2D"]
+script = ExtResource("1_2017v")
+kain_mori = ExtResource("2_y2gs2")
+pedang = ExtResource("3_sihr1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wsrqy")
+animation = &"pup"
+frame_progress = 0.138406
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

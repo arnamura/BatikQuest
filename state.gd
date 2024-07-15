@@ -336,17 +336,16 @@ func save():
 	} #berisi variabel quest
 	return save_dict
 
-func new_game(): #note: coba pake dictionary
-	var save_path = "user://savegame.save"
-	# Pastikan file ada sebelum dihapus
-	if FileAccess.file_exists(save_path):
-
-		print("Save game deleted.")
-	else:
-		print("Save game not found.")
+#func new_game(): #note: coba pake dictionary
+#	var save_path = "user://savegame.save"
+#	# Pastikan file ada sebelum dihapus
+#	if FileAccess.file_exists(save_path):
+#		print("Save game deleted.")
+#	else:
+#		print("Save game not found.")
 	
 func save_game():
-	var saveGame = FileAccess.open("user://savegame.save", FileAccess.WRITE)
+	var saveGame = FileAccess.open("user://savegame.save", FileAccess.WRITE) #membuat file savegame.save ketika file tersebut tidak ditemukan (new game)
 	var json_string = JSON.stringify(save())
 	saveGame.store_line(json_string)
 

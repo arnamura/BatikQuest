@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://btx3a2ufitkuj"]
+
+[ext_resource type="Texture2D" uid="uid://bbjx4rn56s5w" path="res://art/kain.png" id="1_kxxrq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ai8j0"]
+size = Vector2(14.1509, 14.1509)
+
+[node name="Kain_Mori" type="RigidBody2D" groups=["kain"]]
+z_index = 5
+y_sort_enabled = true
+collision_layer = 128
+collision_mask = 128
+mass = 0.1
+gravity_scale = 0.2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.737, 0.737)
+texture = ExtResource("1_kxxrq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.19209e-07, 1.19209e-07)
+scale = Vector2(0.424, 0.424)
+shape = SubResource("RectangleShape2D_ai8j0")

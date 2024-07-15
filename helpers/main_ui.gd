@@ -11,8 +11,6 @@ func _ready():
 	updateHp()
 	dpad.visible = true
 	
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if State.dungeonState:
