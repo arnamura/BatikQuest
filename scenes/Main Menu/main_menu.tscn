@@ -1,10 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://bt3oquybtan00"]
+[gd_scene load_steps=20 format=3 uid="uid://bt3oquybtan00"]
 
 [ext_resource type="FontFile" uid="uid://dofpvw42s1f6d" path="res://NormalFont.ttf" id="1_72bcx"]
 [ext_resource type="Script" path="res://scenes/Main Menu/main_menu.gd" id="1_enl23"]
 [ext_resource type="StyleBox" uid="uid://cn6mbunwuv2gb" path="res://styles/buttonStyle.tres" id="2_5gt5y"]
 [ext_resource type="Theme" uid="uid://2n5gbj21e6e5" path="res://styles/button.tres" id="2_jhgdr"]
 [ext_resource type="Texture2D" uid="uid://e2vamsgxgk6x" path="res://art/DialogueBoxSimple.png" id="3_14l6q"]
+[ext_resource type="Texture2D" uid="uid://cyr0xdq8lnqf" path="res://art/DialogueBubble.png" id="6_8kwoy"]
+[ext_resource type="Texture2D" uid="uid://bk3ytsgm3p8lb" path="res://art/next.png" id="7_lk82c"]
+[ext_resource type="Theme" uid="uid://dvu8l7xh6rvqa" path="res://styles/btn2.tres" id="8_mv7w0"]
+[ext_resource type="Theme" uid="uid://7vpl40sax2v" path="res://styles/Deskripsitheme.tres" id="9_q1ksu"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cj05l"]
 texture = ExtResource("3_14l6q")
@@ -102,6 +106,24 @@ _data = {
 "transisiOut": SubResource("Animation_s3tp7")
 }
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yxg7r"]
+texture = ExtResource("6_8kwoy")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+
+[sub_resource type="Theme" id="Theme_d6h46"]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_yxg7r")
+
+[sub_resource type="Theme" id="Theme_0gjwf"]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 4
+Label/font_sizes/font_size = 12
+Label/fonts/font = ExtResource("1_72bcx")
+
 [node name="MainMenu" type="Control"]
 custom_minimum_size = Vector2(240, 135)
 layout_mode = 3
@@ -177,8 +199,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_cj05l")
 text = "Play
 "
 
-[node name="BtnNewG" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
-visible = false
+[node name="BtnMiniGame" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 focus_mode = 0
@@ -254,8 +275,160 @@ libraries = {
 "": SubResource("AnimationLibrary_p0ymr")
 }
 
+[node name="minigame" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.0
+offset_top = -56.5
+offset_right = 113.0
+offset_bottom = 57.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_d6h46")
+
+[node name="BtnExt" type="Button" parent="minigame"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+focus_mode = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 7
+icon = ExtResource("7_lk82c")
+flat = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="minigame"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="CTMbtn" type="Button" parent="minigame/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("8_mv7w0")
+text = "Catch  the  Mori"
+icon_alignment = 1
+expand_icon = true
+
+[node name="TheMazebtn" type="Button" parent="minigame/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("8_mv7w0")
+text = "The  Maze"
+icon_alignment = 1
+expand_icon = true
+
+[node name="???btn" type="Button" parent="minigame/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("8_mv7w0")
+text = "???"
+icon_alignment = 1
+expand_icon = true
+
+[node name="selectStage" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.0
+offset_top = -56.5
+offset_right = 113.0
+offset_bottom = 57.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_d6h46")
+
+[node name="BtnExt" type="Button" parent="selectStage"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+focus_mode = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 7
+icon = ExtResource("7_lk82c")
+flat = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="selectStage"]
+layout_mode = 2
+
+[node name="Aturan" type="Label" parent="selectStage/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_0gjwf")
+text = "Aturan  Main"
+horizontal_alignment = 1
+
+[node name="LabelDeskripsi" type="VBoxContainer" parent="selectStage/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="RichTextLabel" parent="selectStage/VBoxContainer/LabelDeskripsi"]
+custom_minimum_size = Vector2(200, 15)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("9_q1ksu")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 6
+text = "Dapatkan kain mori yang dijatuhkan oleh monster batang. jangan sampai mengambil senjata tajam"
+tab_size = 1
+
+[node name="StageReq" type="HBoxContainer" parent="selectStage/VBoxContainer/LabelDeskripsi"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="selectStage/VBoxContainer/LabelDeskripsi/StageReq"]
+layout_mode = 2
+theme = ExtResource("9_q1ksu")
+theme_override_font_sizes/font_size = 6
+text = "stage 1: 10 Kain"
+
+[node name="Label2" type="Label" parent="selectStage/VBoxContainer/LabelDeskripsi/StageReq"]
+layout_mode = 2
+theme = ExtResource("9_q1ksu")
+theme_override_font_sizes/font_size = 6
+text = "stage 2: 10 Kain"
+
+[node name="Label3" type="Label" parent="selectStage/VBoxContainer/LabelDeskripsi/StageReq"]
+layout_mode = 2
+theme = ExtResource("9_q1ksu")
+theme_override_font_sizes/font_size = 6
+text = "stage 3: 10 Kain"
+
+[node name="btnContainer" type="HBoxContainer" parent="selectStage/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="1" type="Button" parent="selectStage/VBoxContainer/btnContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("8_mv7w0")
+text = " 1 "
+icon_alignment = 1
+expand_icon = true
+
+[node name="2" type="Button" parent="selectStage/VBoxContainer/btnContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("8_mv7w0")
+text = " 2 "
+icon_alignment = 1
+expand_icon = true
+
+[node name="3" type="Button" parent="selectStage/VBoxContainer/btnContainer"]
+layout_mode = 2
+theme = ExtResource("8_mv7w0")
+text = " 3 "
+icon_alignment = 1
+expand_icon = true
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/BtnContinue" to="." method="_on_btn_continue_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/BtnNewG" to="." method="_on_btn_new_g_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/BtnMiniGame" to="." method="_on_btn_mini_game_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/BtnCol" to="." method="_on_btn_col_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/BtnSett" to="." method="_on_btn_sett_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/BtnExt" to="." method="_on_btn_ext_pressed"]
