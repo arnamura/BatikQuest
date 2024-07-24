@@ -1,12 +1,25 @@
 [gd_scene load_steps=3 format=3 uid="uid://cei0q65gup8iy"]
 
-[ext_resource type="PackedScene" uid="uid://btx3a2ufitkuj" path="res://obj/kain_mori.tscn" id="1_c2kh8"]
 [ext_resource type="Texture2D" uid="uid://b2vjxc5blrcbm" path="res://art/Sword.png" id="2_mwhl8"]
 
-[node name="pedang" instance=ExtResource("1_c2kh8")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ai8j0"]
+size = Vector2(14.1509, 14.1509)
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="pedang" type="RigidBody2D" groups=["pedang"]]
+z_index = 5
+y_sort_enabled = true
+collision_layer = 128
+collision_mask = 128
+mass = 0.1
+gravity_scale = 0.2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-0.1055, -0.26375)
 rotation = 3.13291
 scale = Vector2(0.701833, 0.701833)
 texture = ExtResource("2_mwhl8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.19209e-07, 1.19209e-07)
+scale = Vector2(0.424, 0.424)
+shape = SubResource("RectangleShape2D_ai8j0")

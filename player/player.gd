@@ -126,7 +126,6 @@ func knockback2(enemyVelocity: Vector2): #mengambil vector arah musuh bergerak s
 func onHit(area): #fungsi akbiat dari saat player menyentuh musuh yang menyebabkan knockback dan hp berkurang
 	hp = hp-1	
 	isHurt = true
-	
 	knockback2(area.get_parent().velocity)
 	SoundFx.hurtFx()
 	effects.play("hurtAnim")
@@ -222,7 +221,22 @@ func getBatikAnim(): #Animasi memunculkan teks mendapatkan batik
 
 func _on_map_detection_body_entered(body):
 	if body.is_in_group("kain"):
-		SoundFx.getKain()
-		print("+1")
-		emit_signal("score_point")
+		emit_signal("score_point", 1, hp)
 		body.queue_free()
+	if body.is_in_group("pedang") or body.is_in_group("shuriken"):
+		onHitMiniGame(body)
+		body.queue_free()
+
+func onHitMiniGame(area): #fungsi akbiat dari saat player menyentuh musuh yang menyebabkan knockback dan hp berkurang
+	hp = hp-1	
+	emit_signal("score_point", 2, hp)
+	isHurt = true
+	knockback2(area.linear_velocity)
+	effects.play("hurtAnim")
+	hurtTimer.start()
+	await hurtTimer.timeout
+	#insert jika hp 0, layar menghitam dan player kembali kespawn
+	effects.play("reset")
+	if hp == 0:
+		hp = 3
+	isHurt = false	

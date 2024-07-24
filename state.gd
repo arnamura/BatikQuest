@@ -419,4 +419,12 @@ func load_game():
 		quest8Status = data["qs8"]
 		takenQuest8 = data["tq8"]
 		reqItem8 = data["ri8"]
-		
+
+#----------------untuk kebutuhan minigame----------------
+var stage: int = 1
+
+func set_stage(stage: int):
+	stage = stage
+
+func get_stage() -> int:
+	return stage
