@@ -86,3 +86,86 @@ var batik9 := { # misi kucing "riset lagi soal ciri"
 	"isGet": false,
 	"how": "Membantu seekor kucing"
 }
+
+#part 2 batik
+
+var batik10 := { # Minigame1
+	"nama": "Mega Mendung",
+	"pathimg": "res://art/batik/megamendung.png",
+	"deskripsi" : "Mega berati awan dan mendung berati cuaca sejuk. Berasal dari Cirebon yang dibuat dengan harapan agar pemakainya selalu berusaha menjadi orang yang menyejukan suasana, tidak mudah marah dan tidak mudah tersinggung",
+	"ciri" : "Motif berbentuk awan-awan dengan gradasi biru. motif ini merupakan pola hias pengaruh cina. Memiliki ciri khas dengan garis yang cenderung lonjong dengan bentuk lancip pada ujungnya membentuk segitiga",
+	"isGet": false,
+	"how": ""
+}
+
+var batik11 := { # Minigame1
+	"nama": "Banji",
+	"pathimg": "res://art/batik/banji.png",
+	"deskripsi" : "Banji dari bahasa dialek Tionghoa, ban berarti sepuluh dan dzi berarti ribu. Perlambang murah rezeki atau kebahagiaan yang berlipat ganda. Pola ini banyak dipopulerkan di daerah Banyumas",
+	"ciri" : "Pola ini terinspirasi dari balok bosok (kayu busuk) karena berbentuk menyerupai balok-balok bersilang yang dimakan bubuk",
+	"isGet": false,
+	"how": ""
+}
+
+var batik12 := { # Minigame1
+	"nama": "Besurek",
+	"pathimg": "res://art/batik/besurek.png",
+	"deskripsi" : "Berasal dari Bengkulu. Besurek berarti bersurat atau tulisan. motif ini diperkenalkan oleh Arab dan India pada abad 17",
+	"ciri" : "Memiliki motif gabungan aksara kaganga dan kaligrafi Arab dengan hiasan khas dari Bengkulu dapat berupa bunga rafflessia, rembulan atau burung kuau",
+	"isGet": false,
+	"how": ""
+}
+
+var batik13 := { # Minigame2
+	"nama": "Papadaw",
+	"pathimg": "res://art/batik/papadaw.png",
+	"deskripsi" : "Visualisasi festival Iraw Tengkayu yang merupakan budaya dari masyarakat Tidung Kalimantan Utara sebagai bentuk interaksi dengan lingkungan sekitarnya. Merupakan ungkapan rasa syukur atas aktivitas mereka sebagai nelayan yang disebut juga pesta laut. ",
+	"ciri" : "Terdapat motif perahu sebagai representasi masyarakat tidung yang berprofesi sebagai nelayan dengan hiasan flora lautan",
+	"isGet": false,
+	"how": ""
+}
+
+var batik14 := { # Minigame2
+	"nama": "Honai",
+	"pathimg": "res://art/batik/honai.png",
+	"deskripsi" : "Terinspirasi dari tempat tinggal masyarakat pegunungan Papua yaitu Honai. Yang mana tempat masyarakat Papua dilahirkan dan dibersarkan dan mempelajari arti kehidupan dan hubungan timbal balik manusia dengan alam. Bermakna ucapan rasa syukur terhadap sang pencipta",
+	"ciri" : "Berfokuskan pada bentuk honai yang merupakan rumah tradisional masyarakat tradisional Papua di pegunungan.  Biasa didampingi hiasan kecil seperti burung cendrawasih, matoa, pegunungan, danau dan hal lain yang ikonik dengan Papua",
+	"isGet": false,
+	"how": ""
+}
+
+var batik15 := { # Minigame2
+	"nama": "Matoa",
+	"pathimg": "res://art/batik/matoa.png",
+	"deskripsi" : "Motif yang terinspirasi dari buah asli Papua yaitu matoa. Bermakna ungkapan rasa syukur atas anugrah kesuburan dan kekayaan alam Papua",
+	"ciri" : "Motif berbentuk buah matoa yang berbentuk loncong dan kecil berwarna coklat atau kekuningan. Biasa didampingi dengan daun matoa tanpa ada banyak tambahaan desain dekoratif lainnya.",
+	"isGet": false,
+	"how": ""
+}
+
+var batik16 := { # Minigame2
+	"nama": "Jam Gadang",
+	"pathimg": "res://art/batik/jamgadang.png",
+	"deskripsi" : " Motif batik yang berasal dari padang Sumatra Barat yang dibuat pada tahun 2009 untuk meningkatkan daya tarik produk batik. Desain ini mengacu pada landmark daerah padang",
+	"ciri" : "Memiliki motif jam gadang",
+	"isGet": false,
+	"how": ""
+}
+
+var batik17 := { # Minigame2
+	"nama": "Angklung Buhun",
+	"pathimg": "res://art/batik/angklungbuhun.png",
+	"deskripsi" : "Berasal dari lebak. terinspirasi dari alat musik pusaka dari Suku Baduy yaitu angklung buhun. Angklung buhun ini biasa digunakan oleh Suku Baduy sebagai acara penanaman padi. Motif ini Melanmbangkan Kedinamisan dan kegembiraan",
+	"ciri" : "Motif terdiri dari gambar angklung buhun, bedug kecil dan rumah Suku Baduy",
+	"isGet": false,
+	"how": ""
+}
+
+var batik18 := { # Minigame2
+	"nama": "Lebak Bertauhid",
+	"pathimg": "res://art/batik/lebakbertauhid.png",
+	"deskripsi" : "Bertauhid merupakan Moto Kabupaten Lebak yang berarti bersih, taqwa, hijau, dan damai, Motif ini melambangkan Citra Kehidupan yang religius dengan penuh keimanan dan ketakwaan pada Allah SWT.",
+	"ciri" : "Motif terdiri dari gambar bedug, surau Masjid, Tenun Baduy dan Motif kembang",
+	"isGet": false,
+	"how": ""
+}
