@@ -421,7 +421,7 @@ func load_game():
 		reqItem8 = data["ri8"]
 
 #----------------untuk kebutuhan minigame----------------
-var stage: int = 1
+var stage: int
 
 func set_stage(stage: int):
 	stage = stage

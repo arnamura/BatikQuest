@@ -6,7 +6,7 @@
 [ext_resource type="Theme" uid="uid://2n5gbj21e6e5" path="res://styles/button.tres" id="2_jhgdr"]
 [ext_resource type="Texture2D" uid="uid://e2vamsgxgk6x" path="res://art/DialogueBoxSimple.png" id="3_14l6q"]
 [ext_resource type="Texture2D" uid="uid://cyr0xdq8lnqf" path="res://art/DialogueBubble.png" id="6_8kwoy"]
-[ext_resource type="Texture2D" uid="uid://bk3ytsgm3p8lb" path="res://art/next.png" id="7_lk82c"]
+[ext_resource type="Texture2D" uid="uid://dcikk1q7eoo6q" path="res://art/prev.png" id="7_wb20c"]
 [ext_resource type="Theme" uid="uid://dvu8l7xh6rvqa" path="res://styles/btn2.tres" id="8_mv7w0"]
 [ext_resource type="Theme" uid="uid://7vpl40sax2v" path="res://styles/Deskripsitheme.tres" id="9_q1ksu"]
 
@@ -210,7 +210,7 @@ theme_override_constants/h_separation = 0
 theme_override_styles/normal = ExtResource("2_5gt5y")
 theme_override_styles/hover = ExtResource("2_5gt5y")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_cj05l")
-text = "New Game"
+text = "Mini  Game"
 
 [node name="BtnCol" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -290,14 +290,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_d6h46")
 
-[node name="BtnExt" type="Button" parent="minigame"]
+[node name="BtnClose" type="Button" parent="minigame"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 focus_mode = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 7
-icon = ExtResource("7_lk82c")
+icon = ExtResource("7_wb20c")
 flat = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="minigame"]
@@ -306,7 +306,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 alignment = 1
 
-[node name="CTMbtn" type="Button" parent="minigame/VBoxContainer"]
+[node name="mini_game" type="Button" parent="minigame/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("8_mv7w0")
@@ -343,16 +343,6 @@ offset_bottom = 57.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_d6h46")
-
-[node name="BtnExt" type="Button" parent="selectStage"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-focus_mode = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 7
-icon = ExtResource("7_lk82c")
-flat = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="selectStage"]
 layout_mode = 2
@@ -405,7 +395,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 alignment = 1
 
-[node name="1" type="Button" parent="selectStage/VBoxContainer/btnContainer"]
+[node name="btn1" type="Button" parent="selectStage/VBoxContainer/btnContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("8_mv7w0")
@@ -413,7 +403,7 @@ text = " 1 "
 icon_alignment = 1
 expand_icon = true
 
-[node name="2" type="Button" parent="selectStage/VBoxContainer/btnContainer"]
+[node name="btn2" type="Button" parent="selectStage/VBoxContainer/btnContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("8_mv7w0")
@@ -421,14 +411,30 @@ text = " 2 "
 icon_alignment = 1
 expand_icon = true
 
-[node name="3" type="Button" parent="selectStage/VBoxContainer/btnContainer"]
+[node name="btn3" type="Button" parent="selectStage/VBoxContainer/btnContainer"]
 layout_mode = 2
 theme = ExtResource("8_mv7w0")
 text = " 3 "
 icon_alignment = 1
 expand_icon = true
 
+[node name="BtnClose2" type="Button" parent="selectStage"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+focus_mode = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 7
+icon = ExtResource("7_wb20c")
+flat = true
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/BtnContinue" to="." method="_on_btn_continue_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/BtnMiniGame" to="." method="_on_btn_mini_game_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/BtnCol" to="." method="_on_btn_col_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/BtnExt" to="." method="_on_btn_ext_pressed"]
+[connection signal="pressed" from="minigame/BtnClose" to="." method="_on_btn_close_pressed"]
+[connection signal="pressed" from="minigame/VBoxContainer/mini_game" to="." method="_on_mini_game_pressed"]
+[connection signal="pressed" from="selectStage/VBoxContainer/btnContainer/btn1" to="." method="_on_btn_1_pressed"]
+[connection signal="pressed" from="selectStage/VBoxContainer/btnContainer/btn2" to="." method="_on_btn_2_pressed"]
+[connection signal="pressed" from="selectStage/VBoxContainer/btnContainer/btn3" to="." method="_on_btn_3_pressed"]
+[connection signal="pressed" from="selectStage/BtnClose2" to="." method="_on_btn_close_2_pressed"]

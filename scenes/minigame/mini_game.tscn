@@ -1,10 +1,13 @@
-[gd_scene load_steps=17 format=3 uid="uid://bu0aljt3ql7xl"]
+[gd_scene load_steps=20 format=3 uid="uid://bu0aljt3ql7xl"]
 
 [ext_resource type="Script" path="res://scenes/minigame/mini_game.gd" id="1_mox84"]
 [ext_resource type="Texture2D" uid="uid://bn1rxgfowuian" path="res://art/tileset/TilesetFloor.png" id="1_on0je"]
 [ext_resource type="Texture2D" uid="uid://c4hxk2auadr1" path="res://art/tileset/TilesetField.png" id="2_8rl0m"]
+[ext_resource type="Theme" uid="uid://clf8fk1cbxa6a" path="res://styles/h1.tres" id="2_g6vwn"]
 [ext_resource type="Texture2D" uid="uid://dhw8hjfkujy22" path="res://art/tileset/TilesetRelief.png" id="3_ayahg"]
+[ext_resource type="FontFile" uid="uid://c150i2j8f5iw1" path="res://VCRosdNEUE.ttf" id="3_kwjod"]
 [ext_resource type="Texture2D" uid="uid://dep2qksg16xox" path="res://art/tileset/TilesetNature.png" id="4_4vihb"]
+[ext_resource type="Theme" uid="uid://dvu8l7xh6rvqa" path="res://styles/btn2.tres" id="4_dmt2k"]
 [ext_resource type="PackedScene" uid="uid://dndkvxcijkvrc" path="res://player/player.tscn" id="4_muryu"]
 [ext_resource type="PackedScene" uid="uid://c0nkcotr6s0ly" path="res://scenes/minigame/despawn.tscn" id="5_bl2ve"]
 [ext_resource type="PackedScene" uid="uid://cp64fc26emn5c" path="res://enemies/batang.tscn" id="6_p04t6"]
@@ -2720,6 +2723,90 @@ size = Vector2(234, 20)
 [node name="MiniGame" type="Node2D"]
 script = ExtResource("1_mox84")
 
+[node name="TimerStart" type="Control" parent="."]
+process_mode = 3
+z_index = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+
+[node name="Timer" type="Timer" parent="TimerStart"]
+wait_time = 3.0
+
+[node name="Label" type="Label" parent="TimerStart"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 33.0
+offset_right = 122.0
+offset_bottom = 60.0
+theme = ExtResource("2_g6vwn")
+text = "3"
+
+[node name="GameOver" type="Control" parent="."]
+process_mode = 3
+visible = false
+z_index = 2
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 240.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="vbox" type="VBoxContainer" parent="GameOver"]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 135.0
+alignment = 1
+
+[node name="h1" type="Label" parent="GameOver/vbox"]
+layout_mode = 2
+theme = ExtResource("2_g6vwn")
+text = "Kamu Berhasil"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="h2" type="Label" parent="GameOver/vbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_kwjod")
+theme_override_font_sizes/font_size = 5
+text = "Kamu berhasil mengumpulkan kain mori yang diminta"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameOver/vbox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="backbtn" type="Button" parent="GameOver/vbox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme = ExtResource("4_dmt2k")
+theme_override_font_sizes/font_size = 5
+text = "Main Menu"
+
+[node name="tryagainbtn" type="Button" parent="GameOver/vbox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme = ExtResource("4_dmt2k")
+theme_override_font_sizes/font_size = 5
+text = "Tantang Lagi"
+
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
 tile_set = SubResource("TileSet_tl652")
@@ -2791,5 +2878,6 @@ text = "Score : "
 
 [node name="MainUI" parent="." instance=ExtResource("10_n67o1")]
 
+[connection signal="pressed" from="GameOver/vbox/HBoxContainer/tryagainbtn" to="." method="_on_tryagainbtn_pressed"]
 [connection signal="score_point" from="TileMap/Player" to="." method="_on_player_score_point"]
 [connection signal="body_entered" from="TileMap/Despawn" to="TileMap/Despawn" method="_on_body_entered"]
