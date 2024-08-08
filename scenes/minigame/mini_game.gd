@@ -57,23 +57,47 @@ func score_update(): #update text score
 	$TileMap/Score/Label.text = "Score = " + str(score)
 
 func upspeed(): #meningkatkan kesulitan monster
-	if score > 2:
+	if score > 5:
 		$TileMap/batang.move_mult += randf_range(5, 10)
 		$TileMap/batang.pup_time -= $TileMap/batang.pup_time + $TileMap/batang.pup_time * 0.2
 	else:
 		$TileMap/batang.move_mult = 50
 
 func gameoverState(n):
-	if score == 5 and n > 0:
-		paused()
-		$GameOver/vbox/h1.text = "Kamu Berhasil"
-		gameOverUI.visible = true
-	if n == 0:
-		paused()
-		$GameOver/vbox/h1.text = "Kamu Gagal"
-		gameOverUI.visible = true
-	else:
-		pass
+	match State.stage:
+		1:
+			if score == 5 and n > 0:
+				paused()
+				$GameOver/vbox/h1.text = "Kamu Berhasil"
+				gameOverUI.visible = true
+			if n == 0:
+				paused()
+				$GameOver/vbox/h1.text = "Kamu Gagal"
+				gameOverUI.visible = true
+			else:
+				pass
+		2:
+			if score == 10 and n > 0:
+				paused()
+				$GameOver/vbox/h1.text = "Kamu Berhasil"
+				gameOverUI.visible = true
+			if n == 0:
+				paused()
+				$GameOver/vbox/h1.text = "Kamu Gagal"
+				gameOverUI.visible = true
+			else:
+				pass
+		3:
+			if score == 12 and n > 0:
+				paused()
+				$GameOver/vbox/h1.text = "Kamu Berhasil"
+				gameOverUI.visible = true
+			if n == 0:
+				paused()
+				$GameOver/vbox/h1.text = "Kamu Gagal"
+				gameOverUI.visible = true
+			else:
+				pass
 
 var is_paused = false : 
 	set(value):

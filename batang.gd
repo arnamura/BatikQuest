@@ -8,6 +8,7 @@ var left_end: float = 30
 var right_end: float = 200
 var dir: float = 1.0
 var move_mult: float = 50
+var diff: int
 
 var pup: bool = false
 var pup_time: float = 1
@@ -15,6 +16,7 @@ var change_dir_time: float = 3 #waktu untuk mengganti arah
 
 func _ready():
 	pup = false
+	diff = State.stage
 	if dir > 0:
 		$AnimatedSprite2D.play("walkRight")
 	elif dir < 0:
@@ -51,7 +53,12 @@ func pup_kain():
 	$AnimatedSprite2D.play("pup")
 	
 func spawn_pup():
-	var random_choice = randi() % 3
+	var i: int
+	if diff == 3:
+		i = 3
+	else:
+		i = 2
+	var random_choice = randi() % i
 	var item_spawn : PackedScene
 	
 	if random_choice == 0:
