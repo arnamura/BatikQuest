@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://di45vaso65aso"]
+[gd_scene load_steps=18 format=3 uid="uid://di45vaso65aso"]
 
 [ext_resource type="Script" path="res://audio/SoundFx.gd" id="1_uccg4"]
 [ext_resource type="AudioStream" uid="uid://cg660iwvjnit0" path="res://audio/23 - Road.ogg" id="2_1qas1"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://bvuf7iox3grc3" path="res://audio/14 - Curse.ogg" id="8_qabw0"]
 [ext_resource type="AudioStream" uid="uid://c30o1immjiubp" path="res://audio/15 - Credit Theme.ogg" id="9_5y0xp"]
 [ext_resource type="AudioStream" uid="uid://dvf3t3a5uvhbf" path="res://audio/sfx/Exit.wav" id="9_r76o7"]
+[ext_resource type="AudioStream" uid="uid://73lm18sadlon" path="res://audio/28 - Tension.ogg" id="10_76jlv"]
 [ext_resource type="AudioStream" uid="uid://bm734jqlmbi8e" path="res://audio/sfx/Steps_tiles-006.ogg" id="11_r7crl"]
 [ext_resource type="AudioStream" uid="uid://06fcm2oovdj2" path="res://audio/sfx/Hit.wav" id="12_4qoge"]
 [ext_resource type="AudioStream" uid="uid://1jknicrwabqy" path="res://audio/sfx/cat-purr-meow-8327.mp3" id="13_dyoff"]
@@ -49,6 +50,9 @@ stream = ExtResource("8_qabw0")
 
 [node name="portal" type="AudioStreamPlayer" parent="Bgm"]
 stream = ExtResource("9_5y0xp")
+
+[node name="minigame1" type="AudioStreamPlayer" parent="Bgm"]
+stream = ExtResource("10_76jlv")
 
 [node name="ButtonClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_ohvns")

@@ -3,7 +3,7 @@ extends Node2D
 var stage: int = 1
 var score: int = 0
 
-var count: bool = false
+var count: bool = false #untuk membuat label dapat berganti sesuai timer
 
 @onready var gameOverUI = $GameOver
 @onready var timer :Timer = $TimerStart/Timer
@@ -11,7 +11,8 @@ var count: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#timerStart()
+	
+	timerStart()
 	score = 0
 	score_update()
 	
@@ -44,9 +45,9 @@ func _on_player_score_point(num, hp):
 func timerStart():
 	count = true
 	timer.start()
-	
+	$TileMap/batang.move_mult = 0
 	await timer.timeout
-	
+	$TileMap/batang.move_mult = 50
 	count = false
 	$TimerStart.visible = false
 
@@ -112,3 +113,11 @@ func _on_tryagainbtn_pressed():
 	SoundFx.buttonClick()
 	paused()
 	get_tree().reload_current_scene()
+
+
+func _on_backbtn_pressed():
+	SoundFx.buttonClick()
+	SoundFx.stopBgm("MiniGame")
+	
+	State.save_game()
+	DoorHandle.changeStage(DoorHandle.mainmenu)

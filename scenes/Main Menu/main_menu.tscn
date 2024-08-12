@@ -276,6 +276,7 @@ libraries = {
 }
 
 [node name="minigame" type="PanelContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -330,6 +331,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="selectStage" type="PanelContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -371,19 +373,19 @@ tab_size = 1
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="selectStage/VBoxContainer/LabelDeskripsi/StageReq"]
+[node name="req1" type="Label" parent="selectStage/VBoxContainer/LabelDeskripsi/StageReq"]
 layout_mode = 2
 theme = ExtResource("9_q1ksu")
 theme_override_font_sizes/font_size = 6
 text = "stage 1: 10 Kain"
 
-[node name="Label2" type="Label" parent="selectStage/VBoxContainer/LabelDeskripsi/StageReq"]
+[node name="req2" type="Label" parent="selectStage/VBoxContainer/LabelDeskripsi/StageReq"]
 layout_mode = 2
 theme = ExtResource("9_q1ksu")
 theme_override_font_sizes/font_size = 6
 text = "stage 2: 10 Kain"
 
-[node name="Label3" type="Label" parent="selectStage/VBoxContainer/LabelDeskripsi/StageReq"]
+[node name="req3" type="Label" parent="selectStage/VBoxContainer/LabelDeskripsi/StageReq"]
 layout_mode = 2
 theme = ExtResource("9_q1ksu")
 theme_override_font_sizes/font_size = 6

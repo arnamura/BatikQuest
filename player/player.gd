@@ -75,8 +75,8 @@ func handleInput():
 		var moveDirectionKeyboard = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 		#velocity = moveDirection*speed
 		velocity = moveDirectionKeyboard*speed
-#		if Input.is_action_just_pressed("ui_attack"):
-#			getBatikAnim()
+		if Input.is_action_just_pressed("ui_attack"):
+			attack()
 	else: 
 		velocity = Vector2.ZERO
 
@@ -84,9 +84,9 @@ func handleInput():
 func attack():
 	animations.play("att" + lastDirect)
 	isAttack = true
-	weapon.visible = true
+	#weapon.visible = true
 	await animations.animation_finished
-	weapon.visible = false
+	#weapon.visible = false
 	isAttack = false
 	
 #animasi berjalan
@@ -158,6 +158,8 @@ func _on_map_detection_area_entered(area): #mendeteksi area player berada untuk 
 				SoundFx.playBgm(area.name)
 			"PortalArea":
 				SoundFx.playBgm(area.name)
+			"MiniGame":
+				SoundFx.playBgm(area.name)
 
 func _on_map_detection_area_exited(area): #mendeteksi area player berada untuk stop bgm song 
 	match area.name:
@@ -176,6 +178,8 @@ func _on_map_detection_area_exited(area): #mendeteksi area player berada untuk s
 		"TamanBunga":
 			SoundFx.stopBgm(area.name)
 		"PortalArea":
+			SoundFx.stopBgm(area.name)
+		"MiniGame":
 			SoundFx.stopBgm(area.name)
 
 func respawn(): #fungsi spawn ke lokasi awal dungeon ketika hp menyentuh 0

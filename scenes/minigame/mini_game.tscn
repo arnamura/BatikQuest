@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bu0aljt3ql7xl"]
+[gd_scene load_steps=21 format=3 uid="uid://bu0aljt3ql7xl"]
 
 [ext_resource type="Script" path="res://scenes/minigame/mini_game.gd" id="1_mox84"]
 [ext_resource type="Texture2D" uid="uid://bn1rxgfowuian" path="res://art/tileset/TilesetFloor.png" id="1_on0je"]
@@ -2720,6 +2720,9 @@ sources/3 = SubResource("TileSetAtlasSource_cdq4k")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xexrg"]
 size = Vector2(234, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfcaj"]
+size = Vector2(257, 150)
+
 [node name="MiniGame" type="Node2D"]
 script = ExtResource("1_mox84")
 
@@ -2878,6 +2881,15 @@ text = "Score : "
 
 [node name="MainUI" parent="." instance=ExtResource("10_n67o1")]
 
+[node name="MiniGame" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiniGame"]
+visible = false
+position = Vector2(118.5, 65)
+shape = SubResource("RectangleShape2D_rfcaj")
+
+[connection signal="pressed" from="GameOver/vbox/HBoxContainer/backbtn" to="." method="_on_backbtn_pressed"]
 [connection signal="pressed" from="GameOver/vbox/HBoxContainer/tryagainbtn" to="." method="_on_tryagainbtn_pressed"]
 [connection signal="score_point" from="TileMap/Player" to="." method="_on_player_score_point"]
 [connection signal="body_entered" from="TileMap/Despawn" to="TileMap/Despawn" method="_on_body_entered"]

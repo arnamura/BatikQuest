@@ -30,26 +30,21 @@ func _on_btn_continue_pressed():
 	await anim.animation_finished
 	
 	get_tree().change_scene_to_file("res://scenes/how_to_play.tscn")
-#
-#	match(playerMap):
-#		"DesaBatik":
-#			DoorHandle.changeStage(DoorHandle.DesaBatik)
-#		"Museum":
-#			DoorHandle.changeStage(DoorHandle.museum)
-#		"Dungeon":
-#			DoorHandle.changeStage(DoorHandle.Dungeon)	
-#		_:
-#			DoorHandle.changeStage(DoorHandle.museum)
-
-# ------------------------------minigame container--------------------------------------------------
+	
 func _on_btn_mini_game_pressed():
 	SoundFx.buttonClick()
 	miniGame.visible = true
-	
+
+# ------------------------------minigame container--------------------------------------------------
 func _on_mini_game_pressed():
 	SoundFx.buttonClick()
 	selectStage.visible = true
 	stage = $minigame/VBoxContainer/mini_game.get_name()
+	
+	$selectStage/VBoxContainer/LabelDeskripsi/Label.text = "Dapatkan kain mori yang dijatuhkan oleh monster batang. jangan sampai mengambil senjata tajam"
+	$selectStage/VBoxContainer/LabelDeskripsi/StageReq/req1.text = "Stage 1: 5 Kain"
+	$selectStage/VBoxContainer/LabelDeskripsi/StageReq/req2.text = "Stage 2: 10 Kain"
+	$selectStage/VBoxContainer/LabelDeskripsi/StageReq/req3.text = "Stage 3: 12 Kain"
 	
 func _on_btn_close_pressed():
 	SoundFx.buttonClick()
@@ -83,3 +78,15 @@ func _on_btn_3_pressed():
 	var linkTemp = "res://scenes/minigame/"+str(stage)+".tscn"
 	State.stage = 3
 	get_tree().change_scene_to_file(linkTemp)
+
+
+#----------------------------------unused------------------------------------------
+#	match(playerMap):
+#		"DesaBatik":
+#			DoorHandle.changeStage(DoorHandle.DesaBatik)
+#		"Museum":
+#			DoorHandle.changeStage(DoorHandle.museum)
+#		"Dungeon":
+#			DoorHandle.changeStage(DoorHandle.Dungeon)	
+#		_:
+#			DoorHandle.changeStage(DoorHandle.museum)

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://br0qj0wdyjg7g"
-path="res://.godot/imported/Petarung.png-50b2f5725d6ab5eb78ec17c76dbf7fe4.ctex"
+path="res://.godot/imported/petarung.png-ca5989c4a91af0c64864bd006010b70a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/char/potrait/Petarung.png"
-dest_files=["res://.godot/imported/Petarung.png-50b2f5725d6ab5eb78ec17c76dbf7fe4.ctex"]
+source_file="res://art/char/potrait/petarung.png"
+dest_files=["res://.godot/imported/petarung.png-ca5989c4a91af0c64864bd006010b70a.ctex"]
 
 [params]
 

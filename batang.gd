@@ -17,12 +17,15 @@ var change_dir_time: float = 3 #waktu untuk mengganti arah
 func _ready():
 	pup = false
 	diff = State.stage
+	
 	if dir > 0:
 		$AnimatedSprite2D.play("walkRight")
 	elif dir < 0:
 		$AnimatedSprite2D.play("walkLeft")
+	
 
 func _physics_process(delta): 
+	print_debug($"../..".count)
 	#pergerakan monster
 	position.x += dir * move_mult * delta
 	
@@ -74,7 +77,7 @@ func spawn_pup():
 	get_parent().add_child(spawn)
 
 func _on_animated_sprite_2d_frame_changed():
-	if pup and $AnimatedSprite2D.frame == 3:
+	if pup and $AnimatedSprite2D.frame == 3 and not $"../..".count: #menambahkan variabel count agar tidak pup saat timer berjalan
 		spawn_pup()
 
 func _on_animated_sprite_2d_animation_finished():

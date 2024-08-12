@@ -14,6 +14,7 @@ var fadingbgm = false
 @onready var walk = $walk
 @onready var meow = $meow
 @onready var PortalArea = $Bgm/portal
+@onready var minigame1 = $Bgm/minigame1
 
 func buttonClick():
 	$ButtonClick.play()
@@ -42,6 +43,7 @@ func mainmenuBgm():
 func mainmenuBgmStop():
 	fade_out($Bgm/mainmenu)
 	$Bgm/mainmenu.stop()
+
 func fade_in(bgm: AudioStreamPlayer): #fungsi agar saat bgm mulai, ada efek fade in
 	var tween = create_tween()
 	tween.tween_property(bgm, "volume_db", -10, 5).from(-30)
@@ -68,6 +70,8 @@ func stopBgm(bgm): #Untuk menghentikan bgm ketika player berada di sebuah area
 			fade_out(Flower)
 		"PortalArea":
 			fade_out(PortalArea)
+		"MiniGame":
+			fade_out(minigame1)
 	
 func playBgm(bgm): #Untuk memutar bgm ketika player berada di sebuah area
 	match(bgm):
@@ -95,4 +99,7 @@ func playBgm(bgm): #Untuk memutar bgm ketika player berada di sebuah area
 		"PortalArea":
 			PortalArea.play()
 			fade_in(PortalArea)
+		"MiniGame":
+			minigame1.play()
+			fade_in(minigame1)
 			
