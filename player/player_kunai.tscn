@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://7bbqgi4lm325"]
+
+[ext_resource type="Script" path="res://player/player_kunai.gd" id="1_31ixg"]
+[ext_resource type="Texture2D" uid="uid://dtjv6ijta6m6w" path="res://art/Kunai.png" id="1_t46i4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nvprh"]
+size = Vector2(13, 4)
+
+[node name="PlayerKunai" type="Area2D" groups=["player_weap"]]
+light_mask = 512
+visibility_layer = 512
+z_index = 2
+y_sort_enabled = true
+script = ExtResource("1_31ixg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -6)
+texture = ExtResource("1_t46i4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_nvprh")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

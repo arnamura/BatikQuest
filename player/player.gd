@@ -18,6 +18,7 @@ extends CharacterBody2D
 
 @export var respawnMark : Marker2D
 @export var hp = 3
+@onready var kunai = load("res://player/player_kunai.tscn")
 
 var respawnPoint #tempat player respawn saat hp menyentuh 0
 var isHurt: bool = false
@@ -29,6 +30,7 @@ var playerPos #mencatat kordinasi player
 var playerMap #mencatat area/map dari player
 
 signal score_point
+signal enemies_slayed
 
 func _ready():
 	#agar diawal warna player default
@@ -76,17 +78,23 @@ func handleInput():
 		#velocity = moveDirection*speed
 		velocity = moveDirectionKeyboard*speed
 		if Input.is_action_just_pressed("ui_attack"):
-			attack()
+			if isAttack == false: #agar ada jeda dalam menyerang
+				attack()
 	else: 
 		velocity = Vector2.ZERO
 
 #Animasi Attack
 func attack():
-	animations.play("att" + lastDirect)
+	animations.play("attRight")
+	
+	#agar dapat memanggil senjata "kunai" untuk minigame
+	var atk = kunai.instantiate()
+	atk.position = self.position
+	get_parent().add_child(atk)
+	atk.connect("eliminated", _on_eliminated)
+	
 	isAttack = true
-	#weapon.visible = true
 	await animations.animation_finished
-	#weapon.visible = false
 	isAttack = false
 	
 #animasi berjalan
@@ -244,3 +252,6 @@ func onHitMiniGame(area): #fungsi akbiat dari saat player menyentuh musuh yang m
 	if hp == 0:
 		hp = 3
 	isHurt = false	
+
+func _on_eliminated():
+	emit_signal("enemies_slayed")

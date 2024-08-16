@@ -101,7 +101,7 @@ horizontal_scroll_mode = 3
 vertical_scroll_mode = 2
 
 [node name="BatikListContainer" type="GridContainer" parent="Panel/DisplayPanel/ScrollPanelBatikList"]
-custom_minimum_size = Vector2(140, 200)
+custom_minimum_size = Vector2(148, 200)
 layout_mode = 2
 script = ExtResource("5_i0h35")
 
@@ -130,6 +130,33 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="9" parent="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" instance=ExtResource("5_t5hf8")]
+layout_mode = 2
+
+[node name="10" parent="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" instance=ExtResource("5_t5hf8")]
+layout_mode = 2
+
+[node name="11" parent="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" instance=ExtResource("5_t5hf8")]
+layout_mode = 2
+
+[node name="12" parent="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" instance=ExtResource("5_t5hf8")]
+layout_mode = 2
+
+[node name="13" parent="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" instance=ExtResource("5_t5hf8")]
+layout_mode = 2
+
+[node name="14" parent="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" instance=ExtResource("5_t5hf8")]
+layout_mode = 2
+
+[node name="15" parent="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" instance=ExtResource("5_t5hf8")]
+layout_mode = 2
+
+[node name="16" parent="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" instance=ExtResource("5_t5hf8")]
+layout_mode = 2
+
+[node name="17" parent="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" instance=ExtResource("5_t5hf8")]
+layout_mode = 2
+
+[node name="18" parent="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" instance=ExtResource("5_t5hf8")]
 layout_mode = 2
 
 [node name="DetailBatikPausePanel" parent="." instance=ExtResource("7_gthj5")]
@@ -185,6 +212,15 @@ text = "Quit"
 [connection signal="pressedSign" from="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer/7" to="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" method="_on__pressed_sign"]
 [connection signal="pressedSign" from="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer/8" to="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" method="_on__pressed_sign"]
 [connection signal="pressedSign" from="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer/9" to="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" method="_on__pressed_sign"]
+[connection signal="pressedSign" from="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer/10" to="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" method="_on__pressed_sign"]
+[connection signal="pressedSign" from="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer/11" to="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" method="_on__pressed_sign"]
+[connection signal="pressedSign" from="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer/12" to="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" method="_on__pressed_sign"]
+[connection signal="pressedSign" from="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer/13" to="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" method="_on__pressed_sign"]
+[connection signal="pressedSign" from="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer/14" to="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" method="_on__pressed_sign"]
+[connection signal="pressedSign" from="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer/15" to="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" method="_on__pressed_sign"]
+[connection signal="pressedSign" from="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer/16" to="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" method="_on__pressed_sign"]
+[connection signal="pressedSign" from="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer/17" to="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" method="_on__pressed_sign"]
+[connection signal="pressedSign" from="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer/18" to="Panel/DisplayPanel/ScrollPanelBatikList/BatikListContainer" method="_on__pressed_sign"]
 [connection signal="pressed" from="ResumeBtn" to="." method="_on_resume_btn_pressed"]
 [connection signal="pressed" from="QuestBtn" to="." method="_on_quest_btn_pressed"]
 [connection signal="pressed" from="BatikBtn" to="." method="_on_batik_btn_pressed"]

@@ -29,8 +29,8 @@ anti_aliasing = false
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m1ewc"]
 
 [node name="BatikList" type="Panel"]
-custom_minimum_size = Vector2(130, 20)
-offset_right = 130.0
+custom_minimum_size = Vector2(148, 20)
+offset_right = 148.0
 offset_bottom = 20.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_sfwnu")
@@ -41,7 +41,7 @@ custom_minimum_size = Vector2(125, 18)
 layout_mode = 1
 offset_left = 2.0
 offset_top = 1.0
-offset_right = 127.0
+offset_right = 150.0
 offset_bottom = 19.0
 
 [node name="Panel" type="Panel" parent="HBoxContainer"]

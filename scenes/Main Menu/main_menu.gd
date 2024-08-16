@@ -11,6 +11,16 @@ extends Control
 func _ready():
 	State.load_game()
 	SoundFx.mainmenuBgm()
+	
+	DataBatik.batik10["isGet"] = true
+	DataBatik.batik11["isGet"] = true
+	DataBatik.batik12["isGet"] = true
+	DataBatik.batik13["isGet"] = true
+	DataBatik.batik14["isGet"] = true
+	DataBatik.batik15["isGet"] = true
+	DataBatik.batik16["isGet"] = true
+	DataBatik.batik17["isGet"] = true
+	DataBatik.batik18["isGet"] = true
 
 func _on_btn_col_pressed():
 	SoundFx.buttonClick()

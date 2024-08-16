@@ -1,7 +1,46 @@
-[gd_scene load_steps=3 format=3 uid="uid://bophhpfu7t6m"]
+[gd_scene load_steps=9 format=3 uid="uid://bophhpfu7t6m"]
 
 [ext_resource type="PackedScene" uid="uid://d26emnmor4bo3" path="res://scenes/Main Menu/col_slot.tscn" id="1_nbj7u"]
 [ext_resource type="Script" path="res://scenes/Main Menu/collectible_ui.gd" id="1_ts1g4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q07nb"]
+bg_color = Color(0.901961, 0.65098, 0.52549, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+anti_aliasing_size = 0.25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfdah"]
+bg_color = Color(0.901961, 0.65098, 0.52549, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+anti_aliasing_size = 0.25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3if1"]
+bg_color = Color(0.588235, 0.32549, 0.25098, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+anti_aliasing_size = 0.25
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rbo2"]
+content_margin_left = 3.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_81olf"]
+
+[sub_resource type="Theme" id="Theme_u12x6"]
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_q07nb")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_yfdah")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_x3if1")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_1rbo2")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_81olf")
 
 [node name="CollectibleUI" type="Control"]
 custom_minimum_size = Vector2(72, 72)
@@ -13,7 +52,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_ts1g4")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="ScrollContainer" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -23,25 +62,15 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -36.0
 offset_top = -36.0
-offset_right = 36.0
+offset_right = 39.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_u12x6")
 
 [node name="GridContainer" type="GridContainer" parent="Panel"]
 custom_minimum_size = Vector2(72, 72)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -36.0
-offset_top = -36.0
-offset_right = 36.0
-offset_bottom = 36.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 theme_override_constants/h_separation = 5
 theme_override_constants/v_separation = 5
 columns = 3
@@ -71,4 +100,31 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="9" parent="Panel/GridContainer" instance=ExtResource("1_nbj7u")]
+layout_mode = 2
+
+[node name="10" parent="Panel/GridContainer" instance=ExtResource("1_nbj7u")]
+layout_mode = 2
+
+[node name="11" parent="Panel/GridContainer" instance=ExtResource("1_nbj7u")]
+layout_mode = 2
+
+[node name="12" parent="Panel/GridContainer" instance=ExtResource("1_nbj7u")]
+layout_mode = 2
+
+[node name="13" parent="Panel/GridContainer" instance=ExtResource("1_nbj7u")]
+layout_mode = 2
+
+[node name="14" parent="Panel/GridContainer" instance=ExtResource("1_nbj7u")]
+layout_mode = 2
+
+[node name="15" parent="Panel/GridContainer" instance=ExtResource("1_nbj7u")]
+layout_mode = 2
+
+[node name="16" parent="Panel/GridContainer" instance=ExtResource("1_nbj7u")]
+layout_mode = 2
+
+[node name="17" parent="Panel/GridContainer" instance=ExtResource("1_nbj7u")]
+layout_mode = 2
+
+[node name="18" parent="Panel/GridContainer" instance=ExtResource("1_nbj7u")]
 layout_mode = 2

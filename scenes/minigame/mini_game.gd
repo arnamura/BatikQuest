@@ -114,7 +114,6 @@ func _on_tryagainbtn_pressed():
 	paused()
 	get_tree().reload_current_scene()
 
-
 func _on_backbtn_pressed():
 	SoundFx.buttonClick()
 	SoundFx.stopBgm("MiniGame")

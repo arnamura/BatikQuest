@@ -332,7 +332,18 @@ func save():
 		"qs8" : quest8Status,
 		"tq8" : takenQuest8,
 		"ri8" : reqItem8,
-		"b8" : DataBatik.batik9["isGet"]
+		"b8" : DataBatik.batik9["isGet"],
+		
+		"b9" : DataBatik.batik10["isGet"],
+		"b10" : DataBatik.batik11["isGet"],
+		"b11" : DataBatik.batik12["isGet"],
+		"b12" : DataBatik.batik13["isGet"],
+		"b13" : DataBatik.batik14["isGet"],
+		"b14" : DataBatik.batik15["isGet"],
+		"b15" : DataBatik.batik16["isGet"],
+		"b16" : DataBatik.batik17["isGet"],
+		"b17" : DataBatik.batik18["isGet"],
+		
 	} #berisi variabel quest
 	return save_dict
 
@@ -372,6 +383,17 @@ func load_game():
 		DataBatik.batik7["isGet"] = data["b6"]
 		DataBatik.batik8["isGet"] = data["b7"]
 		DataBatik.batik9["isGet"] = data["b8"]
+		
+		DataBatik.batik10["isGet"] = data["b9"]
+		DataBatik.batik11["isGet"] = data["b10"]
+		DataBatik.batik12["isGet"] = data["b11"]
+		DataBatik.batik13["isGet"] = data["b12"]
+		DataBatik.batik14["isGet"] = data["b13"]
+		DataBatik.batik15["isGet"] = data["b14"]
+		DataBatik.batik16["isGet"] = data["b15"]
+		DataBatik.batik17["isGet"] = data["b16"]
+		DataBatik.batik18["isGet"] = data["b17"]
+		
 		
 		dungeonState = data["ds"]
 		pintuDungeon = data ["pd"]

@@ -4,7 +4,7 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ywd2c"]
 
-[node name="Despawn" type="Area2D"]
+[node name="despawn" type="Area2D"]
 position = Vector2(118, 103)
 script = ExtResource("1_px6fj")
 
