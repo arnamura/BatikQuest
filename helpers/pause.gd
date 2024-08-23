@@ -39,6 +39,6 @@ func _on_quit_btn_pressed():
 	SoundFx.buttonClick()
 	colPan = false
 	paused()
-
 	State.save_game()
+	get_parent().queue_free()
 	DoorHandle.changeStage(DoorHandle.mainmenu)

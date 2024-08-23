@@ -1,9 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://ca4fbleppbptm"]
+[gd_scene load_steps=26 format=3 uid="uid://ca4fbleppbptm"]
 
 [ext_resource type="Texture2D" uid="uid://bn1rxgfowuian" path="res://art/tileset/TilesetFloor.png" id="1_5bfvt"]
 [ext_resource type="Script" path="res://scenes/minigame/tower_defence_game.gd" id="1_jkftp"]
+[ext_resource type="FontFile" uid="uid://dofpvw42s1f6d" path="res://NormalFont.ttf" id="2_0a6ya"]
 [ext_resource type="Texture2D" uid="uid://cy180adeb1oq5" path="res://art/tileset/TilesetFloorDetail.png" id="2_28lcp"]
 [ext_resource type="Texture2D" uid="uid://dui12k4mxn2th" path="res://art/tileset/TilesetHouse.png" id="3_h0i0i"]
+[ext_resource type="PackedScene" uid="uid://binluxttspuiq" path="res://helpers/main_ui.tscn" id="3_nbuwc"]
 [ext_resource type="Texture2D" uid="uid://dep2qksg16xox" path="res://art/tileset/TilesetNature.png" id="4_56to7"]
 [ext_resource type="Texture2D" uid="uid://dhw8hjfkujy22" path="res://art/tileset/TilesetRelief.png" id="5_4gfst"]
 [ext_resource type="Texture2D" uid="uid://dw1tavph1lenb" path="res://art/tileset/TilesetWater.png" id="6_0earo"]
@@ -11,6 +13,22 @@
 [ext_resource type="Theme" uid="uid://clf8fk1cbxa6a" path="res://styles/h1.tres" id="8_b0m1b"]
 [ext_resource type="FontFile" uid="uid://c150i2j8f5iw1" path="res://VCRosdNEUE.ttf" id="9_ukjbi"]
 [ext_resource type="Theme" uid="uid://dvu8l7xh6rvqa" path="res://styles/btn2.tres" id="10_2pal7"]
+
+[sub_resource type="Theme" id="Theme_vr8bj"]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 4
+Label/font_sizes/font_size = 8
+Label/fonts/font = ExtResource("2_0a6ya")
+
+[sub_resource type="Theme" id="Theme_ps06m"]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 4
+Label/font_sizes/font_size = 9
+Label/fonts/font = ExtResource("2_0a6ya")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i7r6d"]
 texture = ExtResource("1_5bfvt")
@@ -5343,9 +5361,34 @@ sources/5 = SubResource("TileSetAtlasSource_d2nmb")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f284t"]
 size = Vector2(19, 131)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eko4h"]
+size = Vector2(257, 150)
+
 [node name="TowerDefenceGame" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_jkftp")
+
+[node name="hp" type="Label" parent="."]
+z_index = 6
+y_sort_enabled = true
+offset_left = 205.0
+offset_top = 10.0
+offset_right = 237.0
+offset_bottom = 25.0
+theme = SubResource("Theme_vr8bj")
+text = "HP: "
+
+[node name="remain" type="Label" parent="."]
+z_index = 5
+y_sort_enabled = true
+offset_left = 153.0
+offset_top = -1.0
+offset_right = 231.0
+offset_bottom = 14.0
+theme = SubResource("Theme_ps06m")
+text = "Sisa  Monster:"
+
+[node name="MainUI" parent="." instance=ExtResource("3_nbuwc")]
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -5394,7 +5437,7 @@ text = "3"
 [node name="GameOver" type="Control" parent="TileMap"]
 process_mode = 3
 visible = false
-z_index = 2
+z_index = 1000
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -5480,11 +5523,21 @@ position = Vector2(248, 73)
 position = Vector2(248, 109)
 
 [node name="Despawn" type="Area2D" parent="TileMap"]
+light_mask = 513
+visibility_layer = 513
 position = Vector2(11, 34)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Despawn"]
 position = Vector2(25, 32.5)
 shape = SubResource("RectangleShape2D_f284t")
+
+[node name="MiniGame" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiniGame"]
+visible = false
+position = Vector2(118.5, 65)
+shape = SubResource("RectangleShape2D_eko4h")
 
 [connection signal="pressed" from="TileMap/GameOver/vbox/HBoxContainer/backbtn" to="." method="_on_backbtn_pressed"]
 [connection signal="pressed" from="TileMap/GameOver/vbox/HBoxContainer/tryagainbtn" to="." method="_on_tryagainbtn_pressed"]

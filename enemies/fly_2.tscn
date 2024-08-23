@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp2b2q10lbbt2"]
+
+[ext_resource type="PackedScene" uid="uid://cfxw8e7fbqsmo" path="res://enemies/fly_1.tscn" id="1_14tlj"]
+[ext_resource type="Texture2D" uid="uid://c3wgsut62qy0q" path="res://art/char/fly2.png" id="2_hfvks"]
+
+[node name="fly2" instance=ExtResource("1_14tlj")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_hfvks")

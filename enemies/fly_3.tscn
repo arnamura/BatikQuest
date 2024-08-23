@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://k6tgct6r1wwr"]
+
+[ext_resource type="PackedScene" uid="uid://cfxw8e7fbqsmo" path="res://enemies/fly_1.tscn" id="1_j8s8x"]
+[ext_resource type="Texture2D" uid="uid://cotudthq5srsv" path="res://art/char/Owl.png" id="2_04t6w"]
+
+[node name="fly3" instance=ExtResource("1_j8s8x")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_04t6w")

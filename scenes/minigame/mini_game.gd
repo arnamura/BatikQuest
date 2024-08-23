@@ -35,7 +35,10 @@ func _on_player_score_point(num, hp):
 		score += 1
 		SoundFx.getKain()
 	elif num == 2:
-		score -= 1
+		if score == 0:
+			score = 0
+		else:
+			score -= 1
 		SoundFx.hurtFx()
 	
 	gameoverState(hp)
@@ -117,6 +120,7 @@ func _on_tryagainbtn_pressed():
 func _on_backbtn_pressed():
 	SoundFx.buttonClick()
 	SoundFx.stopBgm("MiniGame")
-	
 	State.save_game()
 	DoorHandle.changeStage(DoorHandle.mainmenu)
+	State.dungeonState == false
+	paused()

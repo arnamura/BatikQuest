@@ -60,6 +60,15 @@ func _on_btn_close_pressed():
 	SoundFx.buttonClick()
 	miniGame.visible = false
 
+func _on_tower_def_pressed():
+	selectStage.visible = true
+	stage = $minigame/VBoxContainer/tower_defence_game.get_name()
+	State.dungeonState = false
+	
+	$selectStage/VBoxContainer/LabelDeskripsi/Label.text = "Jangan biarkan monster terbang ini masuk ke dalam desa! Kalahkan semua monster menggunakan senjata yang diberikan oleh Kakek untuk mengusir monsternya!"
+	$selectStage/VBoxContainer/LabelDeskripsi/StageReq/req1.text = "Stage 1: 8 Monster"
+	$selectStage/VBoxContainer/LabelDeskripsi/StageReq/req2.text = "Stage 2: 10 Monster"
+	$selectStage/VBoxContainer/LabelDeskripsi/StageReq/req3.text = "Stage 3: 12 Monster"
 #-------------------------------selectStage container-----------------------------------------------
 func _on_btn_close_2_pressed():
 	SoundFx.buttonClick()
@@ -100,3 +109,6 @@ func _on_btn_3_pressed():
 #			DoorHandle.changeStage(DoorHandle.Dungeon)	
 #		_:
 #			DoorHandle.changeStage(DoorHandle.museum)
+
+
+

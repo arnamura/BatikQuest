@@ -323,10 +323,10 @@ text = "The  Maze"
 icon_alignment = 1
 expand_icon = true
 
-[node name="???btn" type="Button" parent="minigame/VBoxContainer"]
+[node name="tower_defence_game" type="Button" parent="minigame/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_mv7w0")
-text = "???"
+text = "Lindungi  Desa"
 icon_alignment = 1
 expand_icon = true
 
@@ -367,6 +367,7 @@ theme = ExtResource("9_q1ksu")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 6
 text = "Dapatkan kain mori yang dijatuhkan oleh monster batang. jangan sampai mengambil senjata tajam"
+fit_content = true
 tab_size = 1
 
 [node name="StageReq" type="HBoxContainer" parent="selectStage/VBoxContainer/LabelDeskripsi"]
@@ -436,6 +437,7 @@ flat = true
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/BtnExt" to="." method="_on_btn_ext_pressed"]
 [connection signal="pressed" from="minigame/BtnClose" to="." method="_on_btn_close_pressed"]
 [connection signal="pressed" from="minigame/VBoxContainer/mini_game" to="." method="_on_mini_game_pressed"]
+[connection signal="pressed" from="minigame/VBoxContainer/tower_defence_game" to="." method="_on_tower_def_pressed"]
 [connection signal="pressed" from="selectStage/VBoxContainer/btnContainer/btn1" to="." method="_on_btn_1_pressed"]
 [connection signal="pressed" from="selectStage/VBoxContainer/btnContainer/btn2" to="." method="_on_btn_2_pressed"]
 [connection signal="pressed" from="selectStage/VBoxContainer/btnContainer/btn3" to="." method="_on_btn_3_pressed"]

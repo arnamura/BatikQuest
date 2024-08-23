@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dywd02ye0oyh5"]
+[gd_scene load_steps=18 format=3 uid="uid://dywd02ye0oyh5"]
 
 [ext_resource type="Texture2D" uid="uid://dt572ah0575y" path="res://art/controller/flatDark04.png" id="1_xrxn3"]
 [ext_resource type="Texture2D" uid="uid://bujwe01nq7juy" path="res://art/controller/lineDark00.png" id="2_1arp8"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://helpers/joystick.gd" id="13_6vbbq"]
 [ext_resource type="Texture2D" uid="uid://kafopdkl73tc" path="res://art/controller/shadedDark11.png" id="14_3suf4"]
 [ext_resource type="Texture2D" uid="uid://ccnywqc2ifnpw" path="res://art/controller/transparentLight09.png" id="15_s53x3"]
+[ext_resource type="Texture2D" uid="uid://dtjv6ijta6m6w" path="res://art/Kunai.png" id="16_6n6nv"]
 
 [node name="Dpads" type="Node2D"]
 scale = Vector2(0.285, 0.285)
@@ -81,7 +82,7 @@ action = "ui_down"
 
 [node name="Action" type="TouchScreenButton" parent="."]
 modulate = Color(1, 1, 1, 0.545098)
-position = Vector2(694.737, 242.105)
+position = Vector2(698.245, 224.561)
 scale = Vector2(0.566631, 0.566631)
 texture_normal = ExtResource("9_14i7y")
 texture_pressed = ExtResource("10_bi0q7")
@@ -93,9 +94,24 @@ position = Vector2(81.5928, 81.5917)
 scale = Vector2(4.76573, 4.76573)
 texture = ExtResource("11_8a6k0")
 
+[node name="Att" type="TouchScreenButton" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.545098)
+position = Vector2(698.246, 329.825)
+scale = Vector2(0.570176, 0.569332)
+texture_normal = ExtResource("9_14i7y")
+texture_pressed = ExtResource("10_bi0q7")
+action = "ui_attack"
+
+[node name="Sprite2D" type="Sprite2D" parent="Att"]
+modulate = Color(1, 1, 1, 0.545098)
+position = Vector2(80.0006, 80.0002)
+scale = Vector2(6.20005, 6.20005)
+texture = ExtResource("16_6n6nv")
+
 [node name="Sprint" type="TouchScreenButton" parent="."]
 modulate = Color(1, 1, 1, 0.545098)
-position = Vector2(564.912, 319.298)
+position = Vector2(589.474, 329.825)
 scale = Vector2(0.572547, 0.572547)
 texture_normal = ExtResource("9_14i7y")
 texture_pressed = ExtResource("10_bi0q7")
