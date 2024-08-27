@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bt3oquybtan00"]
+[gd_scene load_steps=23 format=3 uid="uid://bt3oquybtan00"]
 
 [ext_resource type="FontFile" uid="uid://dofpvw42s1f6d" path="res://NormalFont.ttf" id="1_72bcx"]
 [ext_resource type="Script" path="res://scenes/Main Menu/main_menu.gd" id="1_enl23"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://dcikk1q7eoo6q" path="res://art/prev.png" id="7_wb20c"]
 [ext_resource type="Theme" uid="uid://dvu8l7xh6rvqa" path="res://styles/btn2.tres" id="8_mv7w0"]
 [ext_resource type="Theme" uid="uid://7vpl40sax2v" path="res://styles/Deskripsitheme.tres" id="9_q1ksu"]
+[ext_resource type="Texture2D" uid="uid://ce1luadqpjauq" path="res://art/ss/catch the mori.png" id="9_upkpo"]
+[ext_resource type="Texture2D" uid="uid://cnbo0opd4jtmk" path="res://art/ss/lindungi desa.png" id="10_dc2ip"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cj05l"]
 texture = ExtResource("3_14l6q")
@@ -115,6 +117,8 @@ texture_margin_bottom = 9.0
 
 [sub_resource type="Theme" id="Theme_d6h46"]
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_yxg7r")
+
+[sub_resource type="Theme" id="Theme_jbjim"]
 
 [sub_resource type="Theme" id="Theme_0gjwf"]
 Label/colors/font_color = Color(1, 1, 1, 1)
@@ -301,21 +305,14 @@ theme_override_font_sizes/font_size = 7
 icon = ExtResource("7_wb20c")
 flat = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="minigame"]
+[node name="VBoxContainer" type="HBoxContainer" parent="minigame"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 alignment = 1
 
-[node name="mini_game" type="Button" parent="minigame/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme = ExtResource("8_mv7w0")
-text = "Catch  the  Mori"
-icon_alignment = 1
-expand_icon = true
-
 [node name="TheMazebtn" type="Button" parent="minigame/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("8_mv7w0")
@@ -323,9 +320,42 @@ text = "The  Maze"
 icon_alignment = 1
 expand_icon = true
 
-[node name="tower_defence_game" type="Button" parent="minigame/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="minigame/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="minigame/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(34, 34)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_jbjim")
+texture = ExtResource("9_upkpo")
+expand_mode = 1
+
+[node name="mini_game" type="Button" parent="minigame/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("8_mv7w0")
+theme_override_font_sizes/font_size = 6
+text = "Catch  the  Mori"
+icon_alignment = 1
+expand_icon = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="minigame/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="minigame/VBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(34, 34)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("10_dc2ip")
+expand_mode = 1
+
+[node name="tower_defence_game" type="Button" parent="minigame/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme = ExtResource("8_mv7w0")
+theme_override_font_sizes/font_size = 6
 text = "Lindungi  Desa"
 icon_alignment = 1
 expand_icon = true
@@ -436,8 +466,8 @@ flat = true
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/BtnCol" to="." method="_on_btn_col_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/BtnExt" to="." method="_on_btn_ext_pressed"]
 [connection signal="pressed" from="minigame/BtnClose" to="." method="_on_btn_close_pressed"]
-[connection signal="pressed" from="minigame/VBoxContainer/mini_game" to="." method="_on_mini_game_pressed"]
-[connection signal="pressed" from="minigame/VBoxContainer/tower_defence_game" to="." method="_on_tower_def_pressed"]
+[connection signal="pressed" from="minigame/VBoxContainer/VBoxContainer/mini_game" to="." method="_on_mini_game_pressed"]
+[connection signal="pressed" from="minigame/VBoxContainer/VBoxContainer2/tower_defence_game" to="." method="_on_tower_def_pressed"]
 [connection signal="pressed" from="selectStage/VBoxContainer/btnContainer/btn1" to="." method="_on_btn_1_pressed"]
 [connection signal="pressed" from="selectStage/VBoxContainer/btnContainer/btn2" to="." method="_on_btn_2_pressed"]
 [connection signal="pressed" from="selectStage/VBoxContainer/btnContainer/btn3" to="." method="_on_btn_3_pressed"]

@@ -11,6 +11,7 @@ light_mask = 512
 visibility_layer = 512
 z_index = 2
 y_sort_enabled = true
+scale = Vector2(0.797, 0.797)
 script = ExtResource("1_31ixg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -86,12 +86,13 @@ func diffStage():
 func gameOverState():
 	if hp > 0 :
 		if active_enemies == 0 and enemies_remain == 0:
+			State.cekMinigame2Status(stage-1)
 			paused()
 			$TileMap/GameOver/vbox/h1.text = "Kamu  Berhasil"
 			$TileMap/GameOver/vbox/h2.text = "Kamu berhasil mengusir monster dan menlindungi Desa!"
 			gameOverUI.visible = true
 	elif hp == 0:
-		if active_enemies == 0 and enemies_remain == 0:
+			State.cekMinigame2Status(stage-1)
 			paused()
 			$TileMap/GameOver/vbox/h1.text = "Kamu  Gagal"
 			$TileMap/GameOver/vbox/h2.text = "Monster berhasil mengganggu kedamaian Desa. Beruntung penjaga di sana hebat"

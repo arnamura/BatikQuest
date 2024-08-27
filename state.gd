@@ -111,6 +111,16 @@ var reqItem8: String = ""
 var quest8text1: String = "- Bicara dengan Kakek untuk persiapan quest terakhir"
 var quest8text2: String = "- Tantang Boss terakhir"
 
+var minigame1s1:bool = false
+var minigame1s2:bool = false
+var minigame1s3:bool = false
+var minigame2s1:bool = false
+var minigame2s2:bool = false
+var minigame2s3:bool = false
+
+var minigame1 =[false, false, false]
+var minigame2 = [false, false, false]
+
 var questInfo = {
 	0: {
 		"judul": quest0title,
@@ -200,6 +210,9 @@ func _process(_delta):
 		takenQuest8 = true
 	else:
 		takenQuest8 = false
+		
+	if minigame1 and minigame2:
+		DataBatik.batik18["isGet"] = true
 		
 	questInfo = {
 	0: {
@@ -450,3 +463,27 @@ func set_stage(stage: int):
 
 func get_stage() -> int:
 	return stage
+
+func cekMinigame1Status(i):
+	if minigame1[i] == true:
+		match(i):
+			1:
+				DataBatik.batik10["isGet"] = true
+			2:
+				DataBatik.batik11["isGet"] = true
+			3:
+				DataBatik.batik12["isGet"] = true
+	if minigame1:
+		DataBatik.batik13["isGet"] = true
+				
+func cekMinigame2Status(i):
+	if minigame2[i] == true:
+		match(i):
+			1:
+				DataBatik.batik14["isGet"] = true
+			2:
+				DataBatik.batik15["isGet"] = true
+			3:
+				DataBatik.batik16["isGet"] = true
+	if minigame2:
+		DataBatik.batik13["isGet"] = true

@@ -3,7 +3,6 @@ extends Control
 @onready var anim = $Effect
 @onready var miniGame = $minigame
 @onready var selectStage = $selectStage
-@onready var ctm = $minigame/VBoxContainer/mini_game
 
 @onready var stage: String
 @onready var dif: int
@@ -49,7 +48,7 @@ func _on_btn_mini_game_pressed():
 func _on_mini_game_pressed():
 	SoundFx.buttonClick()
 	selectStage.visible = true
-	stage = $minigame/VBoxContainer/mini_game.get_name()
+	stage = $minigame/VBoxContainer/VBoxContainer/mini_game.get_name()
 	
 	$selectStage/VBoxContainer/LabelDeskripsi/Label.text = "Dapatkan kain mori yang dijatuhkan oleh monster batang. jangan sampai mengambil senjata tajam"
 	$selectStage/VBoxContainer/LabelDeskripsi/StageReq/req1.text = "Stage 1: 5 Kain"
@@ -62,7 +61,7 @@ func _on_btn_close_pressed():
 
 func _on_tower_def_pressed():
 	selectStage.visible = true
-	stage = $minigame/VBoxContainer/tower_defence_game.get_name()
+	stage = $minigame/VBoxContainer/VBoxContainer2/tower_defence_game.get_name()
 	State.dungeonState = false
 	
 	$selectStage/VBoxContainer/LabelDeskripsi/Label.text = "Jangan biarkan monster terbang ini masuk ke dalam desa! Kalahkan semua monster menggunakan senjata yang diberikan oleh Kakek untuk mengusir monsternya!"

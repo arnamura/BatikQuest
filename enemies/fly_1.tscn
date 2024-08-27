@@ -50,6 +50,7 @@ visibility_layer = 512
 z_index = 5
 y_sort_enabled = true
 position = Vector2(184, 39)
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_eblif")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
