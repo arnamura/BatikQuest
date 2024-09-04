@@ -10,16 +10,8 @@ extends Control
 func _ready():
 	State.load_game()
 	SoundFx.mainmenuBgm()
-	
-	DataBatik.batik10["isGet"] = true
-	DataBatik.batik11["isGet"] = true
-	DataBatik.batik12["isGet"] = true
-	DataBatik.batik13["isGet"] = true
-	DataBatik.batik14["isGet"] = true
-	DataBatik.batik15["isGet"] = true
-	DataBatik.batik16["isGet"] = true
-	DataBatik.batik17["isGet"] = true
-	DataBatik.batik18["isGet"] = true
+	State.cekCompletedAllMiniGame1()
+	State.cekCompletedAllMiniGame2()
 
 func _on_btn_col_pressed():
 	SoundFx.buttonClick()
@@ -60,6 +52,7 @@ func _on_btn_close_pressed():
 	miniGame.visible = false
 
 func _on_tower_def_pressed():
+	SoundFx.buttonClick()
 	selectStage.visible = true
 	stage = $minigame/VBoxContainer/VBoxContainer2/tower_defence_game.get_name()
 	State.dungeonState = false

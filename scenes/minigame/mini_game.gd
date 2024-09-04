@@ -102,7 +102,7 @@ func gameoverState(n):
 				gameOverUI.visible = true
 			else:
 				pass
-	State.cekMinigame1Status(stage-1)
+	State.cekMinigame1Status(stage)
 	
 var is_paused = false : 
 	set(value):

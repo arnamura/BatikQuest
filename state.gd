@@ -111,13 +111,6 @@ var reqItem8: String = ""
 var quest8text1: String = "- Bicara dengan Kakek untuk persiapan quest terakhir"
 var quest8text2: String = "- Tantang Boss terakhir"
 
-var minigame1s1:bool = false
-var minigame1s2:bool = false
-var minigame1s3:bool = false
-var minigame2s1:bool = false
-var minigame2s2:bool = false
-var minigame2s3:bool = false
-
 var minigame1 =[false, false, false]
 var minigame2 = [false, false, false]
 
@@ -210,10 +203,13 @@ func _process(_delta):
 		takenQuest8 = true
 	else:
 		takenQuest8 = false
-		
-	if minigame1 and minigame2:
+
+	minigame1
+	minigame2
+
+	if not false in minigame1 and minigame2:
 		DataBatik.batik18["isGet"] = true
-		
+
 	questInfo = {
 	0: {
 		"judul": quest0title,
@@ -357,6 +353,9 @@ func save():
 		"b16" : DataBatik.batik17["isGet"],
 		"b17" : DataBatik.batik18["isGet"],
 		
+		"mg1" : minigame1,
+		"mg2" : minigame2
+		
 	} #berisi variabel quest
 	return save_dict
 
@@ -407,6 +406,8 @@ func load_game():
 		DataBatik.batik17["isGet"] = data["b16"]
 		DataBatik.batik18["isGet"] = data["b17"]
 		
+		minigame1 = data["mg1"]
+		minigame2 = data["mg2"]
 		
 		dungeonState = data["ds"]
 		pintuDungeon = data ["pd"]
@@ -465,25 +466,34 @@ func get_stage() -> int:
 	return stage
 
 func cekMinigame1Status(i):
-	if minigame1[i] == true:
-		match(i):
-			1:
-				DataBatik.batik10["isGet"] = true
-			2:
-				DataBatik.batik11["isGet"] = true
-			3:
-				DataBatik.batik12["isGet"] = true
-	if minigame1:
+	match(i):
+		1:
+			DataBatik.batik10["isGet"] = true
+			minigame1[i-1] = true
+		2:
+			DataBatik.batik11["isGet"] = true
+			minigame1[i-1] = true
+		3:
+			DataBatik.batik12["isGet"] = true
+			minigame1[i-1] = true
+
+func cekMinigame2Status(i: int):
+	print("status: ", i)
+	match(i):
+		1:
+			DataBatik.batik14["isGet"] = true
+			minigame2[i-1] = true
+		2:
+			DataBatik.batik15["isGet"] = true
+			minigame2[i-1] = true
+		3:
+			DataBatik.batik16["isGet"] = true
+			minigame2[i-1] = true
+
+func cekCompletedAllMiniGame1():
+	if not false in minigame1:
 		DataBatik.batik13["isGet"] = true
-				
-func cekMinigame2Status(i):
-	if minigame2[i] == true:
-		match(i):
-			1:
-				DataBatik.batik14["isGet"] = true
-			2:
-				DataBatik.batik15["isGet"] = true
-			3:
-				DataBatik.batik16["isGet"] = true
-	if minigame2:
-		DataBatik.batik13["isGet"] = true
+	
+func cekCompletedAllMiniGame2():
+	if not false in minigame2:
+		DataBatik.batik17["isGet"] = true
