@@ -61,7 +61,7 @@ func score_update(): #update text score
 	$TileMap/Score/Label.text = "Score = " + str(score)
 
 func upspeed(): #meningkatkan kesulitan monster
-	if score > 5:
+	if score > 7:
 		$TileMap/batang.move_mult += randf_range(5, 10)
 		$TileMap/batang.pup_time -= $TileMap/batang.pup_time + $TileMap/batang.pup_time * 0.2
 	else:
@@ -70,7 +70,7 @@ func upspeed(): #meningkatkan kesulitan monster
 func gameoverState(n):
 	match State.stage:
 		1:
-			if score == 5 and n > 0:
+			if score == 8 and n > 0:
 				paused()
 				$GameOver/vbox/h1.text = "Kamu Berhasil"
 				gameOverUI.visible = true

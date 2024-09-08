@@ -41,6 +41,7 @@ func _on_mini_game_pressed():
 	SoundFx.buttonClick()
 	selectStage.visible = true
 	stage = $minigame/VBoxContainer/VBoxContainer/mini_game.get_name()
+	stageClearedCheck(stage)
 	
 	$selectStage/VBoxContainer/LabelDeskripsi/Label.text = "Dapatkan kain mori yang dijatuhkan oleh monster batang. jangan sampai mengambil senjata tajam"
 	$selectStage/VBoxContainer/LabelDeskripsi/StageReq/req1.text = "Stage 1: 5 Kain"
@@ -55,6 +56,7 @@ func _on_tower_def_pressed():
 	SoundFx.buttonClick()
 	selectStage.visible = true
 	stage = $minigame/VBoxContainer/VBoxContainer2/tower_defence_game.get_name()
+	stageClearedCheck(stage)
 	State.dungeonState = false
 	
 	$selectStage/VBoxContainer/LabelDeskripsi/Label.text = "Jangan biarkan monster terbang ini masuk ke dalam desa! Kalahkan semua monster menggunakan senjata yang diberikan oleh Kakek untuk mengusir monsternya!"
@@ -90,6 +92,26 @@ func _on_btn_3_pressed():
 	State.stage = 3
 	get_tree().change_scene_to_file(linkTemp)
 
+func stageClearedCheck(gameMode):
+	match(gameMode):
+		"mini_game":
+			for i in 3:
+				var batik = 10 + i
+				var batikname = "batik"+ str(batik)
+				if DataBatik[batikname]["isGet"] == true:
+					var check = "selectStage/VBoxContainer/btnContainer/Control" +str(i)+ "/Check"
+					var checkConfirm = get_node(check)
+					checkConfirm.visible = true
+					
+		"tower_defence_game":
+			for i in 3:
+				var batik = 14 + i
+				var batikname = "batik"+ str(batik)
+				if DataBatik[batikname]["isGet"] == true:
+					var check = "selectStage/VBoxContainer/btnContainer/Control" +str(i)+ "/Check"
+					var checkConfirm = get_node(check)
+					checkConfirm.visible = true
+		
 
 #----------------------------------unused------------------------------------------
 #	match(playerMap):

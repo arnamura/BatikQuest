@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bt3oquybtan00"]
+[gd_scene load_steps=24 format=3 uid="uid://bt3oquybtan00"]
 
 [ext_resource type="FontFile" uid="uid://dofpvw42s1f6d" path="res://NormalFont.ttf" id="1_72bcx"]
 [ext_resource type="Script" path="res://scenes/Main Menu/main_menu.gd" id="1_enl23"]
@@ -11,6 +11,7 @@
 [ext_resource type="Theme" uid="uid://7vpl40sax2v" path="res://styles/Deskripsitheme.tres" id="9_q1ksu"]
 [ext_resource type="Texture2D" uid="uid://ce1luadqpjauq" path="res://art/ss/catch the mori.png" id="9_upkpo"]
 [ext_resource type="Texture2D" uid="uid://cnbo0opd4jtmk" path="res://art/ss/lindungi desa.png" id="10_dc2ip"]
+[ext_resource type="Texture2D" uid="uid://c7plwqs6n6qrw" path="res://art/check.png" id="12_vnw1p"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cj05l"]
 texture = ExtResource("3_14l6q")
@@ -428,28 +429,77 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 alignment = 1
 
-[node name="btn1" type="Button" parent="selectStage/VBoxContainer/btnContainer"]
+[node name="Control0" type="Control" parent="selectStage/VBoxContainer/btnContainer"]
+custom_minimum_size = Vector2(29, 29)
 layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="btn1" type="Button" parent="selectStage/VBoxContainer/btnContainer/Control0"]
+custom_minimum_size = Vector2(29, 29)
+layout_mode = 2
+offset_right = 25.0
+offset_bottom = 29.0
 size_flags_vertical = 3
 theme = ExtResource("8_mv7w0")
 text = " 1 "
 icon_alignment = 1
 expand_icon = true
 
-[node name="btn2" type="Button" parent="selectStage/VBoxContainer/btnContainer"]
+[node name="Check" type="TextureRect" parent="selectStage/VBoxContainer/btnContainer/Control0"]
+visible = false
+layout_mode = 0
+offset_left = 16.0
+offset_top = -6.0
+offset_right = 32.0
+offset_bottom = 10.0
+texture = ExtResource("12_vnw1p")
+
+[node name="Control1" type="Control" parent="selectStage/VBoxContainer/btnContainer"]
+custom_minimum_size = Vector2(29, 29)
 layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="btn2" type="Button" parent="selectStage/VBoxContainer/btnContainer/Control1"]
+custom_minimum_size = Vector2(29, 29)
+layout_mode = 2
+offset_right = 29.0
+offset_bottom = 29.0
 size_flags_vertical = 3
 theme = ExtResource("8_mv7w0")
 text = " 2 "
 icon_alignment = 1
 expand_icon = true
 
-[node name="btn3" type="Button" parent="selectStage/VBoxContainer/btnContainer"]
+[node name="Check" type="TextureRect" parent="selectStage/VBoxContainer/btnContainer/Control1"]
+visible = false
+offset_left = 16.0
+offset_top = -6.0
+offset_right = 32.0
+offset_bottom = 10.0
+texture = ExtResource("12_vnw1p")
+
+[node name="Control2" type="Control" parent="selectStage/VBoxContainer/btnContainer"]
+custom_minimum_size = Vector2(29, 29)
 layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="btn3" type="Button" parent="selectStage/VBoxContainer/btnContainer/Control2"]
+custom_minimum_size = Vector2(29, 29)
+layout_mode = 2
+offset_right = 29.0
+offset_bottom = 29.0
 theme = ExtResource("8_mv7w0")
 text = " 3 "
 icon_alignment = 1
 expand_icon = true
+
+[node name="Check" type="TextureRect" parent="selectStage/VBoxContainer/btnContainer/Control2"]
+visible = false
+offset_left = 16.0
+offset_top = -6.0
+offset_right = 32.0
+offset_bottom = 10.0
+texture = ExtResource("12_vnw1p")
 
 [node name="BtnClose2" type="Button" parent="selectStage"]
 layout_mode = 2
@@ -468,7 +518,7 @@ flat = true
 [connection signal="pressed" from="minigame/BtnClose" to="." method="_on_btn_close_pressed"]
 [connection signal="pressed" from="minigame/VBoxContainer/VBoxContainer/mini_game" to="." method="_on_mini_game_pressed"]
 [connection signal="pressed" from="minigame/VBoxContainer/VBoxContainer2/tower_defence_game" to="." method="_on_tower_def_pressed"]
-[connection signal="pressed" from="selectStage/VBoxContainer/btnContainer/btn1" to="." method="_on_btn_1_pressed"]
-[connection signal="pressed" from="selectStage/VBoxContainer/btnContainer/btn2" to="." method="_on_btn_2_pressed"]
-[connection signal="pressed" from="selectStage/VBoxContainer/btnContainer/btn3" to="." method="_on_btn_3_pressed"]
+[connection signal="pressed" from="selectStage/VBoxContainer/btnContainer/Control0/btn1" to="." method="_on_btn_1_pressed"]
+[connection signal="pressed" from="selectStage/VBoxContainer/btnContainer/Control1/btn2" to="." method="_on_btn_2_pressed"]
+[connection signal="pressed" from="selectStage/VBoxContainer/btnContainer/Control2/btn3" to="." method="_on_btn_3_pressed"]
 [connection signal="pressed" from="selectStage/BtnClose2" to="." method="_on_btn_close_2_pressed"]
