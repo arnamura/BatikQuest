@@ -25,8 +25,6 @@ func _ready():
 	$MainUI/Dpads/Att.visible = true
 	$MainUI/Dpads/Action.visible = false
 	$MainUI/ColorRect.visible = false
-
-	
 	
 	diffStage()
 	SoundFx.playBgm("MiniGame")
@@ -121,12 +119,14 @@ func paused():
 func _on_backbtn_pressed():
 	SoundFx.buttonClick()
 	SoundFx.stopBgm("MiniGame")
+	deleteEnemy()
 	State.save_game()
 	DoorHandle.changeStage(DoorHandle.mainmenu)
 	paused()
 
 func _on_tryagainbtn_pressed():
 	SoundFx.buttonClick()
+	deleteEnemy()
 	paused()
 	get_tree().reload_current_scene()
 
@@ -135,3 +135,8 @@ func updateLabel(): #untuk update label UI
 	$remain.text = "Sisa  Monster:  "+ str(enemies_remain)
 	if count == true:
 		labelTimer()
+
+func deleteEnemy():
+	var enemy_list = get_tree().get_nodes_in_group("td_enemies")
+	for enemy in enemy_list:
+		enemy.queue_free()

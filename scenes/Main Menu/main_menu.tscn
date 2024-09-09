@@ -472,6 +472,7 @@ expand_icon = true
 
 [node name="Check" type="TextureRect" parent="selectStage/VBoxContainer/btnContainer/Control1"]
 visible = false
+layout_mode = 0
 offset_left = 16.0
 offset_top = -6.0
 offset_right = 32.0
@@ -495,6 +496,7 @@ expand_icon = true
 
 [node name="Check" type="TextureRect" parent="selectStage/VBoxContainer/btnContainer/Control2"]
 visible = false
+layout_mode = 0
 offset_left = 16.0
 offset_top = -6.0
 offset_right = 32.0

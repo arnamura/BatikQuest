@@ -5,6 +5,8 @@ extends Area2D
 
 signal eliminated
 
+
+
 func _process(delta):
 	if i <= 156:
 		i += 1
@@ -18,3 +20,4 @@ func _on_area_entered(area):
 		#area.queue_free()
 		emit_signal("eliminated")
 		kunai.queue_free()
+

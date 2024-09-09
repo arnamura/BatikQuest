@@ -11,6 +11,7 @@ func _ready():
 	#stageDiff(State.stage)
 	hpAdjust()
 
+
 func _process(delta):
 	$".".position.x -= speed
 
@@ -28,6 +29,11 @@ func hpAdjust():
 		"fly3":
 			hpFly = 2
 			speed = 0.5
+
+func _on_gameover():
+	print("gas")
+	
+	
 
 func _on_area_entered(area):
 	if area.is_in_group("player_weap"):
