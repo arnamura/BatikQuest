@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ca4fbleppbptm"]
+[gd_scene load_steps=27 format=3 uid="uid://ca4fbleppbptm"]
 
 [ext_resource type="Texture2D" uid="uid://bn1rxgfowuian" path="res://art/tileset/TilesetFloor.png" id="1_5bfvt"]
 [ext_resource type="Script" path="res://scenes/minigame/tower_defence_game.gd" id="1_jkftp"]
@@ -13,6 +13,7 @@
 [ext_resource type="Theme" uid="uid://clf8fk1cbxa6a" path="res://styles/h1.tres" id="8_b0m1b"]
 [ext_resource type="FontFile" uid="uid://c150i2j8f5iw1" path="res://VCRosdNEUE.ttf" id="9_ukjbi"]
 [ext_resource type="Theme" uid="uid://dvu8l7xh6rvqa" path="res://styles/btn2.tres" id="10_2pal7"]
+[ext_resource type="PackedScene" uid="uid://bteda0q8lw1cj" path="res://npc/kakek.tscn" id="14_oexhx"]
 
 [sub_resource type="Theme" id="Theme_vr8bj"]
 Label/colors/font_color = Color(1, 1, 1, 1)
@@ -5410,7 +5411,7 @@ layer_2/modulate = Color(1, 1, 1, 1)
 layer_2/y_sort_enabled = false
 layer_2/y_sort_origin = 0
 layer_2/z_index = 1
-layer_2/tile_data = PackedInt32Array(65540, 1245186, 5, 131076, 1245186, 6, 196612, 1245186, 7, 65542, 1376258, 5, 131078, 1376258, 6, 196614, 1376258, 7)
+layer_2/tile_data = PackedInt32Array(65540, 1245186, 5, 131076, 1245186, 6, 196612, 1245186, 7, 65542, 1376258, 5, 131078, 1376258, 6, 196614, 1376258, 7, 196608, 1310722, 21, 65543, 983043, 10, 589831, 983043, 10, 524300, 983043, 10, 262156, 262147, 10, 458766, 196611, 10, 524297, 196611, 10, 524302, 655363, 12, 458758, 655363, 12, 131071, 1245186, 19, 196607, 1245186, 20, 262143, 1245186, 21, 65536, 1310722, 19, 131072, 1310722, 20, 65537, 1376258, 19, 131073, 1376258, 20, 196609, 1376258, 21, 458754, 983041, 0, 131074, 393217, 2, 131082, 327681, 2)
 
 [node name="TimerStart" type="Control" parent="TileMap"]
 process_mode = 3
@@ -5499,6 +5500,11 @@ text = "Tantang Lagi"
 
 [node name="Player" parent="TileMap" instance=ExtResource("7_ejq8h")]
 position = Vector2(88, 62)
+
+[node name="NPC" type="Node2D" parent="TileMap"]
+
+[node name="Kakek" parent="TileMap/NPC" instance=ExtResource("14_oexhx")]
+position = Vector2(27, 74)
 
 [node name="SpawnPoint" type="Node2D" parent="TileMap"]
 

@@ -74,6 +74,7 @@ func gameoverState(n):
 				paused()
 				$GameOver/vbox/h1.text = "Kamu Berhasil"
 				gameOverUI.visible = true
+				State.cekMinigame1Status(stage)
 			if n == 0:
 				paused()
 				$GameOver/vbox/h1.text = "Kamu Gagal"
@@ -85,6 +86,7 @@ func gameoverState(n):
 				paused()
 				$GameOver/vbox/h1.text = "Kamu Berhasil"
 				gameOverUI.visible = true
+				State.cekMinigame1Status(stage)
 			if n == 0:
 				paused()
 				$GameOver/vbox/h1.text = "Kamu Gagal"
@@ -96,14 +98,14 @@ func gameoverState(n):
 				paused()
 				$GameOver/vbox/h1.text = "Kamu Berhasil"
 				gameOverUI.visible = true
+				State.cekMinigame1Status(stage)
 			if n == 0:
 				paused()
 				$GameOver/vbox/h1.text = "Kamu Gagal"
 				gameOverUI.visible = true
 			else:
 				pass
-	State.cekMinigame1Status(stage)
-	
+
 var is_paused = false : 
 	set(value):
 		is_paused = value

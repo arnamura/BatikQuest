@@ -68,6 +68,9 @@ func _unhandled_input(_event: InputEvent) -> void:
 		speed = 100
 	elif Input.is_action_just_released("ui_shift"):
 		speed = 35
+	if Input.is_action_just_pressed("ui_attack"):
+			if isAttack == false: #agar ada jeda dalam menyerang
+				attack()
 
 	
 #untuk handle input gerakan 
@@ -77,14 +80,13 @@ func handleInput():
 		var moveDirectionKeyboard = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 		#velocity = moveDirection*speed
 		velocity = moveDirectionKeyboard*speed
-		if Input.is_action_just_pressed("ui_attack"):
-			if isAttack == false: #agar ada jeda dalam menyerang
-				attack()
+		
 	else: 
 		velocity = Vector2.ZERO
 
 #Animasi Attack
 func attack():
+	print_debug("att")
 	animations.play("attRight")
 	
 	#agar dapat memanggil senjata "kunai" untuk minigame
@@ -228,7 +230,6 @@ func getBatikAnim(): #Animasi memunculkan teks mendapatkan batik
 #		hurtTimer.start()
 #		await hurtTimer.timeout
 #		effects.play("reset")
-
 
 
 func _on_map_detection_body_entered(body):

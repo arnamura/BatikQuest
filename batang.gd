@@ -25,7 +25,6 @@ func _ready():
 	
 
 func _physics_process(delta): 
-	
 	#pergerakan monster
 	position.x += dir * move_mult * delta
 	

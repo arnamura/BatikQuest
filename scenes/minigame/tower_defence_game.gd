@@ -101,7 +101,18 @@ func _on_timer_spawn_timeout():
 		enemies_remain -= 1
 	elif enemies_remain <= 0:
 		pass
-	
+		
+func updateLabel(): #untuk update label UI
+	$hp.text = "HP :  "+ str(hp)
+	$remain.text = "Sisa  Monster:  "+ str(enemies_remain)
+	if count == true:
+		labelTimer()
+
+func deleteEnemy():
+	var enemy_list = get_tree().get_nodes_in_group("td_enemies")
+	for enemy in enemy_list:
+		enemy.queue_free()
+
 func _on_despawn_area_entered(area):
 	if area.is_in_group("td_enemies"):
 		hp -= 1
@@ -130,13 +141,3 @@ func _on_tryagainbtn_pressed():
 	paused()
 	get_tree().reload_current_scene()
 
-func updateLabel(): #untuk update label UI
-	$hp.text = "HP :  "+ str(hp)
-	$remain.text = "Sisa  Monster:  "+ str(enemies_remain)
-	if count == true:
-		labelTimer()
-
-func deleteEnemy():
-	var enemy_list = get_tree().get_nodes_in_group("td_enemies")
-	for enemy in enemy_list:
-		enemy.queue_free()
